@@ -1,0 +1,121 @@
+---
+title: "HOTspots"
+author: "Alys Young"
+date:  "`r format(Sys.time(), '%d %B, %Y')`"
+output: html_document
+---
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+The goal of HOTspots is to display the data about antimmicrobial resistance in the Top End in a way that is easy to understand and useable for the audience. The audience nicludes members of the public, medical professionals and policy/decision makers. 
+
+## Outline of the project
+
+### Content
+- Patterns of drug resistance in space and time
+- Rural and regional areas
+- Local rates
+
+### Audience
+- Local stakeholder
+- Prescribers and doctors
+- Policy and guideline makers
+
+### Adjectives
+- user friendly
+- Sophistocated
+
+## The Specifications from Teresa
+### General
+- navigation bar
+  - Opening page as heat map
+  - region and age plots
+  - methodology
+  - reports
+  - links and news
+  - Terms of use, data disclaimer
+  - data
+  - options to share
+  
+
+### Heat map
+- statistical area three
+- grey out options of microbe/antimicrobe that dont exist or we have no data on
+
+### Plots and tables
+- region and age plots
+
+### Download report
+- pdf
+- including summary statistics, plots, antibiogram
+
+### Options to add later
+Other options that might be important or interesting
+- age
+- social disadvantage
+- remoteness index
+- household structure
+- gender
+- international areas
+
+## The data
+The data is supplied by the HOTspots team; currently the member that supplies the data is Will Cunningham. The data is saved to a dropbox folder which is shared with Alys Young. The data is comprised of 2 csv files; HOTspots_yearly_age&sex.csv and HOTspots_monthly.csv. The HOTspots_yearly_age&sex.csv file contains annual antimicrobial resistance data split for each age and sex category. The HOTspots_monthly.csv file contains monthly resistance data. 
+
+```{r data_raw}
+## The raw data
+
+## Monthly
+hotspot_data <-  read.csv("www/data/HOTspots_monthly.csv")
+hotspot_data$date_dmy <- as.Date(paste("01", hotspot_data$month_year), format = "%d %b %y")
+head(hotspot_data)
+
+## Yearly
+hotspot_yearly_data_full <-  read.csv("www/data/HOTspots_yearly_age&sex.csv")
+head(hotspot_yearly_data_full)
+```
+
+The HOTspots_yearly_age&sex.csv file is cleaned in the Data_manipulation.R script to create 4 files, 3 of which are loaded for the shiny app. Cleaning includes removing NAs and duplicates, and aggregating across superfluous groups.
+
+```{r data_annual_clean}
+hotspot_yearly_data  <- read.csv("www/data/hotspot_yearly_data.csv")
+head(hotspot_yearly_data, n= 2)
+
+
+hotspot_yearly_splitage <- read.csv("www/data/hotspot_yearly_splitage.csv")
+# Note: The column "Age" shows age brackets and the column "sex" has the value 'both' for all records
+head(hotspot_yearly_splitage, n= 2)
+
+
+hotspot_yearly_splitsex <- read.csv("www/data/hotspot_yearly_splitsex.csv")
+# Note: The column "Age" shows 'overall' for all records and the column "sex" has the value F for female sex or M for male sex
+head(hotspot_yearly_splitsex, n= 2)
+```
+
+The regions that antimicrobial resistance is mapped across are displayed on the map below. 
+
+
+```{r leaflet_regions, echo=FALSE, message = FALSE, warning = FALSE}
+library(leaflet)
+
+SA3 <- rgdal::readOGR("www/data/Australian_regions/Aus_regions.shp")
+SA3_data <- SA3[SA3$SA3_NAME16 %in% hotspot_yearly_data$region,]
+
+    SA3_data %>% # using the shapefile data
+      leaflet() %>% # create a leaflet map
+      fitBounds(lng1 = 114.304, lat1 =  -35.19201, lng2 = 150.442, lat2 = -9.142143) %>%
+      addTiles(options = providerTileOptions(minZoom = 2)) %>%
+      addPolygons( weight = 2,
+                    opacity = 1,
+                    fillColor = "Blue",
+                    color = "black",
+                    dashArray = "3",
+                    popup =paste0(SA3_data$SA3_NAME16))
+```
+

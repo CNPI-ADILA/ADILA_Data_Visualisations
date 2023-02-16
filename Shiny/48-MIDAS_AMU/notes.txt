@@ -1,0 +1,27 @@
+=================================================================================================
+PLAN FOR APP:
+
+1.
+Heatmap of DDD by country (also have the option to show a data table)
+	- have the option to choose year or range of years (for this will need to calculate an average within the app each time something is selected)
+	- have the option to select ONE organism (including the "all" option)	
+	- have the option to select ONE administration route (including the "all" option)
+	- have the option to select ONE antimicrobial (including the "all" option)
+	- have the option to select ONE aware_category (including the "all" option)
+
+2.
+Line plot of DDD over time (also have the option to show a data table) 
+	- have four different tabs, each one allowing user to select a combination of four of countries/routes/antimicrobials/aware_category and the fifth will all appear on the plot
+    	- set default to show all the categories of the fourth variable, but list as tick boxes so can de-select them if desired (using checkboxGroupInput())
+	- also have the option to collapse into an "all" category (see above)
+=================================================================================================
+DEPLOY OPTIONS:
+
+	1. Deploy to the cloud
+		- https://www.shinyapps.io/?_ga=2.124969162.1745752972.1675950619-1149319099.1670938131
+	2. Deploy on-premises or in your VPC (open source) - "Shiny Server"
+		- https://posit.co/products/open-source/shinyserver/?_ga=2.124969162.1745752972.1675950619-1149319099.1670938131
+
+
+	- General instructions: https://shiny.rstudio.com/articles/shinyapps.html
+=================================================================================================
