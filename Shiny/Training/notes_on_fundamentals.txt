@@ -1,0 +1,83 @@
+#############
+# RESOURCES #
+#############
+https://shiny.rstudio.com/tutorial/ (need to do exercises/workshops/watch videos)
+https://mastering-shiny.org/ (refer back to relevant secetions as needed)
+http://zevross.com/blog/2016/04/19/r-powered-web-applications-with-shiny-a-tutorial-and-cheat-sheet-with-40-example-apps/ (have read through)
+https://github.com/rstudio/shiny-examples
+#####################
+# MOST BASIC FORMAT # (bigger apps split into separate ui.R and server.R files)
+#####################
+install.packages("shiny")
+library(shiny)
+#...and any other packages you require
+#type: shinyapp, then press Shift+Tab to insert the below Shiny app snippet/framework
+
+
+ui <- basicPage("Text")	{ }		 	#the user interface (fluidPage also common)
+
+server <- function(input, output, session) { } 	#the server
+
+shinyApp(ui = ui, server = server) 		#this launches your app
+#######################
+# TEMPLATES WITHIN ui # https://shiny.rstudio.com/articles/layout-guide.html
+#######################
+sidebarLayout(
+	sidebarPanel(
+
+	),
+	mainPanel(
+
+	)
+)
+
+Bootstrap grid system (12 collumns)
+	fluidRow() for grid format (or fixedRow())
+	theme=shinytheme("nameoftheme") for existing layouts/looks
+
+tabsetPanel() for multiple tabs, or navlistPanel() for hyperlink list style
+
+navbarPage() for an additional level of sub-components (and navbarMenu() for dropdown menu)
+
+tags$OBJECT() for HTML elements (such as paragraphs: tags$p())
+###########################
+# WIDGETS, INPUTS/OUTPUTS # https://shiny.rstudio.com/gallery/widget-gallery.html
+###########################
+*Input(inputId = "nameofinput", ...) and *Output (works with render*()) in ui
+	inputId/outputId's must be unique
+
+input$nameofinputId (within updateTextInput()) and "outputname" in server
+
+observe({}) [side-effects and no output], reactive({}) [ouput and no side-effects] or render*({}) [meaningful data-realted outputs] for reactive values to work
+	observeEvent(input$nameofinputId, {}) / eventReactive(...) to run code only if a specific input change (or use isolate())
+	", priority = N" option to ensure order each value will be updated
+	
+keep reactive values separate to ensure only relevant code runs when changed by user
+#####################
+# DEPLOYING THE APP #
+#####################
+For a multi-page app in RStudio you can open either ui.R or server.R and click on Run App in the top right
+
+For a single or multi-page app you can use the function runApp("nameofdirectory") where you specify the directory your app.R or ui.R/server.R files are housed in.
+
+shinyapps.io
+######################
+# OTHER GENERAL TIPS #
+######################
+use an existing theme: theme = bslib::bs_theme(bootswatch = "nameoftheme")
+	https://rstudio.github.io/shinythemes/
+
+use isolate() to prevent output from rendering until a specific button is pressed (e.g., actionButton()), OR, just use eventReactive() without isolate()
+
+can hide various outputs using mainPanel(tabsetPanel(...,type = "hidden",...))
+
+Modules are very useful for larger apps in terms of organisation/replication of code
+
+turn on autoreload (https://github.com/sol-eng/background-jobs/tree/master/shiny-job)
+
+consider using the renv package so that the app will work at any point in the future (https://rstudio.github.io/renv/)
+
+Dashboard-Builder
+	- https://pega.shinyapps.io/dashboard-builder/
+	- https://github.com/petergandenberger/dashboard-builder
+	- install gridstackeR package (devtools::install_github("https://github.com/petergandenberger/gridstackeR"), but might be on CRAN now)

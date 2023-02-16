@@ -1,0 +1,13 @@
+name: GRAM_antibiotic_consumption
+title: GRAM_antibiotic_consumption
+username:
+account: livedataoxford
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4923529
+bundleId: 5237341
+url: https://livedataoxford.shinyapps.io/GRAM_antibiotic_consumption/
+when: 1636564806.82726
+lastSyncTime: 1636564806.82726
+asMultiple: FALSE
+asStatic: FALSE

@@ -1,0 +1,13 @@
+name: AMR_Typhi_Paratyphi
+title: AMR_Typhi_Paratyphi
+username:
+account: livedataoxford
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4924833
+bundleId: 5162572
+url: https://livedataoxford.shinyapps.io/AMR_Typhi_Paratyphi/
+when: 1634824165.43611
+lastSyncTime: 1634824165.43611
+asMultiple: FALSE
+asStatic: FALSE

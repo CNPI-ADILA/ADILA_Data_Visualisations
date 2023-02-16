@@ -1,0 +1,9 @@
+bug,drug,filename
+Salmonella Typhi,Multidrug resistance (MDR),MDR_Typhi
+Salmonella Paratyphi A,Multidrug resistance (MDR),MDR_Paratyphi
+Salmonella Typhi,Fluoroquinolone non-susceptibility (FQNS),FQNS_Typhi
+Salmonella Paratyphi A,Fluoroquinolone non-susceptibility (FQNS),FQNS_Paratyphi
+Staphylococcus aureus,Methicillin,MRSA
+Escherichia coli,Third generation cephalosporins,3GC_E_coli
+Klebsiella pneumoniae,Third generation cephalosporins,3GC_K_pneumo
+Streptococcus pneumoniae,Penicillin,penicillin_S_pneumo

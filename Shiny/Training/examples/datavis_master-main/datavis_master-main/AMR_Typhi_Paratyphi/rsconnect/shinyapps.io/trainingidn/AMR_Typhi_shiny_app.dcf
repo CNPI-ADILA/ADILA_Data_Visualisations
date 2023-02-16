@@ -1,0 +1,13 @@
+name: AMR_Typhi_shiny_app
+title:
+username:
+account: trainingidn
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4498437
+bundleId: 4941595
+url: https://anniejbrowne.shinyapps.io/AMR_Typhi_shiny_app/
+when: 1629385042.70247
+lastSyncTime: 1629385042.70247
+asMultiple: FALSE
+asStatic: FALSE

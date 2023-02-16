@@ -1,0 +1,13 @@
+name: shiny_app
+title:
+username:
+account: trainingidn
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4471535
+bundleId: 4996642
+url: https://anniejbrowne.shinyapps.io/shiny_app/
+when: 1630671785.73603
+lastSyncTime: 1630671785.73603
+asMultiple: FALSE
+asStatic: FALSE
