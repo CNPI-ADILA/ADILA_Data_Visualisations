@@ -31,7 +31,7 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
   useShinyjs(),
   
   # App title
-  titlePanel("ANTIMICROBIAL USE DATA (IQVIA MIDAS)"),
+  titlePanel("ANTIMICROBIAL USE DATA"),
 
   # Two visualisations, each in a separate tab (one tab containing several sub-tabs)
   navbarPage("", selected = NULL, collapsible = TRUE,
