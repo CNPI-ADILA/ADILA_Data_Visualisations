@@ -1,0 +1,14 @@
+???KEY QUESTION: DO THEY WANT THIS META-DATA FOR THE RAW DATA SOURCES (e.g., to decide which to prioritise for cleaning) OR ON THE CLEANED/READY DATA???
+	- if the former, then could include some sort of quality score saying how much of the data missing etc. (but this could be difficult)
+
+*Summarising the meta-data of ADILA data sources
+	- this could either be a Shiny app or a markdown document (in R)
+		- a live Shiny app might be better so is always up to date?
+	- Suggested design of app:
+		- two tabs
+			- meta-data about each resource
+				- inputs: topic (e.g., AMR or AMU), structure/format (e.g., line-listed, aggregate)
+				- outputs: table (dataset name/ID, years included, countries included, organisms/antimicrobials included, key metrics (e.g., for AMR: percentage resistant or MICs, for AMU: metric used (DDD?)), number of variables, number of rows
+			- research questions
+				- inputs: setting (e.g., hospital, primary), format of data (e.g., line listed, aggregate), year(s), location (e.g., global, Latin America, indiviudal countries), independent variables (e.g., age, sex, antimicrobial treatment, AMR), outcome (e.g., death, AMR), model type (e.g., logisitic, Cox)
+				- outputs: table of datasets that could be used (e.g., name (incl. ID), key attributes (e.g., number of observations), whether it's ready for analysis (e.g., might not have recieved the data yet, or it might not have been cleaned)
