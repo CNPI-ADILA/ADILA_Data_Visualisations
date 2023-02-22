@@ -167,7 +167,7 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
           mainPanel(
             
             h4(uiOutput("plot_title_by_antimicrobial")),
-            plotlyOutput(outputId = "plot_by_antimicrobial", height = 600) %>% withSpinner(type = 6),
+            plotlyOutput(outputId = "plot_by_antimicrobial", height = 600), #could use: %>% withSpinner(type = 6)
 
             # Option to de-select lines from the plot ##NOT NEEDED - NOW USING PLOTLY##
             # linebreaks(2),
@@ -237,7 +237,7 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
           mainPanel(
             
             h4(uiOutput("plot_title_by_route")),
-            plotlyOutput(outputId = "plot_by_route", height = 600) %>% withSpinner(type = 6),
+            plotlyOutput(outputId = "plot_by_route", height = 600),
             
             # Option to de-select lines from the plot ##NOT NEEDED - NOW USING PLOTLY##
             # linebreaks(2),
@@ -307,7 +307,7 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
           mainPanel(
             
             h4(uiOutput("plot_title_by_aware")),
-            plotlyOutput(outputId = "plot_by_aware", height = 600) %>% withSpinner(type = 6),
+            plotlyOutput(outputId = "plot_by_aware", height = 600),
             
             # Option to de-select lines from the plot ##NOT NEEDED - NOW USING PLOTLY##
             # linebreaks(2),
@@ -377,7 +377,7 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
           mainPanel(
             
             h4(uiOutput("plot_title_by_country")),
-            plotlyOutput(outputId = "plot_by_country", height = 600) %>% withSpinner(type = 6),
+            plotlyOutput(outputId = "plot_by_country", height = 600),
             
             # Option to de-select lines from the plot ##NOT NEEDED - NOW USING PLOTLY##
             # linebreaks(2),
@@ -918,9 +918,17 @@ server <- function(input, output, session) {
       # Plot title
       plot_title_by_antimicrobial_reactive <- eventReactive(input$load_plot_by_antimicrobial, {
         if (input$metric_line_by_antimicrobial == "ddd") {
-          paste(toupper(input$metric_line_by_antimicrobial), "(x 10^3) of", tolower(input$route_line_by_antimicrobial), input$aware_line_by_antimicrobial, "(AWaRe) antimicrobials in", input$country_line_by_antimicrobial)
+          if (input$aware_line_by_antimicrobial == "All") {
+            paste(toupper(input$metric_line_by_antimicrobial), "(x 10^3) of", tolower(input$route_line_by_antimicrobial), "antimicrobials (all AWaRe) in", input$country_line_by_antimicrobial)
+          } else {
+            paste(toupper(input$metric_line_by_antimicrobial), "(x 10^3) of", tolower(input$route_line_by_antimicrobial), input$aware_line_by_antimicrobial, "(AWaRe) antimicrobials in", input$country_line_by_antimicrobial)
+          }
         } else {
-          paste(toupper(input$metric_line_by_antimicrobial), "of", tolower(input$route_line_by_antimicrobial), input$aware_line_by_antimicrobial, "(AWaRe) antimicrobials in", input$country_line_by_antimicrobial)
+          if (input$aware_line_by_antimicrobial == "All") {
+            paste(toupper(input$metric_line_by_antimicrobial), "of", tolower(input$route_line_by_antimicrobial), "antimicrobials (all AWaRe) in", input$country_line_by_antimicrobial)
+          } else {
+            paste(toupper(input$metric_line_by_antimicrobial), "of", tolower(input$route_line_by_antimicrobial), input$aware_line_by_antimicrobial, "(AWaRe) antimicrobials in", input$country_line_by_antimicrobial)
+          }
         }
       })
   
@@ -982,9 +990,17 @@ server <- function(input, output, session) {
       # Plot title
       plot_title_by_route_reactive <- eventReactive(input$load_plot_by_route, {
         if (input$metric_line_by_route == "ddd") {
-          paste0(toupper(input$metric_line_by_route), " (x 10^3) of ", tolower(input$antimicrobial_line_by_route), " (AWaRe: ", input$aware_line_by_route, ") in ", input$country_line_by_route)
+          if (input$antimicrobial_line_by_route == "All") {
+            paste0(toupper(input$metric_line_by_route), " (x 10^3) of antimicrobials (AWaRe: ", input$aware_line_by_route, ") in ", input$country_line_by_route)
+          } else {
+            paste0(toupper(input$metric_line_by_route), " (x 10^3) of ", tolower(input$antimicrobial_line_by_route), " (AWaRe: ", input$aware_line_by_route, ") in ", input$country_line_by_route)
+          }  
         } else {
-          paste0(toupper(input$metric_line_by_route), " of ", tolower(input$antimicrobial_line_by_route), " (AWaRe: ", input$aware_line_by_route, ") in ", input$country_line_by_route)
+          if (input$antimicrobial_line_by_route == "All") {
+            paste0(toupper(input$metric_line_by_route), " of antimicrobials (AWaRe: ", input$aware_line_by_route, ") in ", input$country_line_by_route)
+          } else {
+            paste0(toupper(input$metric_line_by_route), " of ", tolower(input$antimicrobial_line_by_route), " (AWaRe: ", input$aware_line_by_route, ") in ", input$country_line_by_route)
+          }  
         }
       })
       
@@ -1044,11 +1060,19 @@ server <- function(input, output, session) {
       
     # By AWaRe category
       # Plot title
-      plot_title_by_aware_reactive <- eventReactive(input$load_plot_by_aware, {
+      plot_title_by_aware_reactive <- eventReactive(input$load_plot_by_aware, { 
         if (input$metric_line_by_aware == "ddd") {
-          paste(toupper(input$metric_line_by_aware), "(x 10^3) of", tolower(input$route_line_by_aware), input$antimicrobial_line_by_aware, "in", input$country_line_by_aware)
+          if (input$antimicrobial_line_by_aware == "All") {
+            paste(toupper(input$metric_line_by_aware), "(x 10^3) of", tolower(input$route_line_by_aware), "antimicrobials in", input$country_line_by_aware)
+          } else {
+            paste(toupper(input$metric_line_by_aware), "(x 10^3) of", tolower(input$route_line_by_aware), input$antimicrobial_line_by_aware, "in", input$country_line_by_aware)
+          }  
         } else {
-          paste(toupper(input$metric_line_by_aware), "of", tolower(input$route_line_by_aware), input$antimicrobial_line_by_aware, "in", input$country_line_by_aware)
+          if (input$antimicrobial_line_by_aware == "All") {
+            paste(toupper(input$metric_line_by_aware), "of", tolower(input$route_line_by_aware), "antimicrobials in", input$country_line_by_aware)
+          } else {
+            paste(toupper(input$metric_line_by_aware), "of", tolower(input$route_line_by_aware), input$antimicrobial_line_by_aware, "in", input$country_line_by_aware)
+          }  
         }
       })
       
@@ -1110,9 +1134,17 @@ server <- function(input, output, session) {
       # Plot title
       plot_title_by_country_reactive <- eventReactive(input$load_plot_by_country, {
         if (input$metric_line_by_country == "ddd") {
-          paste(toupper(input$metric_line_by_country), "(x 10^3) of", tolower(input$route_line_by_country), input$antimicrobial_line_by_country, "(AWaRe:", input$aware_line_by_country, ")")
+          if (input$antimicrobial_line_by_country == "All") { 
+            paste0(toupper(input$metric_line_by_country), " (x 10^3) of ", tolower(input$route_line_by_country), " antimicrobials (AWaRe: ", input$aware_line_by_country, ")")
+          } else {
+            paste0(toupper(input$metric_line_by_country), " (x 10^3) of ", tolower(input$route_line_by_country), input$antimicrobial_line_by_country, " (AWaRe: ", input$aware_line_by_country, ")")
+          }
         } else {
-          paste(toupper(input$metric_line_by_country), "of", tolower(input$route_line_by_country), input$antimicrobial_line_by_country, "(AWaRe:", input$aware_line_by_country, ")")
+          if (input$antimicrobial_line_by_country == "All") { 
+            paste0(toupper(input$metric_line_by_country), " of ", tolower(input$route_line_by_country), " antimicrobials (AWaRe: ", input$aware_line_by_country, ")")
+          } else {
+            paste0(toupper(input$metric_line_by_country), " of ", tolower(input$route_line_by_country), input$antimicrobial_line_by_country, " (AWaRe: ", input$aware_line_by_country, ")")
+          }
         }
       })
       
