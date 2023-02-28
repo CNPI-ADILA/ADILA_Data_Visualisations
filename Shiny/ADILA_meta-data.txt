@@ -1,9 +1,11 @@
 ???KEY QUESTION: DO THEY WANT THIS META-DATA FOR THE RAW DATA SOURCES (e.g., to decide which to prioritise for cleaning) OR ON THE CLEANED/READY DATA???
-	- if the former, then could include some sort of quality score saying how much of the data missing etc. (but this could be difficult)
+	- if the former, then could include some sort of quality score saying how much of the data missing etc. (although this could be difficult)
+		- also difficult as almost all data will come in different formats
+	- if the latter, not sure of the added benefit because by that stage researchers will know what's in the data and will naturally explore the data in detail before analysis
 
 *Summarising the meta-data of ADILA data sources
 	- this could either be a Shiny app or a markdown document (in R)
-		- a live Shiny app might be better so is always up to date?
+		- a live Shiny app might be better so it's always up to date?
 	- Suggested design of app:
 		- two tabs
 			- meta-data about each resource
