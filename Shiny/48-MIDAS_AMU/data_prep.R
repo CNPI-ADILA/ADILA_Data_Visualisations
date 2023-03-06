@@ -8,9 +8,9 @@ data_original <- read.csv(d)
 # reformat/clean
   # renaming columns
   data_reformatted <- data_original %>% 
-    select(source_title, fdef_short_name, antimicrobials, aware_category, route_of_administration, effective_from, ddd, did, di) %>%
+    select(source_title, country, antimicrobials, aware_category, route_of_administration, effective_from, sum_ddd, sum_did, sum_di) %>%
     mutate(year = as.numeric(gsub("-01-01", "", effective_from))) %>% select(-effective_from) %>%
-    rename(country = fdef_short_name) #CAN DELETE THIS IF IT CHANGES BACK TO BEING CALLED "country" (and replace fdef_short_name above)!!!
+    rename(ddd = sum_ddd, did = sum_did, di = sum_di)
   # reshaping wide to long
   data_reformatted <- gather(data_reformatted, metric, value, ddd, did, di, factor_key = TRUE)
   # collapsing age_appropriate (true/false) stratification
