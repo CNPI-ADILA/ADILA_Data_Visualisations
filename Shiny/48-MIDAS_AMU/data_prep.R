@@ -18,64 +18,9 @@ data_original <- read.csv(d)
     summarize(value = sum(value, na.rm = TRUE), .groups = "keep") %>%
     ungroup()
 
-# create summed cols for "All" antimicrobials/routes/countries/aware_categories   #ADD WHO_REGION AND SECTOR HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  # "All" in all four groups
-  subset_all_4 <- data_reformatted %>% group_by(source_title, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>% 
-    mutate(country = "All", antimicrobials = "All", aware_category = "All", route_of_administration = "All") %>%
-    ungroup()
-  # "All" in any three of the four groups
-  subset_route_3 <- data_reformatted %>% group_by(route_of_administration, source_title, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>% 
-    mutate(country = "All", antimicrobials = "All", aware_category = "All") %>%
-    ungroup()
-  subset_aware_3 <- data_reformatted %>% group_by(aware_category, source_title, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>% 
-    mutate(country = "All", antimicrobials = "All", route_of_administration = "All") %>%
-    ungroup()
-  subset_antimicrobial_3 <- data_reformatted %>% group_by(antimicrobials, source_title, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>% 
-    mutate(country = "All", route_of_administration = "All", aware_category = "All") %>%
-    ungroup()
-  subset_country_3 <- data_reformatted %>% group_by(country, source_title, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>% 
-    mutate(route_of_administration = "All", antimicrobials = "All", aware_category = "All") %>%
-    ungroup()
-  # "All" in any two of the four groups
-  subset_aware_route_2 <- data_reformatted %>% group_by(aware_category, route_of_administration, source_title, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>% 
-    mutate(country = "All", antimicrobials = "All") %>%
-    ungroup()
-  subset_antimicrobial_route_2 <- data_reformatted %>% group_by(antimicrobials, route_of_administration, source_title, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>% 
-    mutate(country = "All", aware_category = "All") %>%
-    ungroup()
-  subset_country_route_2 <- data_reformatted %>% group_by(country, route_of_administration, source_title, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>% 
-    mutate(aware_category = "All", antimicrobials = "All") %>%
-    ungroup()
-  subset_antimicrobial_aware_2 <- data_reformatted %>% group_by(antimicrobials, aware_category, source_title, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>% 
-    mutate(country = "All", route_of_administration = "All") %>%
-    ungroup()
-  subset_country_aware_2 <- data_reformatted %>% group_by(country, aware_category, source_title, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>% 
-    mutate(route_of_administration = "All", antimicrobials = "All") %>%
-    ungroup()
-  subset_country_antimicrobial_2 <- data_reformatted %>% group_by(country, antimicrobials, source_title, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>% 
-    mutate(route_of_administration = "All", aware_category = "All") %>%
-    ungroup()
-  # "All" in only one of the four groups
-  subset_route_1 <- data_reformatted %>% group_by(country, antimicrobials, aware_category, source_title, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>% 
-    mutate(route_of_administration = "All") %>%
-    ungroup()
-  subset_aware_1 <- data_reformatted %>% group_by(country, antimicrobials, route_of_administration, source_title, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>% 
-    mutate(aware_category = "All") %>%
-    ungroup()
-  subset_antimicrobial_1 <- data_reformatted %>% group_by(country, route_of_administration, aware_category, source_title, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>% 
-    mutate(antimicrobials = "All") %>%
-    ungroup()
-  subset_country_1 <- data_reformatted %>% group_by(route_of_administration, antimicrobials, aware_category, source_title, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>% 
-    mutate(country = "All") %>%
-    ungroup()
-  # append each of these subsets to the main dataset (15 in total)  #may need to subset into smaller datasets if the app is too slow (e.g., ddd/did/di)???
-  data_for_visualisations <- rbind(data_reformatted, 
-                                   subset_all_4, 
-                                   subset_route_3, subset_aware_3, subset_antimicrobial_3, subset_country_3, 
-                                   subset_aware_route_2, subset_antimicrobial_route_2, subset_country_route_2, subset_antimicrobial_aware_2, subset_country_aware_2, subset_country_antimicrobial_2, 
-                                   subset_country_1, subset_antimicrobial_1, subset_aware_1, subset_route_1)
-  rm(list = ls(pattern = "subset_")) 
-
+# create summed cols for "All" antimicrobials/routes/countries/aware_categories/who_region/sector
+source("collapse_by_category.R")
+  
 # change some country names that don't match the names in the shape file
 data_for_visualisations <- data_for_visualisations %>%
   mutate(country = ifelse(country == "Russian Federation", "Russia", country)) %>%
