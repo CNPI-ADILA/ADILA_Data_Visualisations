@@ -69,6 +69,14 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
                       selected = NULL, 
                       multiple = FALSE
           ),
+
+          # Select input *SECTOR*
+          selectInput(inputId = "sector_map", 
+                      label = "Sector:",
+                      choices = c("", sort(unique(data_for_visualisations$sector))),
+                      selected = NULL, 
+                      multiple = FALSE
+          ),
           
           # Slider input *SINGLE YEAR OR YEAR RANGE*
           sliderInput(inputId = "years",
@@ -139,10 +147,24 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
                         selected = NULL,
                         multiple = FALSE),
             
+            # Select input *WHO REGION*
+            selectInput(inputId = "whoregion_line_by_antimicrobial", 
+                        label = "WHO region:", 
+                        choices= c("", sort(unique(data_for_visualisations$who_region))),
+                        selected = NULL,
+                        multiple = FALSE),
+            
             # Select input *COUNTRY*
             selectInput(inputId = "country_line_by_antimicrobial", 
                         label = "Country:", 
                         choices= c("", sort(unique(data_for_visualisations$country))),
+                        selected = NULL,
+                        multiple = FALSE),
+            
+            # Select input *SECTOR*
+            selectInput(inputId = "sector_line_by_antimicrobial", 
+                        label = "Sector:", 
+                        choices= c("", sort(unique(data_for_visualisations$sector))),
                         selected = NULL,
                         multiple = FALSE),
             
@@ -209,6 +231,13 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
                         selected = NULL,
                         multiple = FALSE),
             
+            # Select input *WHO REGION*
+            selectInput(inputId = "whoregion_line_by_route", 
+                        label = "WHO region:", 
+                        choices= c("", sort(unique(data_for_visualisations$who_region))),
+                        selected = NULL,
+                        multiple = FALSE),
+            
             # Select input *COUNTRY*
             selectInput(inputId = "country_line_by_route", 
                         label = "Country:", 
@@ -216,6 +245,13 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
                         selected = NULL,
                         multiple = FALSE),
 
+            # Select input *SECTOR*
+            selectInput(inputId = "sector_line_by_route", 
+                        label = "Sector:", 
+                        choices= c("", sort(unique(data_for_visualisations$sector))),
+                        selected = NULL,
+                        multiple = FALSE),
+            
             # Choose metric (DDD/DID/DI)
             radioButtons(inputId = "metric_line_by_route",
                          label = "AMU metric:",
@@ -279,10 +315,24 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
                         selected = NULL,
                         multiple = FALSE),
             
+            # Select input *WHO REGION*
+            selectInput(inputId = "whoregion_line_by_aware", 
+                        label = "WHO region:", 
+                        choices= c("", sort(unique(data_for_visualisations$who_region))),
+                        selected = NULL,
+                        multiple = FALSE),
+            
             # Select input *COUNTRY*
             selectInput(inputId = "country_line_by_aware", 
                         label = "Country:", 
                         choices = c("", sort(unique(data_for_visualisations$country))),
+                        selected = NULL,
+                        multiple = FALSE),
+            
+            # Select input *SECTOR*
+            selectInput(inputId = "sector_line_by_aware", 
+                        label = "Sector:", 
+                        choices= c("", sort(unique(data_for_visualisations$sector))),
                         selected = NULL,
                         multiple = FALSE),
             
@@ -326,6 +376,83 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
       ),
       
       #
+      # WHO regions
+      #
+      tabPanel("compare WHO regions",
+               
+        sidebarLayout(
+           
+          # Sidebar inputs 
+          sidebarPanel(
+             
+            # Select input *ANTIMICROBIAL*
+            selectInput(inputId = "antimicrobial_line_by_whoregion", 
+                        label = "Antimicrobial:", 
+                        choices = c("", sort(unique(data_for_visualisations$antimicrobials))),
+                        selected = NULL,
+                        multiple = FALSE),
+             
+            # Select input *ADMINISTRATION ROUTE*
+            selectInput(inputId = "route_line_by_whoregion", 
+                        label = "Administration route:", 
+                        choices = c("", sort(unique(data_for_visualisations$route_of_administration))),
+                        selected = NULL,
+                        multiple = FALSE),
+             
+            # Select input *AWaRe*
+            selectInput(inputId = "aware_line_by_whoregion", 
+                        label = "AWaRe category:", 
+                        choices= c("", sort(unique(data_for_visualisations$aware_category))),
+                        selected = NULL,
+                        multiple = FALSE),
+             
+            # Select input *SECTOR*
+            selectInput(inputId = "sector_line_by_whoregion", 
+                        label = "Sector:", 
+                        choices= c("", sort(unique(data_for_visualisations$sector))),
+                        selected = NULL,
+                        multiple = FALSE),
+             
+            # Choose metric (DDD/DID/DI)
+            radioButtons(inputId = "metric_line_by_whoregion",
+                         label = "AMU metric:",
+                         selected = character(0),
+                         choices = unique(data_for_visualisations$metric)),
+            conditionalPanel(
+              condition = "input.metric_line_by_whoregion == null", 
+              helpText("Please select metric")
+            ),
+             
+            # Action button to load plot
+            linebreaks(5),
+            actionButton(inputId  = "load_plot_by_whoregion", label = "Load plot"),
+            hidden(p(id = "please_wait_by_whoregion", "Please wait while the plot loads..."))
+             
+          ),
+           
+          # Main panel plot (could also add a table below plot???)
+          mainPanel(
+             
+            h4(uiOutput("plot_title_by_whoregion")),
+            plotlyOutput(outputId = "plot_by_whoregion", height = 600), #could use: %>% withSpinner(type = 6)
+             
+            # Option to de-select lines from the plot ##NOT NEEDED - NOW USING PLOTLY##
+            # linebreaks(2),
+            # disabled(
+            #   checkboxGroupInput(inputId = "line_options_by_whoregion",
+            #                      label = "",
+            #                      choices = sort(unique(data_for_visualisations$who_region),
+            #                      inline = TRUE,
+            #                      selected = "All")
+            # )
+            
+          )
+           
+        )
+               
+      ),
+      
+      #
       # Countries
       #
       tabPanel("compare countries",
@@ -353,6 +480,20 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
             selectInput(inputId = "aware_line_by_country", 
                         label = "AWaRe category:", 
                         choices = c("", sort(unique(data_for_visualisations$aware_category))),
+                        selected = NULL,
+                        multiple = FALSE),
+            
+            # Select input *WHO REGION*
+            selectInput(inputId = "whoregion_line_by_country", 
+                        label = "WHO region:", 
+                        choices= c("", sort(unique(data_for_visualisations$who_region))),
+                        selected = NULL,
+                        multiple = FALSE),
+            
+            # Select input *SECTOR*
+            selectInput(inputId = "sector_line_by_country", 
+                        label = "Sector:", 
+                        choices= c("", sort(unique(data_for_visualisations$sector))),
                         selected = NULL,
                         multiple = FALSE),
             
@@ -395,6 +536,90 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
         
       ),
       
+      #
+      # Sectors
+      #
+      tabPanel("compare sectors",
+               
+        sidebarLayout(
+         
+          # Sidebar inputs 
+          sidebarPanel(
+           
+            # Select input *ANTIMICROBIAL*
+            selectInput(inputId = "antimicrobial_line_by_sector", 
+                        label = "Antimicrobial:", 
+                        choices = c("", sort(unique(data_for_visualisations$antimicrobials))),
+                        selected = NULL,
+                        multiple = FALSE),
+            
+            # Select input *ADMINISTRATION ROUTE*
+            selectInput(inputId = "route_line_by_sector", 
+                        label = "Administration route:", 
+                        choices = c("", sort(unique(data_for_visualisations$route_of_administration))),
+                        selected = NULL,
+                        multiple = FALSE),
+            
+            # Select input *AWaRe*
+            selectInput(inputId = "aware_line_by_sector", 
+                        label = "AWaRe category:", 
+                        choices= c("", sort(unique(data_for_visualisations$aware_category))),
+                        selected = NULL,
+                        multiple = FALSE),
+           
+            # Select input *WHO REGION*
+            selectInput(inputId = "whoregion_line_by_sector", 
+                        label = "WHO region:", 
+                        choices= c("", sort(unique(data_for_visualisations$who_region))),
+                        selected = NULL,
+                        multiple = FALSE),
+            
+            # Select input *COUNTRY*
+            selectInput(inputId = "country_line_by_sector", 
+                        label = "Country:", 
+                        choices= c("", sort(unique(data_for_visualisations$country))),
+                        selected = NULL,
+                        multiple = FALSE),
+           
+            # Choose metric (DDD/DID/DI)
+            radioButtons(inputId = "metric_line_by_sector",
+                         label = "AMU metric:",
+                         selected = character(0),
+                         choices = unique(data_for_visualisations$metric)),
+            conditionalPanel(
+              condition = "input.metric_line_by_sector == null", 
+              helpText("Please select metric")
+            ),
+           
+            # Action button to load plot
+            linebreaks(5),
+            actionButton(inputId  = "load_plot_by_sector", label = "Load plot"),
+            hidden(p(id = "please_wait_by_sector", "Please wait while the plot loads..."))
+           
+          ),
+         
+          # Main panel plot (could also add a table below plot???)
+          mainPanel(
+           
+            h4(uiOutput("plot_title_by_sector")),
+            plotlyOutput(outputId = "plot_by_sector", height = 600), #could use: %>% withSpinner(type = 6)
+           
+            # Option to de-select lines from the plot ##NOT NEEDED - NOW USING PLOTLY##
+            # linebreaks(2),
+            # disabled(
+            #   checkboxGroupInput(inputId = "line_options_by_sector",
+            #                      label = "",
+            #                      choices = sort(unique(data_for_visualisations$sector),
+            #                      inline = TRUE,
+            #                      selected = "All")
+            # )
+           
+          )
+         
+        )
+               
+      ),
+
     ),
     
   )
@@ -435,11 +660,23 @@ server <- function(input, output, session) {
     delay(200, enable("load_plot_by_aware"))
     delay(200, hide("please_wait_by_aware"))
   })
+  observeEvent(input$load_plot_by_whoregion, {
+    disable("load_plot_by_whoregion")
+    show("please_wait_by_whoregion")
+    delay(200, enable("load_plot_by_whoregion"))
+    delay(200, hide("please_wait_by_whoregion"))
+  })
   observeEvent(input$load_plot_by_country, {
     disable("load_plot_by_country")
     show("please_wait_by_country")
     delay(200, enable("load_plot_by_country"))
     delay(200, hide("please_wait_by_country"))
+  })
+  observeEvent(input$load_plot_by_sector, {
+    disable("load_plot_by_sector")
+    show("please_wait_by_sector")
+    delay(200, enable("load_plot_by_sector"))
+    delay(200, hide("please_wait_by_sector"))
   })
   
   #
@@ -480,21 +717,30 @@ server <- function(input, output, session) {
           filter(aware_category == input$aware_map)
         data_map1
       })
-
-      # year(s)
+      
+      # Sector
       data_map_filter4 <- reactive({
-        req(input$antimicrobial_map, input$route_map, input$aware_map, input$years)
+        req(input$antimicrobial_map, input$route_map, input$aware_map, input$sector_map)
         
         data_map1 <- data_map_filter3() %>%
+          filter(sector == input$sector_map)
+        data_map1
+      })
+      
+      # year(s)
+      data_map_filter5 <- reactive({
+        req(input$antimicrobial_map, input$route_map, input$aware_map, input$sector_map, input$years)
+        
+        data_map1 <- data_map_filter4() %>%
           filter(year %in%  seq(min(input$years, na.rm = T), max(input$years, na.rm = T)))
         data_map1
       })
       
       # AMU metric
-      data_map_filter5 <- reactive({
-        req(input$antimicrobial_map, input$route_map, input$aware_map, input$years, input$metric_map)
+      data_map_filter6 <- reactive({
+        req(input$antimicrobial_map, input$route_map, input$aware_map, input$sector_map, input$years, input$metric_map)
         
-        data_map1 <- data_map_filter4() %>%
+        data_map1 <- data_map_filter5() %>%
           filter(metric == input$metric_map)
         data_map1
       })
@@ -521,20 +767,38 @@ server <- function(input, output, session) {
           data_line_by_antimicrobial1
         })
         
-        # country
+        # WHO region
         data_line_by_antimicrobial_filter3 <- reactive({
-          req(input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial, input$country_line_by_antimicrobial)
+          req(input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial, input$whoregion_line_by_antimicrobial)
           
           data_line_by_antimicrobial1 <- data_line_by_antimicrobial_filter2() %>%
+            filter(who_region == input$whoregion_line_by_antimicrobial)
+          data_line_by_antimicrobial1
+        })
+        
+        # country
+        data_line_by_antimicrobial_filter4 <- reactive({
+          req(input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial, input$whoregion_line_by_antimicrobial, input$country_line_by_antimicrobial)
+          
+          data_line_by_antimicrobial1 <- data_line_by_antimicrobial_filter3() %>%
             filter(country == input$country_line_by_antimicrobial)
           data_line_by_antimicrobial1
         })
-
-        # AMU metric
-        data_line_by_antimicrobial_filter4 <- reactive({
-          req(input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial, input$country_line_by_antimicrobial, input$metric_line_by_antimicrobial)
+        
+        # sector
+        data_line_by_antimicrobial_filter5 <- reactive({
+          req(input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial, input$whoregion_line_by_antimicrobial, input$country_line_by_antimicrobial, input$sector_line_by_antimicrobial)
           
-          data_line_by_antimicrobial1 <- data_line_by_antimicrobial_filter3() %>%
+          data_line_by_antimicrobial1 <- data_line_by_antimicrobial_filter4() %>%
+            filter(sector == input$sector_line_by_antimicrobial)
+          data_line_by_antimicrobial1
+        })
+        
+        # AMU metric
+        data_line_by_antimicrobial_filter6 <- reactive({
+          req(input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial, input$whoregion_line_by_antimicrobial, input$country_line_by_antimicrobial, input$sector_line_by_antimicrobial, input$metric_line_by_antimicrobial)
+          
+          data_line_by_antimicrobial1 <- data_line_by_antimicrobial_filter5() %>%
             filter(metric == input$metric_line_by_antimicrobial)
           data_line_by_antimicrobial1
         })
@@ -557,21 +821,39 @@ server <- function(input, output, session) {
             filter(aware_category == input$aware_line_by_route)
           data_line_by_route1
         })
-        
-        # country
+
+        # WHO region
         data_line_by_route_filter3 <- reactive({
-          req(input$antimicrobial_line_by_route, input$aware_line_by_route, input$country_line_by_route)
+          req(input$antimicrobial_line_by_route, input$aware_line_by_route, input$whoregion_line_by_route)
           
           data_line_by_route1 <- data_line_by_route_filter2() %>%
+            filter(who_region == input$whoregion_line_by_route)
+          data_line_by_route1
+        })
+        
+        # country
+        data_line_by_route_filter4 <- reactive({
+          req(input$antimicrobial_line_by_route, input$aware_line_by_route, input$whoregion_line_by_route, input$country_line_by_route)
+          
+          data_line_by_route1 <- data_line_by_route_filter3() %>%
             filter(country == input$country_line_by_route)
+          data_line_by_route1
+        })
+
+        # sector
+        data_line_by_route_filter5 <- reactive({
+          req(input$antimicrobial_line_by_route, input$aware_line_by_route, input$whoregion_line_by_route, input$country_line_by_route, input$sector_line_by_route)
+          
+          data_line_by_route1 <- data_line_by_route_filter4() %>%
+            filter(sector == input$sector_line_by_route)
           data_line_by_route1
         })
         
         # AMU metric
-        data_line_by_route_filter4 <- reactive({
-          req(input$antimicrobial_line_by_route, input$aware_line_by_route, input$country_line_by_route, input$metric_line_by_route)
+        data_line_by_route_filter6 <- reactive({
+          req(input$antimicrobial_line_by_route, input$aware_line_by_route, input$whoregion_line_by_route, input$country_line_by_route, input$sector_line_by_route, input$metric_line_by_route)
           
-          data_line_by_route1 <- data_line_by_route_filter3() %>%
+          data_line_by_route1 <- data_line_by_route_filter5() %>%
             filter(metric == input$metric_line_by_route)
           data_line_by_route1
         })
@@ -595,24 +877,88 @@ server <- function(input, output, session) {
           data_line_by_aware1
         })
         
-        # country
+        # WHO region
         data_line_by_aware_filter3 <- reactive({
-          req(input$antimicrobial_line_by_aware, input$route_line_by_aware, input$country_line_by_aware)
+          req(input$antimicrobial_line_by_aware, input$route_line_by_aware, input$whoregion_line_by_aware)
           
           data_line_by_aware1 <- data_line_by_aware_filter2() %>%
+            filter(who_region == input$whoregion_line_by_aware)
+          data_line_by_aware1
+        })
+        
+        # country
+        data_line_by_aware_filter4 <- reactive({
+          req(input$antimicrobial_line_by_aware, input$route_line_by_aware, input$whoregion_line_by_aware, input$country_line_by_aware)
+          
+          data_line_by_aware1 <- data_line_by_aware_filter3() %>%
             filter(country == input$country_line_by_aware)
           data_line_by_aware1
         })
         
-        # AMU metric
-        data_line_by_aware_filter4 <- reactive({
-          req(input$antimicrobial_line_by_aware, input$route_line_by_aware, input$country_line_by_aware, input$metric_line_by_aware)
+        # sector
+        data_line_by_aware_filter5 <- reactive({
+          req(input$antimicrobial_line_by_aware, input$route_line_by_aware, input$whoregion_line_by_aware, input$country_line_by_aware, input$sector_line_by_aware)
           
-          data_line_by_aware1 <- data_line_by_aware_filter3() %>%
+          data_line_by_aware1 <- data_line_by_aware_filter4() %>%
+            filter(sector == input$sector_line_by_aware)
+          data_line_by_aware1
+        })
+        
+        # AMU metric
+        data_line_by_aware_filter6 <- reactive({
+          req(input$antimicrobial_line_by_aware, input$route_line_by_aware, input$whoregion_line_by_aware, input$country_line_by_aware, input$sector_line_by_aware, input$metric_line_by_aware)
+          
+          data_line_by_aware1 <- data_line_by_aware_filter5() %>%
             filter(metric == input$metric_line_by_aware)
           data_line_by_aware1
         })
-
+        
+      # WHO regions
+        # antimicrobial
+        data_line_by_whoregion_filter1 <- reactive({
+          req(input$antimicrobial_line_by_whoregion)
+          
+          data_line_by_whoregion1 <- data() %>%
+            filter(antimicrobials == input$antimicrobial_line_by_whoregion)
+          data_line_by_whoregion1
+        })
+        
+        # administration route
+        data_line_by_whoregion_filter2 <- reactive({
+          req(input$antimicrobial_line_by_whoregion, input$route_line_by_whoregion)
+          
+          data_line_by_whoregion1 <- data_line_by_whoregion_filter1() %>%
+            filter(route_of_administration == input$route_line_by_whoregion)
+          data_line_by_whoregion1
+        })
+        
+        # AWaRe category
+        data_line_by_whoregion_filter3 <- reactive({
+          req(input$antimicrobial_line_by_whoregion, input$route_line_by_whoregion, input$aware_line_by_whoregion)
+          
+          data_line_by_whoregion1 <- data_line_by_whoregion_filter2() %>%
+            filter(aware_category == input$aware_line_by_whoregion)
+          data_line_by_whoregion1
+        })
+        
+        # sector
+        data_line_by_whoregion_filter4 <- reactive({
+          req(input$antimicrobial_line_by_whoregion, input$route_line_by_whoregion, input$aware_line_by_whoregion, input$sector_line_by_whoregion)
+          
+          data_line_by_whoregion1 <- data_line_by_whoregion_filter3() %>%
+            filter(sector == input$sector_line_by_whoregion)
+          data_line_by_whoregion1
+        })
+        
+        # AMU metric
+        data_line_by_whoregion_filter5 <- reactive({
+          req(input$antimicrobial_line_by_whoregion, input$route_line_by_whoregion, input$aware_line_by_whoregion, input$sector_line_by_whoregion, input$metric_line_by_whoregion)
+          
+          data_line_by_whoregion1 <- data_line_by_whoregion_filter4() %>%
+            filter(metric == input$metric_line_by_whoregion)
+          data_line_by_whoregion1
+        })
+        
       # Countries
         # antimicrobial
         data_line_by_country_filter1 <- reactive({
@@ -641,13 +987,86 @@ server <- function(input, output, session) {
           data_line_by_country1
         })
         
-        # AMU metric
+        # WHO region
         data_line_by_country_filter4 <- reactive({
-          req(input$antimicrobial_line_by_country, input$route_line_by_country, input$aware_line_by_country, input$metric_line_by_country)
+          req(input$antimicrobial_line_by_country, input$route_line_by_country, input$aware_line_by_country, input$whoregion_line_by_country)
           
           data_line_by_country1 <- data_line_by_country_filter3() %>%
+            filter(who_region == input$whoregion_line_by_country)
+          data_line_by_country1
+        })
+        
+        # sector
+        data_line_by_country_filter5 <- reactive({
+          req(input$antimicrobial_line_by_country, input$route_line_by_country, input$aware_line_by_country, input$whoregion_line_by_country, input$sector_line_by_country)
+          
+          data_line_by_country1 <- data_line_by_country_filter4() %>%
+            filter(sector == input$sector_line_by_country)
+          data_line_by_country1
+        })
+        
+        # AMU metric
+        data_line_by_country_filter6 <- reactive({
+          req(input$antimicrobial_line_by_country, input$route_line_by_country, input$aware_line_by_country, input$whoregion_line_by_country, input$sector_line_by_country, input$metric_line_by_country)
+          
+          data_line_by_country1 <- data_line_by_country_filter5() %>%
             filter(metric == input$metric_line_by_country)
           data_line_by_country1
+        })
+        
+      # Sectors
+        # antimicrobial
+        data_line_by_sector_filter1 <- reactive({
+          req(input$antimicrobial_line_by_sector)
+          
+          data_line_by_sector1 <- data() %>%
+            filter(antimicrobials == input$antimicrobial_line_by_sector)
+          data_line_by_sector1
+        })
+        
+        # administration route
+        data_line_by_sector_filter2 <- reactive({
+          req(input$antimicrobial_line_by_sector, input$route_line_by_sector)
+          
+          data_line_by_sector1 <- data_line_by_sector_filter1() %>%
+            filter(route_of_administration == input$route_line_by_sector)
+          data_line_by_sector1
+        })
+        
+        # AWaRe category
+        data_line_by_sector_filter3 <- reactive({
+          req(input$antimicrobial_line_by_sector, input$route_line_by_sector, input$aware_line_by_sector)
+          
+          data_line_by_sector1 <- data_line_by_sector_filter2() %>%
+            filter(aware_category == input$aware_line_by_sector)
+          data_line_by_sector1
+        })
+ 
+        # WHO region
+        data_line_by_sector_filter4 <- reactive({
+          req(input$antimicrobial_line_by_sector, input$route_line_by_sector, input$aware_line_by_sector, input$whoregion_line_by_sector)
+          
+          data_line_by_sector1 <- data_line_by_sector_filter3() %>%
+            filter(who_region == input$whoregion_line_by_sector)
+          data_line_by_sector1
+        })
+        
+        # country
+        data_line_by_sector_filter5 <- reactive({
+          req(input$antimicrobial_line_by_sector, input$route_line_by_sector, input$aware_line_by_sector, input$whoregion_line_by_sector, input$country_line_by_sector)
+          
+          data_line_by_sector1 <- data_line_by_sector_filter4() %>%
+            filter(country == input$country_line_by_sector)
+          data_line_by_sector1
+        })
+        
+        # AMU metric
+        data_line_by_sector_filter6 <- reactive({
+          req(input$antimicrobial_line_by_sector, input$route_line_by_sector, input$aware_line_by_sector, input$whoregion_line_by_sector, input$country_line_by_sector, input$metric_line_by_sector)
+          
+          data_line_by_sector1 <- data_line_by_sector_filter5() %>%
+            filter(metric == input$metric_line_by_sector)
+          data_line_by_sector1
         })
           
   #
@@ -680,12 +1099,23 @@ server <- function(input, output, session) {
                           choices = c("", sort(unique(D$aware_category))),
                           selected = NULL)
       })
-        
-      # year(s)
+      
+      # Sector
       observe({
         req(input$antimicrobial_map, input$route_map, input$aware_map)
         
         D <- data_map_filter3()
+        updateSelectInput(session, inputId = "sector_map",
+                          label = "Sector:",
+                          choices = c("", sort(unique(D$sector))),
+                          selected = NULL)
+      })
+      
+      # year(s)
+      observe({
+        req(input$antimicrobial_map, input$route_map, input$aware_map, input$sector_map)
+        
+        D <- data_map_filter4()
         updateSliderInput(session, inputId = "years",
                           label = "Year(s):",
                           value = c(min(D$year, na.rm = T), max(D$year, na.rm = T)),
@@ -695,9 +1125,9 @@ server <- function(input, output, session) {
       
       # AMU metric
       observe({
-        req(input$antimicrobial_map, input$route_map, input$aware_map, input$years)
+        req(input$antimicrobial_map, input$route_map, input$aware_map, input$sector_map, input$years)
         
-        D <- data_map_filter4()
+        D <- data_map_filter5()
         updateRadioButtons(session, inputId = "metric_map",
                            label = "AMU metric:",
                            selected = character(0),
@@ -719,22 +1149,44 @@ server <- function(input, output, session) {
                             selected = NULL)
         })
 
-        # country
+        # WHO region
         observe({
           req(input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial)
           
           D <- data_line_by_antimicrobial_filter2()
+          updateSelectInput(session, inputId = "whoregion_line_by_antimicrobial",
+                            label = "WHO region:",
+                            choices = c("", sort(unique(D$who_region))),
+                            selected = NULL)
+        })
+        
+        # country
+        observe({
+          req(input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial, input$whoregion_line_by_antimicrobial)
+          
+          D <- data_line_by_antimicrobial_filter3()
           updateSelectInput(session, inputId = "country_line_by_antimicrobial",
                             label = "Country:",
                             choices = c("", sort(unique(D$country))),
                             selected = NULL)
         })
         
+        # sector
+        observe({
+          req(input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial, input$whoregion_line_by_antimicrobial, input$country_line_by_antimicrobial)
+          
+          D <- data_line_by_antimicrobial_filter4()
+          updateSelectInput(session, inputId = "sector_line_by_antimicrobial",
+                            label = "Sector:",
+                            choices = c("", sort(unique(D$sector))),
+                            selected = NULL)
+        })
+        
         # AMU metric
         observe({
-          req(input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial, input$country_line_by_antimicrobial)
+          req(input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial, input$whoregion_line_by_antimicrobial, input$country_line_by_antimicrobial, input$sector_line_by_antimicrobial)
           
-          D <- data_line_by_antimicrobial_filter3()
+          D <- data_line_by_antimicrobial_filter5()
           updateRadioButtons(session, inputId = "metric_line_by_antimicrobial",
                              label = "AMU metric:",
                              selected = character(0),
@@ -753,22 +1205,44 @@ server <- function(input, output, session) {
                             selected = NULL)
         })
 
-        # country
+        # WHO region
         observe({
           req(input$antimicrobial_line_by_route, input$aware_line_by_route)
           
           D <- data_line_by_route_filter2()
+          updateSelectInput(session, inputId = "whoregion_line_by_route",
+                            label = "WHO region:",
+                            choices = c("", sort(unique(D$who_region))),
+                            selected = NULL)
+        })
+        
+        # country
+        observe({
+          req(input$antimicrobial_line_by_route, input$aware_line_by_route, input$whoregion_line_by_route)
+          
+          D <- data_line_by_route_filter3()
           updateSelectInput(session, inputId = "country_line_by_route",
                             label = "Country:",
                             choices = c("", sort(unique(D$country))),
                             selected = NULL)
         })
         
+        # sector
+        observe({
+          req(input$antimicrobial_line_by_route, input$aware_line_by_route, input$whoregion_line_by_route, input$country_line_by_route)
+          
+          D <- data_line_by_route_filter4()
+          updateSelectInput(session, inputId = "sector_line_by_route",
+                            label = "Sector:",
+                            choices = c("", sort(unique(D$sector))),
+                            selected = NULL)
+        })
+        
         # AMU metric
         observe({
-          req(input$antimicrobial_line_by_route, input$aware_line_by_route, input$country_line_by_route)
+          req(input$antimicrobial_line_by_route, input$aware_line_by_route, input$whoregion_line_by_route, input$country_line_by_route, input$sector_line_by_route)
           
-          D <- data_line_by_route_filter3()
+          D <- data_line_by_route_filter5()
           updateRadioButtons(session, inputId = "metric_line_by_route",
                              label = "AMU metric:",
                              selected = character(0),
@@ -787,23 +1261,90 @@ server <- function(input, output, session) {
                             selected = NULL)
         })
         
-        # country
+        # WHO region
         observe({
           req(input$antimicrobial_line_by_aware, input$route_line_by_aware)
           
           D <- data_line_by_aware_filter2()
+          updateSelectInput(session, inputId = "whoregion_line_by_aware",
+                            label = "WHO region:",
+                            choices = c("", sort(unique(D$who_region))),
+                            selected = NULL)
+        })
+        
+        # country
+        observe({
+          req(input$antimicrobial_line_by_aware, input$route_line_by_aware, input$whoregion_line_by_aware)
+          
+          D <- data_line_by_aware_filter3()
           updateSelectInput(session, inputId = "country_line_by_aware",
                             label = "Country:",
                             choices = c("", sort(unique(D$country))),
                             selected = NULL)
         })
         
+        # sector
+        observe({
+          req(input$antimicrobial_line_by_aware, input$route_line_by_aware, input$whoregion_line_by_aware, input$country_line_by_aware)
+          
+          D <- data_line_by_aware_filter4()
+          updateSelectInput(session, inputId = "sector_line_by_aware",
+                            label = "Sector:",
+                            choices = c("", sort(unique(D$sector))),
+                            selected = NULL)
+        })
+        
         # AMU metric
         observe({
-          req(input$antimicrobial_line_by_aware, input$route_line_by_aware, input$country_line_by_aware)
+          req(input$antimicrobial_line_by_aware, input$route_line_by_aware, input$whoregion_line_by_aware, input$country_line_by_aware, input$sector_line_by_aware)
           
-          D <- data_line_by_aware_filter3()
+          D <- data_line_by_aware_filter5()
           updateRadioButtons(session, inputId = "metric_line_by_aware",
+                             label = "AMU metric:",
+                             selected = character(0),
+                             choices = unique(D$metric))
+        })
+        
+      # WHO regions
+        # administration route
+        observe({
+          req(input$antimicrobial_line_by_whoregion)
+          
+          D <- data_line_by_whoregion_filter1() #i.e., already filtered on antimicrobial
+          updateSelectInput(session, inputId = "route_line_by_whoregion",
+                            label = "Administration route:",
+                            choices = c("", sort(unique(D$route_of_administration))),
+                            selected = NULL)
+        })
+        
+        # AWaRe category
+        observe({
+          req(input$antimicrobial_line_by_whoregion, input$route_line_by_whoregion)
+          
+          D <- data_line_by_whoregion_filter2()
+          updateSelectInput(session, inputId = "aware_line_by_whoregion",
+                            label = "AWaRe category:",
+                            choices = c("", sort(unique(D$aware_category))),
+                            selected = NULL)
+        })
+        
+        # sector
+        observe({
+          req(input$antimicrobial_line_by_whoregion, input$route_line_by_whoregion, input$aware_line_by_whoregion)
+          
+          D <- data_line_by_whoregion_filter3()
+          updateSelectInput(session, inputId = "sector_line_by_whoregion",
+                            label = "Sector:",
+                            choices = c("", sort(unique(D$sector))),
+                            selected = NULL)
+        })
+        
+        # AMU metric
+        observe({
+          req(input$antimicrobial_line_by_whoregion, input$route_line_by_whoregion, input$aware_line_by_whoregion, input$sector_line_by_whoregion)
+          
+          D <- data_line_by_whoregion_filter4()
+          updateRadioButtons(session, inputId = "metric_line_by_whoregion",
                              label = "AMU metric:",
                              selected = character(0),
                              choices = unique(D$metric))
@@ -832,12 +1373,90 @@ server <- function(input, output, session) {
                             selected = NULL)
         })
         
-        # AMU metric
+        # WHO region
         observe({
           req(input$antimicrobial_line_by_country, input$route_line_by_country, input$aware_line_by_country)
           
           D <- data_line_by_country_filter3()
+          updateSelectInput(session, inputId = "whoregion_line_by_country",
+                            label = "WHO region:",
+                            choices = c("", sort(unique(D$who_region))),
+                            selected = NULL)
+        })
+        
+        # sector
+        observe({
+          req(input$antimicrobial_line_by_country, input$route_line_by_country, input$aware_line_by_country, input$whoregion_line_by_country)
+          
+          D <- data_line_by_country_filter4()
+          updateSelectInput(session, inputId = "sector_line_by_country",
+                            label = "Sector:",
+                            choices = c("", sort(unique(D$sector))),
+                            selected = NULL)
+        })
+        
+        # AMU metric
+        observe({
+          req(input$antimicrobial_line_by_country, input$route_line_by_country, input$aware_line_by_country, input$whoregion_line_by_country, input$sector_line_by_country)
+          
+          D <- data_line_by_country_filter5()
           updateRadioButtons(session, inputId = "metric_line_by_country",
+                             label = "AMU metric:",
+                             selected = character(0),
+                             choices = unique(D$metric))
+        })
+        
+      # Sectors
+        # administration route
+        observe({
+          req(input$antimicrobial_line_by_sector)
+          
+          D <- data_line_by_sector_filter1() #i.e., already filtered on antimicrobial
+          updateSelectInput(session, inputId = "route_line_by_sector",
+                            label = "Administration route:",
+                            choices = c("", sort(unique(D$route_of_administration))),
+                            selected = NULL)
+        })
+        
+        # AWaRe category
+        observe({
+          req(input$antimicrobial_line_by_sector, input$route_line_by_sector)
+          
+          D <- data_line_by_sector_filter2()
+          updateSelectInput(session, inputId = "aware_line_by_sector",
+                            label = "AWaRe category:",
+                            choices = c("", sort(unique(D$aware_category))),
+                            selected = NULL)
+        })
+        
+        # WHO region
+        observe({
+          req(input$antimicrobial_line_by_sector, input$route_line_by_sector, input$aware_line_by_sector)
+          
+          D <- data_line_by_sector_filter3()
+          updateSelectInput(session, inputId = "whoregion_line_by_sector",
+                            label = "WHO region:",
+                            choices = c("", sort(unique(D$who_region))),
+                            selected = NULL)
+        })
+        
+        # country
+        observe({
+          req(input$antimicrobial_line_by_sector, input$route_line_by_sector, input$aware_line_by_sector, input$whoregion_line_by_sector)
+          
+          D <- data_line_by_sector_filter4()
+          updateSelectInput(session, inputId = "country_line_by_sector",
+                            label = "Country:",
+                            choices = c("", sort(unique(D$country))),
+                            selected = NULL)
+        })
+        
+        # AMU metric
+        observe({
+          req(input$antimicrobial_line_by_sector, input$route_line_by_sector, input$aware_line_by_sector, input$whoregion_line_by_sector, input$sector_line_by_sector, input$country_line_by_sector)
+          
+          D <- data_line_by_sector_filter5()
+          updateRadioButtons(session, inputId = "metric_line_by_sector",
                              label = "AMU metric:",
                              selected = character(0),
                              choices = unique(D$metric))
@@ -848,10 +1467,10 @@ server <- function(input, output, session) {
   #----------
     # Map title
     map_title_reactive <- eventReactive(input$load_map, {
-      if (input$metric_map == "ddd") {
-        paste0(toupper(input$metric_map), " (x 10^3) of ", tolower(input$route_map), " ", tolower(input$antimicrobial_map), " (AWaRe: ", input$aware_map, ") ", ifelse(min(input$years, na.rm = T) == max(input$years, na.rm = T), min(input$years, na.rm = T), paste0(min(input$years, na.rm = T), "-", max(input$years, na.rm = T))))
+      if (input$metric_map == "ddd" | input$metric_map == "su") {
+        paste0(toupper(input$metric_map), " (x 10^3) of ", tolower(input$route_map), " ", tolower(input$antimicrobial_map), " (AWaRe: ", input$aware_map, ") in ", tolower(input$sector_map), ifelse(min(input$years, na.rm = T) == max(input$years, na.rm = T), min(input$years, na.rm = T), paste0(min(input$years, na.rm = T), "-", max(input$years, na.rm = T))))
       } else {
-        paste0(toupper(input$metric_map), " of ", tolower(input$route_map), " ", tolower(input$antimicrobial_map), " (AWaRe: ", input$aware_map, ") ", ifelse(min(input$years, na.rm = T) == max(input$years, na.rm = T), min(input$years, na.rm = T), paste0(min(input$years, na.rm = T), "-", max(input$years, na.rm = T))))
+        paste0(toupper(input$metric_map), " of ", tolower(input$route_map), " ", tolower(input$antimicrobial_map), " (AWaRe: ", input$aware_map, ") in ", tolower(input$sector_map), ifelse(min(input$years, na.rm = T) == max(input$years, na.rm = T), min(input$years, na.rm = T), paste0(min(input$years, na.rm = T), "-", max(input$years, na.rm = T))))
       }
     })
     
@@ -871,7 +1490,7 @@ server <- function(input, output, session) {
     # If data are selected:
     observeEvent(input$load_map, {
 
-      DATA <- data_map_filter5() %>%
+      DATA <- data_map_filter6() %>%
         group_by(country) %>%
         mutate(AMU = sum(value) / length(unique(year))) %>%
         select(country, AMU) %>%
@@ -881,12 +1500,12 @@ server <- function(input, output, session) {
       merged_data <- merge(shape_file, DATA, by.x = "loc_name", by.y = "country")
       
       year_range = ifelse(min(input$years, na.rm = T) == max(input$years, na.rm = T), min(input$years, na.rm = T), paste0(min(input$years, na.rm = T), "-", max(input$years, na.rm = T)))
-      if (input$metric_map == "ddd") {
-        hover_text <- paste0('<strong>', merged_data$loc_name, '</strong>',
+      if (input$metric_map == "ddd" | input$metric_map == "su") {
+        hover_text <- paste0('<strong>', merged_data$loc_name, '</strong>', " (", tolower(input$sector_map), ")",
                              '</br>', '<strong>', toupper(input$metric_map), " (x 10^3): ", '</strong>', round(merged_data$AMU,1),
                              '</br>', '<strong>', "Year(s): ", '</strong>', year_range)
       } else {
-        hover_text <- paste0('<strong>', merged_data$loc_name, '</strong>',
+        hover_text <- paste0('<strong>', merged_data$loc_name, '</strong>', " (", tolower(input$sector_map), ")",
                              '</br>', '<strong>', toupper(input$metric_map), ": ", '</strong>', round(merged_data$AMU,1),
                              '</br>', '<strong>', "Year(s): ", '</strong>', year_range)
       }
@@ -907,7 +1526,7 @@ server <- function(input, output, session) {
                                    paste("no data available"),
                                    hover_text),
                     highlight = highlightOptions(weight = 3, color = "black", bringToFront = TRUE)) %>%
-        addLegend("bottomright", pal = colour_palette, values = ~c(min(merged_data$AMU, na.rm = T):max(merged_data$AMU, na.rm = T)), title = ifelse(input$metric_map == "ddd", paste0(toupper(input$metric_map), " x 10^3"), toupper(input$metric_map)), opacity = 0.9)
+        addLegend("bottomright", pal = colour_palette, values = ~c(min(merged_data$AMU, na.rm = T):max(merged_data$AMU, na.rm = T)), title = ifelse(input$metric_map == "ddd" | input$metric_map == "su", paste0(toupper(input$metric_map), " x 10^3"), toupper(input$metric_map)), opacity = 0.9)
       
     })
     
@@ -917,17 +1536,17 @@ server <- function(input, output, session) {
     # By antimicrobial
       # Plot title
       plot_title_by_antimicrobial_reactive <- eventReactive(input$load_plot_by_antimicrobial, {
-        if (input$metric_line_by_antimicrobial == "ddd") {
+        if (input$metric_line_by_antimicrobial == "ddd" | input$metric_line_by_antimicrobial == "su") {
           if (input$aware_line_by_antimicrobial == "All") {
-            paste(toupper(input$metric_line_by_antimicrobial), "(x 10^3) of", tolower(input$route_line_by_antimicrobial), "antimicrobials (all AWaRe) in", input$country_line_by_antimicrobial)
+            paste0(toupper(input$metric_line_by_antimicrobial), " (x 10^3) of ", tolower(input$route_line_by_antimicrobial), " antimicrobials (all AWaRe) in ", input$country_line_by_antimicrobial, " (", input$whoregion_line_by_antimicrobial, "; ", tolower(input$sector_line_by_antimicrobial), " sector)")
           } else {
-            paste(toupper(input$metric_line_by_antimicrobial), "(x 10^3) of", tolower(input$route_line_by_antimicrobial), input$aware_line_by_antimicrobial, "(AWaRe) antimicrobials in", input$country_line_by_antimicrobial)
+            paste0(toupper(input$metric_line_by_antimicrobial), " (x 10^3) of ", tolower(input$route_line_by_antimicrobial), " ", input$aware_line_by_antimicrobial, " (AWaRe) antimicrobials in ", input$country_line_by_antimicrobial, " (", input$whoregion_line_by_antimicrobial, "; ", tolower(input$sector_line_by_antimicrobial), " sector)")
           }
         } else {
           if (input$aware_line_by_antimicrobial == "All") {
-            paste(toupper(input$metric_line_by_antimicrobial), "of", tolower(input$route_line_by_antimicrobial), "antimicrobials (all AWaRe) in", input$country_line_by_antimicrobial)
+            paste0(toupper(input$metric_line_by_antimicrobial), " of ", tolower(input$route_line_by_antimicrobial), " antimicrobials (all AWaRe) in ", input$country_line_by_antimicrobial, " (", input$whoregion_line_by_antimicrobial, "; ", tolower(input$sector_line_by_antimicrobial), ")")
           } else {
-            paste(toupper(input$metric_line_by_antimicrobial), "of", tolower(input$route_line_by_antimicrobial), input$aware_line_by_antimicrobial, "(AWaRe) antimicrobials in", input$country_line_by_antimicrobial)
+            paste0(toupper(input$metric_line_by_antimicrobial), " of ", tolower(input$route_line_by_antimicrobial), " ", input$aware_line_by_antimicrobial, " (AWaRe) antimicrobials in ", input$country_line_by_antimicrobial, " (", input$whoregion_line_by_antimicrobial, "; ", tolower(input$sector_line_by_antimicrobial), " sector)")
           }
         }
       })
@@ -941,15 +1560,15 @@ server <- function(input, output, session) {
         
         output$plot_by_antimicrobial <- renderPlotly({
   
-          DATA_by_antimicrobial <- data_line_by_antimicrobial_filter4()
+          DATA_by_antimicrobial <- data_line_by_antimicrobial_filter6()
           
           DATA_by_antimicrobial_lines <- DATA_by_antimicrobial %>% 
-            group_by(route_of_administration, aware_category, country, metric, antimicrobials) %>%
+            group_by(route_of_administration, aware_category, country, metric, antimicrobials, who_region, sector) %>%
             filter(length(year) > 1) %>% ungroup()
   
           antimicrobial_colours <- colours_antimicrobial$my_colours[colours_antimicrobial$antimicrobial %in% DATA_by_antimicrobial_lines$antimicrobials]
 
-          if (input$metric_line_by_antimicrobial == "ddd") {
+          if (input$metric_line_by_antimicrobial == "ddd" | input$metric_line_by_antimicrobial == "su") {
             hover_text_by_antimicrobial <- paste0('</br>', DATA_by_antimicrobial_lines$antimicrobials,
                                                   '</br>', DATA_by_antimicrobial_lines$year,
                                                   '</br>', toupper(DATA_by_antimicrobial_lines$metric), " (x 10^3): ", round(DATA_by_antimicrobial_lines$value,0))
@@ -965,7 +1584,7 @@ server <- function(input, output, session) {
             #geom_point(aes(colour = antimicrobials)) +
             scale_colour_manual(values = antimicrobial_colours) +
             scale_x_continuous("Year", breaks = seq(2015,2019,1), labels = seq(2015,2019,1)) +
-            labs(x = "Year", y = ifelse(input$metric_line_by_antimicrobial == "ddd", paste0(toupper(unique(DATA_by_antimicrobial_lines$metric)), " x 10^3"), toupper(unique(DATA_by_antimicrobial_lines$metric))), fill = NULL) +
+            labs(x = "Year", y = ifelse(input$metric_line_by_antimicrobial == "ddd" | input$metric_line_by_antimicrobial == "su", paste0(toupper(unique(DATA_by_antimicrobial_lines$metric)), " x 10^3"), toupper(unique(DATA_by_antimicrobial_lines$metric))), fill = NULL) +
             theme_bw() +
             theme(text = element_text(size = 15, angle = 0))
   
@@ -975,8 +1594,8 @@ server <- function(input, output, session) {
         
         # Line display options ##NOT NEEDED - NOW USING PLOTLY##
         # enable("line_options_by_antimicrobial")
-        # tickbox_update_by_antimicrobial <- data_line_by_antimicrobial_filter4() %>%
-        #   group_by(route_of_administration, aware_category, country, metric, antimicrobials) %>%
+        # tickbox_update_by_antimicrobial <- data_line_by_antimicrobial_filter6() %>%
+        #   group_by(route_of_administration, aware_category, country, metric, antimicrobials, who_region, sector) %>%
         #   filter(length(year) > 1) %>% ungroup()
         # updateCheckboxGroupInput(session, inputId = "line_options_by_antimicrobial",
         #                          label = "",
@@ -989,17 +1608,17 @@ server <- function(input, output, session) {
     # By route of administration
       # Plot title
       plot_title_by_route_reactive <- eventReactive(input$load_plot_by_route, {
-        if (input$metric_line_by_route == "ddd") {
+        if (input$metric_line_by_route == "ddd" | input$metric_line_by_route == "su") {
           if (input$antimicrobial_line_by_route == "All") {
-            paste0(toupper(input$metric_line_by_route), " (x 10^3) of antimicrobials (AWaRe: ", input$aware_line_by_route, ") in ", input$country_line_by_route)
+            paste0(toupper(input$metric_line_by_route), " (x 10^3) of antimicrobials (AWaRe: ", input$aware_line_by_route, ") in ", input$country_line_by_route, " (", input$whoregion_line_by_route, "; ", tolower(input$sector_line_by_route), " sector)")
           } else {
-            paste0(toupper(input$metric_line_by_route), " (x 10^3) of ", tolower(input$antimicrobial_line_by_route), " (AWaRe: ", input$aware_line_by_route, ") in ", input$country_line_by_route)
+            paste0(toupper(input$metric_line_by_route), " (x 10^3) of ", tolower(input$antimicrobial_line_by_route), " (AWaRe: ", input$aware_line_by_route, ") in ", input$country_line_by_route, " (", input$whoregion_line_by_route, "; ", tolower(input$sector_line_by_route), " sector)")
           }  
         } else {
           if (input$antimicrobial_line_by_route == "All") {
-            paste0(toupper(input$metric_line_by_route), " of antimicrobials (AWaRe: ", input$aware_line_by_route, ") in ", input$country_line_by_route)
+            paste0(toupper(input$metric_line_by_route), " of antimicrobials (AWaRe: ", input$aware_line_by_route, ") in ", input$country_line_by_route, " (", input$whoregion_line_by_route, "; ", tolower(input$sector_line_by_route), " sector)")
           } else {
-            paste0(toupper(input$metric_line_by_route), " of ", tolower(input$antimicrobial_line_by_route), " (AWaRe: ", input$aware_line_by_route, ") in ", input$country_line_by_route)
+            paste0(toupper(input$metric_line_by_route), " of ", tolower(input$antimicrobial_line_by_route), " (AWaRe: ", input$aware_line_by_route, ") in ", input$country_line_by_route, " (", input$whoregion_line_by_route, "; ", tolower(input$sector_line_by_route), " sector)")
           }  
         }
       })
@@ -1013,18 +1632,18 @@ server <- function(input, output, session) {
       
         output$plot_by_route <- renderPlotly({
           
-          DATA_by_route <- data_line_by_route_filter4()
+          DATA_by_route <- data_line_by_route_filter6()
           
           DATA_by_route_lines <- DATA_by_route %>% 
-            group_by(antimicrobials, aware_category, country, metric, route_of_administration) %>%
+            group_by(antimicrobials, aware_category, country, metric, route_of_administration, who_region, sector) %>%
             filter(length(year) > 1) %>% ungroup()
   
           route_colours <- colours_route$my_colours[colours_route$route %in% DATA_by_route_lines$route_of_administration]
           
-          if (input$metric_line_by_route == "ddd") {
+          if (input$metric_line_by_route == "ddd" | input$metric_line_by_route == "su") {
             hover_text_by_route <- paste0('</br>', DATA_by_route_lines$route_of_administration,
                                           '</br>', DATA_by_route_lines$year,
-                                           '</br>', toupper(DATA_by_route_lines$metric), " (x 10^3): ", round(DATA_by_route_lines$value,0))
+                                          '</br>', toupper(DATA_by_route_lines$metric), " (x 10^3): ", round(DATA_by_route_lines$value,0))
           } else {
             hover_text_by_route <- paste0('</br>', DATA_by_route_lines$route_of_administration,
                                           '</br>', DATA_by_route_lines$year,
@@ -1037,7 +1656,7 @@ server <- function(input, output, session) {
             #geom_point(aes(colour = route_of_administration)) +
             scale_colour_manual(values = route_colours) +
             scale_x_continuous("Year", breaks = seq(2015,2019,1), labels = seq(2015,2019,1)) +
-            labs(x = "Year", y = ifelse(input$metric_line_by_route == "ddd", paste0(toupper(unique(DATA_by_route_lines$metric)), " x 10^3"), toupper(unique(DATA_by_route_lines$metric))), fill = NULL) + 
+            labs(x = "Year", y = ifelse(input$metric_line_by_route == "ddd" | input$metric_line_by_route == "su", paste0(toupper(unique(DATA_by_route_lines$metric)), " x 10^3"), toupper(unique(DATA_by_route_lines$metric))), fill = NULL) + 
             theme_bw() + 
             theme(text = element_text(size = 15, angle = 0))
           
@@ -1047,8 +1666,8 @@ server <- function(input, output, session) {
         
         # Line display options ##NOT NEEDED - NOW USING PLOTLY##
         # enable("line_options_by_route")
-        # tickbox_update_by_route <- data_line_by_route_filter4() %>%
-        #   group_by(antimicrobials, aware_category, country, metric, route_of_administration) %>%
+        # tickbox_update_by_route <- data_line_by_route_filter6() %>%
+        #   group_by(antimicrobials, aware_category, country, metric, route_of_administration, who_region, sector) %>%
         #   filter(length(year) > 1) %>% ungroup()
         # updateCheckboxGroupInput(session, inputId = "line_options_by_route",
         #                          label = "",
@@ -1061,17 +1680,17 @@ server <- function(input, output, session) {
     # By AWaRe category
       # Plot title
       plot_title_by_aware_reactive <- eventReactive(input$load_plot_by_aware, { 
-        if (input$metric_line_by_aware == "ddd") {
+        if (input$metric_line_by_aware == "ddd" | input$metric_line_by_aware == "ddd") {
           if (input$antimicrobial_line_by_aware == "All") {
-            paste(toupper(input$metric_line_by_aware), "(x 10^3) of", tolower(input$route_line_by_aware), "antimicrobials in", input$country_line_by_aware)
+            paste0(toupper(input$metric_line_by_aware), " (x 10^3) of ", tolower(input$route_line_by_aware), " antimicrobials in ", input$country_line_by_aware, " (", input$whoregion_line_by_aware, "; ", tolower(input$sector_line_by_aware), " sector)")
           } else {
-            paste(toupper(input$metric_line_by_aware), "(x 10^3) of", tolower(input$route_line_by_aware), input$antimicrobial_line_by_aware, "in", input$country_line_by_aware)
+            paste0(toupper(input$metric_line_by_aware), " (x 10^3) of ", tolower(input$route_line_by_aware), " ", input$antimicrobial_line_by_aware, " in ", input$country_line_by_aware, " (", input$whoregion_line_by_aware, "; ", tolower(input$sector_line_by_aware), " sector)")
           }  
         } else {
           if (input$antimicrobial_line_by_aware == "All") {
-            paste(toupper(input$metric_line_by_aware), "of", tolower(input$route_line_by_aware), "antimicrobials in", input$country_line_by_aware)
+            paste0(toupper(input$metric_line_by_aware), " of ", tolower(input$route_line_by_aware), " antimicrobials in ", input$country_line_by_aware, " (", input$whoregion_line_by_aware, "; ", tolower(input$sector_line_by_aware), " sector)")
           } else {
-            paste(toupper(input$metric_line_by_aware), "of", tolower(input$route_line_by_aware), input$antimicrobial_line_by_aware, "in", input$country_line_by_aware)
+            paste0(toupper(input$metric_line_by_aware), " of ", tolower(input$route_line_by_aware), " ", input$antimicrobial_line_by_aware, " in ", input$country_line_by_aware, " (", input$whoregion_line_by_aware, "; ", tolower(input$sector_line_by_aware), " sector)")
           }  
         }
       })
@@ -1085,15 +1704,15 @@ server <- function(input, output, session) {
         
         output$plot_by_aware <- renderPlotly({
           
-          DATA_by_aware <- data_line_by_aware_filter4()
+          DATA_by_aware <- data_line_by_aware_filter6()
           
           DATA_by_aware_lines <- DATA_by_aware %>% 
-            group_by(antimicrobials, route_of_administration, country, metric, aware_category) %>%
+            group_by(antimicrobials, route_of_administration, country, metric, aware_category, who_region, sector) %>%
             filter(length(year) > 1) %>% ungroup()
           
           aware_colours <- colours_aware$my_colours[colours_aware$aware_category %in% DATA_by_aware_lines$aware_category]
           
-          if (input$metric_line_by_aware == "ddd") {
+          if (input$metric_line_by_aware == "ddd" | input$metric_line_by_aware == "su") {
             hover_text_by_aware <- paste0('</br>', DATA_by_aware_lines$aware_category,
                                           '</br>', DATA_by_aware_lines$year,
                                           '</br>', toupper(DATA_by_aware_lines$metric), " (x 10^3) : ", round(DATA_by_aware_lines$value,0))
@@ -1109,7 +1728,7 @@ server <- function(input, output, session) {
             #geom_point(aes(colour = aware_category)) +
             scale_colour_manual(values = aware_colours) +
             scale_x_continuous("Year", breaks = seq(2015,2019,1), labels = seq(2015,2019,1)) +
-            labs(x = "Year", y = ifelse(input$metric_line_by_aware == "ddd", paste0(toupper(unique(DATA_by_aware_lines$metric)), " x 10^3"), toupper(unique(DATA_by_aware_lines$metric))), fill = NULL) + 
+            labs(x = "Year", y = ifelse(input$metric_line_by_aware == "ddd" | input$metric_line_by_aware == "su", paste0(toupper(unique(DATA_by_aware_lines$metric)), " x 10^3"), toupper(unique(DATA_by_aware_lines$metric))), fill = NULL) + 
             theme_bw() + 
             theme(text = element_text(size = 15, angle = 0))
           
@@ -1119,8 +1738,8 @@ server <- function(input, output, session) {
         
         # Line display options ##NOT NEEDED - NOW USING PLOTLY##
         # enable("line_options_by_aware")
-        # tickbox_update_by_aware <- data_line_by_aware_filter4() %>%
-        #   group_by(antimicrobials, route_of_administration, country, metric, aware_category) %>%
+        # tickbox_update_by_aware <- data_line_by_aware_filter6() %>%
+        #   group_by(antimicrobials, route_of_administration, country, metric, aware_category, who_region, sector) %>%
         #   filter(length(year) > 1) %>% ungroup()
         # updateCheckboxGroupInput(session, inputId = "line_options_by_aware",
         #                          label = "",
@@ -1130,20 +1749,92 @@ server <- function(input, output, session) {
 
       })
       
+    # By WHO region
+      # Plot title
+      plot_title_by_whoregion_reactive <- eventReactive(input$load_plot_by_whoregion, {
+        if (input$metric_line_by_whoregion == "ddd" | input$metric_line_by_whoregion == "su") {
+          if (input$antimicrobial_line_by_whoregion == "All") { 
+            paste0(toupper(input$metric_line_by_whoregion), " (x 10^3) of ", tolower(input$route_line_by_whoregion), " antimicrobials (AWaRe: ", input$aware_line_by_whoregion, ")", ", ", tolower(input$sector_line_by_whoregion), " sector")
+          } else {
+            paste0(toupper(input$metric_line_by_whoregion), " (x 10^3) of ", tolower(input$route_line_by_whoregion), input$antimicrobial_line_by_whoregion, " (AWaRe: ", input$aware_line_by_whoregion, ")", ", ", tolower(input$sector_line_by_whoregion), " sector")
+          }
+        } else {
+          if (input$antimicrobial_line_by_whoregion == "All") { 
+            paste0(toupper(input$metric_line_by_whoregion), " of ", tolower(input$route_line_by_whoregion), " antimicrobials (AWaRe: ", input$aware_line_by_whoregion, ")", ", ", tolower(input$sector_line_by_whoregion), " sector")
+          } else {
+            paste0(toupper(input$metric_line_by_whoregion), " of ", tolower(input$route_line_by_whoregion), input$antimicrobial_line_by_whoregion, " (AWaRe: ", input$aware_line_by_whoregion, ")", ", ", tolower(input$sector_line_by_whoregion), " sector")
+          }
+        }
+      })
+      
+      output$plot_title_by_whoregion <- renderUI(
+        HTML(plot_title_by_whoregion_reactive())
+      )
+      
+      # Plot
+      observeEvent(input$load_plot_by_whoregion, {
+        
+        output$plot_by_whoregion <- renderPlotly({
+          
+          DATA_by_whoregion <- data_line_by_whoregion_filter5()
+          
+          DATA_by_whoregion_lines <- DATA_by_whoregion %>% 
+            group_by(antimicrobials, route_of_administration, aware_category, metric, who_region, sector) %>%
+            filter(length(year) > 1) %>% ungroup()
+          
+          whoregion_colours <- colours_whoregion$my_colours[colours_whoregion$location %in% DATA_by_whoregion_lines$who_region] #NEED TO CREATE NEW COLOUR FILES!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+          
+          if (input$metric_line_by_whoregion == "ddd" | input$metric_line_by_whoregion == "su") {
+            hover_text_by_whoregion <- paste0('</br>', DATA_by_whoregion_lines$who_region,
+                                              '</br>', DATA_by_whoregion_lines$year,
+                                              '</br>', toupper(DATA_by_whoregion_lines$metric), "(x 10^3): ", round(DATA_by_whoregion_lines$value,0))
+          } else {
+            hover_text_by_whoregion <- paste0('</br>', DATA_by_whoregion_lines$who_region,
+                                              '</br>', DATA_by_whoregion_lines$year,
+                                              '</br>', toupper(DATA_by_whoregion_lines$metric), ": ", round(DATA_by_whoregion_lines$value,0))
+          }
+          
+          DATA_by_whoregion_plot <- 
+            ggplot(DATA_by_whoregion_lines, aes(x = year, y = value, text = hover_text_by_whoregion, group = who_region)) +
+            geom_line(aes(colour = who_region)) +
+            #geom_point(aes(colour = who_region)) +
+            scale_colour_manual(values = whoregion_colours) +
+            scale_x_continuous("Year", breaks = seq(2015,2019,1), labels = seq(2015,2019,1)) +
+            labs(x = "Year", y = ifelse(input$metric_line_by_whoregion == "ddd" | input$metric_line_by_whoregion == "su", paste0(toupper(unique(DATA_by_whoregion_lines$metric)), " x 10^3"), toupper(unique(DATA_by_whoregion_lines$metric))), fill = NULL) + 
+            theme_bw() + 
+            theme(text = element_text(size = 15, angle = 0))
+          
+          by_whoregion_interactive <- ggplotly(DATA_by_whoregion_plot, tooltip = "text")
+          
+        })
+        
+        # Line display options ##NOT NEEDED - NOW USING PLOTLY##
+        # enable("line_options_by_whoregion")
+        # tickbox_update_by_whoregion <- data_line_by_whoregion_filter5() %>%
+        #   group_by(antimicrobials, route_of_administration, aware_category, metric, who_region, sector) %>%
+        #   filter(length(year) > 1) %>% ungroup()
+        # updateCheckboxGroupInput(session, inputId = "line_options_by_whoregion",
+        #                          label = "",
+        #                          choices = sort(unique(tickbox_update_by_whoregion$who_region)),
+        #                          inline = TRUE,
+        #                          selected = "Global")
+        
+      })
+      
     # By country
       # Plot title
       plot_title_by_country_reactive <- eventReactive(input$load_plot_by_country, {
-        if (input$metric_line_by_country == "ddd") {
+        if (input$metric_line_by_country == "ddd" | input$metric_line_by_country == "su") {
           if (input$antimicrobial_line_by_country == "All") { 
-            paste0(toupper(input$metric_line_by_country), " (x 10^3) of ", tolower(input$route_line_by_country), " antimicrobials (AWaRe: ", input$aware_line_by_country, ")")
+            paste0(toupper(input$metric_line_by_country), " (x 10^3) of ", tolower(input$route_line_by_country), " antimicrobials (AWaRe: ", input$aware_line_by_country, ")", " in ", input$whoregion_line_by_country, ", ", tolower(input$sector_line_by_country), " sector")
           } else {
-            paste0(toupper(input$metric_line_by_country), " (x 10^3) of ", tolower(input$route_line_by_country), input$antimicrobial_line_by_country, " (AWaRe: ", input$aware_line_by_country, ")")
+            paste0(toupper(input$metric_line_by_country), " (x 10^3) of ", tolower(input$route_line_by_country), input$antimicrobial_line_by_country, " (AWaRe: ", input$aware_line_by_country, ")", " in ", input$whoregion_line_by_country, ", ", tolower(input$sector_line_by_country), " sector")
           }
         } else {
           if (input$antimicrobial_line_by_country == "All") { 
-            paste0(toupper(input$metric_line_by_country), " of ", tolower(input$route_line_by_country), " antimicrobials (AWaRe: ", input$aware_line_by_country, ")")
+            paste0(toupper(input$metric_line_by_country), " of ", tolower(input$route_line_by_country), " antimicrobials (AWaRe: ", input$aware_line_by_country, ")", " in ", input$whoregion_line_by_country, ", ", tolower(input$sector_line_by_country), " sector")
           } else {
-            paste0(toupper(input$metric_line_by_country), " of ", tolower(input$route_line_by_country), input$antimicrobial_line_by_country, " (AWaRe: ", input$aware_line_by_country, ")")
+            paste0(toupper(input$metric_line_by_country), " of ", tolower(input$route_line_by_country), input$antimicrobial_line_by_country, " (AWaRe: ", input$aware_line_by_country, ")", " in ", input$whoregion_line_by_country, ", ", tolower(input$sector_line_by_country), " sector")
           }
         }
       })
@@ -1157,15 +1848,15 @@ server <- function(input, output, session) {
         
       output$plot_by_country <- renderPlotly({
         
-        DATA_by_country <- data_line_by_country_filter4()
+        DATA_by_country <- data_line_by_country_filter6()
         
         DATA_by_country_lines <- DATA_by_country %>% 
-          group_by(antimicrobials, route_of_administration, aware_category, metric, country) %>%
+          group_by(antimicrobials, route_of_administration, aware_category, metric, country, who_region, sector) %>%
           filter(length(year) > 1) %>% ungroup()
         
         country_colours <- colours_country$my_colours[colours_country$location %in% DATA_by_country_lines$country]
         
-        if (input$metric_line_by_country == "ddd") {
+        if (input$metric_line_by_country == "ddd" | input$metric_line_by_country == "su") {
           hover_text_by_country <- paste0('</br>', DATA_by_country_lines$country,
                                           '</br>', DATA_by_country_lines$year,
                                           '</br>', toupper(DATA_by_country_lines$metric), "(x 10^3): ", round(DATA_by_country_lines$value,0))
@@ -1181,7 +1872,7 @@ server <- function(input, output, session) {
           #geom_point(aes(colour = country)) +
           scale_colour_manual(values = country_colours) +
           scale_x_continuous("Year", breaks = seq(2015,2019,1), labels = seq(2015,2019,1)) +
-          labs(x = "Year", y = ifelse(input$metric_line_by_country == "ddd", paste0(toupper(unique(DATA_by_country_lines$metric)), " x 10^3"), toupper(unique(DATA_by_country_lines$metric))), fill = NULL) + 
+          labs(x = "Year", y = ifelse(input$metric_line_by_country == "ddd" | input$metric_line_by_country == "su", paste0(toupper(unique(DATA_by_country_lines$metric)), " x 10^3"), toupper(unique(DATA_by_country_lines$metric))), fill = NULL) + 
           theme_bw() + 
           theme(text = element_text(size = 15, angle = 0))
         
@@ -1191,8 +1882,8 @@ server <- function(input, output, session) {
       
       # Line display options ##NOT NEEDED - NOW USING PLOTLY##
       # enable("line_options_by_country")
-      # tickbox_update_by_country <- data_line_by_country_filter4() %>%
-      #   group_by(antimicrobials, route_of_administration, aware_category, metric, country) %>%
+      # tickbox_update_by_country <- data_line_by_country_filter6() %>%
+      #   group_by(antimicrobials, route_of_administration, aware_category, metric, country, who_region, sector) %>%
       #   filter(length(year) > 1) %>% ungroup()
       # updateCheckboxGroupInput(session, inputId = "line_options_by_country",
       #                          label = "",
@@ -1200,8 +1891,80 @@ server <- function(input, output, session) {
       #                          inline = TRUE,
       #                          selected = "Global")
 
+    })
+  
+    # By sector
+      # Plot title
+      plot_title_by_sector_reactive <- eventReactive(input$load_plot_by_sector, {
+        if (input$metric_line_by_sector == "ddd" | input$metric_line_by_sector == "su") {
+          if (input$antimicrobial_line_by_sector == "All") { 
+            paste0(toupper(input$metric_line_by_sector), " (x 10^3) of ", tolower(input$route_line_by_sector), " antimicrobials (AWaRe: ", input$aware_line_by_sector, ")", " in ", input$country_line_by_sector, " (", input$whoregion_line_by_sector, ")", ", ", tolower(input$sector_line_by_sector), " sector")
+          } else {
+            paste0(toupper(input$metric_line_by_sector), " (x 10^3) of ", tolower(input$route_line_by_sector), input$antimicrobial_line_by_sector, " (AWaRe: ", input$aware_line_by_sector, ")", " in ", input$country_line_by_sector, " (", input$whoregion_line_by_sector, ")", ", ", tolower(input$sector_line_by_sector), " sector")
+          }
+        } else {
+          if (input$antimicrobial_line_by_sector == "All") { 
+            paste0(toupper(input$metric_line_by_sector), " of ", tolower(input$route_line_by_sector), " antimicrobials (AWaRe: ", input$aware_line_by_sector, ")", " in ", input$country_line_by_sector, " (", input$whoregion_line_by_sector, ")", ", ", tolower(input$sector_line_by_sector), " sector")
+          } else {
+            paste0(toupper(input$metric_line_by_sector), " of ", tolower(input$route_line_by_sector), input$antimicrobial_line_by_sector, " (AWaRe: ", input$aware_line_by_sector, ")", " in ", input$country_line_by_sector, " (", input$whoregion_line_by_sector, ")", ", ", tolower(input$sector_line_by_sector), " sector")
+          }
+        }
       })
       
+      output$plot_title_by_sector <- renderUI(
+        HTML(plot_title_by_sector_reactive())
+      )
+      
+      # Plot
+      observeEvent(input$load_plot_by_sector, {
+        
+      output$plot_by_sector <- renderPlotly({
+        
+        DATA_by_sector <- data_line_by_sector_filter6()
+        
+        DATA_by_sector_lines <- DATA_by_sector %>% 
+          group_by(antimicrobials, route_of_administration, aware_category, metric, country, who_region, sector) %>%
+          filter(length(year) > 1) %>% ungroup()
+        
+        sector_colours <- colours_sector$my_colours[colours_sector$location %in% DATA_by_sector_lines$sector] #NEED TO CREATE NEW COLOUR FILES!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        
+        if (input$metric_line_by_sector == "ddd" | input$metric_line_by_sector == "su") {
+          hover_text_by_sector <- paste0('</br>', DATA_by_sector_lines$sector,
+                                         '</br>', DATA_by_sector_lines$year,
+                                         '</br>', toupper(DATA_by_sector_lines$metric), "(x 10^3): ", round(DATA_by_sector_lines$value,0))
+        } else {
+          hover_text_by_sector <- paste0('</br>', DATA_by_sector_lines$sector,
+                                         '</br>', DATA_by_sector_lines$year,
+                                         '</br>', toupper(DATA_by_sector_lines$metric), ": ", round(DATA_by_sector_lines$value,0))
+        }
+        
+        DATA_by_sector_plot <- 
+          ggplot(DATA_by_sector_lines, aes(x = year, y = value, text = hover_text_by_sector, group = sector)) +
+          geom_line(aes(colour = sector)) +
+          #geom_point(aes(colour = sector)) +
+          scale_colour_manual(values = sector_colours) +
+          scale_x_continuous("Year", breaks = seq(2015,2019,1), labels = seq(2015,2019,1)) +
+          labs(x = "Year", y = ifelse(input$metric_line_by_sector == "ddd" | input$metric_line_by_sector == "su", paste0(toupper(unique(DATA_by_sector_lines$metric)), " x 10^3"), toupper(unique(DATA_by_sector_lines$metric))), fill = NULL) + 
+          theme_bw() + 
+          theme(text = element_text(size = 15, angle = 0))
+        
+        by_sector_interactive <- ggplotly(DATA_by_sector_plot, tooltip = "text")
+        
+      })
+      
+      # Line display options ##NOT NEEDED - NOW USING PLOTLY##
+      # enable("line_options_by_sector")
+      # tickbox_update_by_sector <- data_line_by_sector_filter6() %>%
+      #   group_by(antimicrobials, route_of_administration, aware_category, metric, country, who_region, sector) %>%
+      #   filter(length(year) > 1) %>% ungroup()
+      # updateCheckboxGroupInput(session, inputId = "line_options_by_sector",
+      #                          label = "",
+      #                          choices = sort(unique(tickbox_update_by_sector$sector)),
+      #                          inline = TRUE,
+      #                          selected = "Global")
+      
+    })
+
 }
 
 ############

@@ -9,9 +9,9 @@ data_original <- read.csv(d)
   # renaming columns
   data_reformatted <- data_original %>% 
     select(source_title, who_region, country, antimicrobials, aware_category, route_of_administration, sector, effective_from, standard_units, ddd, did, di) %>%
-    mutate(year = as.numeric(gsub("-01-01", "", effective_from))) %>% select(-effective_from)
+    mutate(year = as.numeric(gsub("-01-01", "", effective_from))) %>% select(-effective_from) %>% rename(su = standard_units)
   # reshaping wide to long
-  data_reformatted <- gather(data_reformatted, metric, value, standard_units, ddd, did, di, factor_key = TRUE)
+  data_reformatted <- gather(data_reformatted, metric, value, su, ddd, did, di, factor_key = TRUE)
   # collapsing stratification in other categories (e.g., age_appropriate (true/false), manufacturer, etc.)
   data_reformatted <- data_reformatted %>% 
     group_by(source_title, who_region, country, antimicrobials, aware_category, route_of_administration, sector, year, metric) %>%
@@ -31,7 +31,7 @@ data_for_visualisations <- data_for_visualisations %>%
 
 # make values more manageable 
 data_for_visualisations <- data_for_visualisations %>%
-  mutate(value = case_when(metric == "ddd" ~ value/1000, metric == "standard_units" ~ value/1000, .default = value))
+  mutate(value = case_when(metric == "ddd" ~ value/1000, metric == "su" ~ value/1000, .default = value))
 
 # aesthetics, functions etc.
   # country polygons 
