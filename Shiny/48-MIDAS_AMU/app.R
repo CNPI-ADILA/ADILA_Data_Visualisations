@@ -46,6 +46,14 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
         # Sidebar inputs
         sidebarPanel(
           
+          # Select input *DATASET*
+          selectInput(inputId = "dataset_map", 
+                      label = "Dataset:",
+                      choices = c("", sort(unique(data_for_visualisations$source_title))),
+                      selected = NULL, 
+                      multiple = FALSE
+          ),
+          
           # Select input *ANTIMICROBIAL*
           selectInput(inputId = "antimicrobial_map", 
                       label = "Antimicrobial:",
@@ -133,6 +141,14 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
           # Sidebar inputs 
           sidebarPanel(
             
+            # Select input *DATASET*
+            selectInput(inputId = "dataset_line_by_antimicrobial", 
+                        label = "Dataset:",
+                        choices = c("", sort(unique(data_for_visualisations$source_title))),
+                        selected = NULL, 
+                        multiple = FALSE
+            ),
+
             # Select input *ADMINISTRATION ROUTE*
             selectInput(inputId = "route_line_by_antimicrobial", 
                         label = "Administration route:", 
@@ -217,6 +233,14 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
           # Sidebar inputs 
           sidebarPanel(
             
+            # Select input *DATASET*
+            selectInput(inputId = "dataset_line_by_route", 
+                        label = "Dataset:",
+                        choices = c("", sort(unique(data_for_visualisations$source_title))),
+                        selected = NULL, 
+                        multiple = FALSE
+            ),
+
             # Select input *ANTIMICROBIAL*
             selectInput(inputId = "antimicrobial_line_by_route", 
                         label = "Antimicrobial:", 
@@ -301,6 +325,14 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
           # Sidebar inputs 
           sidebarPanel(
             
+            # Select input *DATASET*
+            selectInput(inputId = "dataset_line_by_aware", 
+                        label = "Dataset:",
+                        choices = c("", sort(unique(data_for_visualisations$source_title))),
+                        selected = NULL, 
+                        multiple = FALSE
+            ),
+
             # Select input *ANTIMICROBIAL*
             selectInput(inputId = "antimicrobial_line_by_aware", 
                         label = "Antimicrobial:", 
@@ -385,6 +417,14 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
           # Sidebar inputs 
           sidebarPanel(
              
+            # Select input *DATASET*
+            selectInput(inputId = "dataset_line_by_whoregion", 
+                        label = "Dataset:",
+                        choices = c("", sort(unique(data_for_visualisations$source_title))),
+                        selected = NULL, 
+                        multiple = FALSE
+            ),
+
             # Select input *ANTIMICROBIAL*
             selectInput(inputId = "antimicrobial_line_by_whoregion", 
                         label = "Antimicrobial:", 
@@ -462,6 +502,14 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
           # Sidebar inputs 
           sidebarPanel(
             
+            # Select input *DATASET*
+            selectInput(inputId = "dataset_line_by_country", 
+                        label = "Dataset:",
+                        choices = c("", sort(unique(data_for_visualisations$source_title))),
+                        selected = NULL, 
+                        multiple = FALSE
+            ),
+
             # Select input *ANTIMICROBIAL*
             selectInput(inputId = "antimicrobial_line_by_country", 
                         label = "Antimicrobial:", 
@@ -527,7 +575,7 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
             #                      label = "",
             #                      choices = sort(unique(data_for_visualisations$country)),
             #                      inline = TRUE,
-            #                      selected = "Global")
+            #                      selected = "All")
             # )
             
           )
@@ -546,6 +594,14 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
           # Sidebar inputs 
           sidebarPanel(
            
+            # Select input *DATASET*
+            selectInput(inputId = "dataset_line_by_sector", 
+                        label = "Dataset:",
+                        choices = c("", sort(unique(data_for_visualisations$source_title))),
+                        selected = NULL, 
+                        multiple = FALSE
+            ),
+
             # Select input *ANTIMICROBIAL*
             selectInput(inputId = "antimicrobial_line_by_sector", 
                         label = "Antimicrobial:", 
@@ -687,7 +743,13 @@ server <- function(input, output, session) {
   data <- reactive({
     data_for_visualisations
   })
-    
+  # data_map <- reactive({  #WILL NEED TO ADD THIS TO EACH PART BELOW (INCL. FOR EACH LINE PLOT) AND THINK ABOUT IF FILTERING ORDER NEEDS TO CHANGE (e.g., an extra level at the start that pushes everything down one)!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  #   req(input$dataset_map)
+  #   
+  #   data_for_visualisations <- data_for_visualisations %>% filter(source_title == input$dataset_map)
+  #   data_for_visualisations
+  # })
+  
     #
     # Heat map
     #
@@ -1468,9 +1530,9 @@ server <- function(input, output, session) {
     # Map title
     map_title_reactive <- eventReactive(input$load_map, {
       if (input$metric_map == "ddd" | input$metric_map == "su") {
-        paste0(toupper(input$metric_map), " (x 10^3) of ", tolower(input$route_map), " ", tolower(input$antimicrobial_map), " (AWaRe: ", input$aware_map, ") in ", tolower(input$sector_map), ifelse(min(input$years, na.rm = T) == max(input$years, na.rm = T), min(input$years, na.rm = T), paste0(min(input$years, na.rm = T), "-", max(input$years, na.rm = T))))
+        paste0(toupper(input$metric_map), " (x 10^3) of ", tolower(input$route_map), " ", tolower(input$antimicrobial_map), " (AWaRe: ", input$aware_map, ") in ", tolower(input$sector_map), ", ", ifelse(min(input$years, na.rm = T) == max(input$years, na.rm = T), min(input$years, na.rm = T), paste0(min(input$years, na.rm = T), "-", max(input$years, na.rm = T))))
       } else {
-        paste0(toupper(input$metric_map), " of ", tolower(input$route_map), " ", tolower(input$antimicrobial_map), " (AWaRe: ", input$aware_map, ") in ", tolower(input$sector_map), ifelse(min(input$years, na.rm = T) == max(input$years, na.rm = T), min(input$years, na.rm = T), paste0(min(input$years, na.rm = T), "-", max(input$years, na.rm = T))))
+        paste0(toupper(input$metric_map), " of ", tolower(input$route_map), " ", tolower(input$antimicrobial_map), " (AWaRe: ", input$aware_map, ") in ", tolower(input$sector_map), ", ", ifelse(min(input$years, na.rm = T) == max(input$years, na.rm = T), min(input$years, na.rm = T), paste0(min(input$years, na.rm = T), "-", max(input$years, na.rm = T))))
       }
     })
     
@@ -1510,7 +1572,8 @@ server <- function(input, output, session) {
                              '</br>', '<strong>', "Year(s): ", '</strong>', year_range)
       }
       
-      colour_palette <- colorNumeric(palette = "magma", domain = c(min(merged_data$AMU, na.rm = T):max(merged_data$AMU, na.rm = T)), na.color = "transparent", reverse = TRUE)
+      extend_scale = (max(merged_data$AMU, na.rm = T) - min(merged_data$AMU, na.rm = T))/10 #because some very big/small values weren't appearing on map!
+      colour_palette <- colorNumeric(palette = "magma", domain = c((min(merged_data$AMU, na.rm = T) - extend_scale):(max(merged_data$AMU, na.rm = T) + extend_scale)), na.color = "transparent", reverse = TRUE)
       
       leafletProxy("heat_map", data = merged_data) %>%
         clearControls() %>%
@@ -1557,15 +1620,15 @@ server <- function(input, output, session) {
       
       # Plot
       observeEvent(input$load_plot_by_antimicrobial, {
-        
+
         output$plot_by_antimicrobial <- renderPlotly({
   
           DATA_by_antimicrobial <- data_line_by_antimicrobial_filter6()
-          
-          DATA_by_antimicrobial_lines <- DATA_by_antimicrobial %>% 
+
+          DATA_by_antimicrobial_lines <- DATA_by_antimicrobial %>%
             group_by(route_of_administration, aware_category, country, metric, antimicrobials, who_region, sector) %>%
             filter(length(year) > 1) %>% ungroup()
-  
+
           antimicrobial_colours <- colours_antimicrobial$my_colours[colours_antimicrobial$antimicrobial %in% DATA_by_antimicrobial_lines$antimicrobials]
 
           if (input$metric_line_by_antimicrobial == "ddd" | input$metric_line_by_antimicrobial == "su") {
@@ -1782,7 +1845,7 @@ server <- function(input, output, session) {
             group_by(antimicrobials, route_of_administration, aware_category, metric, who_region, sector) %>%
             filter(length(year) > 1) %>% ungroup()
           
-          whoregion_colours <- colours_whoregion$my_colours[colours_whoregion$location %in% DATA_by_whoregion_lines$who_region] #NEED TO CREATE NEW COLOUR FILES!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+          whoregion_colours <- colours_whoregion$my_colours[colours_whoregion$region %in% DATA_by_whoregion_lines$who_region]
           
           if (input$metric_line_by_whoregion == "ddd" | input$metric_line_by_whoregion == "su") {
             hover_text_by_whoregion <- paste0('</br>', DATA_by_whoregion_lines$who_region,
@@ -1817,7 +1880,7 @@ server <- function(input, output, session) {
         #                          label = "",
         #                          choices = sort(unique(tickbox_update_by_whoregion$who_region)),
         #                          inline = TRUE,
-        #                          selected = "Global")
+        #                          selected = "All")
         
       })
       
@@ -1889,7 +1952,7 @@ server <- function(input, output, session) {
       #                          label = "",
       #                          choices = sort(unique(tickbox_update_by_country$country)),
       #                          inline = TRUE,
-      #                          selected = "Global")
+      #                          selected = "All")
 
     })
   
@@ -1926,7 +1989,7 @@ server <- function(input, output, session) {
           group_by(antimicrobials, route_of_administration, aware_category, metric, country, who_region, sector) %>%
           filter(length(year) > 1) %>% ungroup()
         
-        sector_colours <- colours_sector$my_colours[colours_sector$location %in% DATA_by_sector_lines$sector] #NEED TO CREATE NEW COLOUR FILES!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        sector_colours <- colours_sector$my_colours[colours_sector$sector %in% DATA_by_sector_lines$sector]
         
         if (input$metric_line_by_sector == "ddd" | input$metric_line_by_sector == "su") {
           hover_text_by_sector <- paste0('</br>', DATA_by_sector_lines$sector,
@@ -1961,7 +2024,7 @@ server <- function(input, output, session) {
       #                          label = "",
       #                          choices = sort(unique(tickbox_update_by_sector$sector)),
       #                          inline = TRUE,
-      #                          selected = "Global")
+      #                          selected = "All")
       
     })
 

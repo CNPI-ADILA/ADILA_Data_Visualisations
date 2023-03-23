@@ -26,8 +26,7 @@ data_for_visualisations <- data_for_visualisations %>%
   mutate(country = ifelse(country == "Russian Federation", "Russia", country)) %>%
   mutate(country = ifelse(country == "U.K. of Great Britain and Northern Ireland", "United Kingdom", country)) %>%
   mutate(country = ifelse(country == "United States of America", "United States", country)) %>%
-  mutate(country = ifelse(country == "Viet Nam", "Vietnam", country)) %>%
-  mutate(country = ifelse(country == "All", "Global", country))
+  mutate(country = ifelse(country == "Viet Nam", "Vietnam", country))
 
 # make values more manageable 
 data_for_visualisations <- data_for_visualisations %>%
@@ -46,5 +45,8 @@ data_for_visualisations <- data_for_visualisations %>%
     colours_antimicrobial <- fread("colours/colour_scheme_antimicrobial.csv")
     colours_route <- fread("colours/colour_scheme_route.csv")
     colours_aware <- fread("colours/colour_scheme_aware.csv")
+    colours_sector <- fread("colours/colour_scheme_sector.csv")
+    colours_whoregion <- fread("colours/colour_scheme_whoregion.csv")
+    #source("./colours/new/check_match.R")
   # multiple line-breaks
   linebreaks <- function(n){HTML(strrep(br(), n))}
