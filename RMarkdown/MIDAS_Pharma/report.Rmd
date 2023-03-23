@@ -1,0 +1,162 @@
+---
+title: "Visualisations for Pharma Project (MIDAS data)"
+author: "Will Cuningham | ADILA"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: html_document
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r prep, include=FALSE}
+# packages
+rm(list = ls()) 
+packages <- c("dplyr","tidyr","ggplot2","plotly","data.table")
+new_packages <- packages[!(packages %in% installed.packages()[,"Package"])]
+if(length(new_packages)) install.packages(new_packages)
+lapply(packages, require, character.only = TRUE)
+
+# import data
+data_original <- read.csv("O://formatted_data/amu_data/row_level_ddd.csv")
+
+# clean & format
+data_reformatted <- data_original %>% 
+  select(country, country_iso3_code, corporation, corp_amr_alliance, corp_ifpma, aware_category, route_of_administration, effective_from, standard_units, ddd) %>%
+  mutate(year = as.numeric(gsub("-01-01", "", effective_from))) %>% select(-effective_from) %>% rename(su = standard_units)
+  # reshaping wide to long
+  data_reformatted <- gather(data_reformatted, metric, value, su, ddd, factor_key = TRUE)
+  # collapsing stratification in other categories (e.g., age_appropriate (true/false), etc.)
+  data_for_report <- data_reformatted %>% 
+    group_by(country, country_iso3_code, corporation, corp_amr_alliance, corp_ifpma, aware_category, route_of_administration, year, metric) %>%
+    summarize(value = sum(value, na.rm = TRUE), .groups = "keep") %>%
+    ungroup()
+
+# collapse to create "All" subgroups
+  # "All" in all four groups
+  subset_all_4 <- data_for_report %>% group_by(year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>% 
+    mutate(country = "All", country_iso3_code = "All", aware_category = "All", route_of_administration = "All", corporation = "All", corp_amr_alliance = "All", corp_ifpma = "All") %>%
+    ungroup()
+  # "All" in any three of the four groups
+  subset_country_3 <- data_for_report %>% group_by(country, country_iso3_code, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>% 
+    mutate(aware_category = "All", route_of_administration = "All", corporation = "All", corp_amr_alliance = "All", corp_ifpma = "All") %>%
+    ungroup()
+  subset_aware_3 <- data_for_report %>% group_by(aware_category, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>% 
+    mutate(country = "All", country_iso3_code = "All", route_of_administration = "All", corporation = "All", corp_amr_alliance = "All", corp_ifpma = "All") %>%
+    ungroup()
+  subset_route_3 <- data_for_report %>% group_by(route_of_administration, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>% 
+    mutate(country = "All", country_iso3_code = "All", aware_category = "All", corporation = "All", corp_amr_alliance = "All", corp_ifpma = "All") %>%
+    ungroup()
+  subset_corp_3 <- data_for_report %>% group_by(corporation, corp_amr_alliance, corp_ifpma, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>% 
+    mutate(country = "All", country_iso3_code = "All", aware_category = "All", route_of_administration = "All") %>%
+    ungroup()
+  # "All" in any two of the four groups
+  subset_country_aware_2 <- data_for_report %>% group_by(country, country_iso3_code, aware_category, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>% 
+    mutate(route_of_administration = "All", corporation = "All", corp_amr_alliance = "All", corp_ifpma = "All") %>%
+    ungroup()
+  subset_country_route_2 <- data_for_report %>% group_by(country, country_iso3_code, route_of_administration, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>% 
+    mutate(aware_category = "All", corporation = "All", corp_amr_alliance = "All", corp_ifpma = "All") %>%
+    ungroup()
+  subset_country_corp_2 <- data_for_report %>% group_by(country, country_iso3_code, corporation, corp_amr_alliance, corp_ifpma, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>% 
+    mutate(aware_category = "All", route_of_administration = "All") %>%
+    ungroup()
+  subset_aware_route_2 <- data_for_report %>% group_by(aware_category, route_of_administration, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>%
+    mutate(country = "All", country_iso3_code = "All", corporation = "All", corp_amr_alliance = "All", corp_ifpma = "All") %>%
+    ungroup()
+  subset_aware_corp_2 <- data_for_report %>% group_by(aware_category, corporation, corp_amr_alliance, corp_ifpma, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>%
+    mutate(country = "All", country_iso3_code = "All", route_of_administration = "All") %>%
+    ungroup()
+  subset_route_corp_2 <- data_for_report %>% group_by(route_of_administration, corporation, corp_amr_alliance, corp_ifpma, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>%
+    mutate(country = "All", country_iso3_code = "All", aware_category = "All") %>%
+    ungroup()
+  # "All" in only one of the four groups
+  subset_country_1 <- data_for_report %>% group_by(route_of_administration, aware_category, corporation, corp_amr_alliance, corp_ifpma, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>% 
+    mutate(country = "All", country_iso3_code = "All") %>%
+    ungroup()
+  subset_route_1 <- data_for_report %>% group_by(country, country_iso3_code, aware_category, corporation, corp_amr_alliance, corp_ifpma, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>% 
+    mutate(route_of_administration = "All") %>%
+    ungroup()
+  subset_aware_1 <- data_for_report %>% group_by(country, country_iso3_code, route_of_administration, corporation, corp_amr_alliance, corp_ifpma, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>%
+    mutate(aware_category = "All") %>%
+    ungroup()
+  subset_corp_1 <- data_for_report %>% group_by(country, country_iso3_code, route_of_administration, aware_category, year, metric) %>% summarise(value = sum(value, na.rm = TRUE), .groups = "keep") %>%
+    mutate(corporation = "All", corp_amr_alliance = "All", corp_ifpma = "All") %>%
+    ungroup()
+  # append each of these subsets to the main dataset
+  data_for_report <- rbind(data_for_report, 
+                           subset_all_4,
+                           subset_country_3, subset_aware_3, subset_route_3, subset_corp_3, 
+                           subset_country_aware_2, subset_country_route_2, subset_country_corp_2, subset_aware_route_2, subset_aware_corp_2, subset_route_corp_2,
+                           subset_country_1, subset_route_1, subset_aware_1, subset_corp_1
+                          )
+  rm(list = ls(pattern = "subset_"))
+```
+
+## Introduction
+
+This report is intended to help analyse and visualise the IQVIA MIDAS dataset as part of the ADILA project. In particular, it focuses on describing the corporations contributing most to AMC.
+
+## Descriptive summary
+
+This dataset includes AMC data in `r length(unique(data_for_report$country))` countries between `r min(data_for_report$year, na.rm = T)` and `r max(data_for_report$year, na.rm = T)`, supplied by `r length(unique(data_for_report$corporation))` corporations.
+
+```{r stats, include=FALSE}
+# calculate percentage by route
+per_by_route <- data_for_report %>%
+  filter(year == 2019 & metric == "su" & country == "All" & corporation == "All" & aware_category == "All" & route_of_administration != "All") %>%
+  mutate(percent = round((value/sum(value))*100, 1))
+per_oral <- per_by_route[per_by_route$route_of_administration == "Oral", ]
+per_parenteral <- per_by_route[per_by_route$route_of_administration == "Parenteral", ]
+  
+# calculate percentage by AWaRe
+per_by_aware <- data_for_report %>%
+  filter(year == 2019 & metric == "su" & country == "All" & corporation == "All" & route_of_administration == "All" & aware_category != "All") %>%
+  mutate(percent = round((value/sum(value))*100, 1))
+per_access <- per_by_aware[per_by_aware$aware_category == "Access", ]
+per_watch <- per_by_aware[per_by_aware$aware_category == "Watch", ]
+per_reserve <- per_by_aware[per_by_aware$aware_category == "Reserve", ]
+
+# calculate number of corporations in DU90
+DU90_corp <- data_for_report %>%
+  filter(year == 2019 & metric == "su" & country == "All" & aware_category == "All" & route_of_administration == "All" & corporation != "All") %>%
+  mutate(percent = round((value/sum(value))*100, 5))
+DU90_corp <- DU90_corp[order(-DU90_corp$percent, DU90_corp$corporation), ] %>%
+  mutate(cumulative = cumsum(percent)) %>%
+  filter(cumulative <= 90)
+  # calculate percentage of these that are in each alliance
+  alliance <- DU90_corp %>%
+    mutate(count_amr = case_when(corp_amr_alliance == "true" & corp_ifpma == "false" ~ 1),
+           count_ifpma = case_when(corp_amr_alliance == "false" & corp_ifpma == "true" ~ 1),
+           count_both = case_when(corp_amr_alliance == "true" & corp_ifpma == "true" ~ 1))
+```
+
+Globally in 2019, oral and parenteral antibiotics accounted for `r per_oral$percent`% and `r per_parenteral$percent`% of AMC respectively. "Access" antibiotics accounted for `r per_access$percent`%, "Watch" `r per_watch$percent`%, and "Reserve" `r per_reserve$percent`%. `r length(unique(DU90_corp$corporation)` (`r round((length(unique(DU90_corp$corporation))/length(unique(data_for_report$corporation)))*100, 2)`%) of the corporations contributed to 90% of AMC. Of these corporations, `r round((sum(alliance$count_amr, na.rm = T)/length(unique(DU90_corp$corporation)))*100, 2)`% were part of the AMR Alliance only, `r round((sum(alliance$count_ifpma, na.rm = T)/length(unique(DU90_corp$corporation)))*100, 2)`% part of the IFPMA only, and `r round((sum(alliance$count_both, na.rm = T)/length(unique(DU90_corp$corporation)))*100, 2)`% part of both.
+
+## Explore DU90 by category
+
+Please use the Shiny app below to reveal which corporations contribute most to AMC.
+
+<!-- App should include:
+  - a an ordered bar plot (plotly)
+    - shade which are in each alliance, or both (will need a legend)
+    - somewhere on plot a note stating what proportion of these corporations are in each alliance, or both
+  - a table listing the corporations in the plot with their percentage contribution to overall AMC in the combination of subgroups specified-->
+
+```{r eruptions, echo=FALSE}
+inputPanel(
+  selectInput("n_breaks", label = "Number of bins:",
+              choices = c(10, 20, 35, 50), selected = 20),
+  
+  sliderInput("bw_adjust", label = "Bandwidth adjustment:",
+              min = 0.2, max = 2, value = 1, step = 0.2)
+)
+
+renderPlot({
+  hist(faithful$eruptions, probability = TRUE, breaks = as.numeric(input$n_breaks),
+       xlab = "Duration (minutes)", main = "Geyser eruption duration")
+  
+  dens <- density(faithful$eruptions, adjust = input$bw_adjust)
+  lines(dens, col = "blue")
+})
+```
