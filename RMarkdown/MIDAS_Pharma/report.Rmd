@@ -281,14 +281,25 @@ shinyApp(
         ggplot(DATA, aes(x = reorder(corporation, cumulative), y = AMC, fill = corp_group)) +
         geom_bar(stat = "identity") +
         labs(x = "", y = ifelse(input$metric == "ddd", "DDD", "SU"), 
-             caption = paste0(round((sum(DATA$count_amr, na.rm = T)/length(unique(DATA$corporation)))*100, 2), "% AMR alliance only; ", 
-                              round((sum(DATA$count_ifpma, na.rm = T)/length(unique(DATA$corporation)))*100, 2), "% IFPMA only; ",
-                              round((sum(DATA$count_both, na.rm = T)/length(unique(DATA$corporation)))*100, 2), "% both; ", 
-                              round((sum(DATA$count_neither, na.rm = T)/length(unique(DATA$corporation)))*100, 2), "% neither."
-                             ), fill = NULL) +
-        theme(axis.text.x=element_text(angle=45, hjust=.5))
+             # caption = paste0(round((sum(percent_corp_groups$count_amr, na.rm = T)/length(unique(percent_corp_groups$corporation)))*100, 2), "% AMR alliance only; ", 
+             #                  round((sum(percent_corp_groups$count_ifpma, na.rm = T)/length(unique(percent_corp_groups$corporation)))*100, 2), "% IFPMA only; ",
+             #                  round((sum(percent_corp_groups$count_both, na.rm = T)/length(unique(percent_corp_groups$corporation)))*100, 2), "% both; ", 
+             #                  round((sum(percent_corp_groups$count_neither, na.rm = T)/length(unique(percent_corp_groups$corporation)))*100, 2), "% neither."
+             #                 ), 
+             fill = NULL) +
+        theme(axis.text.x=element_text(angle=45, hjust=.5), plot.caption = element_text(color = "red", face = "italic", hjust = 0))
       
-      bar_plotly <- ggplotly(bar_plot)
+      bar_plotly <- ggplotly(bar_plot) %>%
+        layout(annotations = list(x = 1, y = 0.9,
+                                  xref = 'paper', yref = 'paper', showarrow = F, 
+                                  xanchor = 'right', yanchor = 'auto', xshift = 0, yshift = 0,
+                                  font = list(size = 12, color = "blue"),
+                                  text = paste0(round((sum(percent_corp_groups$count_amr, na.rm = T)/length(unique(percent_corp_groups$corporation)))*100, 2), "% AMR alliance only; ", 
+                                                round((sum(percent_corp_groups$count_ifpma, na.rm = T)/length(unique(percent_corp_groups$corporation)))*100, 2), "% IFPMA only; ",
+                                                round((sum(percent_corp_groups$count_both, na.rm = T)/length(unique(percent_corp_groups$corporation)))*100, 2), "% both; ", 
+                                                round((sum(percent_corp_groups$count_neither, na.rm = T)/length(unique(percent_corp_groups$corporation)))*100, 2), "% neither."
+                             )))
+      
     })
     
     # table
