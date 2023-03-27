@@ -745,13 +745,7 @@ server <- function(input, output, session) {
     
     data_for_visualisations %>% filter(source_title == input$dataset)
   })
-  # data_map <- reactive({  #WILL NEED TO ADD THIS TO EACH PART BELOW (INCL. FOR EACH LINE PLOT) AND THINK ABOUT IF FILTERING ORDER NEEDS TO CHANGE (e.g., an extra level at the start that pushes everything down one)!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  #   req(input$dataset_map)
-  #   
-  #   data_for_visualisations <- data_for_visualisations %>% filter(source_title == input$dataset_map)
-  #   data_for_visualisations
-  # })
-  
+
     #
     # Heat map
     #
