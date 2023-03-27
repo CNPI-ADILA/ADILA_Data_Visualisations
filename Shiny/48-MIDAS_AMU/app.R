@@ -47,7 +47,7 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
         sidebarPanel(
           
           # Select input *DATASET*
-          selectInput(inputId = "dataset_map", 
+          selectInput(inputId = "dataset", 
                       label = "Dataset:",
                       choices = c("", sort(unique(data_for_visualisations$source_title))),
                       selected = NULL, 
@@ -142,7 +142,7 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
           sidebarPanel(
             
             # Select input *DATASET*
-            selectInput(inputId = "dataset_line_by_antimicrobial", 
+            selectInput(inputId = "dataset", 
                         label = "Dataset:",
                         choices = c("", sort(unique(data_for_visualisations$source_title))),
                         selected = NULL, 
@@ -234,7 +234,7 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
           sidebarPanel(
             
             # Select input *DATASET*
-            selectInput(inputId = "dataset_line_by_route", 
+            selectInput(inputId = "dataset", 
                         label = "Dataset:",
                         choices = c("", sort(unique(data_for_visualisations$source_title))),
                         selected = NULL, 
@@ -326,7 +326,7 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
           sidebarPanel(
             
             # Select input *DATASET*
-            selectInput(inputId = "dataset_line_by_aware", 
+            selectInput(inputId = "dataset", 
                         label = "Dataset:",
                         choices = c("", sort(unique(data_for_visualisations$source_title))),
                         selected = NULL, 
@@ -418,7 +418,7 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
           sidebarPanel(
              
             # Select input *DATASET*
-            selectInput(inputId = "dataset_line_by_whoregion", 
+            selectInput(inputId = "dataset", 
                         label = "Dataset:",
                         choices = c("", sort(unique(data_for_visualisations$source_title))),
                         selected = NULL, 
@@ -503,7 +503,7 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
           sidebarPanel(
             
             # Select input *DATASET*
-            selectInput(inputId = "dataset_line_by_country", 
+            selectInput(inputId = "dataset", 
                         label = "Dataset:",
                         choices = c("", sort(unique(data_for_visualisations$source_title))),
                         selected = NULL, 
@@ -595,7 +595,7 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
           sidebarPanel(
            
             # Select input *DATASET*
-            selectInput(inputId = "dataset_line_by_sector", 
+            selectInput(inputId = "dataset", 
                         label = "Dataset:",
                         choices = c("", sort(unique(data_for_visualisations$source_title))),
                         selected = NULL, 
@@ -741,7 +741,9 @@ server <- function(input, output, session) {
   #
   #
   data <- reactive({
-    data_for_visualisations
+    req(input$dataset)
+    
+    data_for_visualisations %>% filter(source_title == input$dataset)
   })
   # data_map <- reactive({  #WILL NEED TO ADD THIS TO EACH PART BELOW (INCL. FOR EACH LINE PLOT) AND THINK ABOUT IF FILTERING ORDER NEEDS TO CHANGE (e.g., an extra level at the start that pushes everything down one)!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   #   req(input$dataset_map)
@@ -755,7 +757,7 @@ server <- function(input, output, session) {
     #
       # antimicrobial
       data_map_filter1 <- reactive({
-        req(input$antimicrobial_map)
+        req(input$dataset, input$antimicrobial_map)
         
         data_map1 <- data() %>%
           filter(antimicrobials == input$antimicrobial_map)
@@ -764,7 +766,7 @@ server <- function(input, output, session) {
     
       # administration route
       data_map_filter2 <- reactive({
-        req(input$antimicrobial_map, input$route_map)
+        req(input$dataset, input$antimicrobial_map, input$route_map)
         
         data_map1 <- data_map_filter1() %>%
           filter(route_of_administration == input$route_map)
@@ -773,7 +775,7 @@ server <- function(input, output, session) {
 
       # AWaRe category
       data_map_filter3 <- reactive({
-        req(input$antimicrobial_map, input$route_map, input$aware_map)
+        req(input$dataset, input$antimicrobial_map, input$route_map, input$aware_map)
         
         data_map1 <- data_map_filter2() %>%
           filter(aware_category == input$aware_map)
@@ -782,7 +784,7 @@ server <- function(input, output, session) {
       
       # Sector
       data_map_filter4 <- reactive({
-        req(input$antimicrobial_map, input$route_map, input$aware_map, input$sector_map)
+        req(input$dataset, input$antimicrobial_map, input$route_map, input$aware_map, input$sector_map)
         
         data_map1 <- data_map_filter3() %>%
           filter(sector == input$sector_map)
@@ -791,7 +793,7 @@ server <- function(input, output, session) {
       
       # year(s)
       data_map_filter5 <- reactive({
-        req(input$antimicrobial_map, input$route_map, input$aware_map, input$sector_map, input$years)
+        req(input$dataset, input$antimicrobial_map, input$route_map, input$aware_map, input$sector_map, input$years)
         
         data_map1 <- data_map_filter4() %>%
           filter(year %in%  seq(min(input$years, na.rm = T), max(input$years, na.rm = T)))
@@ -800,7 +802,7 @@ server <- function(input, output, session) {
       
       # AMU metric
       data_map_filter6 <- reactive({
-        req(input$antimicrobial_map, input$route_map, input$aware_map, input$sector_map, input$years, input$metric_map)
+        req(input$dataset, input$antimicrobial_map, input$route_map, input$aware_map, input$sector_map, input$years, input$metric_map)
         
         data_map1 <- data_map_filter5() %>%
           filter(metric == input$metric_map)
@@ -813,7 +815,7 @@ server <- function(input, output, session) {
       # Antimicrobials
         # administration route
         data_line_by_antimicrobial_filter1 <- reactive({
-          req(input$route_line_by_antimicrobial)
+          req(input$dataset, input$route_line_by_antimicrobial)
           
           data_line_by_antimicrobial1 <- data() %>%
             filter(route_of_administration == input$route_line_by_antimicrobial)
@@ -822,7 +824,7 @@ server <- function(input, output, session) {
         
         # AWaRe category
         data_line_by_antimicrobial_filter2 <- reactive({
-          req(input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial)
+          req(input$dataset, input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial)
           
           data_line_by_antimicrobial1 <- data_line_by_antimicrobial_filter1() %>%
             filter(aware_category == input$aware_line_by_antimicrobial)
@@ -831,7 +833,7 @@ server <- function(input, output, session) {
         
         # WHO region
         data_line_by_antimicrobial_filter3 <- reactive({
-          req(input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial, input$whoregion_line_by_antimicrobial)
+          req(input$dataset, input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial, input$whoregion_line_by_antimicrobial)
           
           data_line_by_antimicrobial1 <- data_line_by_antimicrobial_filter2() %>%
             filter(who_region == input$whoregion_line_by_antimicrobial)
@@ -840,7 +842,7 @@ server <- function(input, output, session) {
         
         # country
         data_line_by_antimicrobial_filter4 <- reactive({
-          req(input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial, input$whoregion_line_by_antimicrobial, input$country_line_by_antimicrobial)
+          req(input$dataset, input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial, input$whoregion_line_by_antimicrobial, input$country_line_by_antimicrobial)
           
           data_line_by_antimicrobial1 <- data_line_by_antimicrobial_filter3() %>%
             filter(country == input$country_line_by_antimicrobial)
@@ -849,7 +851,7 @@ server <- function(input, output, session) {
         
         # sector
         data_line_by_antimicrobial_filter5 <- reactive({
-          req(input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial, input$whoregion_line_by_antimicrobial, input$country_line_by_antimicrobial, input$sector_line_by_antimicrobial)
+          req(input$dataset, input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial, input$whoregion_line_by_antimicrobial, input$country_line_by_antimicrobial, input$sector_line_by_antimicrobial)
           
           data_line_by_antimicrobial1 <- data_line_by_antimicrobial_filter4() %>%
             filter(sector == input$sector_line_by_antimicrobial)
@@ -858,7 +860,7 @@ server <- function(input, output, session) {
         
         # AMU metric
         data_line_by_antimicrobial_filter6 <- reactive({
-          req(input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial, input$whoregion_line_by_antimicrobial, input$country_line_by_antimicrobial, input$sector_line_by_antimicrobial, input$metric_line_by_antimicrobial)
+          req(input$dataset, input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial, input$whoregion_line_by_antimicrobial, input$country_line_by_antimicrobial, input$sector_line_by_antimicrobial, input$metric_line_by_antimicrobial)
           
           data_line_by_antimicrobial1 <- data_line_by_antimicrobial_filter5() %>%
             filter(metric == input$metric_line_by_antimicrobial)
@@ -868,7 +870,7 @@ server <- function(input, output, session) {
       # Administration routes
         # antimicrobial
         data_line_by_route_filter1 <- reactive({
-          req(input$antimicrobial_line_by_route)
+          req(input$dataset, input$antimicrobial_line_by_route)
           
           data_line_by_route1 <- data() %>%
             filter(antimicrobials == input$antimicrobial_line_by_route)
@@ -877,7 +879,7 @@ server <- function(input, output, session) {
         
         # AWaRe category
         data_line_by_route_filter2 <- reactive({
-          req(input$antimicrobial_line_by_route, input$aware_line_by_route)
+          req(input$dataset, input$antimicrobial_line_by_route, input$aware_line_by_route)
           
           data_line_by_route1 <- data_line_by_route_filter1() %>%
             filter(aware_category == input$aware_line_by_route)
@@ -886,7 +888,7 @@ server <- function(input, output, session) {
 
         # WHO region
         data_line_by_route_filter3 <- reactive({
-          req(input$antimicrobial_line_by_route, input$aware_line_by_route, input$whoregion_line_by_route)
+          req(input$dataset, input$antimicrobial_line_by_route, input$aware_line_by_route, input$whoregion_line_by_route)
           
           data_line_by_route1 <- data_line_by_route_filter2() %>%
             filter(who_region == input$whoregion_line_by_route)
@@ -895,7 +897,7 @@ server <- function(input, output, session) {
         
         # country
         data_line_by_route_filter4 <- reactive({
-          req(input$antimicrobial_line_by_route, input$aware_line_by_route, input$whoregion_line_by_route, input$country_line_by_route)
+          req(input$dataset, input$antimicrobial_line_by_route, input$aware_line_by_route, input$whoregion_line_by_route, input$country_line_by_route)
           
           data_line_by_route1 <- data_line_by_route_filter3() %>%
             filter(country == input$country_line_by_route)
@@ -904,7 +906,7 @@ server <- function(input, output, session) {
 
         # sector
         data_line_by_route_filter5 <- reactive({
-          req(input$antimicrobial_line_by_route, input$aware_line_by_route, input$whoregion_line_by_route, input$country_line_by_route, input$sector_line_by_route)
+          req(input$dataset, input$antimicrobial_line_by_route, input$aware_line_by_route, input$whoregion_line_by_route, input$country_line_by_route, input$sector_line_by_route)
           
           data_line_by_route1 <- data_line_by_route_filter4() %>%
             filter(sector == input$sector_line_by_route)
@@ -913,7 +915,7 @@ server <- function(input, output, session) {
         
         # AMU metric
         data_line_by_route_filter6 <- reactive({
-          req(input$antimicrobial_line_by_route, input$aware_line_by_route, input$whoregion_line_by_route, input$country_line_by_route, input$sector_line_by_route, input$metric_line_by_route)
+          req(input$dataset, input$antimicrobial_line_by_route, input$aware_line_by_route, input$whoregion_line_by_route, input$country_line_by_route, input$sector_line_by_route, input$metric_line_by_route)
           
           data_line_by_route1 <- data_line_by_route_filter5() %>%
             filter(metric == input$metric_line_by_route)
@@ -923,7 +925,7 @@ server <- function(input, output, session) {
       # AWaRe categories
         # antimicrobial
         data_line_by_aware_filter1 <- reactive({
-          req(input$antimicrobial_line_by_aware)
+          req(input$dataset, input$antimicrobial_line_by_aware)
           
           data_line_by_aware1 <- data() %>%
             filter(antimicrobials == input$antimicrobial_line_by_aware)
@@ -932,7 +934,7 @@ server <- function(input, output, session) {
         
         # administration route
         data_line_by_aware_filter2 <- reactive({
-          req(input$antimicrobial_line_by_aware, input$route_line_by_aware)
+          req(input$dataset, input$antimicrobial_line_by_aware, input$route_line_by_aware)
           
           data_line_by_aware1 <- data_line_by_aware_filter1() %>%
             filter(route_of_administration == input$route_line_by_aware)
@@ -941,7 +943,7 @@ server <- function(input, output, session) {
         
         # WHO region
         data_line_by_aware_filter3 <- reactive({
-          req(input$antimicrobial_line_by_aware, input$route_line_by_aware, input$whoregion_line_by_aware)
+          req(input$dataset, input$antimicrobial_line_by_aware, input$route_line_by_aware, input$whoregion_line_by_aware)
           
           data_line_by_aware1 <- data_line_by_aware_filter2() %>%
             filter(who_region == input$whoregion_line_by_aware)
@@ -950,7 +952,7 @@ server <- function(input, output, session) {
         
         # country
         data_line_by_aware_filter4 <- reactive({
-          req(input$antimicrobial_line_by_aware, input$route_line_by_aware, input$whoregion_line_by_aware, input$country_line_by_aware)
+          req(input$dataset, input$antimicrobial_line_by_aware, input$route_line_by_aware, input$whoregion_line_by_aware, input$country_line_by_aware)
           
           data_line_by_aware1 <- data_line_by_aware_filter3() %>%
             filter(country == input$country_line_by_aware)
@@ -959,7 +961,7 @@ server <- function(input, output, session) {
         
         # sector
         data_line_by_aware_filter5 <- reactive({
-          req(input$antimicrobial_line_by_aware, input$route_line_by_aware, input$whoregion_line_by_aware, input$country_line_by_aware, input$sector_line_by_aware)
+          req(input$dataset, input$antimicrobial_line_by_aware, input$route_line_by_aware, input$whoregion_line_by_aware, input$country_line_by_aware, input$sector_line_by_aware)
           
           data_line_by_aware1 <- data_line_by_aware_filter4() %>%
             filter(sector == input$sector_line_by_aware)
@@ -968,7 +970,7 @@ server <- function(input, output, session) {
         
         # AMU metric
         data_line_by_aware_filter6 <- reactive({
-          req(input$antimicrobial_line_by_aware, input$route_line_by_aware, input$whoregion_line_by_aware, input$country_line_by_aware, input$sector_line_by_aware, input$metric_line_by_aware)
+          req(input$dataset, input$antimicrobial_line_by_aware, input$route_line_by_aware, input$whoregion_line_by_aware, input$country_line_by_aware, input$sector_line_by_aware, input$metric_line_by_aware)
           
           data_line_by_aware1 <- data_line_by_aware_filter5() %>%
             filter(metric == input$metric_line_by_aware)
@@ -978,7 +980,7 @@ server <- function(input, output, session) {
       # WHO regions
         # antimicrobial
         data_line_by_whoregion_filter1 <- reactive({
-          req(input$antimicrobial_line_by_whoregion)
+          req(input$dataset, input$antimicrobial_line_by_whoregion)
           
           data_line_by_whoregion1 <- data() %>%
             filter(antimicrobials == input$antimicrobial_line_by_whoregion)
@@ -987,7 +989,7 @@ server <- function(input, output, session) {
         
         # administration route
         data_line_by_whoregion_filter2 <- reactive({
-          req(input$antimicrobial_line_by_whoregion, input$route_line_by_whoregion)
+          req(input$dataset, input$antimicrobial_line_by_whoregion, input$route_line_by_whoregion)
           
           data_line_by_whoregion1 <- data_line_by_whoregion_filter1() %>%
             filter(route_of_administration == input$route_line_by_whoregion)
@@ -996,7 +998,7 @@ server <- function(input, output, session) {
         
         # AWaRe category
         data_line_by_whoregion_filter3 <- reactive({
-          req(input$antimicrobial_line_by_whoregion, input$route_line_by_whoregion, input$aware_line_by_whoregion)
+          req(input$dataset, input$antimicrobial_line_by_whoregion, input$route_line_by_whoregion, input$aware_line_by_whoregion)
           
           data_line_by_whoregion1 <- data_line_by_whoregion_filter2() %>%
             filter(aware_category == input$aware_line_by_whoregion)
@@ -1005,7 +1007,7 @@ server <- function(input, output, session) {
         
         # sector
         data_line_by_whoregion_filter4 <- reactive({
-          req(input$antimicrobial_line_by_whoregion, input$route_line_by_whoregion, input$aware_line_by_whoregion, input$sector_line_by_whoregion)
+          req(input$dataset, input$antimicrobial_line_by_whoregion, input$route_line_by_whoregion, input$aware_line_by_whoregion, input$sector_line_by_whoregion)
           
           data_line_by_whoregion1 <- data_line_by_whoregion_filter3() %>%
             filter(sector == input$sector_line_by_whoregion)
@@ -1014,7 +1016,7 @@ server <- function(input, output, session) {
         
         # AMU metric
         data_line_by_whoregion_filter5 <- reactive({
-          req(input$antimicrobial_line_by_whoregion, input$route_line_by_whoregion, input$aware_line_by_whoregion, input$sector_line_by_whoregion, input$metric_line_by_whoregion)
+          req(input$dataset, input$antimicrobial_line_by_whoregion, input$route_line_by_whoregion, input$aware_line_by_whoregion, input$sector_line_by_whoregion, input$metric_line_by_whoregion)
           
           data_line_by_whoregion1 <- data_line_by_whoregion_filter4() %>%
             filter(metric == input$metric_line_by_whoregion)
@@ -1024,7 +1026,7 @@ server <- function(input, output, session) {
       # Countries
         # antimicrobial
         data_line_by_country_filter1 <- reactive({
-          req(input$antimicrobial_line_by_country)
+          req(input$dataset, input$antimicrobial_line_by_country)
           
           data_line_by_country1 <- data() %>%
             filter(antimicrobials == input$antimicrobial_line_by_country)
@@ -1033,7 +1035,7 @@ server <- function(input, output, session) {
         
         # administration route
         data_line_by_country_filter2 <- reactive({
-          req(input$antimicrobial_line_by_country, input$route_line_by_country)
+          req(input$dataset, input$antimicrobial_line_by_country, input$route_line_by_country)
           
           data_line_by_country1 <- data_line_by_country_filter1() %>%
             filter(route_of_administration == input$route_line_by_country)
@@ -1042,7 +1044,7 @@ server <- function(input, output, session) {
         
         # AWaRe category
         data_line_by_country_filter3 <- reactive({
-          req(input$antimicrobial_line_by_country, input$route_line_by_country, input$aware_line_by_country)
+          req(input$dataset, input$antimicrobial_line_by_country, input$route_line_by_country, input$aware_line_by_country)
           
           data_line_by_country1 <- data_line_by_country_filter2() %>%
             filter(aware_category == input$aware_line_by_country)
@@ -1051,7 +1053,7 @@ server <- function(input, output, session) {
         
         # WHO region
         data_line_by_country_filter4 <- reactive({
-          req(input$antimicrobial_line_by_country, input$route_line_by_country, input$aware_line_by_country, input$whoregion_line_by_country)
+          req(input$dataset, input$antimicrobial_line_by_country, input$route_line_by_country, input$aware_line_by_country, input$whoregion_line_by_country)
           
           data_line_by_country1 <- data_line_by_country_filter3() %>%
             filter(who_region == input$whoregion_line_by_country)
@@ -1060,7 +1062,7 @@ server <- function(input, output, session) {
         
         # sector
         data_line_by_country_filter5 <- reactive({
-          req(input$antimicrobial_line_by_country, input$route_line_by_country, input$aware_line_by_country, input$whoregion_line_by_country, input$sector_line_by_country)
+          req(input$dataset, input$antimicrobial_line_by_country, input$route_line_by_country, input$aware_line_by_country, input$whoregion_line_by_country, input$sector_line_by_country)
           
           data_line_by_country1 <- data_line_by_country_filter4() %>%
             filter(sector == input$sector_line_by_country)
@@ -1069,7 +1071,7 @@ server <- function(input, output, session) {
         
         # AMU metric
         data_line_by_country_filter6 <- reactive({
-          req(input$antimicrobial_line_by_country, input$route_line_by_country, input$aware_line_by_country, input$whoregion_line_by_country, input$sector_line_by_country, input$metric_line_by_country)
+          req(input$dataset, input$antimicrobial_line_by_country, input$route_line_by_country, input$aware_line_by_country, input$whoregion_line_by_country, input$sector_line_by_country, input$metric_line_by_country)
           
           data_line_by_country1 <- data_line_by_country_filter5() %>%
             filter(metric == input$metric_line_by_country)
@@ -1079,7 +1081,7 @@ server <- function(input, output, session) {
       # Sectors
         # antimicrobial
         data_line_by_sector_filter1 <- reactive({
-          req(input$antimicrobial_line_by_sector)
+          req(input$dataset, input$antimicrobial_line_by_sector)
           
           data_line_by_sector1 <- data() %>%
             filter(antimicrobials == input$antimicrobial_line_by_sector)
@@ -1088,7 +1090,7 @@ server <- function(input, output, session) {
         
         # administration route
         data_line_by_sector_filter2 <- reactive({
-          req(input$antimicrobial_line_by_sector, input$route_line_by_sector)
+          req(input$dataset, input$antimicrobial_line_by_sector, input$route_line_by_sector)
           
           data_line_by_sector1 <- data_line_by_sector_filter1() %>%
             filter(route_of_administration == input$route_line_by_sector)
@@ -1097,7 +1099,7 @@ server <- function(input, output, session) {
         
         # AWaRe category
         data_line_by_sector_filter3 <- reactive({
-          req(input$antimicrobial_line_by_sector, input$route_line_by_sector, input$aware_line_by_sector)
+          req(input$dataset, input$antimicrobial_line_by_sector, input$route_line_by_sector, input$aware_line_by_sector)
           
           data_line_by_sector1 <- data_line_by_sector_filter2() %>%
             filter(aware_category == input$aware_line_by_sector)
@@ -1106,7 +1108,7 @@ server <- function(input, output, session) {
  
         # WHO region
         data_line_by_sector_filter4 <- reactive({
-          req(input$antimicrobial_line_by_sector, input$route_line_by_sector, input$aware_line_by_sector, input$whoregion_line_by_sector)
+          req(input$dataset, input$antimicrobial_line_by_sector, input$route_line_by_sector, input$aware_line_by_sector, input$whoregion_line_by_sector)
           
           data_line_by_sector1 <- data_line_by_sector_filter3() %>%
             filter(who_region == input$whoregion_line_by_sector)
@@ -1115,7 +1117,7 @@ server <- function(input, output, session) {
         
         # country
         data_line_by_sector_filter5 <- reactive({
-          req(input$antimicrobial_line_by_sector, input$route_line_by_sector, input$aware_line_by_sector, input$whoregion_line_by_sector, input$country_line_by_sector)
+          req(input$dataset, input$antimicrobial_line_by_sector, input$route_line_by_sector, input$aware_line_by_sector, input$whoregion_line_by_sector, input$country_line_by_sector)
           
           data_line_by_sector1 <- data_line_by_sector_filter4() %>%
             filter(country == input$country_line_by_sector)
@@ -1124,7 +1126,7 @@ server <- function(input, output, session) {
         
         # AMU metric
         data_line_by_sector_filter6 <- reactive({
-          req(input$antimicrobial_line_by_sector, input$route_line_by_sector, input$aware_line_by_sector, input$whoregion_line_by_sector, input$country_line_by_sector, input$metric_line_by_sector)
+          req(input$dataset, input$antimicrobial_line_by_sector, input$route_line_by_sector, input$aware_line_by_sector, input$whoregion_line_by_sector, input$country_line_by_sector, input$metric_line_by_sector)
           
           data_line_by_sector1 <- data_line_by_sector_filter5() %>%
             filter(metric == input$metric_line_by_sector)
@@ -1140,11 +1142,22 @@ server <- function(input, output, session) {
     #
     # Heat map
     #
+      # antimicrobial
+      observe({
+        req(input$dataset)
+        
+        D <- data() #i.e., already filtered on dataset
+        updateSelectInput(session, inputId = "antimicrobial_map",
+                          label = "Antimicrobial:",
+                          choices = c("", sort(unique(D$antimicrobials))),
+                          selected = NULL)
+      })
+        
       # administration route
       observe({
-        req(input$antimicrobial_map)
+        req(input$dataset, input$antimicrobial_map)
         
-        D <- data_map_filter1() #i.e., already filtered on antimicrobial
+        D <- data_map_filter1()
         updateSelectInput(session, inputId = "route_map",
                           label = "Administration route:",
                           choices = c("", sort(unique(D$route_of_administration))),
@@ -1153,7 +1166,7 @@ server <- function(input, output, session) {
 
       # AWaRe category
       observe({
-        req(input$antimicrobial_map, input$route_map)
+        req(input$dataset, input$antimicrobial_map, input$route_map)
         
         D <- data_map_filter2()
         updateSelectInput(session, inputId = "aware_map",
@@ -1164,7 +1177,7 @@ server <- function(input, output, session) {
       
       # Sector
       observe({
-        req(input$antimicrobial_map, input$route_map, input$aware_map)
+        req(input$dataset, input$antimicrobial_map, input$route_map, input$aware_map)
         
         D <- data_map_filter3()
         updateSelectInput(session, inputId = "sector_map",
@@ -1175,7 +1188,7 @@ server <- function(input, output, session) {
       
       # year(s)
       observe({
-        req(input$antimicrobial_map, input$route_map, input$aware_map, input$sector_map)
+        req(input$dataset, input$antimicrobial_map, input$route_map, input$aware_map, input$sector_map)
         
         D <- data_map_filter4()
         updateSliderInput(session, inputId = "years",
@@ -1187,7 +1200,7 @@ server <- function(input, output, session) {
       
       # AMU metric
       observe({
-        req(input$antimicrobial_map, input$route_map, input$aware_map, input$sector_map, input$years)
+        req(input$dataset, input$antimicrobial_map, input$route_map, input$aware_map, input$sector_map, input$years)
         
         D <- data_map_filter5()
         updateRadioButtons(session, inputId = "metric_map",
@@ -1200,20 +1213,31 @@ server <- function(input, output, session) {
     # Line plots
     #
       # Antimicrobials
+        # Administration route
+        observe({
+          req(input$dataset)
+          
+          D <- data() #i.e., already filtered on dataset
+          updateSelectInput(session, inputId = "route_line_by_antimicrobial",
+                            label = "Administration route:",
+                            choices = c("", sort(unique(D$route_of_administration))),
+                            selected = NULL)
+        })
+        
         # AWaRe category
         observe({
-          req(input$route_line_by_antimicrobial)
+          req(input$dataset, input$route_line_by_antimicrobial)
           
-          D <- data_line_by_antimicrobial_filter1() #i.e., already filtered on administration route
+          D <- data_line_by_antimicrobial_filter1()
           updateSelectInput(session, inputId = "aware_line_by_antimicrobial",
                             label = "AWaRe category:",
                             choices = c("", sort(unique(D$aware_category))),
                             selected = NULL)
         })
-
+        
         # WHO region
         observe({
-          req(input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial)
+          req(input$dataset, input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial)
           
           D <- data_line_by_antimicrobial_filter2()
           updateSelectInput(session, inputId = "whoregion_line_by_antimicrobial",
@@ -1224,7 +1248,7 @@ server <- function(input, output, session) {
         
         # country
         observe({
-          req(input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial, input$whoregion_line_by_antimicrobial)
+          req(input$dataset, input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial, input$whoregion_line_by_antimicrobial)
           
           D <- data_line_by_antimicrobial_filter3()
           updateSelectInput(session, inputId = "country_line_by_antimicrobial",
@@ -1235,7 +1259,7 @@ server <- function(input, output, session) {
         
         # sector
         observe({
-          req(input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial, input$whoregion_line_by_antimicrobial, input$country_line_by_antimicrobial)
+          req(input$dataset, input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial, input$whoregion_line_by_antimicrobial, input$country_line_by_antimicrobial)
           
           D <- data_line_by_antimicrobial_filter4()
           updateSelectInput(session, inputId = "sector_line_by_antimicrobial",
@@ -1246,7 +1270,7 @@ server <- function(input, output, session) {
         
         # AMU metric
         observe({
-          req(input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial, input$whoregion_line_by_antimicrobial, input$country_line_by_antimicrobial, input$sector_line_by_antimicrobial)
+          req(input$dataset, input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial, input$whoregion_line_by_antimicrobial, input$country_line_by_antimicrobial, input$sector_line_by_antimicrobial)
           
           D <- data_line_by_antimicrobial_filter5()
           updateRadioButtons(session, inputId = "metric_line_by_antimicrobial",
@@ -1256,20 +1280,31 @@ server <- function(input, output, session) {
         })
         
       # Administration routes
+        # Antimicrobial
+        observe({
+          req(input$dataset)
+          
+          D <- data() #i.e., already filtered on dataset
+          updateSelectInput(session, inputId = "antimicrobial_line_by_route",
+                            label = "Antimicrobial:",
+                            choices = c("", sort(unique(D$antimicrobials))),
+                            selected = NULL)
+        })
+        
         # AWaRe category
         observe({
-          req(input$antimicrobial_line_by_route)
+          req(input$dataset, input$antimicrobial_line_by_route)
           
-          D <- data_line_by_route_filter1() #i.e., already filtered on antimicrobial
+          D <- data_line_by_route_filter1()
           updateSelectInput(session, inputId = "aware_line_by_route",
                             label = "AWaRe category:",
                             choices = c("", sort(unique(D$aware_category))),
                             selected = NULL)
         })
-
+        
         # WHO region
         observe({
-          req(input$antimicrobial_line_by_route, input$aware_line_by_route)
+          req(input$dataset, input$antimicrobial_line_by_route, input$aware_line_by_route)
           
           D <- data_line_by_route_filter2()
           updateSelectInput(session, inputId = "whoregion_line_by_route",
@@ -1280,7 +1315,7 @@ server <- function(input, output, session) {
         
         # country
         observe({
-          req(input$antimicrobial_line_by_route, input$aware_line_by_route, input$whoregion_line_by_route)
+          req(input$dataset, input$antimicrobial_line_by_route, input$aware_line_by_route, input$whoregion_line_by_route)
           
           D <- data_line_by_route_filter3()
           updateSelectInput(session, inputId = "country_line_by_route",
@@ -1291,7 +1326,7 @@ server <- function(input, output, session) {
         
         # sector
         observe({
-          req(input$antimicrobial_line_by_route, input$aware_line_by_route, input$whoregion_line_by_route, input$country_line_by_route)
+          req(input$dataset, input$antimicrobial_line_by_route, input$aware_line_by_route, input$whoregion_line_by_route, input$country_line_by_route)
           
           D <- data_line_by_route_filter4()
           updateSelectInput(session, inputId = "sector_line_by_route",
@@ -1302,7 +1337,7 @@ server <- function(input, output, session) {
         
         # AMU metric
         observe({
-          req(input$antimicrobial_line_by_route, input$aware_line_by_route, input$whoregion_line_by_route, input$country_line_by_route, input$sector_line_by_route)
+          req(input$dataset, input$antimicrobial_line_by_route, input$aware_line_by_route, input$whoregion_line_by_route, input$country_line_by_route, input$sector_line_by_route)
           
           D <- data_line_by_route_filter5()
           updateRadioButtons(session, inputId = "metric_line_by_route",
@@ -1312,11 +1347,22 @@ server <- function(input, output, session) {
         })
         
       # AWaRe categories
+        # Antimicrobial
+        observe({
+          req(input$dataset)
+          
+          D <- data() #i.e., already filtered on dataset
+          updateSelectInput(session, inputId = "antimicrobial_line_by_aware",
+                            label = "Antimicrobial:",
+                            choices = c("", sort(unique(D$antimicrobials))),
+                            selected = NULL)
+        })
+        
         # administration route
         observe({
-          req(input$antimicrobial_line_by_aware)
+          req(input$dataset, input$antimicrobial_line_by_aware)
           
-          D <- data_line_by_aware_filter1() #i.e., already filtered on antimicrobial
+          D <- data_line_by_aware_filter1()
           updateSelectInput(session, inputId = "route_line_by_aware",
                             label = "Administration route:",
                             choices = c("", sort(unique(D$route_of_administration))),
@@ -1325,7 +1371,7 @@ server <- function(input, output, session) {
         
         # WHO region
         observe({
-          req(input$antimicrobial_line_by_aware, input$route_line_by_aware)
+          req(input$dataset, input$antimicrobial_line_by_aware, input$route_line_by_aware)
           
           D <- data_line_by_aware_filter2()
           updateSelectInput(session, inputId = "whoregion_line_by_aware",
@@ -1336,7 +1382,7 @@ server <- function(input, output, session) {
         
         # country
         observe({
-          req(input$antimicrobial_line_by_aware, input$route_line_by_aware, input$whoregion_line_by_aware)
+          req(input$dataset, input$antimicrobial_line_by_aware, input$route_line_by_aware, input$whoregion_line_by_aware)
           
           D <- data_line_by_aware_filter3()
           updateSelectInput(session, inputId = "country_line_by_aware",
@@ -1347,7 +1393,7 @@ server <- function(input, output, session) {
         
         # sector
         observe({
-          req(input$antimicrobial_line_by_aware, input$route_line_by_aware, input$whoregion_line_by_aware, input$country_line_by_aware)
+          req(input$dataset, input$antimicrobial_line_by_aware, input$route_line_by_aware, input$whoregion_line_by_aware, input$country_line_by_aware)
           
           D <- data_line_by_aware_filter4()
           updateSelectInput(session, inputId = "sector_line_by_aware",
@@ -1358,7 +1404,7 @@ server <- function(input, output, session) {
         
         # AMU metric
         observe({
-          req(input$antimicrobial_line_by_aware, input$route_line_by_aware, input$whoregion_line_by_aware, input$country_line_by_aware, input$sector_line_by_aware)
+          req(input$dataset, input$antimicrobial_line_by_aware, input$route_line_by_aware, input$whoregion_line_by_aware, input$country_line_by_aware, input$sector_line_by_aware)
           
           D <- data_line_by_aware_filter5()
           updateRadioButtons(session, inputId = "metric_line_by_aware",
@@ -1368,11 +1414,22 @@ server <- function(input, output, session) {
         })
         
       # WHO regions
+        # Antimicrobial
+        observe({
+          req(input$dataset)
+          
+          D <- data() #i.e., already filtered on dataset
+          updateSelectInput(session, inputId = "antimicrobial_line_by_whoregion",
+                            label = "Antimicrobial:",
+                            choices = c("", sort(unique(D$antimicrobials))),
+                            selected = NULL)
+        })
+        
         # administration route
         observe({
-          req(input$antimicrobial_line_by_whoregion)
+          req(input$dataset, input$antimicrobial_line_by_whoregion)
           
-          D <- data_line_by_whoregion_filter1() #i.e., already filtered on antimicrobial
+          D <- data_line_by_whoregion_filter1()
           updateSelectInput(session, inputId = "route_line_by_whoregion",
                             label = "Administration route:",
                             choices = c("", sort(unique(D$route_of_administration))),
@@ -1381,7 +1438,7 @@ server <- function(input, output, session) {
         
         # AWaRe category
         observe({
-          req(input$antimicrobial_line_by_whoregion, input$route_line_by_whoregion)
+          req(input$dataset, input$antimicrobial_line_by_whoregion, input$route_line_by_whoregion)
           
           D <- data_line_by_whoregion_filter2()
           updateSelectInput(session, inputId = "aware_line_by_whoregion",
@@ -1392,7 +1449,7 @@ server <- function(input, output, session) {
         
         # sector
         observe({
-          req(input$antimicrobial_line_by_whoregion, input$route_line_by_whoregion, input$aware_line_by_whoregion)
+          req(input$dataset, input$antimicrobial_line_by_whoregion, input$route_line_by_whoregion, input$aware_line_by_whoregion)
           
           D <- data_line_by_whoregion_filter3()
           updateSelectInput(session, inputId = "sector_line_by_whoregion",
@@ -1403,7 +1460,7 @@ server <- function(input, output, session) {
         
         # AMU metric
         observe({
-          req(input$antimicrobial_line_by_whoregion, input$route_line_by_whoregion, input$aware_line_by_whoregion, input$sector_line_by_whoregion)
+          req(input$dataset, input$antimicrobial_line_by_whoregion, input$route_line_by_whoregion, input$aware_line_by_whoregion, input$sector_line_by_whoregion)
           
           D <- data_line_by_whoregion_filter4()
           updateRadioButtons(session, inputId = "metric_line_by_whoregion",
@@ -1413,20 +1470,31 @@ server <- function(input, output, session) {
         })
         
       # Countries
+        # Antimicrobial
+        observe({
+          req(input$dataset)
+          
+          D <- data() #i.e., already filtered on dataset
+          updateSelectInput(session, inputId = "antimicrobial_line_by_country",
+                            label = "Antimicrobial:",
+                            choices = c("", sort(unique(D$antimicrobials))),
+                            selected = NULL)
+        })
+        
         # administration route
         observe({
-          req(input$antimicrobial_line_by_country)
+          req(input$dataset, input$antimicrobial_line_by_country)
           
-          D <- data_line_by_country_filter1() #i.e., already filtered on antimicrobial
+          D <- data_line_by_country_filter1()
           updateSelectInput(session, inputId = "route_line_by_country",
                             label = "Administration route:",
                             choices = c("", sort(unique(D$route_of_administration))),
                             selected = NULL)
         })
-
+        
         # AWaRe category
         observe({
-          req(input$antimicrobial_line_by_country, input$route_line_by_country)
+          req(input$dataset, input$antimicrobial_line_by_country, input$route_line_by_country)
           
           D <- data_line_by_country_filter2()
           updateSelectInput(session, inputId = "aware_line_by_country",
@@ -1437,7 +1505,7 @@ server <- function(input, output, session) {
         
         # WHO region
         observe({
-          req(input$antimicrobial_line_by_country, input$route_line_by_country, input$aware_line_by_country)
+          req(input$dataset, input$antimicrobial_line_by_country, input$route_line_by_country, input$aware_line_by_country)
           
           D <- data_line_by_country_filter3()
           updateSelectInput(session, inputId = "whoregion_line_by_country",
@@ -1448,7 +1516,7 @@ server <- function(input, output, session) {
         
         # sector
         observe({
-          req(input$antimicrobial_line_by_country, input$route_line_by_country, input$aware_line_by_country, input$whoregion_line_by_country)
+          req(input$dataset, input$antimicrobial_line_by_country, input$route_line_by_country, input$aware_line_by_country, input$whoregion_line_by_country)
           
           D <- data_line_by_country_filter4()
           updateSelectInput(session, inputId = "sector_line_by_country",
@@ -1459,7 +1527,7 @@ server <- function(input, output, session) {
         
         # AMU metric
         observe({
-          req(input$antimicrobial_line_by_country, input$route_line_by_country, input$aware_line_by_country, input$whoregion_line_by_country, input$sector_line_by_country)
+          req(input$dataset, input$antimicrobial_line_by_country, input$route_line_by_country, input$aware_line_by_country, input$whoregion_line_by_country, input$sector_line_by_country)
           
           D <- data_line_by_country_filter5()
           updateRadioButtons(session, inputId = "metric_line_by_country",
@@ -1469,11 +1537,22 @@ server <- function(input, output, session) {
         })
         
       # Sectors
+        # Antimicrobial
+        observe({
+          req(input$dataset)
+          
+          D <- data() #i.e., already filtered on dataset
+          updateSelectInput(session, inputId = "antimicrobial_line_by_sector",
+                            label = "Antimicrobial:",
+                            choices = c("", sort(unique(D$antimicrobials))),
+                            selected = NULL)
+        })
+        
         # administration route
         observe({
-          req(input$antimicrobial_line_by_sector)
+          req(input$dataset, input$antimicrobial_line_by_sector)
           
-          D <- data_line_by_sector_filter1() #i.e., already filtered on antimicrobial
+          D <- data_line_by_sector_filter1()
           updateSelectInput(session, inputId = "route_line_by_sector",
                             label = "Administration route:",
                             choices = c("", sort(unique(D$route_of_administration))),
@@ -1482,7 +1561,7 @@ server <- function(input, output, session) {
         
         # AWaRe category
         observe({
-          req(input$antimicrobial_line_by_sector, input$route_line_by_sector)
+          req(input$dataset, input$antimicrobial_line_by_sector, input$route_line_by_sector)
           
           D <- data_line_by_sector_filter2()
           updateSelectInput(session, inputId = "aware_line_by_sector",
@@ -1493,7 +1572,7 @@ server <- function(input, output, session) {
         
         # WHO region
         observe({
-          req(input$antimicrobial_line_by_sector, input$route_line_by_sector, input$aware_line_by_sector)
+          req(input$dataset, input$antimicrobial_line_by_sector, input$route_line_by_sector, input$aware_line_by_sector)
           
           D <- data_line_by_sector_filter3()
           updateSelectInput(session, inputId = "whoregion_line_by_sector",
@@ -1504,7 +1583,7 @@ server <- function(input, output, session) {
         
         # country
         observe({
-          req(input$antimicrobial_line_by_sector, input$route_line_by_sector, input$aware_line_by_sector, input$whoregion_line_by_sector)
+          req(input$dataset, input$antimicrobial_line_by_sector, input$route_line_by_sector, input$aware_line_by_sector, input$whoregion_line_by_sector)
           
           D <- data_line_by_sector_filter4()
           updateSelectInput(session, inputId = "country_line_by_sector",
@@ -1515,7 +1594,7 @@ server <- function(input, output, session) {
         
         # AMU metric
         observe({
-          req(input$antimicrobial_line_by_sector, input$route_line_by_sector, input$aware_line_by_sector, input$whoregion_line_by_sector, input$sector_line_by_sector, input$country_line_by_sector)
+          req(input$dataset, input$antimicrobial_line_by_sector, input$route_line_by_sector, input$aware_line_by_sector, input$whoregion_line_by_sector, input$sector_line_by_sector, input$country_line_by_sector)
           
           D <- data_line_by_sector_filter5()
           updateRadioButtons(session, inputId = "metric_line_by_sector",
