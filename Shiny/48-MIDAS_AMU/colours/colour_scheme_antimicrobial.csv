@@ -1,206 +1,422 @@
 antimicrobial,my_colours
 All,#810000
-Amoxicillin,#5C741F
-Amoxicillin+Clavulanic acid,#928B57
-Ampicillin,#EB2F69
-Azithromycin,#50A0BA
-Benzylpenicillin,#8B481D
-Cefaclor,#EAAE2B
-Cefadroxil,#6D584B
-Cefalexin,#693B8D
-Cefazolin,#79531A
-Cefdinir,#875242
-Cefixime,#B5E9A0
-Cefradine,#4CCC98
-Ciprofloxacin,#1E3D14
-Clarithromycin,#692C16
-Cloxacillin,#E77461
-Doxycycline,#3C1133
-Erythromycin,#D771E4
-Fusidic acid,#E933B7
-Gemifloxacin,#B034C3
-Gentamicin,#EAAA61
-Josamycin,#8CEA92
-Levofloxacin,#2B5738
-Lymecycline,#EA932C
-Netilmicin,#E67E4A
-Norfloxacin,#4721C0
-Oxacillin,#8A277A
-Oxytetracycline,#C9B12B
-Phenoxymethylpenicillin,#817C85
-Pristinamycin,#88EB5B
-Roxithromycin,#BD2B65
-Spiramycin,#24316B
-Thiamphenicol,#54EECA
-Amikacin,#EB2F41
-Amoxicillin+Sulbactam,#47C32B
-Amoxicillin+Sulbactam-pivoxil,#661A3D
-Ampicillin+Sulbactam,#4D9AE5
-Aztreonam,#ADBEA6
-Cefalotin,#8B2713
-Cefepime,#759D77
-Cefotaxime,#63613A
-Ceftaroline-fosamil,#B66C51
-Ceftazidime,#8BBABB
-Ceftazidime+Avibactam,#57EE2B
-Ceftobiprole-medocaril,#BFEAE2
-Ceftolozane+Tazobactam,#B98A55
-Ceftriaxone,#442F3A
-Cefuroxime,#424133
-Chloramphenicol,#8A99B7
-Clindamycin,#5E1959
-Colistin,#94EAB8
-Daptomycin,#5C3D1A
-Ertapenem,#429397
-Fosfomycin,#B43CE5
-Kanamycin,#6A7294
-Lincomycin,#48EC56
-Linezolid,#BB3288
-Meropenem,#94EBDD
-Minocycline,#59507E
-Moxifloxacin,#4486B6
-Ofloxacin,#92EB2E
-Piperacillin,#432617
-Piperacillin+Tazobactam,#4FBBBC
-Polymyxin B,#AEB1B7
-Rifabutin,#87B0E7
-Rifampicin,#417488
-Teicoplanin,#50655E
-Tetracycline,#B36795
-Tigecycline,#EB5C71
-Tobramycin,#922B66
-Vancomycin,#643B5B
-Cefoxitin,#E5E2E4
-Dicloxacillin,#31577F
-Flucloxacillin,#C42B46
-Neomycin,#B058AB
-Trimethoprim,#404A95
-Cefamandole,#E9BF5B
-Cefoperazone,#7CBC5B
-Cefpodoxime-proxetil,#18242B
-Dalbavancin,#BDC72F
-Meropenem+Vaborbactam,#55C578
-Pivmecillinam,#567751
-Prulifloxacin,#C8EF2E
-Tedizolid,#C1B185
-Cefditoren-pivoxil,#E594C0
-Cefetamet-pivoxil,#B996A5
-Cefpirome,#423E14
-Cefpodoxime-proxetil+Clavulanic acid,#9F7671
-Cefprozil,#5E5462
-Ceftibuten,#8791E9
-Cefuroxime+Clavulanic acid,#439B25
-Doripenem,#42A674
-Gatifloxacin,#E58ADD
-Lomefloxacin,#91B62D
-Pefloxacin,#8ABE7E
-Sparfloxacin,#E699A9
-Spectinomycin,#AE6320
-Cefoperazone+Sulbactam,#8E2246
-Midecamycin,#9BE670
-Cefotetan,#B2E44A
-Clometocillin,#AA9E8E
-Demeclocycline,#55E8E3
-Rifamycin,#C15357
-Telithromycin,#C4E9C0
-Temocillin,#B8DAEA
-Azlocillin,#E85891
-Biapenem,#2B5D1C
-Carbenicillin,#C28F28
-Cefalexin+Trimethoprim,#57954F
-Cefazedone,#E863BF
-Cefcapene-pivoxil,#49581C
-Cefmenoxime,#E558E4
-Cefmetazole,#7965B9
-Cefminox,#E3C6B1
-Cefodizime,#C3ED84
-Cefonicid,#5F1C83
-Cefotaxime+Sulbactam,#EAE984
-Cefotiam,#2C4A58
-Cefpiramide,#241049
-Ceftazidime+Sulbactam,#AB982C
-Cefteram-pivoxil,#ADC960
-Ceftezole,#DE6FAB
-Ceftizoxime,#48C355
-Ceftriaxone+Sulbactam,#1D2614
-Dirithromycin,#56EC7D
-Enoxacin,#B692BC
-Faropenem,#EDCF36
-Fleroxacin,#5221EB
-Flomoxef,#AC7BC0
-Isepamicin,#E93090
-Latamoxef,#D5C95B
-Metacycline,#B784E6
-Mezlocillin,#E9311B
-Mezlocillin+Sulbactam,#4FC4AA
-Nafcillin,#C3C3E6
-Pazufloxacin,#4870E6
-Piperacillin+Sulbactam,#E77994
-Ribostamycin,#8472E5
-Rufloxacin,#ACBC87
-Sulbenicillin,#50EDA4
-Ticarcillin,#4E2F64
-Tosufloxacin,#307A21
-Cefapirin,#789050
-Cefsulodin,#4578D6
-Dalfopristin+Quinupristin,#886A98
-Flumequine,#349E4C
-Cefatrizine,#1B142F
-Ceforanide,#BFA55B
-Mecillinam,#6844EB
-Penamecillin,#E65748
-Amoxicillin+Clavulanic acid+Lactobacillus acidophilus,#231416
-Arbekacin,#E9E931
-Cefadroxil+Clavulanic acid,#E95A22
-Cefepime+Sulbactam,#B9281C
-Cefixime+Clavulanic acid,#4EB7E8
-Cefixime+Clavulanic acid+Lactobacillus acidophilus,#63171D
-Cefixime+Linezolid,#6A601A
-Cefpodoxime-proxetil+Sulbactam,#8E6C45
-Cefuroxime+Sulbactam,#9251BE
-Garenoxacin,#85C2A5
-Meropenem+Sulbactam,#824B86
-Dibekacin,#B64D36
-Bacampicillin,#E7E6C2
-Clofoctol,#B1A9EA
-Rokitamycin,#E5837F
-Cefozopran,#8D4762
-Cefroxadine,#6B3B3F
-Sitafloxacin,#E99873
-Amoxicillin+Clavulanic acid+Nimesulide,#7F84C1
-Amoxicillin+Clavulanic acid+Lactic ferments,#92687D
-Troleandomycin,#6F942D
-Trovafloxacin,#C135AD
-Pheneticillin,#B76E76
-Pivampicillin,#897F27
-Cefbuperazone,#1D4035
-Sisomicin,#E2ED65
-Oleandomycin,#E52EE5
-Rosoxacin,#76BE2D
-Chlortetracycline,#BB4F1B
-Ampicillin+Lidocaine+Sulbactam,#8DC3E1
-Cefaclor+Clavulanic acid,#2E186D
-Cefdinir+Clavulanic acid,#4445AD
-Ceftibuten+Clavulanic acid,#E2A398
-Delafloxacin,#3C1F9A
-Omadacycline,#42111C
-Streptomycin,#A8B160
-Cefuroxime axetil,#2C3354
-Metronidazole+Spiramycin,#729189
-Sulfamethoxazole+Trimethoprim,#E7BFC6
-Cilastatin+Imipenem,#CD8641
-Sulfametrole+Trimethoprim,#DFA6EA
-Ciprofloxacin+Tinidazole,#BA5170
-Amoxicillin+Dicloxacillin,#419780
-Amoxicillin+Flucloxacillin,#9C7123
-Ampicillin+Cloxacillin,#96A02A
-Bromhexine+Sulfamethoxazole+Trimethoprim,#2B6E64
-Phenazopyridine+Sulfamethoxazole+Trimethoprim,#807E67
-Amoxicillin+Dicloxacillin+Saccharomyces boulardii,#7B2AB6
-Cefixime+Ofloxacin,#912797
-Flavoxate+Ofloxacin,#BA8F74
-Metronidazole+Tetracycline,#954342
-Amoxicillin+Metronidazole,#A360EA
-Guaifenesin+Sulfamethoxazole+Trimethoprim,#5353DE
-Pivampicillin+Pivmecillinam,#EBBA8C
-Acetylspiramycin+Metronidazole,#9E24EC
+Acetyl Kitasamycin,#5D5E48
+Acetylspiramycin,#92EEF4
+Acetylspiramycin+Metronidazole,#EBB764
+Ambroxol+Amoxicillin,#A9AAD6
+Ambroxol+Doxycycline,#E6EC58
+Amikacin,#F5C4DA
+Amikacin+Cefepime,#83EF91
+Amoxicillin,#687D4F
+Amoxicillin+Bacillus coagulans,#A8A1C2
+Amoxicillin+Bacillus coagulans+Cloxacillin,#B39795
+Amoxicillin+Bacillus coagulans+Dicloxacillin,#837A7F
+Amoxicillin+Bromelain,#BDB9BC
+Amoxicillin+Clavulanic acid,#F0A34F
+Amoxicillin+Clavulanic acid+Lactic ferments,#8FC590
+Amoxicillin+Clavulanic acid+Lactobacillus acidophilus,#E1DC57
+Amoxicillin+Clavulanic acid+Nimesulide,#39F4E9
+Amoxicillin+Cloxacillin,#F1F79E
+Amoxicillin+Cloxacillin+DL-Lactic acid,#D3E482
+Amoxicillin+Cloxacillin+DL-Lactic acid+Serrapeptase,#4F24AB
+Amoxicillin+Cloxacillin+Lactobacillus acidophilus,#A4CE1A
+Amoxicillin+Cloxacillin+Lactobacillus lactis,#9A279D
+Amoxicillin+Cloxacillin+Serrapeptase,#E0BFA9
+Amoxicillin+Cloxacillin+Serrapeptase+Lactobacillus acidophilus,#C8298A
+Amoxicillin+Diclofenac,#9886AC
+Amoxicillin+Diclofenac+Esomeprazole,#9DFA86
+Amoxicillin+Diclofenac+Paracetamol,#543227
+Amoxicillin+Dicloxacillin,#91A8D2
+Amoxicillin+Dicloxacillin+Lactobacillus acidophilus,#80FBEB
+Amoxicillin+Dicloxacillin+Saccharomyces boulardii,#F0E772
+Amoxicillin+Flucloxacillin,#46677F
+Amoxicillin+Flucloxacillin+Lactobacillus acidophilus,#CFCEF6
+Amoxicillin+Lactobacillus acidophilus,#ABF442
+Amoxicillin+Metronidazole,#4669EC
+Amoxicillin+Nystatin,#D5FA79
+Amoxicillin+Sulbactam,#F1839B
+Amoxicillin+Sulbactam-pivoxil,#AFE1F8
+Amphotericin B+Tetracycline,#6DD665
+Ampicillin,#EDFAF8
+Ampicillin+Bacillus coagulans+Cloxacillin,#0A79EB
+Ampicillin+Chymotrypsin+Trypsin,#9DD6C6
+Ampicillin+Cloxacillin,#9498F0
+Ampicillin+Cloxacillin+Lactobacillus acidophilus,#A7E068
+Ampicillin+Cloxacillin+Saccharomyces boulardii,#E5F8DD
+Ampicillin+Dicloxacillin,#E2B94E
+Ampicillin+Dicloxacillin+Lactobacillus acidophilus,#44AB93
+Ampicillin+Dicloxacillin+Lidocaine,#96DE90
+Ampicillin+Flucloxacillin,#B85BA0
+Ampicillin+Lidocaine+Sulbactam,#62F3DD
+Ampicillin+Oxacillin,#69BF95
+Ampicillin+Probenecid,#E5EBDB
+Ampicillin+Sulbactam,#7B8B1F
+Antofloxacin,#B4CC5E
+Arbekacin,#787BBB
+Arginine+Cefepime,#D26C4F
+Azelaic acid+Copper+Curcumin+Doxycycline+Folic acid+Nicotinamide+Pyridoxine+Quercetin+Zinc,#EF4AA4
+Azithromycin,#F9F8F3
+Azithromycin+Bacillus coagulans+Cefixime,#F8E984
+Azithromycin+Bacillus coagulans+Saccharomyces boulardii,#87F3B1
+Azithromycin+Cefixime,#7D8F79
+Azithromycin+Cefixime+DL-Lactic acid,#89A0A3
+Azithromycin+Cefixime+Lactobacillus acidophilus,#85D3DF
+Azithromycin+Cefpodoxime-proxetil,#F6B1F7
+Azithromycin+Cefpodoxime-proxetil+Lactobacillus acidophilus,#BC9DBB
+Azithromycin+Fluconazole+Secnidazole,#D58988
+Azithromycin+Lactobacillus acidophilus,#F4ECB9
+Azithromycin+Levofloxacin,#212D5C
+Azithromycin+Levofloxacin+Lactobacillus acidophilus,#CBC6DF
+Azithromycin+Nimesulide,#C59A5A
+Azithromycin+Ofloxacin,#2A6F95
+Azithromycin+Zinc,#E9BEC4
+Azlocillin,#D7555E
+Aztreonam,#D4C1E3
+Bacampicillin,#85BBA6
+Bacillus coagulans+Cefixime,#EFE4C4
+Bacillus coagulans+Cefixime+Ofloxacin,#C9A774
+Bacillus coagulans+Cefixime+Saccharomyces boulardii,#F3D4D5
+Bacillus coagulans+Doxycycline,#46EF2B
+Bacillus coagulans+Doxycycline+Lactobacillus reuteri+Lactobacillus rhamnosus,#81A5F4
+Bacillus coagulans+Ofloxacin,#59B7BD
+Balofloxacin,#B5C528
+Barium+Benzoyl peroxide+Gentamicin+Polymethyl methacrylate,#9EDBFB
+Barium+Polymethyl methacrylate+Tobramycin,#F4DE18
+Benzoyl peroxide+Chlorophyll+Gentamicin+Polymethyl methacrylate+Zirconium,#EBF8D1
+"Benzoyl peroxide+Clindamycin+Gentamicin+Methacrylic acid+N,N-Dimethyl-P-Toluidine+Polymethyl methacrylate+Zirconium",#8175E1
+"Benzoyl peroxide+Clindamycin+Gentamicin+Methacrylic acid+N,N-Dimethyl-P-Toluidine+Propylmethacrylate ethylacrylate copolymer+Zirconium",#5D4BEE
+Benzoyl peroxide+Clindamycin+Gentamicin+Methacrylic acid+O-Toluidine+Polymethyl methacrylate+Zirconium,#15907E
+Benzoyl peroxide+Clindamycin+Gentamicin+Propylmethacrylate ethylacrylate copolymer+Zirconium,#F177AA
+"Benzoyl peroxide+Gentamicin+Methacrylic acid+N,N-Dimethyl-P-Toluidine+Polymethyl methacrylate+Zirconium",#B1B0E6
+Benzoyl peroxide+Gentamicin+Methacrylic acid+O-Toluidine+Polymethyl methacrylate+Zirconium,#B9F7B4
+Benzoyl peroxide+Gentamicin+Polymethyl methacrylate+Styrene methyl methacrylate copolymer+Zirconium,#CB93B8
+Benzoyl peroxide+Gentamicin+Polymethyl methacrylate+Zirconium,#52DB58
+Benzoyl peroxide+Gentamicin+Propylmethacrylate ethylacrylate copolymer+Zirconium,#CDE993
+Benzylpenicillin,#A1BBFB
+Benzylpenicillin+Colistin,#988AC7
+Benzylpenicillin+Kanamycin,#60DCB2
+Benzylpenicillin+Lidocaine,#F4E6E3
+Benzylpenicillin+Probenecid,#FDB5DD
+Benzylpenicillin+Streptomycin,#BDA0D0
+Benzylpenicillin+Streptomycin+Ascorbic acid+Metamizole sodium,#C3BF20
+Benzylpenicillin+Tolycaine,#F2C0AB
+Beta-cyclodextrin+Doxycycline,#9C507D
+Beta-cyclodextrin+Doxycycline+Lactobacillus acidophilus,#9EE573
+Betamipron+Panipenem,#BAF65D
+Bezoar bovis+Borneol+Sulfamethoxazole+Trimethoprim,#97773D
+Biapenem,#8C40E4
+Bone+Gentamicin+Vancomycin,#BBF0E4
+Bromelain+Doxycycline+Lactobacillus reuteri+Lactobacillus rhamnosus+Ornidazole,#957C6B
+Bromelain+Tetracycline,#AFCEAD
+Bromhexine+Sulfamethoxazole+Trimethoprim,#8490BB
+Carbenicillin,#E7DFD2
+Cefacetrile,#EA9FF2
+Cefaclor,#F331F3
+Cefaclor+Clavulanic acid,#35F16A
+Cefadroxil,#83CCE4
+Cefadroxil+Clavulanic acid,#F6EBD4
+Cefadroxil+Lactobacillus acidophilus,#92F3A3
+Cefadroxil+Trimethoprim,#A1F8DF
+Cefalexin,#8EDFA3
+Cefalexin+Probenecid,#69B6F8
+Cefalexin+Trimethoprim,#87BDE9
+Cefalotin,#9186D5
+Cefamandole,#BDE85B
+Cefamandole+Lidocaine,#D05DA1
+Cefapirin,#AE67F3
+Cefathiamidine,#8DF12B
+Cefatrizine,#CDBCB4
+Cefazedone,#59FDD5
+Cefazolin,#DED577
+Cefazolin+Lidocaine,#3E54E1
+Cefbuperazone,#D5E6E6
+Cefcapene-pivoxil,#88BAC0
+Cefdinir,#AA77A7
+Cefdinir+Clavulanic acid,#995E23
+Cefdinir+Lactobacillus acidophilus,#3D774E
+Cefditoren-pivoxil,#6984D0
+Cefepime,#E4C095
+Cefepime+Sulbactam,#EE75F1
+Cefepime+Tazobactam,#9055CA
+Cefetamet-pivoxil,#DEA3E1
+Cefixime,#AAC5D3
+Cefixime+Cefpodoxime-proxetil,#B1DF74
+Cefixime+Clavulanic acid,#5EB3DE
+Cefixime+Clavulanic acid+Lactobacillus acidophilus,#D7B1EC
+Cefixime+Cloxacillin,#991FF8
+Cefixime+Cloxacillin+Lactobacillus acidophilus,#BA7E95
+Cefixime+Dicloxacillin,#C565BF
+Cefixime+Dicloxacillin+Lactobacillus acidophilus,#44D364
+Cefixime+Lactobacillus acidophilus,#F7C89D
+Cefixime+Lactobacillus lactis,#F7DB39
+Cefixime+Levofloxacin,#EB85F8
+Cefixime+Linezolid,#D7FB8A
+Cefixime+Moxifloxacin,#6289B1
+Cefixime+Ofloxacin,#BD23FC
+Cefixime+Ofloxacin+Lactobacillus acidophilus,#F6ACDF
+Cefixime+Ornidazole,#8177A5
+Cefixime+Ornidazole+Saccharomyces boulardii+Lactobacillus acidophilus,#EBFDBF
+Cefixime+Sulbactam,#EEB77A
+Cefmenoxime,#C5BA6B
+Cefmetazole,#60AC7B
+Cefminox,#D29DF2
+Cefodizime,#EED5F7
+Cefonicid,#F4CA80
+Cefoperazone,#F57083
+Cefoperazone+Sulbactam,#CABC9B
+Cefoperazone+Tazobactam,#F3C9F7
+Ceforanide,#C094A6
+Cefoselis,#BFB3FB
+Cefotaxime,#ADDE80
+Cefotaxime+Lidocaine,#F8D9EA
+Cefotaxime+Sulbactam,#FCD4EE
+Cefotetan,#C246D7
+Cefotiam,#DEC31F
+Cefoxitin,#B599AC
+Cefozopran,#B86569
+Cefpiramide,#D7C2F7
+Cefpirome,#E3D4C0
+Cefpirome+Sulbactam,#8B53A3
+Cefpodoxime-proxetil,#9A8AED
+Cefpodoxime-proxetil+Clavulanic acid,#8EF1CE
+Cefpodoxime-proxetil+Cloxacillin+Lactobacillus acidophilus,#89E25C
+Cefpodoxime-proxetil+Dicloxacillin,#EAC86E
+Cefpodoxime-proxetil+Dicloxacillin+Lactobacillus acidophilus,#D27BAB
+Cefpodoxime-proxetil+Lactobacillus acidophilus,#E7FA58
+Cefpodoxime-proxetil+Levofloxacin,#F8F6B8
+Cefpodoxime-proxetil+Ofloxacin,#71CCF6
+Cefpodoxime-proxetil+Ofloxacin+Lactobacillus acidophilus,#AFD6A9
+Cefpodoxime-proxetil+Sulbactam,#E65A09
+Cefprozil,#BC76E6
+Cefradine,#7E21E7
+Cefroxadine,#79BA72
+Cefsulodin,#7ACB6D
+Ceftaroline-fosamil,#91E0D7
+Ceftazidime,#3B95F0
+Ceftazidime+Avibactam,#BD94D8
+Ceftazidime+Sulbactam,#AFD7EB
+Ceftazidime+Tazobactam,#3B8595
+Ceftazidime+Tobramycin,#47CAE8
+Cefteram-pivoxil,#D874F6
+Ceftezole,#59E0E4
+Ceftibuten,#E6995D
+Ceftibuten+Clavulanic acid,#9B977B
+Ceftizoxime,#9BD1DC
+Ceftizoxime+Tazobactam,#E274DE
+Ceftobiprole-medocaril,#ABC0E1
+Ceftolozane+Tazobactam,#BC5FE5
+Ceftriaxone,#D75E7A
+Ceftriaxone+Lactobacillus acidophilus,#55E1F5
+Ceftriaxone+Lidocaine,#ED4135
+Ceftriaxone+Sulbactam,#F3685D
+Ceftriaxone+Tazobactam,#9BF8C7
+Ceftriaxone+Vancomycin,#E54487
+Cefuroxime,#C9A925
+Cefuroxime axetil,#77F1FA
+Cefuroxime axetil+Clavulanic acid,#D6D3DC
+Cefuroxime axetil+Lactobacillus acidophilus,#D89FA3
+Cefuroxime axetil+Linezolid,#8F8FAB
+Cefuroxime axetil+Sulbactam,#DE27B3
+Cefuroxime+Clavulanic acid,#B0ECF8
+Cefuroxime+Linezolid,#EACC4E
+Cefuroxime+Sulbactam,#D14262
+Cellulose+Doxycycline,#C5D853
+Chloramphenicol,#7CA3B6
+Chloramphenicol+Cyanocobalamin+Folic acid+Nicotinamide+Nucleotides+Pantothenic acid+Pyridoxine+Riboflavin+Thiamine,#4B2CF8
+Chloramphenicol+Tetracycline,#C5E3D7
+Chlortetracycline,#C1D2DF
+Chymotrypsin+Doxycycline+Trypsin,#88E5D3
+Cilastatin+Imipenem,#71DED5
+Ciprofloxacin,#7FD1B3
+Ciprofloxacin+Ascorbic acid,#8F7C98
+Ciprofloxacin+Metronidazole,#5F94F8
+Ciprofloxacin+Ornidazole,#B2F8E7
+Ciprofloxacin+Phenazopyridine,#B0B458
+Ciprofloxacin+Tinidazole,#CECEC4
+Clarithromycin,#CE9D7F
+Clindamycin,#99C96E
+Clindamycin+Gentamicin+Polymethyl methacrylate,#E2E5A1
+Clindamycin+Gentamicin+Propylmethacrylate ethylacrylate copolymer,#F82578
+Clofoctol,#DC87DA
+Clometocillin,#CDE0C7
+Cloxacillin,#ABF1F5
+Colistin,#837510
+Colistin+Erythromycin,#B4B1C4
+Colistin+Polymethyl methacrylate+Tobramycin,#27A8CB
+Collagen+Gentamicin,#AD43F7
+Cyanocobalamin+Folic acid+Nicotinamide+Oxytetracycline+Pantothenic acid+Pyridoxine+Riboflavin+Thiamine,#895B6E
+Cyanocobalamin+Folic acid+Nicotinamide+Oxytetracycline+Pantothenic acid+Pyridoxine+Riboflavin+Thiamine+Ascorbic acid,#79F5C2
+Dalbavancin,#DA61F6
+Dalfopristin+Quinupristin,#A8C4B9
+Daptomycin,#CA313B
+Delafloxacin,#D4EE74
+Demeclocycline,#F4B696
+Dextran+Levofloxacin,#A796B4
+Dextran+Linezolid,#F36AA8
+Dibekacin,#E8D9A2
+Dicloxacillin,#F2F582
+Dirithromycin,#47B26A
+Doripenem,#F74574
+Doxycycline,#57DBC1
+Doxycycline+Lactobacillus acidophilus,#396E70
+Doxycycline+Lactobacillus lactis,#34ECBF
+Doxycycline+Saccharomyces boulardii,#33F7BE
+Doxycycline+Serrapeptase,#9B6BA7
+Doxycycline+Tinidazole,#E4DBF9
+Doxycycline+Trypsin,#51F5F7
+Enoxacin,#4EC089
+Eravacycline,#B696B1
+Ertapenem,#D3D2B1
+Erythromycin,#C4F1CE
+Erythromycin stinoprate,#F5941E
+Erythromycin+Nimesulide,#F46990
+Erythromycin+Sulfamethoxazole+Trimethoprim,#DBE0F4
+Erythromycin+Trimethoprim,#F2AEAF
+Ethylenediamine+Gentamicin+Propylmethacrylate ethylacrylate copolymer+Zirconium,#9277BF
+Ethylmorphine+Guaifenesin+Tetracycline,#B9B7A2
+Etimicin,#D1BB4C
+Faropenem,#7CC6C2
+Flavoxate+Ofloxacin,#C120C3
+Fleroxacin,#C57ABA
+Flomoxef,#CFF3A8
+Flucloxacillin,#58A9C6
+Flumequine,#B2D27F
+Fluorometholone+Gentamicin,#63BF1B
+Fosfomycin,#BFF77C
+Fosfomycin+Lidocaine,#22B8F1
+Fosfomycin+Trimethoprim,#D5D063
+Furbenicillin,#95B452
+Fusidic acid,#AED1F7
+Garenoxacin,#B990E8
+Gatifloxacin,#FAD3BD
+Gemifloxacin,#E2CAA9
+Gentamicin,#F7E192
+Gentamicin+Lidocaine,#E653D2
+Gentamicin+Polymethyl methacrylate,#AE706F
+Gentamicin+Vancomycin,#697BDA
+Gentamicin+Zirconium,#8A9F64
+Guaifenesin+Sulfamethoxazole+Trimethoprim,#F1AD7C
+Guaifenesin+Tetracycline,#C5AB60
+Guamecycline,#58F5AF
+Hyaluronic acid+Minocycline,#B7AFCC
+Imipenem,#E1CCC7
+Isepamicin,#BA77F4
+Isoniazid+Rifampicin,#747CFB
+Josamycin,#3FEFCF
+Kanamycin,#A2235E
+Kanamycin+Lidocaine,#FBF1E6
+Kitasamycin,#785AEC
+Lactose+Tigecycline,#C2C3D2
+Latamoxef,#6A57D5
+Lefamulin,#9E9894
+Lenampicillin,#BDEA30
+Levofloxacin,#F5F264
+Levofloxacin+Metronidazole,#F276CB
+Levofloxacin+Ornidazole,#5AE0A5
+Lidocaine+Oxytetracycline,#F7C9C3
+Lidocaine+Rifamycin,#F69D9C
+Lincomycin,#A2B584
+Lincomycin+Lactobacillus acidophilus,#A2EC5F
+Linezolid,#EB827B
+Lomefloxacin,#8A98E0
+Lymecycline,#AEA0EB
+Lysozyme+Metacycline,#E7FAEB
+Mannitol+Moxifloxacin,#3B98CA
+Mecillinam,#D031EE
+Meleumycin,#F56DDB
+Meropenem,#ACFBA1
+Meropenem+Sulbactam,#CEF0F3
+Meropenem+Tazobactam,#CED579
+Meropenem+Vaborbactam,#C4B072
+Metacycline,#C179C6
+Metronidazole+Norfloxacin,#1CFBDA
+Metronidazole+Spiramycin,#F088C3
+Metronidazole+Tetracycline,#CEFA53
+Mezlocillin,#73D9E2
+Mezlocillin+Sulbactam,#C1D199
+Micronomicin,#A6A5E8
+Midecamycin,#C8F18B
+Minocycline,#45EF9A
+Moxifloxacin,#484DA3
+Nafcillin,#AAECCE
+Naproxen+Tetracycline,#C9E9BC
+Nemonoxacin,#5EAE32
+Neomycin,#912AC4
+Neomycin+Polymyxin B+Tetracaine+Tyrothricin,#A17FF2
+Netilmicin,#735CA9
+Norfloxacin,#F94AC0
+Norfloxacin+Phenazopyridine,#F6CD8D
+Norvancomycin,#AF77BC
+Nystatin+Tetracycline,#B29E40
+Ofloxacin,#A0F7F3
+Ofloxacin+Lactobacillus acidophilus,#706473
+Ofloxacin+Ornidazole,#F0D2A0
+Ofloxacin+Tinidazole,#F8A0BF
+Oleandomycin,#D15385
+Oleandomycin+Tetracycline,#498DCD
+Omadacycline,#E8DA8D
+Oritavancin,#BBF793
+Oxacillin,#E8FB20
+Oxytetracycline,#B388F0
+Paromomycin,#F4EBF8
+Pazufloxacin,#C1E66B
+Pefloxacin,#D1A149
+Penamecillin,#F4B7C9
+Phenazopyridine+Sulfamethoxazole+Trimethoprim,#47C76B
+Pheneticillin,#5B9399
+Phenoxymethylpenicillin,#6B2866
+Piperacillin,#CB4BB1
+Piperacillin+Sulbactam,#FB8C67
+Piperacillin+Tazobactam,#75A6E0
+Pivampicillin,#AD69C9
+Pivampicillin+Pivmecillinam,#537AF1
+Pivmecillinam,#9C9A59
+Polymyxin B,#4F944B
+Pristinamycin,#C2DBFA
+Procaine-benzylpenicillin,#CCC48A
+Protease+Tetracycline,#BBD0D0
+Prulifloxacin,#F5F136
+Ribostamycin,#CBE722
+Rifabutin,#393DC8
+Rifampicin,#8BF256
+Rifampicin+Trimethoprim,#E1A6C5
+Rifamycin,#B251EC
+Rokitamycin,#89BBD7
+Rosoxacin,#BCE7F2
+Roxithromycin,#F29ADA
+Roxithromycin+Lactobacillus acidophilus,#D3B0C5
+Roxithromycin+Serrapeptase,#BAB8F9
+Rufloxacin,#69F17C
+Sisomicin,#E098FA
+Sitafloxacin,#D9AAF4
+Sparfloxacin,#57D1DC
+Spectinomycin,#6C5879
+Spiramycin,#CCC799
+Streptomycin,#AEBE9A
+Sulbenicillin,#F4E7BE
+Sulfadiazine+Sulfamethoxazole+Trimethoprim,#EC853A
+Sulfadiazine+Trimethoprim,#F7CCF0
+Sulfadimidine+Trimethoprim,#D9E6F4
+Sulfamethizole+Trimethoprim,#B2C4F5
+Sulfamethoxazole+Sulfogaiacol,#81C0F7
+Sulfamethoxazole+Sulfogaiacol+Trimethoprim,#E297AC
+Sulfamethoxazole+Trimethoprim,#E2B6E6
+Sulfametrole+Trimethoprim,#989213
+Sulfamoxole+Trimethoprim,#DEEDBA
+Tedizolid,#ED947A
+Teicoplanin,#B29CF7
+Telavancin,#B67751
+Telithromycin,#D488EC
+Temocillin,#CE5BD4
+Tetracycline,#F6CF32
+Thiamphenicol,#29B9AF
+Ticarcillin,#F7BEF4
+Ticarcillin+Clavulanic acid,#A2D994
+Tigecycline,#EB1DCD
+Tobramycin,#8FBF3F
+Tosufloxacin,#B3EFBB
+Trimethoprim,#F053F3
+Troleandomycin,#C1B8DF
+Trovafloxacin,#E6BFD8
+Vancomycin,#A179D9
+Zabofloxacin,#E8495E
