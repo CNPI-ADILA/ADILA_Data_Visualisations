@@ -3,7 +3,7 @@ data_dir <- "O:/formatted_data/amu_data"  #MIGHT NEED TO USE RELATIVE PATH WHEN 
 
 # load data
 d <- paste0(data_dir,"/row_level_ddd.csv") #NB: also have data filtered /by_administration and /by_aware categories
-data_original <- read.csv(d) #COULD USE data.table's fread(d) IF read.csv IS TOO SLOW!!!
+data_original <- read.csv(d) #can also use data.table's fread(d)
 
 # reformat/clean
   # renaming columns
