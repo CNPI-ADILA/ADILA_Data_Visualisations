@@ -85,7 +85,7 @@ library(DT)
 # Statistical models #
 ######################
   # DU90
-    # copy over / adapt from Pharma DU90 corportation report (except do for antimicrobials, inputs: who_region/country/aware/route/sector/year/metric)
+    # copy over / adapt from Pharma DU90 corporation report (except do for antimicrobials, inputs: who_region/country/aware/route/sector/year/metric)
 
 #------------------------------------------------------------------------------#   
   # Correlations
