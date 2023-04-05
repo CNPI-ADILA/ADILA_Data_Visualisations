@@ -1,4 +1,5 @@
 # Integrate as new tab ("Statistics") in Shiny app:
+library(DT)
 
 ########################
 # Data sources summary # could also add 95% CIs if necessary
@@ -66,15 +67,16 @@
   rm(avg_perc_route)
   
   # combine into data table
-  row_names <- c("Number of data sources", "Number of countries", "Avg. number of countries per data source", "Number of antimicrobials",
-                 "Avg. number of antimicrobials per data source", "Year range", "Avg. number of years per data source",
-                 "Avg. percent of DDD that are Access antimicrobials per data source", "Avg. percent of DDD that are Watch antimicrobials per data source", 
-                 "Avg. percent of DDD that are Reserve antimicrobials per data source", "Avg. percent of DDD that are oral antimicrobials per data source", 
-                 "Avg. percent of DDD that are parenteral antimicrobials per data source")
+  row_names <- c("Number of data sources", "Number of countries", "Avg. number of countries (per data source)", "Number of antimicrobials",
+                 "Avg. number of antimicrobials (per data source)", "Year range", "Avg. number of years (per data source)",
+                 "Avg. percent of DDD that are Access antimicrobials (per data source)", "Avg. percent of DDD that are Watch antimicrobials (per data source)", 
+                 "Avg. percent of DDD that are Reserve antimicrobials (per data source)", "Avg. percent of DDD that are oral antimicrobials (per data source)", 
+                 "Avg. percent of DDD that are parenteral antimicrobials (per data source)")
   values <- c(num_data_sources, total_num_countries, avg_num_countries_per_data_source, total_num_antimicrobials,
               avg_num_antimicrobials_per_data_source, total_year_range, avg_year_range_per_data_source,
               avg_perc_access, avg_perc_watch, avg_perc_reserve, avg_perc_oral, avg_perc_parenteral)
   data_source_summary_table <- data.table("metric" = row_names, "value" = values)
+  #datatable(data_source_summary_table)
   
 #------------------------------------------------------------------------------#   
 #------------------------------------------------------------------------------#   
@@ -82,57 +84,58 @@
 ######################
 # Statistical models #
 ######################
-  # DU90 (global)
-    #plot (with colouring by aware category) and table
+  # DU90
+    # copy over / adapt from Pharma DU90 corportation report (except do for antimicrobials, inputs: who_region/country/aware/route/sector/year/metric)
 
 #------------------------------------------------------------------------------#   
-  # Correlations / variation
-    # within...
-      # countries
-        # globally
-          # univariable (i.e., one group at a time)
-            # Is AMC in administration route categories correlated?
-              #imagine line plots of the correlation between oral/parenteral over time for each country, OR,
-              #a scatter plot of oral vs parenteral for all the countries (collapsed by year)
-              
-            # ... same but in aware categories...
-              
-            # ... same but in sectors...
-    
-          # multivariable
-            #e.g., is route correllated to aware correlated to sector?
-    
-        # within WHO regions
-          # ... same as above...
-          
-      # WHO regions
-        # ... same as above...
-    
-      # HIC vs LMIC
-        # ... same as above...
-    
-    # between...
-      # countries
-        # gloabally
-          # univariable (i.e., one group at a time)
-            # Is AMC in administration route categories correlated?
-              
-            # ... same but in aware categories...
-            
-            # ... same but in sectors...
-    
-          # multivariable
-            # ... same as above...
-      
-        # within WHO regions
-          # ... same as above...
-      
-      # WHO regions
-        # ... same as above...
-    
-      # HIC vs LMIC
-        # ... same as above...
+  # Correlations
+    # countries (and by antimicrobials)
+      # univariable (i.e., one group at a time)
+        # Is AMC in administration route categories correlated?
+          country_univ <- data_for_visualisations %>%
+            filter(metric == "su" & (route_of_administration == "Oral" | route_of_administration == "Parenteral")) %>%
+            filter(value > 0) %>%
+            mutate(value = log(value)) %>%
+            group_by(who_region, country, antimicrobials, aware_category, route_of_administration, sector) %>%
+            summarize(value = sum(value, na.rm = TRUE), .groups = "keep") %>%
+            ungroup()
+          country_univ <- country_univ %>%
+            pivot_wider(
+              names_from = route_of_administration,
+              values_from = value
+            ) %>%
+            filter(aware_category != "All" & sector != "All") 
+          labels <- country_univ %>%
+            group_by(who_region) %>%
+            mutate(label = round(cor(Oral, Parenteral, use = "complete.obs"), 3)) %>%
+            distinct(label) %>% mutate(aware_category = NA, sector = NA)
+          country_univ_plot <- 
+            ggplot(country_univ, aes(x = Oral, y = Parenteral, color = aware_category, shape = sector)) +
+            geom_point() +
+            labs(x = "log(Oral SU)", y = "log(Parenteral SU)", fill = NULL) +
+            facet_wrap(~who_region)
+          country_univ_plot <- country_univ_plot + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = labels)
 
+        # ... same but in aware categories...
+          
+        # ... same but in sectors...
+
+      # multivariable
+        #e.g., is route correlated to aware correlated to sector?
+        #3D: 
+          #http://www.sthda.com/english/wiki/scatterplot3d-3d-graphics-r-software-and-data-visualization
+          #https://plotly.com/r/3d-scatter-plots/
+          #https://r-graph-gallery.com/3d_scatter_plot.html?utm_content=cmp-true
+
+    # WHO regions (and by antimicrobials)
+      # ... same as above but collapse countries
+  
+    # HIC vs LMIC (and by antimicrobials)
+      # ... same as above...
+    
+#------------------------------------------------------------------------------#   
+  # Principal Component Analysis?
+                            
 #------------------------------------------------------------------------------#   
   # Predict AMC five years into the future/past
     # https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html
