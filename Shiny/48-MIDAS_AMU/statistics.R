@@ -89,37 +89,100 @@ library(DT)
 
 #------------------------------------------------------------------------------#   
   # Correlations
-    # countries (and by antimicrobials)
+    # by countries (and antimicrobials)
       # univariable (i.e., one group at a time)
         # Is AMC in administration route categories correlated?
-          country_univ <- data_for_visualisations %>%
+          country_route_univ <- data_for_visualisations %>%
             filter(metric == "su" & (route_of_administration == "Oral" | route_of_administration == "Parenteral")) %>%
             filter(value > 0) %>%
             mutate(value = log(value)) %>%
             group_by(who_region, country, antimicrobials, aware_category, route_of_administration, sector) %>%
             summarize(value = sum(value, na.rm = TRUE), .groups = "keep") %>%
             ungroup()
-          country_univ <- country_univ %>%
+          country_route_univ <- country_route_univ %>%
             pivot_wider(
               names_from = route_of_administration,
               values_from = value
             ) %>%
-            filter(aware_category != "All" & sector != "All") 
-          labels <- country_univ %>%
+            filter(aware_category != "All" & sector != "All" & antimicrobials != "All") 
+          cor_labels <- country_route_univ %>%
             group_by(who_region) %>%
             mutate(label = round(cor(Oral, Parenteral, use = "complete.obs"), 3)) %>%
             distinct(label) %>% mutate(aware_category = NA, sector = NA)
-          country_univ_plot <- 
-            ggplot(country_univ, aes(x = Oral, y = Parenteral, color = aware_category, shape = sector)) +
+          country_route_univ_plot <- 
+            ggplot(country_route_univ, aes(x = Oral, y = Parenteral, color = aware_category, shape = sector)) +
             geom_point() +
             labs(x = "log(Oral SU)", y = "log(Parenteral SU)", fill = NULL) +
             facet_wrap(~who_region)
-          country_univ_plot <- country_univ_plot + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = labels)
-
-        # ... same but in aware categories...
-          
-        # ... same but in sectors...
-
+          country_route_univ_plot <- country_route_univ_plot + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = cor_labels)
+        # Is AMC in AWaRe categories correlated?
+          country_aware_univ <- data_for_visualisations %>%
+            filter(metric == "su" & (aware_category == "Access" | aware_category == "Watch" | aware_category == "Reserve")) %>%
+            filter(value > 0) %>%
+            mutate(value = log(value)) %>%
+            group_by(who_region, country, antimicrobials, aware_category, route_of_administration, sector) %>%
+            summarize(value = sum(value, na.rm = TRUE), .groups = "keep") %>%
+            ungroup()
+          country_aware_univ <- country_aware_univ %>%
+            pivot_wider(
+              names_from = aware_category,
+              values_from = value
+            ) %>%
+            filter((route_of_administration == "Oral" | route_of_administration == "Parenteral") & sector != "All" & antimicrobials != "All") 
+          cor_labels1 <- country_aware_univ %>%
+            group_by(who_region) %>%
+            mutate(label = round(cor(Access, Watch, use = "complete.obs"), 3)) %>%
+            distinct(label) %>% mutate(route_of_administration = NA, sector = NA)
+          cor_labels2 <- country_aware_univ %>%
+            group_by(who_region) %>%
+            mutate(label = round(cor(Access, Reserve, use = "complete.obs"), 3)) %>%
+            distinct(label) %>% mutate(route_of_administration = NA, sector = NA)
+          cor_labels3 <- country_aware_univ %>%
+            group_by(who_region) %>%
+            mutate(label = round(cor(Watch, Reserve, use = "complete.obs"), 3)) %>%
+            distinct(label) %>% mutate(route_of_administration = NA, sector = NA)
+          country_aware_univ_plot1 <- 
+            ggplot(country_aware_univ, aes(x = Access, y = Watch, color = route_of_administration, shape = sector)) +
+            geom_point() +
+            labs(x = "log(Access SU)", y = "log(Watch SU)", fill = NULL) +
+            facet_wrap(~who_region)
+          country_aware_univ_plot1 <- country_aware_univ_plot1 + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = cor_labels1)
+          country_aware_univ_plot2 <- 
+            ggplot(country_aware_univ, aes(x = Access, y = Reserve, color = route_of_administration, shape = sector)) +
+            geom_point() +
+            labs(x = "log(Access SU)", y = "log(Reserve SU)", fill = NULL) +
+            facet_wrap(~who_region)
+          country_aware_univ_plot2 <- country_aware_univ_plot2 + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = cor_labels2)
+          country_aware_univ_plot3 <- 
+            ggplot(country_aware_univ, aes(x = Watch, y = Reserve, color = route_of_administration, shape = sector)) +
+            geom_point() +
+            labs(x = "log(Watch SU)", y = "log(Reserve SU)", fill = NULL) +
+            facet_wrap(~who_region)
+          country_aware_univ_plot3 <- country_aware_univ_plot3 + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = cor_labels3)
+        # Is AMC in sectors correlated?
+          country_sector_univ <- data_for_visualisations %>%
+            filter(metric == "su" & (sector == "Retail" | sector == "Hospital")) %>%
+            filter(value > 0) %>%
+            mutate(value = log(value)) %>%
+            group_by(who_region, country, antimicrobials, aware_category, route_of_administration, sector) %>%
+            summarize(value = sum(value, na.rm = TRUE), .groups = "keep") %>%
+            ungroup()
+          country_sector_univ <- country_sector_univ %>%
+            pivot_wider(
+              names_from = sector,
+              values_from = value
+            ) %>%
+            filter((route_of_administration == "Oral" | route_of_administration == "Parenteral") & (aware_category == "Access" | aware_category == "Reserve" | aware_category == "Watch") & antimicrobials != "All") 
+          cor_labels <- country_sector_univ %>%
+            group_by(who_region) %>%
+            mutate(label = round(cor(Retail, Hospital, use = "complete.obs"), 3)) %>%
+            distinct(label) %>% mutate(aware_category = NA, route_of_administration = NA)
+          country_sector_univ_plot <- 
+            ggplot(country_sector_univ, aes(x = Retail, y = Hospital, color = aware_category, shape = route_of_administration)) +
+            geom_point() +
+            labs(x = "log(Retail SU)", y = "log(Hospital SU)", fill = NULL) +
+            facet_wrap(~who_region)
+          country_sector_univ_plot <- country_sector_univ_plot + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = cor_labels)
       # multivariable
         #e.g., is route correlated to aware correlated to sector?
         #3D: 
@@ -127,11 +190,11 @@ library(DT)
           #https://plotly.com/r/3d-scatter-plots/
           #https://r-graph-gallery.com/3d_scatter_plot.html?utm_content=cmp-true
 
-    # WHO regions (and by antimicrobials)
+    # by WHO regions (and antimicrobials)
       # ... same as above but collapse countries
   
-    # HIC vs LMIC (and by antimicrobials)
-      # ... same as above...
+    # by HIC vs LMIC (and antimicrobials)
+      # ... same as above but need to merge country income status
     
 #------------------------------------------------------------------------------#   
   # Principal Component Analysis?
