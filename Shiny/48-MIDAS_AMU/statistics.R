@@ -104,7 +104,7 @@ library(DT)
               names_from = route_of_administration,
               values_from = value
             ) %>%
-            filter(aware_category != "All" & sector != "All" & antimicrobials != "All") 
+            filter((aware_category == "Access" | aware_category == "Watch" | aware_category == "Reserve") & sector != "All" & antimicrobials != "All") 
           cor_labels <- country_route_univ %>%
             group_by(who_region) %>%
             mutate(label = round(cor(Oral, Parenteral, use = "complete.obs"), 3)) %>%
@@ -120,7 +120,7 @@ library(DT)
             filter(metric == "su" & (aware_category == "Access" | aware_category == "Watch" | aware_category == "Reserve")) %>%
             filter(value > 0) %>%
             mutate(value = log(value)) %>%
-            group_by(who_region, country, antimicrobials, aware_category, route_of_administration, sector) %>%
+            group_by(who_region, country, aware_category, route_of_administration, sector) %>%
             summarize(value = sum(value, na.rm = TRUE), .groups = "keep") %>%
             ungroup()
           country_aware_univ <- country_aware_univ %>%
@@ -128,7 +128,7 @@ library(DT)
               names_from = aware_category,
               values_from = value
             ) %>%
-            filter((route_of_administration == "Oral" | route_of_administration == "Parenteral") & sector != "All" & antimicrobials != "All") 
+            filter((route_of_administration == "Oral" | route_of_administration == "Parenteral") & sector != "All") 
           cor_labels1 <- country_aware_univ %>%
             group_by(who_region) %>%
             mutate(label = round(cor(Access, Watch, use = "complete.obs"), 3)) %>%
