@@ -1915,6 +1915,7 @@ server <- function(input, output, session) {
           DATA_by_whoregion <- data_line_by_whoregion_filter5()
           
           DATA_by_whoregion_lines <- DATA_by_whoregion %>% 
+            filter(country == "All") %>%
             group_by(antimicrobials, route_of_administration, aware_category, metric, who_region, sector) %>%
             filter(length(year) > 1) %>% ungroup()
           
@@ -2034,15 +2035,15 @@ server <- function(input, output, session) {
       plot_title_by_sector_reactive <- eventReactive(input$load_plot_by_sector, {
         if (input$metric_line_by_sector == "ddd" | input$metric_line_by_sector == "su") {
           if (input$antimicrobial_line_by_sector == "All") { 
-            paste0(toupper(input$metric_line_by_sector), " (x 10^3) of ", tolower(input$route_line_by_sector), " antimicrobials (AWaRe: ", input$aware_line_by_sector, ")", " in ", input$country_line_by_sector, " (", input$whoregion_line_by_sector, ")", ", ", tolower(input$sector_line_by_sector), " sector")
+            paste0(toupper(input$metric_line_by_sector), " (x 10^3) of ", tolower(input$route_line_by_sector), " antimicrobials (AWaRe: ", input$aware_line_by_sector, ")", " in ", input$country_line_by_sector, " (", input$whoregion_line_by_sector, ")")
           } else {
-            paste0(toupper(input$metric_line_by_sector), " (x 10^3) of ", tolower(input$route_line_by_sector), input$antimicrobial_line_by_sector, " (AWaRe: ", input$aware_line_by_sector, ")", " in ", input$country_line_by_sector, " (", input$whoregion_line_by_sector, ")", ", ", tolower(input$sector_line_by_sector), " sector")
+            paste0(toupper(input$metric_line_by_sector), " (x 10^3) of ", tolower(input$route_line_by_sector), input$antimicrobial_line_by_sector, " (AWaRe: ", input$aware_line_by_sector, ")", " in ", input$country_line_by_sector, " (", input$whoregion_line_by_sector, ")")
           }
         } else {
           if (input$antimicrobial_line_by_sector == "All") { 
-            paste0(toupper(input$metric_line_by_sector), " of ", tolower(input$route_line_by_sector), " antimicrobials (AWaRe: ", input$aware_line_by_sector, ")", " in ", input$country_line_by_sector, " (", input$whoregion_line_by_sector, ")", ", ", tolower(input$sector_line_by_sector), " sector")
+            paste0(toupper(input$metric_line_by_sector), " of ", tolower(input$route_line_by_sector), " antimicrobials (AWaRe: ", input$aware_line_by_sector, ")", " in ", input$country_line_by_sector, " (", input$whoregion_line_by_sector, ")")
           } else {
-            paste0(toupper(input$metric_line_by_sector), " of ", tolower(input$route_line_by_sector), input$antimicrobial_line_by_sector, " (AWaRe: ", input$aware_line_by_sector, ")", " in ", input$country_line_by_sector, " (", input$whoregion_line_by_sector, ")", ", ", tolower(input$sector_line_by_sector), " sector")
+            paste0(toupper(input$metric_line_by_sector), " of ", tolower(input$route_line_by_sector), input$antimicrobial_line_by_sector, " (AWaRe: ", input$aware_line_by_sector, ")", " in ", input$country_line_by_sector, " (", input$whoregion_line_by_sector, ")")
           }
         }
       })
