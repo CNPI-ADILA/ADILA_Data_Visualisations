@@ -1,5 +1,6 @@
 # Integrate as new tab ("Statistics") in Shiny app:
 library(DT)
+colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if needed: "#0072B2", "#D55E00"
 
 ########################
 # Data sources summary # could also add 95% CIs if necessary
@@ -107,14 +108,21 @@ library(DT)
             filter((aware_category == "Access" | aware_category == "Watch" | aware_category == "Reserve") & sector != "All" & antimicrobials != "All") 
           cor_labels <- country_route_univ %>%
             group_by(who_region) %>%
-            mutate(label = round(cor(Oral, Parenteral, use = "complete.obs"), 3)) %>%
-            distinct(label) %>% mutate(aware_category = NA, sector = NA)
+            mutate(label = round(cor(Oral, Parenteral, use = "complete.obs"), 2)) %>%
+            distinct(label) %>% mutate(aware_category = NA, sector = NA, group = NA)
+          cor_labels$label <- paste0("corr=", cor_labels$label)
+          country_route_univ <- country_route_univ %>% mutate(group = paste0(aware_category, "_", sector)) %>% select(-c(aware_category, sector))
           country_route_univ_plot <- 
-            ggplot(country_route_univ, aes(x = Oral, y = Parenteral, color = aware_category, shape = sector)) +
-            geom_point() +
+            ggplot(country_route_univ, aes(x = Oral, y = Parenteral, color = group)) +
+            geom_point(alpha = 0.25) +
+            geom_smooth(method = "lm", se = FALSE) +
+            scale_colour_manual(values = colours) +
             labs(x = "log(Oral SU)", y = "log(Parenteral SU)", fill = NULL) +
             facet_wrap(~who_region)
-          country_route_univ_plot <- country_route_univ_plot + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = cor_labels)
+          country_route_univ_plot <- country_route_univ_plot + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = cor_labels, show.legend = FALSE)
+          country_route_univ_plot
+          ggsave("./plots/parenteral_vs_oral.pdf", 
+                 scale = 1, width = 30, height = 20, dpi = 3000, units = "cm")
         # Is AMC in AWaRe categories correlated?
           country_aware_univ <- data_for_visualisations %>%
             filter(metric == "su" & (aware_category == "Access" | aware_category == "Watch" | aware_category == "Reserve")) %>%
@@ -131,34 +139,53 @@ library(DT)
             filter((route_of_administration == "Oral" | route_of_administration == "Parenteral") & sector != "All") 
           cor_labels1 <- country_aware_univ %>%
             group_by(who_region) %>%
-            mutate(label = round(cor(Access, Watch, use = "complete.obs"), 3)) %>%
-            distinct(label) %>% mutate(route_of_administration = NA, sector = NA)
+            mutate(label = round(cor(Access, Watch, use = "complete.obs"), 2)) %>%
+            distinct(label) %>% mutate(route_of_administration = NA, sector = NA, group = NA)
+          cor_labels1$label <- paste0("corr=", cor_labels1$label)
           cor_labels2 <- country_aware_univ %>%
             group_by(who_region) %>%
-            mutate(label = round(cor(Access, Reserve, use = "complete.obs"), 3)) %>%
-            distinct(label) %>% mutate(route_of_administration = NA, sector = NA)
+            mutate(label = round(cor(Access, Reserve, use = "complete.obs"), 2)) %>%
+            distinct(label) %>% mutate(route_of_administration = NA, sector = NA, group = NA)
+          cor_labels2$label <- paste0("corr=", cor_labels2$label)
           cor_labels3 <- country_aware_univ %>%
             group_by(who_region) %>%
-            mutate(label = round(cor(Watch, Reserve, use = "complete.obs"), 3)) %>%
-            distinct(label) %>% mutate(route_of_administration = NA, sector = NA)
+            mutate(label = round(cor(Watch, Reserve, use = "complete.obs"), 2)) %>%
+            distinct(label) %>% mutate(route_of_administration = NA, sector = NA, group = NA)
+          cor_labels3$label <- paste0("corr=", cor_labels3$label)
+          country_aware_univ <- country_aware_univ %>% mutate(group = paste0(route_of_administration, "_", sector)) %>% select(-c(route_of_administration, sector))
           country_aware_univ_plot1 <- 
-            ggplot(country_aware_univ, aes(x = Access, y = Watch, color = route_of_administration, shape = sector)) +
-            geom_point() +
+            ggplot(country_aware_univ, aes(x = Access, y = Watch, color = group)) +
+            geom_point(alpha = 0.25) +
+            geom_smooth(method = "lm", se = FALSE) +
+            scale_colour_manual(values = colours) +
             labs(x = "log(Access SU)", y = "log(Watch SU)", fill = NULL) +
             facet_wrap(~who_region)
-          country_aware_univ_plot1 <- country_aware_univ_plot1 + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = cor_labels1)
+          country_aware_univ_plot1 <- country_aware_univ_plot1 + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = cor_labels1, show.legend = FALSE)
+          country_aware_univ_plot1
+          ggsave("./plots/watch_vs_access.pdf", 
+                 scale = 1, width = 30, height = 20, dpi = 3000, units = "cm")
           country_aware_univ_plot2 <- 
-            ggplot(country_aware_univ, aes(x = Access, y = Reserve, color = route_of_administration, shape = sector)) +
-            geom_point() +
+            ggplot(country_aware_univ, aes(x = Access, y = Reserve, color = group)) +
+            geom_point(alpha = 0.25) +
+            geom_smooth(method = "lm", se = FALSE) +
+            scale_colour_manual(values = colours) +
             labs(x = "log(Access SU)", y = "log(Reserve SU)", fill = NULL) +
             facet_wrap(~who_region)
-          country_aware_univ_plot2 <- country_aware_univ_plot2 + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = cor_labels2)
+          country_aware_univ_plot2 <- country_aware_univ_plot2 + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = cor_labels2, show.legend = FALSE)
+          country_aware_univ_plot2
+          ggsave("./plots/reserve_vs_access.pdf", 
+                 scale = 1, width = 30, height = 20, dpi = 3000, units = "cm")
           country_aware_univ_plot3 <- 
-            ggplot(country_aware_univ, aes(x = Watch, y = Reserve, color = route_of_administration, shape = sector)) +
-            geom_point() +
+            ggplot(country_aware_univ, aes(x = Watch, y = Reserve, color = group)) +
+            geom_point(alpha = 0.25) +
+            geom_smooth(method = "lm", se = FALSE) +
+            scale_colour_manual(values = colours) +
             labs(x = "log(Watch SU)", y = "log(Reserve SU)", fill = NULL) +
             facet_wrap(~who_region)
-          country_aware_univ_plot3 <- country_aware_univ_plot3 + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = cor_labels3)
+          country_aware_univ_plot3 <- country_aware_univ_plot3 + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = cor_labels3, show.legend = FALSE)
+          country_aware_univ_plot3
+          ggsave("./plots/reserve_vs_watch.pdf", 
+                 scale = 1, width = 30, height = 20, dpi = 3000, units = "cm")
         # Is AMC in sectors correlated?
           country_sector_univ <- data_for_visualisations %>%
             filter(metric == "su" & (sector == "Retail" | sector == "Hospital")) %>%
@@ -175,14 +202,21 @@ library(DT)
             filter((route_of_administration == "Oral" | route_of_administration == "Parenteral") & (aware_category == "Access" | aware_category == "Reserve" | aware_category == "Watch") & antimicrobials != "All") 
           cor_labels <- country_sector_univ %>%
             group_by(who_region) %>%
-            mutate(label = round(cor(Retail, Hospital, use = "complete.obs"), 3)) %>%
-            distinct(label) %>% mutate(aware_category = NA, route_of_administration = NA)
+            mutate(label = round(cor(Retail, Hospital, use = "complete.obs"), 2)) %>%
+            distinct(label) %>% mutate(aware_category = NA, route_of_administration = NA, group = NA)
+          cor_labels$label <- paste0("corr=", cor_labels$label)
+          country_sector_univ <- country_sector_univ %>% mutate(group = paste0(aware_category, "_", route_of_administration)) %>% select(-c(aware_category, route_of_administration))
           country_sector_univ_plot <- 
-            ggplot(country_sector_univ, aes(x = Retail, y = Hospital, color = aware_category, shape = route_of_administration)) +
-            geom_point() +
+            ggplot(country_sector_univ, aes(x = Retail, y = Hospital, color = group)) +
+            geom_point(alpha = 0.25) +
+            geom_smooth(method = "lm", se = FALSE) +
+            scale_colour_manual(values = colours) +
             labs(x = "log(Retail SU)", y = "log(Hospital SU)", fill = NULL) +
             facet_wrap(~who_region)
-          country_sector_univ_plot <- country_sector_univ_plot + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = cor_labels)
+          country_sector_univ_plot <- country_sector_univ_plot + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = cor_labels, show.legend = FALSE)
+          country_sector_univ_plot
+          ggsave("./plots/hospital_vs_retail.pdf", 
+                 scale = 1, width = 30, height = 20, dpi = 3000, units = "cm")
       # multivariable
         #e.g., is route correlated to aware correlated to sector?
         #3D: 
