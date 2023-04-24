@@ -1,5 +1,6 @@
 # Integrate as new tab ("Statistics") in Shiny app:
 library(DT)
+library(writexl)
 colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if needed: "#0072B2", "#D55E00"
 
 ########################
@@ -77,6 +78,7 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if
               avg_num_antimicrobials_per_data_source, total_year_range, avg_year_range_per_data_source,
               avg_perc_access, avg_perc_watch, avg_perc_reserve, avg_perc_oral, avg_perc_parenteral)
   data_source_summary_table <- data.table("metric" = row_names, "value" = values)
+  write_xlsx(data_source_summary_table, "./outputs/data_source_summary_table.xlsx")
   #datatable(data_source_summary_table)
   
 #------------------------------------------------------------------------------#   
@@ -121,8 +123,8 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if
             facet_wrap(~who_region)
           country_route_univ_plot <- country_route_univ_plot + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = cor_labels, show.legend = FALSE)
           country_route_univ_plot
-          ggsave("./plots/parenteral_vs_oral.pdf", 
-                 scale = 1, width = 30, height = 20, dpi = 3000, units = "cm")
+          ggsave("./outputs/parenteral_vs_oral.png", 
+                 scale = 1, width = 30, height = 20, dpi = 1000, units = "cm")
         # Is AMC in AWaRe categories correlated?
           country_aware_univ <- data_for_visualisations %>%
             filter(metric == "su" & (aware_category == "Access" | aware_category == "Watch" | aware_category == "Reserve")) %>%
@@ -162,8 +164,8 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if
             facet_wrap(~who_region)
           country_aware_univ_plot1 <- country_aware_univ_plot1 + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = cor_labels1, show.legend = FALSE)
           country_aware_univ_plot1
-          ggsave("./plots/watch_vs_access.pdf", 
-                 scale = 1, width = 30, height = 20, dpi = 3000, units = "cm")
+          ggsave("./outputs/watch_vs_access.png", 
+                 scale = 1, width = 30, height = 20, dpi = 1000, units = "cm")
           country_aware_univ_plot2 <- 
             ggplot(country_aware_univ, aes(x = Access, y = Reserve, color = group)) +
             geom_point(alpha = 0.25) +
@@ -173,8 +175,8 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if
             facet_wrap(~who_region)
           country_aware_univ_plot2 <- country_aware_univ_plot2 + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = cor_labels2, show.legend = FALSE)
           country_aware_univ_plot2
-          ggsave("./plots/reserve_vs_access.pdf", 
-                 scale = 1, width = 30, height = 20, dpi = 3000, units = "cm")
+          ggsave("./outputs/reserve_vs_access.png", 
+                 scale = 1, width = 30, height = 20, dpi = 1000, units = "cm")
           country_aware_univ_plot3 <- 
             ggplot(country_aware_univ, aes(x = Watch, y = Reserve, color = group)) +
             geom_point(alpha = 0.25) +
@@ -184,8 +186,8 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if
             facet_wrap(~who_region)
           country_aware_univ_plot3 <- country_aware_univ_plot3 + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = cor_labels3, show.legend = FALSE)
           country_aware_univ_plot3
-          ggsave("./plots/reserve_vs_watch.pdf", 
-                 scale = 1, width = 30, height = 20, dpi = 3000, units = "cm")
+          ggsave("./outputs/reserve_vs_watch.png", 
+                 scale = 1, width = 30, height = 20, dpi = 1000, units = "cm")
         # Is AMC in sectors correlated?
           country_sector_univ <- data_for_visualisations %>%
             filter(metric == "su" & (sector == "Retail" | sector == "Hospital")) %>%
@@ -215,8 +217,8 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if
             facet_wrap(~who_region)
           country_sector_univ_plot <- country_sector_univ_plot + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = cor_labels, show.legend = FALSE)
           country_sector_univ_plot
-          ggsave("./plots/hospital_vs_retail.pdf", 
-                 scale = 1, width = 30, height = 20, dpi = 3000, units = "cm")
+          ggsave("./outputs/hospital_vs_retail.png", 
+                 scale = 1, width = 30, height = 20, dpi = 1000, units = "cm")
       # multivariable
         #e.g., is route correlated to aware correlated to sector?
         #3D: 
