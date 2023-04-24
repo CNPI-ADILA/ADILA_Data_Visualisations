@@ -37,7 +37,7 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if
   avg_year_range_per_data_source <- round(sum(unique(avg_year_range_per_data_source$year_range)) / num_data_sources, 2)
   
   avg_perc_aware <- data_for_visualisations %>%
-    filter(metric == "ddd") %>%
+    filter(metric == "ddd" & who_region == "All" & country == "All" & antimicrobials == "All" & route_of_administration == "All" & sector == "All" & aware_category != "All") %>%
     group_by(source_title, aware_category) %>%
     mutate(AMC_aware = sum(value)) %>%
     ungroup()
@@ -54,7 +54,7 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if
   rm(avg_perc_aware)
 
   avg_perc_route <- data_for_visualisations %>%
-    filter(metric == "ddd") %>%
+    filter(metric == "ddd" & who_region == "All" & country == "All" & antimicrobials == "All" & aware_category == "All" & sector == "All" & route_of_administration != "All") %>%
     group_by(source_title, route_of_administration) %>%
     mutate(AMC_route = sum(value)) %>%
     ungroup()
