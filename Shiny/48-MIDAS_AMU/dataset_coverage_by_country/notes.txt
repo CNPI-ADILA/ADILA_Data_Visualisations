@@ -1,0 +1,11 @@
+- data from each country only covers a fraction of all AMC
+- the fraction covered varies by country
+- some countries include only "retail", some only "hospital", some both
+- can we calculate a quality score (to be used as a weight in statistical models) based on information in "MIDAS and National Audit Data Sources-November 2019.pdf"?
+	- and then normalise score?
+		- normalised = x - xminimum / range of x
+		OR custom range a-b:
+		- normalised = a + ( ((x - xminimum) * (b - a)) / range of x)
+		OR
+		- normalised = x - mean / sd
+		OR ...
