@@ -1,0 +1,29 @@
+Sub reformatsheets()
+   Dim WS As Excel.Worksheet
+   Dim xTxtBox As TextBox
+   
+   For Each WS In ThisWorkbook.Sheets
+     If WS.Range("A1").Value = "Audit Name" Then
+      WS.Cells.UnMerge
+      WS.Range("A13") = "Notes"
+
+      For Each xTxtBox In WS.TextBoxes
+        WS.Range("B13") = xTxtBox.Text
+      Next
+      
+      WS.Range("A14") = WS.Range("C2")
+      WS.Range("B14") = WS.Range("D2")
+      WS.Range("A15") = WS.Range("C6")
+      WS.Range("B15") = WS.Range("D6")
+      WS.Range("A16") = WS.Range("C7")
+      WS.Range("B16") = WS.Range("D7")
+      WS.Range("A17") = WS.Range("C8")
+      WS.Range("B17") = WS.Range("D8")
+      WS.Range("A18") = WS.Range("C9")
+      WS.Range("B18") = WS.Range("D9")
+      Sheets("combinedsheet").Rows(1).Insert
+      Sheets("combinedsheet").Range("A1:R1").Value = WorksheetFunction.Transpose(WS.Range("B1:B18"))
+     End If
+   Next WS
+   
+End Sub

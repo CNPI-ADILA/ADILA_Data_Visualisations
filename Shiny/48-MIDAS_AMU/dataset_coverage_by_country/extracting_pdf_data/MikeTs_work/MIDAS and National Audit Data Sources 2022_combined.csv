@@ -1,0 +1,895 @@
+Country,Segment,Total Coverage,publication_year,Audit Name,Audit Type,Data Source,Universe,Projection,Frequency (MIDAS),Backdata (MIDAS),Sales Level,Local Currency,Icons not on MIDAS,Segments not covered,"Covered locally, not on MIDAS",Notes,Market Segment,Frequency (Local),Backdata (Local),Corporation,Market Segmentation
+Vietnam,Hospital,1,2022,Vietnam Total Market Audit (VTMA),Hospital Sell-in,Distributors & direct manufacturers + panel data from 163 in-patient and 157 out-patient hospital pharmacies,"1,189 hospitals with 336,750 beds","Data from distributors and direct manufacturers is un-projected.
+For non-contributors, Hospital pharmacy panel data projected by type (in-patient & out-patient), bed size (?25 beds) and region (HCMC, Hanoi and Rest of Vietnam)",Quarterly,2017Q1 onwards,Trade,Vietnam Dong (millions),-,"•   Polyclinics and private clinics or doctor private practices
+•   Veterinary centers","Regional split: HCMC, Hanoi and Rest of Vietnam","Notes
+
+•    VTMA covers in-patient and out-patient hospitals and health centers comprehending general and specialty outlets (private
+and public)
+
+•    The audit sources data from Distributors and Direct Manufacturers (DDM) and a sample of 163 in-patient and 157 out-patient hospital pharmacies nationwide. The DDM data suppliers include the two biggest drug distributors in addition to direct manufacturers, i.e., companies with their own distribution network and facilities
+
+•    The panel of hospital pharmacies supplies data for companies not providing DDM data to IQVIA. A projection factor is then applied to this data. The panel consists of both in-patient and out-patient hospitals with at least 25 beds.
+
+•    The panel of hospitals pharmacies does not include any health-related center associated to the following: military, law enforcement institutions, fire departments, education and religious centers, drug abuse treatment centers and mental health institutions",0.44,Quarterly,2017Q1 onwards,Local,Local
+Vietnam,Retail,1,2022,Vietnam Total Market Audit (VTMA),Retail Sell-in,"Distributors & direct manufacturers data and panel data from 1,264 pharmacies
+(606 urban chain outlets + 452 urban independent outlets + 206 rural independent outlets)","70,586 Pharmacies (incl. urban chains, urban independent & rural independent) + 1,550 Wholesalers + 779 (Polyclinics/Doctors) + 10,178 Other non-hospital channels","Data from distributors and direct manufacturers is un-projected.
+For non-contributors, Pharmacy panel data is projected by type (urban and rural) and region (HCMC, Hanoi and Rest of Vietnam)",Quarterly,2017Q1 onwards,Trade,Vietnam Dong (millions),-,"•    Modern Trade channels such as CVS (Convenience Stores) and Retail (Supermarkets)
+•    Traditional Trade channels such as Wet Markets and Mom & Pops stores
+•    Online vendors (i.e., Lazada, Shopee, Tiki, Sendo, etc.)
+•    Dental and beauty clinics","Regional split: HCMC, Hanoi and Rest of Vietnam","Notes
+
+•    VTMA comprehends both Hospitals and Retail channels, where Retail (RT) consist of sales from: pharmacies (chain & independent), polyclinics, private practices (doctors), wholesalers, institutes & vaccination centers and any other existing channel that is not defined as an out-patient and/or in-patient hospital
+
+•    The audit sources data from Distributors and Direct Manufacturers (DDM) and a sample of 1,264 pharmacies nationwide. The DDM data suppliers include the two biggest drug distributors in addition to direct manufacturers, i.e., companies
+with their own distribution network and facilities
+
+•    The panel of 1,264 pharmacies supplies data for companies not providing DDM data to IQVIA. A projection factor is then applied to this data. The panel consists of both chain and independent pharmacies within the urban and rural areas of Vietnam",0.56,Quarterly,2017Q1 onwards,Local,Local
+Venezuela,Retail,0.78,2022,"Mercado Farmacéutico Venezuela
+(Pharmaceutical Market Venezuela (PMV))",Retail Sell-in,32 Wholesalers,155 Wholesalers & pharmacy chains,Regional projection factors for wholesalers,Monthly,144 months,Trade,US Dollars*,"DDD, local molecule coding","Hospitals, clinics",-,"Notes
+
+•    The PMV is based on data supplied by 32 wholesalers. This data is classified as
+indirect sales, with the exception of data from
+6 wholesalers which are classified as direct sales
+
+•    A panel of 32 wholesalers provides total sales figures to pharmacies, broken down into six country regions. Regional projection factors for wholesalers are used in reporting the data
+
+•    Market coverage includes Generics and Ethical products. The OTC products are covered by the audit if they are sold through pharmacies
+
+•    *The reporting currency in Venezuela was changed from the Bolivar Fuerte to the US Dollar effective Dec’17 following ongoing anticipated high level of inflation in Venezuela and the associated challenges facing the presentation of the local currency values
+on MIDAS",0.78,Monthly,60 months,Local,Local
+Uruguay,Mutuales,0.69,2022,Uruguay Mutuales,Retail Sell-in,4 mutuales in Montevideo and 7 in the rest of the country,45 mutuales,Yes,Monthly,144 months,Trade,Uruguay Peso,-,"Public, private hospitals",-,"Notes
+
+•   Mutuales are integrated institutions providing health care services through Labour Unions, functioning in the same way as medical insurance companies
+•   The Mutuales are audited separately to the Uruguay Pharmacy audit due to their different purchasing behaviour in comparison to pharmacies since in general Mutuales purchase in bulk direct from manufacturers
+•   Sales to public and private hospitals not covered by the “Organized Mutual Aid” system are not included",0.42,Monthly,60 months,Local and MIDAS,Local
+Uruguay,Retail,0.69,2022,Pharmaceutical Market Uruguay (PMU),Retail Sell-in,175 Pharmacies and 5 Wholesalers,"992 Pharmacies, 10 wholesalers",Yes,Monthly,144 months,Trade,Uruguay Peso,-,-,-,"Notes
+
+•   The PMU estimates pharmaceutical product sales, in units and values, via wholesalers and pharmacies (Independent and belonging to pharmacy chains in panel)",0.27,Monthly,60 months,Local and MIDAS,Local
+United States of America,Retail and Hospital,0.89,2022,National Sales Perspectives (NSP),Retail and Hospital sell-in,"222 Wholesalers, 44 chain warehouses, 168 Mail Service reporting locations, 100 manufacturers, 300 non-federal hospital panel","442 wholesalers, 222 drug and food chains, 404 mail service pharmacies","Indirect and non-DDD data is projected
+Direct and mail service data is not projected",Monthly,144 months,Trade,US Dollars,"USC, local molecule coding, product form classification",-,-,"Notes
+
+•    National Sales Perspectives™ measures sales of pharmaceutical products purchased by retail outlets (Chain and Independent pharmacies, Mass Merchandisers, Food stores with Pharmacies and Mail Service pharmacies) and non-retail outlets (Non- Federal Hospitals, Federal Facilities, Clinics, LTC, HMO, Home Health Care, and Miscellaneous). Sales data is collected from Direct and Indirect sources. Direct sales to retail and non-retail outlets are provided by approximately 100 pharmaceutical manufacturers. Indirect sales to retail and non- retail outlets are provided by withdrawal records from a panel of wholesalers and chain warehouses representing the most comprehensive coverage of warehouses throughout the United States. National Sales Perspectives provides 97% channel coverage of national pharmaceutical sales in the US at invoice transaction price. Projected indirect, projected hospital panel, unprojected Mail Service and actual DDD direct sales are added together to determine national estimates
+
+Extra notes...
+
+USA retail:
+
+•   USA retail sales figures are obtained from indirect and direct sources
+•   The primary sources of Indirect Data are wholesaler and chain warehouses accessed via the DDD™ system. The DDD™ data are adjusted to reflect non-covered warehouses. A sample warehouse panel supplements the DDD™ data by providing sales of non- DDD™ products. Sample warehouse data are projected nationally to reflect non-covered warehouses. For Direct Data, approximately 100 manufacturers provide direct sales to DDD™ which are included in the audit. Non-reporting manufacturer direct sales are not estimated. This omission is approximately 0.1% of National Sales Perspectives: Retail ™ estimates
+•   USA Retail Pharmacies Audit covers 57,965 Chain and Independent Pharmacies, Mass Merchandisers, Proprietary Stores and Foodstores with Pharmacies
+
+USA hospital:
+
+•   The hospital audit for the USA comprises purchases of ethical, OTC and generic pharmaceuticals by:
+•   Non-Federal Hospitals (5,321 private hospitals, city/county/state hospitals, and psychiatric hospitals)
+•   Clinics (176,677 cancer treatment centres, outpatient clinics, convenience care centres, dialysis clinics, family planning centres, X-ray, radiology, urology and nephrology clinics, surgical centres, and emergency centres)
+•   HMO (2,994 HMO warehouses/purchasing agents, HMO hospitals, HMO clinics)
+•   Long-Term Care (3,194 nursing homes and nursing home pharmacies)
+•   Federal Facilities (982 federal government depots and hospital agents, non-VA federal government hospitals and outpatient care facilities
+•   Home Health Care (4,068 home health care
+services)
+•   Miscellaneous Other (26,193 prisons, export company, Universities & other Miscellaneous organizations)
+
+USA mail service:
+
+•   The unprojected NSP™ Mail Service channel uses: Of the 404 mail service pharmacies in the universe (this includes reporting and non- reporting standard, specialty, and internet pharmacies), 168 locations report their shipped sales. For the remaining 236 mail pharmacies that do not report shipments, IQVIA captures the DDD™ reported pharmaceutical distributor sell-in to the locations from approximately 100 pharmaceutical manufacturers and wholesaler & chain distributors
+•   Mail Service universe was redefined due to supplier blocking to exclude Federal government military health care system and VA Government mail sales
+
+",0.97,Monthly,36 months,Local,Local
+United Kingdom,Hospital,0.93,2022,Hospital Pharmacy Audit Index (HPAI),Hospital Consumption,~97% of total NHS beds,"179,186 total NHS acute beds","Yes, based on a sample of hospital beds projected to universe level",Monthly,144 months,Trade,Pound Sterling,-,"PrivaPrivate hospitals, military hospitals",Historical product ownership,"Notes
+
+•    The IQVIA Hospital Pharmacy audit (HPAI), provides a comprehensive record of usage of medicinal products by NHS hospitals. It monitors usage/consumption levels by end user hospitals – rather than sales into large hospital buying points per se
+
+•    The HPAI monitors usage of all pharmaceutical products within the hospital – irrespective of their source of supply. Product sales from wholesalers, direct from manufacturers or via other hospitals are all automatically covered
+
+•    The audit does not currently cover the private or military sectors
+
+•    On MIDAS, all the backdated sales of a product will be linked to the current owning company. Normally, when a product is transferred to a new manufacturer, the sales data is transferred with it, although on the IQVIA National Database in the UK, data can be seen split out and as a result historical data from these systems may not match with data from MIDAS",0.25,Monthly,60 months,Local,Local and MIDAS
+United Kingdom,Retail,0.93,2022,British Prescription Based Services (PBS),Retail Sell-Out,Prescription data from 82% of pharmacies + direct sales panel,"13,480 pharmacies",Yes,Monthly,144 months,Trade,Pound Sterling,-,Internet pharmacies,Historical product ownership,"Notes
+
+•    Any pharmaceutical product that is bought over the counter (P and GSL products) will not be recorded within Xponent BPI. If a P or GSL product is prescribed by a GP and the prescription dispensed to a patient then it will be included in Xponent BPI
+
+•    Prescription data is provided by ~82% of retail pharmacies. Wholesaler sell-in data to Dispensing doctor accounts is also included as a proxy for dispensed product
+
+•    A very small proportion of Dispensing Doctor purchases are direct from manufacturers and from some small wholesalers not supplying sales information to IQVIA
+
+•    On MIDAS, all the backdated sales of a product will be linked to the current owning company. Normally, when a product is transferred to a new manufacturer, the sales data is transferred with it, although on the IQVIA National Database in the UK, data can be seen split out and as a result historical data from these systems may not match with data from MIDAS",0.64,Monthly,60 months,Local,Local and MIDAS
+United Arab Emirates,Retail,0.58,2022,United Arab Emirates Pharmaceutical Index (UAEP),Retail Sell-in,"33 pharmacies, 25 distributors","1,314 pharmacies, 154 private hospitals",Yes,Monthly,144 months,Public,UAE Dirham,-,Government and semi-government institutions,Local Purchase Order,"Notes
+
+•   UAEP audit does not cover the consumption of drugs distributed directly by health centers, hospitals and government institutions
+•   The market covered includes Abu Dhabi, Al Ain, Dubai, Sharjah and Northern Emirates
+•   The locally available UAE Local Purchase Order Indicator measures direct sales from panel distributors to institutional and semi-institutional hospitals & organizations. ULP does not covers direct obverses tenders",0.58,Monthly,60 months,Local,-
+Ukraine,Hospital,~1.0,2022,Ukraine Quarterly Hospital,Hospital Sell-in,"570 Hospitals, National Tender data, Distributors reports","2,500 Hospitals",Yes,Quarterly,From Q1 2010,Trade,Ukrainian Hryvnia,-,-,Private hospitals,"Notes
+
+•   The Ukraine Hospital audit covers sales of ethical pharmaceuticals through national, regional and local wholesalers to hospitals and other medical institutions
+•   Sales from national tender via government officials are also covered
+•   Ukraine data via IQVIA is hospital data supplied by Proxima and then subject to IQVIA coding & product reference rules. As a result there are differences in product reference coding and differences in the use of ATC classification between IQVIA outputs and Proxima outputs
+•   Ukraine data on MIDAS is restricted, and not available for purchase unless an underlying subscription to the local Proxima audit is in place",0.12,Monthly,From M01 2007,Local,-
+Ukraine,Retail,~1.0,2022,Ukraine Monthly Retail Sale In,Retail Sell-in,"4,500 Pharmacies","20,500 Pharmacies",Yes,Monthly,From M01 2010,Trade,Ukrainian Hryvnia,-,-,-,"Notes
+
+•   The Ukraine Retail audit covers sales of ethical pharmaceuticals through retail pharmacies, supplied by national, regional and local wholesalers as well as direct distribution from manufacturers
+•   Ukraine data via IQVIA is pharmacy data supplied by Proxima and then subject to IQVIA coding & product reference rules. As a result there are differences in product reference coding and differences in the use of ATC classification between IQVIA outputs and Proxima outputs
+•   Ukraine data on MIDAS is restricted, and not available for purchase unless an underlying subscription to the local Proxima audit is in place",0.88,Monthly,From M01 2009,Local,-
+Turkey,Hospital,~1.0,2022,Turkey Hospital Index (THI),Hospital Sell-in,196 wholesalers (174 regular + 22 tender wholesalers),"1,609 hospitals",Not projected,Monthly,144 months,Manufacturer,Turkish Lira,"Distributor, DDD, DOT",,"Reimbursement Status, TPEQCD ( Theurapeutic Equavalance Code)","Notes
+
+•   The Turkish hospital audit covers sales of ethical pharmaceuticals through wholesalers to hospitals such as Government, Private, University hospitals
+•   Sales to military hospitals are not covered as they purchase direct from the manufacturer",0.13,Monthly,60 months,Local and MIDAS,Local
+Turkey,Retail,~1.0,2022,Turkey Pharmaceutical Index (TPI),Retail Sell-in,174 wholesaler depots,"26,456 Pharmacies",Not projected,Monthly,144 months,Manufacturer,Turkish Lira,"Distributor, DDD, DOT",Government,"Reimbursement, TPEQCD ( Theurapeutic Equavalance Code)","Notes
+
+•   The TPI covers sales of ethical and non-ethical pharmaceuticals through wholesalers to retail pharmacies
+•   Audit does not cover sales by manufacturers or through wholesalers to government or other institutions such as the Army
+•   In 2014, free goods were removed from values only in the audit, and returns included, with backdata changes being applied retroactively from M01 2009",0.87,Monthly,60 months,Local and MIDAS,Local
+Tunisia,Hospital,1,2022,The Tunisian Hospital and Institutions Index (TUH),Hospital Sell-in,Census data collected from PCT (Pharmacie Centrale de Tunisie),,Not projected,Monthly,From M01 2011,Public,Tunisian Dinar,-,-,-,Null,0.3,Monthly,From M01 2011,Local,MIDAS
+Tunisia,Retail,1,2022,Le Marche Pharmaceutique Tunisien (LMPT),Retail Sell-in,29 wholesalers,,54 projection factors,Monthly,144 months,Public,Tunisian Dinar,-,-,-,Null,0.7,Monthly,60 months,Local,MIDAS
+Thailand,Hospital,0.93,2022,Thailand Healthcare Index (TLHI),Hospital sell-in,"217 General Hospital (55,415 beds), 21 Specialized Hospital (4,329 beds)","1,195 General Hospitals (145,572 beds), 48 Specialized Hospital
+(7,790 beds)",Yes,Monthly,144 months,Trade,Thai Baht,DDD,"Health centres, private clinics",-,"Notes
+
+•   The TLHI is a nation-wide survey which covers the purchases of pharmaceutical products of hospitals in Thailand
+•   This includes private and government (plus military and university) hospitals. The audit also reflects estimated sales to Specialized Hospitals
+•   From a universe of 48, a sample of  21 specialist hospitals covered including Psyche & Neuro, Ob. Gyn., Dermatology, Pediatrics, Ophthalmology & ENT, Oncology, and Respiratory Diseases",0.71,Monthly,60 months,Local and MIDAS,Local
+Thailand,Retail,0.93,2022,Thailand Pharmaceutical Index (TLPI),Retail Sell-in,"366 drugstores, plus panel of distributors & direct manufacturers","18,476 drugstores (4,436 in Bangkok)",Projection by panel type (Drugstore class A and class B),Quarterly,48 quarters,Trade,Thai Baht,DDD,"Traditional medicine shops, groceries, supermarkets etc.",-,"Notes
+
+•   The Thailand pharmaceutical audit reports sales movement of ethical and over-the-counter preparations through Class A and Class B drugstores located throughout Thailand
+•   Class A drugstores are those licensed to deal with the full range of pharmaceutical products and legally should employ full time pharmacist in attendance
+•   Class B drugstores are legally
+licensed to deal with only OTC items
+•   The report does not include the sales of pharmaceuticals through hospitals (both government and private), clinics, government and military establishments as well as commercial firms, e.g. estates, factories and other industrial enterprises. It also excludes traditional medicine shops, groceries and supermarkets, etc.",0.22,Quarterly,20 quarters,Local and MIDAS,Local
+Taiwan,Hospital,0.97,2022,Taiwan Hospital Pharmaceutical Audit (TWHA),Hospital Consumption,"101 hospitals with 58,100 beds","356 hospitals with 131,143 beds",Projected to universe level by stratum and then consolidated to provide nation-wide figures,Monthly,144 months,Trade,New Taiwan Dollar,-,-,-,"Notes
+
+•    The Taiwan Hospital audit covers hospital utilization of pharmaceutical products
+in Taiwan
+•    The audit does not cover the sales of pharmaceutical products through clinics, which total 16,749 and usually have less than 50 beds each, or no beds at all
+•    Government Employee Clinic Centres (National Health Insurance Clinic Centers), Sun Yat-Sen Cancer Centre, Kuen-Ming Branch of Taipei City Hospital Disease Control & Prevention and psychiatric hospitals are also included
+•    The universe was stratified into 3 distinct types, government (public & military), private, and psychiatric, to account for their difference in utilization characteristics. Further stratification was done to reflect the difference in utilization characteristics by hospital accreditation. The sampling strata consists of 2 types of hospitals (government and private) and 3 accreditation classes (Medical Centers, Regional Hospitals, Area Hospitals), and 2 accreditation classes (Teaching and Non- teaching Hospitals) in Psychiatric Hospitals",0.83,Monthly,60 months,-,-
+Taiwan,Retail,0.97,2022,Taiwan Pharmaceutical Audit (TWPA),Retail Sell-in,"400 drugstores, 260 dispensing doctors","10,222 drugstores, 16,710 doctors",Projected to the national level by type of sampling unit,Quarterly,48 quarters,Trade,New Taiwan Dollar,-,-,-,"Notes
+
+•   The TWPA covers sales of pharmaceuticals through drugstores and private clinics located in Taipei, Kaohsiung and 4 regions
+•   The panel of drugstores provides purchase invoices/records issued from manufacturers, wholesalers, and other sources including pharmaceutical traders and importers
+•   The report covers pharmaceuticals sold through drugstores and private clinics but does not include sales through government health stations and hospitals or other government and military establishments",0.14,Quarterly,20 quarters,-,-
+Switzerland,Hospital,1,2022,Spitalmarktmonitor Schweiz (SMM),Hospital Sell-in,Deliveries of ~90 manufacturers and wholesalers in a joint data pool,~300 hospitals,Not projected,Monthly,144 months,Manufacturer,Swiss Francs,-,-,-,"Notes
+
+•   The Swiss Hospital Audit panel was redesigned in Q106
+•   The Hospital Market Monitor Switzerland covers the monthly deliveries of around 90 manufacturers or importers together with diverse wholesalers (wholesalers, purchase organization, doctors’ suppliers or mail order pharmacies)
+•   Medicament sales to hospitals are recorded in line with Swissmedic categories
+•   Data is supplied in anonymous form",0.25,Monthly,120 months,Local and MIDAS,-
+Switzerland,Retail,1,2022,APO/SD Index Schweiz (APO/SD),Retail Sell-in,"Deliveries of ~107 manufacturers, wholesalers, doctors suppliers, buying groups and mail order pharmacies in a joint data pool","1,822 pharmacies, 5,257 doctors, 483 drugstores",Not projected,Monthly,144 months,Manufacturer,Swiss Francs,-,-,-,"Notes
+
+•   The APO/SD covers pharmacies, self- dispensing doctors and drugstores. All sales and changes for pharmaceutical specialities to pharmacies, doctors' practices and drugstores are recorded for the listed wholesalers
+•   Miscellaneous manufacturers/importers report all sales to pharmacies/drugstores and doctors' practices to IQVIA
+•   The audit includes the Duchy of Liechtenstein",0.75,Monthly,120 months,Local and MIDAS,-
+Sweden,"Combined, Retail, Hospital",1,2022,Pharmaceutical Market Sweden,Sell-in,3 wholesalers,3 wholesalers and an unknown numbers of direct distributors,Not projected,Monthly,144 months,Trade,Swedish Krona,-,-,Veterinary products,"Notes
+
+•   The data source available for Pharmaceutical Market Sweden on MIDAS is Pharmacy Purchase data
+•   Hospital data remains a measure of purchases by hospital pharmacies
+•   ATC changes can be applied as soon as they are identified in the Pharmacy Market Sweden audit, while MIDAS update on an annual cycle",~98%,Monthly,36 months,Local,Local
+Sri Lanka,Retail,0.58,2022,Sri Lanka Pharmaceutical Audit (SLPA),Retail Sell-in,"184 pharmacies, including government owned retail outlets","3,053 pharmacies",Yes,Quarterly,From Q1 2007,Trade,Sri Lanka Rupees,-,"Government and private hospitals, dispensing doctors",-,"Notes
+
+•   The SLPA covers pharmacies purchases from distributors via a panel of 163 pharmacies
+•   Sales to government hospitals, private hospitals and institutions and dispensing doctors are not covered within the SLPA",0.58,Quarterly,20 quarters,-,-
+Spain,Hospital,0.99,2022,El Mercado Hospitalario (EMH),Hospital Consumption,"97 hospitals with 40,035 beds","769 hospitals with 158,256 beds","Yes, using a classification for the type, size and number of beds of the hospital .",Monthly,144 months,Manufacturer,Euro,-,"Military, prisons",-,"Notes
+
+•   A sample of hospital pharmacies reports information on 97 hospitals, covering 19% of hospitals and 25% of the total number of beds in the country. All the data is projected to national level using a classification for the type, size and number of beds of the hospital
+•   The following hospitals have been excluded from the universe and from the sample:
+-   Ministry of Defence
+-   Penitentiary Hospitals
+-   Monographic Hospitals
+-   C.C.A.A. Ceuta and Melilla",0.35,Monthly,60 months,MIDAS,Local and MIDAS
+Spain,Sell-Out,0.99,2022,National Prescription Audit (NPA),Retail Sell-out,"5,430 pharmacies","22,070 pharmacies","Yes, by applying a projection factor to each territorial unit",Monthly,144 months,Manufacturer,Euro,-,-,-,"Notes
+
+•   The NPA monitors sales out of retail pharmacies and includes public prescriptions, private prescriptions, self-medication, collected from a panel of 5.430 pharmacies
+•   The NPA contains data at both Public and manufacturer level. MIDAS input level is at manufacturer level",0.64,Monthly,60 months,MIDAS,Local and MIDAS
+Spain,Retail,0.99,2022,El Mercado Farmacéutico (EMF),Retail Sell-in,"93 wholesalers and 1,200 pharmacies to collect direct sales","95 Wholesalers, 20,553 pharmacies","Yes, by applying a projection factor to each territorial unit",Monthly,144 months,Manufacturer,Euro,-,-,-,"Notes
+
+•   In Spain data is collected from a mixed sample of retail pharmacies and wholesalers
+•   The universe comprises all the pharmacies and wholesalers in the country, taking into account all the different types of wholesaler and direct sales from manufacturer to pharmacy. All data is projected to national level by applying a projection factor to each territorial unit
+•   The following channels are excluded:
+-   Sales to hospitals, clinics, drug stock in companies, schools, residences of Social Security, consultation centres of the Social Security, General Directorate of Health, drug stocks in Armed Forces, military pharmacies, etc.
+-   Free samples
+-   Exports",0.64,Monthly,60 months,MIDAS,Local and MIDAS
+South Africa,State Hospital,1,2022,State Hospital Market South Africa – Hospital (DVISA),State Hospital Sell-in,"Distributors, and some manufacturer direct sales, plus sales into state from tender base from 4 depots in South Africa",4 of 9 geographical regions,Not projected - 40% actual read,Quarterly,48 quarters,Trade,South African Rand,-,"Mines Benefit Society hospitals, municipal clinics, military hospitals,
+correctional services, 5 of 9 geographical regions",-,"Notes
+
+•   The Hospital Audit reflects sales into the state/government sector
+•   The audit reports actual purchase data from provincial medical supply centres of 4 of the 9 provinces in South Africa. (Western Cape, North-West, Northern Cape, Mpumalanga & Limpopo are  not included)
+•   Provincial Depots are reported at an average tender price ex VAT
+•   Direct Sales are reported at SEP
+(single exit price) ex VAT
+•   Quarterly audit",0.14,Quarterly,20 quarters,-,MIDAS
+South Africa,Retail,1,2022,Pharmaceutical Market South Africa – Retail (PMSA),Retail Sell-in,"Distributors, wholesalers, direct sales from manufacturers","2,991 pharmacies",91% actual and a 9% projection factor,Monthly,144 months,Trade,South African Rand,-,"Buying groups, mail order",-,"Notes
+
+•   PMSA is based upon an analysis of purchases made by retail pharmacies in the Republic of South Africa. Data consist of two types of purchases:
+-   Indirect sales via distributors and wholesalers
+-   Direct sales from manufacturers
+•   The PMSA does not cover buying groups or mail order channels, which are covered the in the South Africa Total Market (TPM) panel",0.62,Monthly,60 months,-,MIDAS
+South Africa,Total Market,1,2022,Total Private Market (TPM),Retail Sell-in,"Distributors, wholesalers, direct sales from manufacturers, buying groups","2,991 Pharmacies, 257 Private hospitals , 8555 Purchasing Physicians, 5 Mail Order, 947 Other Private",91% actual and a 9% projection factor,Monthly,144 months,Trade,South African Rand,-,Public hospitals,-,"Notes
+
+•   The TPM Audit measures the Total Private Pharmaceutical market and covers Retail Private Pharmacies, Purchasing Physicians/Dispensing Doctors, Private hospitals and other non-retail pharmacy outlets
+•   Anatomical ATC class classifications by active pharmaceutical ingredient across schedules (i.e. schedule 6 and below)
+•   Classified according to active pharmaceutical ingredient",0.86,Monthly,60 months,-,MIDAS
+Slovenia,Combined,0.98,2022,Slovenia Pharmaceutical Index,Combined Sell-in,"12 wholesalers + direct sales, covering >98% of registered market","29 Hospitals, 339 Pharmacies",Not projected,Monthly,144 months,Trade,Euros,"DDD, DOT",Exports,Sales levels at both manufacturer and trade in local audit,"Notes
+
+•   The Slovenian Pharmaceutical Index is an unprojected combined pharmacy and hospital audit, which covers over 98% of the pharmaceutical market
+•   The Audit currency changed to Euros from Q1 2007
+•   Alongside the M01 2014 data supply, out of ordinary demand sales for products which have been identified as being exported were removed retroactively from M01 2012, thereby ensuring measurement of true domestic supply only
+•   Sales values and prices are reported at both manufacturer and trade levels locally, but the MIDAS output is at trade level",0.97,Monthly,60 months,Local and MIDAS,Local and MIDAS
+Slovakia,Hospital,0.97,2022,Slovak Republic Pharmaceutical Index (SRHI),Hospital Sell-in,21 wholesalers (100% coverage),101 hospital pharmacies,Not projected – census coverage,Monthly,144 months,Manufacturer,Euro,"DDD, DOT","Specialist distribution channels, army, welfare centres","Social Services, Vendor of selected products, Green Pharmacy, Internet Pharmacy, Infant home, Sanitary goods, Cosmetic care","Notes
+
+•   The SRHI is an unprojected measurement of wholesaler sales data, with census coverage of volumes going through wholesalers to hospital pharmacies",0.12,Monthly,60 months,Local and MIDAS,MIDAS
+Slovakia,Retail,0.97,2022,Slovak Republic Pharmaceutical Index (SRPI),Retail Sell-in,21 wholesalers (99% coverage),"2,250 retail pharmacies & subsidiaries",Not projected,Monthly,144 months,Manufacturer,Euro,"DDD,DOT","Specialist distribution channels, army, welfare centres","Social Services, Vendor of selected products, Green Pharmacy, Internet Pharmacy, Infant home, Sanitary goods, Cosmetic care","Notes
+
+•   The SRPI is an unprojected measurement of wholesaler sales data, with coverage of 99% of volumes going through wholesalers to retail pharmacies and subsidiaries",0.85,Monthly,60 months,Local and MIDAS,MIDAS
+Singapore,Others (Hospital),0.87,2022,Singapore Others Report (SOR),Hospital Sell-in,"Panel data from other small institutions and service hospitals
+Direct data from Distributors and manufacturers (subscribers who sells)","18 Polyclinics, multitude of service hospitals, nursing centres, patient associations","No projection is SOR, only direct data reported",Quarterly,48 quarters,Trade,Singapore Dollars,"DDD, DOT",-,-,"Notes
+
+•    In Singapore, the primary healthcare role is fulfilled by government polyclinics and private clinics. The polyclinics provide subsidised outpatient medical care, health screening and pharmacy services, with some offering dental services as well. The Ministry of Health states that only 20% of primary healthcare is currently provided by the polyclinics versus 80% by private medical practitioners
+
+•    There are currently eighteen polyclinics located throughout the island, and these are managed by the two vertically integrated delivery networks or clusters, National Healthcare Group (NHG) and Singapore Health Services (Singhealth)
+
+•    The Singapore Government report was renamed locally to Singapore Others Report (SOR) in Q2 2012 so as to better reflect the nature of the data, as it covers data from several sources other than government channel
+
+•    Effective Q4 2015, panel data from suppliers with units but no values are given a fixed price of 1",0.05,Quarterly,20 quarters,Local,-
+Singapore,Combined,0.87,2022,Singapore Pharmaceutical Audit (SPA),Combined Sell-in,"Panel data; 55 private doctors, 3,287 hospital beds, 121 pharmacies, Direct data: distributors and direct manufacturers (75% market coverage)","2,381 doctors, 350 pharmacies, 13,591 private hospital beds","DDM data is unprojected
+Doctor, pharmacy and hospital panels projected",Quarterly,48 quarters,Trade,Singapore Dollars,"DDD, DOT","Supermarkets, Non-pharmacist drugstores & retail outlets, exports",-,"Notes
+
+•   The SPA covers pharmaceutical sales to dispensing doctors, private & restructured hospitals and retail pharmacies
+•   It consists of 55 doctors (inclusive of group practice doctors),
+121 pharmacies and 3,287 private and restructured hospital beds. The dispensing doctors panel consists of general practitioners (both solo and in group practices) and specialists.
+The sample value of SPA doctors, pharmacies and hospitals are projected
+•   Data from the distributors and direct manufacturers (DDM) panel is unprojected
+•   Bonus or official free goods are included in the SPA.",0.82,Quarterly,20 quarters,Local,-
+Serbia,Combined,0.93,2022,Serbia Pharmaceutical Index (SPI),Combined Sell-in,"17 wholesalers, direct Sales from 7 manufacturers","3,338 pharmacies, 223 Hospitals, 2451 Others*",Not projected,Monthly,From M01 2011,Trade,Serbian Dinar,DOT,-,-,"Notes
+
+•   The 17 wholesalers and 7 direct sales manufacturer panel represents over 93% of the total Serbia pharmaceutical market share by value
+•   *Others include Military, homes for the elderly, private clinics w/o beds, etc.",1,Monthly,60 months,Local,Local
+Saudi Arabia,Local Purchase Order,1,2022,Saudi Arabia Local Purchase Order (SALPO),Hospital Sell-in,30 Distributors,Local purchase order market,Not projected,Quarterly,12 years,Trade,Saudi Riyals,-,-,-,"Notes
+
+•   The SALPO is a non-projected market indicator, reporting on
+volumes collected from participating distributors reflecting the purchases by semi-public and institutional entities from sole-agent distributors, generally outside usual tender agreements
+•   This covers census data from
+21 distributors (approx. 90% of total LPO market) and is not projected to national level",0.15,Monthly,20 months,Local,-
+Saudi Arabia,Tender,1,2022,Saudi Arabia Customized Institution Market (SCIM),Government Tender,30 Distributors,Tender market,Not projected,Quarterly,From Q1 2014,Trade,Saudi Riyals,-,-,-,"Notes
+
+•   The SCIM covers government tenders for supply to government and semi- government institutions and hospitals
+•   Although the tender data is captured at the supplied volume level, prices and sales values are calculated using the published Saudi FDA price list",0.4,Monthly,24 months,Local,-
+Saudi Arabia,Retail,1,2022,Saudi Arabia Pharmaceutical Index (SAPI),Retail Sell-in,"126 pharmacies, 20 hospital pharmacies and 32 distributors","4,654 pharmacies & 145 private hospital pharmacies",Distributor data unprojected Pharmacy panels projected,Monthly,144 months,Trade,Saudi Riyals,-,-,-,"Notes
+
+•   Although named Saudi Arabia Retail on MIDAS, the SAPI reports on the total private market: purchases of private & chain pharmacies, private clinics and hospitals, and subagents
+•   Data relating to sales transactions are collected at the following points:
+I.  Distributors contribute sales to retail pharmacies, private hospitals/clinics
+II. Pharmacies contributing purchase transactions as hard copy invoices",0.45,Monthly,60 months,Local,-
+Russian Federation,RLO,0.98,2022,Russia Regional Reimbursement Audit (RLO),Government Tender,Official website of Government platform for purchasing,N/A,Not projected,From M01 2013,From M01 2013,Trade,Russian Rubles,DOT,-,-,"Notes
+
+•   The Russia Regional Reimbursement audit is a non-projected measurement of regional tender pharma purchasing, where the DLO audit is a measurement of federal tender purchasing
+•   Products in both the DLO and RLO audits are distributed through pharmacies, either specialized (such as in-hospital) or through commercial pharmacies, where products are stored in a separate space from out-of-pocket retail products
+•   The DLO and RLO data is distributed via retail pharmacy; however, it is not viewed locally as retail, due to completely different market access, and the nature of products involved
+•   Due to complexities with the data acquisition process, there is some level of double-counting for some products between the DLO and RLO audits",0.07,Monthly,From M01 2013,Local & MIDAS,MIDAS
+Russian Federation,DLO,0.98,2022,Russia Additional Drug Supply Audit (DLO),Government Tender,6 tender websites,N/A,Not projected,Monthly,From M01 2005,Trade,Russian Rubles,DOT,-,-,"Notes
+
+•    The DLO (Additional Drugs Supply) audit captures a state restricted drug reimbursement program which was introduced in 2005 to provide subsidized pharmaceuticals in the out-patient sector for the disabled, war veterans, children under 3 years of age and families with 3 or more children
+
+•    Those benefiting from the program receive free treatment: there is no prescription charge or official co-payment for patients on the program. There is a list of products included in the DLO program which are put out to tender to wholesalers who compete for contracts to supply the products
+
+•    The price that IQVIA currently monitors for the DLO panel is the trade price which reflects the published price paid as the tender reimbursement by the central Russian Authorities
+
+•    Due to complexities with the data acquisition process, there is some level of double- counting for some products between the DLO and RLO audits",0.09,Monthly,From M01 2005,Local & MIDAS,MIDAS
+Russian Federation,Hospital,0.98,2022,Russian Federation Hospital Index (RFHI),Hospital Sell-in,Official website of Government platform for purchasing,"5,400 Hospitals; 18,600 Polyclinics",Not projected,Monthly,144 months,Trade,Russian Rubles,DOT,Penitentiary Hospitals,-,"Notes
+
+•   In 2013 a new hospital audit was launched, integrating the IQVIA and Pharmexpert panel, with backdata from Q1 2010
+•   The audit captures regional non- reimbursed state tender procurement transactions, in addition to the hospital self-procurement transactions
+•   The sample included panel comprising 630 hospitals until 2016 and is now no longer used",0.17,Monthly,From M01 2004,Local & MIDAS,MIDAS
+Russian Federation,Retail,0.98,2022,Russian Federation Pharmaceutical Index (RFPI),Retail Sell-in,"23,000 pharmacies including private pharmacies, private kiosks, state pharmacies, state kiosks","63,090 pharmacies including private pharmacies, private kiosks, state pharmacies, state kiosks",300 territorial factors,Monthly,144 months,Trade,Russian Rubles,DOT,-,"Food and other supplements, homeopathy, other medicines","Notes
+
+•   The RFPI audit covers purchases in retail pharmacies including private pharmacies, private kiosks, state pharmacies, state kiosks
+•   The IQVIA universe is 63,090 retail pharmacies and the sample size used is 23,000 pharmacies
+•   The data is projected with 300 territorial factors
+•   The actual Retail Sell-Out price is reflected locally, in addition to the manufacturer, trade and public prices which are available on MIDAS",0.65,Monthly,60 months,Local & MIDAS,MIDAS
+Romania,Hospital,1,2022,Romania Hospital Index (ROHI),Hospital Sell-in,45 Wholesalers (covering 95% market share),461 Hospitals,Not projected,Monthly,From M01 2005,Trade,Romanian Lei,DOT,-,-,"Notes
+
+•   The ROHI provides data on wholesaler sales to hospitals. The hospital universe comprises 461 hospitals, with 45 wholesalers in the sample size, representing 95% of the market share by value. No projection factor is applied to the audit",0.15,Monthly,60 months,Local & MIDAS,Local
+Romania,Sell-Out,1,2022,Romania Sell-out Sales National Service (ROSO),Retail Sell-out,"3,600 pharmacies (covering 70% market share)","7,542 Pharmacies",Yes,Monthly,From M01 2009,Trade,Romanian Lei,DOT,-,-,"Notes
+
+•   The Sell-out Sales National Service audit covers sales from retail pharmacies to patients/end users. The IQVIA universe is 7,542 pharmacies, while the sample size covers 3,600 pharmacies, which collectively represent 70% of the market share
+by value",0.85,Monthly,60 months,Local & MIDAS,Local
+Romania,Retail,1,2022,Romania Pharmaceutical Index (ROPI),Retail Sell-in,45 Wholesalers (covering 95% market share),"7,542 Pharmacies",Yes (one wholesaler is projected),Monthly,144 months,Trade,Romanian Lei,DOT,-,-,"Notes
+
+•   The ROPI covers wholesalers' sales to retail pharmacies. The IQVIA universe is 7,542 pharmacies, while the sample size covers 45 wholesalers, covering 99% of the market share by value",0.85,Monthly,60 months,Local & MIDAS,Local
+Puerto Rico,Hospital,,2022,IQVIA Xponent Puerto Rico (PRSA),Hospital Sell-in,"Suppliers - wholesalers, distributors and some direct sales (93% market coverage)","Hospitals, nursing homes",Not projected,Monthly,144 months,Manufacturer,US Dollars,USC,-,-,"Notes
+
+•   The Puerto Rico Hospital MIDAS panel matches the PRSA Hospital channel in the audit",,Monthly,60 months,Local,MIDAS
+Puerto Rico,Retail,,2022,IQVIA Xponent Puerto Rico (PRSA),Retail Sell-in,"Suppliers - wholesalers, distributors and some direct sales (93% market coverage)","Pharmacies, foodstores",Not projected,Monthly,144 months,Manufacturer,US Dollars,USC,-,"Mail Order values, Non-Reporting Wholesalers","Notes
+
+•    The Puerto Rico Retail MIDAS panel contains data from both the Retail and Non Retail channels of the PRSA
+
+•    The PRSA includes Mail Order value in the Non Retail Channel (but not units) Mail Order value is not included in the MIDAS output since the Mail Order Units are not collected or applied locally and MIDAS processing requires the presence of both sales & unit data. The Mail Order segment equates to approx. 1-2% value of the total Puerto Rico market
+
+•    The Non Reporting Wholesalers channel is also available locally but not on MIDAS. Reporting wholesalers report to IQVIA the movement of products they sell to a physical outlet. However, in some instances a manufacturer will sell to a wholesaler who does not report their sales transactions. These purchases cannot be categorized into Retail, Hospital or Non Retail, hence are termed Non Reporting Wholesalers",,Monthly,60 months,Local,MIDAS
+Portugal,Hospital,1,2022,Estudo Hospitalar Nacional (EHN),Hospital Consumption,23 hospitals,50 hospitals,Yes,Monthly,From M01 2010,Manufacturer,Euro,-,"Central hospitals specialized in psychiatry, ophthalmology and alcoholism, district level 1 hospitals",-,"Notes
+
+•   The Hospital Universe only includes Public Hospitals (SNS) with the exclusion of central hospitals specialized in Psychiatry, Ophthalmology and Alcoholism
+•   Also excluded from the universe are District Level 1 type hospitals (hospitals of local relevance) due to their size and contribution in terms of consumptions. The rule applied is: if a District Level 1 hospital is not part of a hospital centre, it does not count in the Universe; when part of a hospital group, then it counts
+•   Portuguese islands (Azores and Madeira) are not covered",0.42,Monthly,24 months,Local,Local
+Portugal,Retail,1,2022,Informação Farmaceutica Portugal (IFP),Retail Sell-in,Wholesalers and agents (99% of market),"2,918 pharmacies",Projection methodology based on 571 regional projection factors,Monthly,144 months,Manufacturer,Euro,Full sales – includes export volumes and values,-,Exports,"Notes
+
+•   The Portuguese audit provides data on pharmaceutical sales from wholesalers and the agents of the Madeira Islands and the Azores
+•   The universe used by IQVIA is 2,918 pharmacies, with a sample design of wholesalers and agents which amount to 99% of the total pharmaceutical market
+•   Projection methodology is based on 571 regional projection factors",0.58,Monthly,36 months,Local,Local
+Poland,Hospital,1,2022,Poland Hospital Index (PLHI),Hospital sell-in,88 wholesaler warehouses,250 wholesaler warehouses,Projected to brick level and then summarized to national level,Monthly,144 months,Manufacturer,Polish Zloty,"DDD, DOT",-,-,"Notes
+
+•   The PLHI covers indirect sales from wholesalers to hospitals and direct sales from producers to hospitals
+•   The universe size is 250 wholesaler warehouses, of which the sample
+is 88
+•   All data is projected to hospital brick level and then summarized to national level",0.15,Monthly,60 months,Local and MIDAS,Local
+Poland,Retail,1,2022,Poland Pharmaceutical Index (PLPI),Retail Sell-in,150 wholesaler warehouses,163 wholesaler warehouses,Projected to brick level and then summarized to national level,Monthly,144 months,Manufacturer,Polish Zloty,"DDD, DOT",-,-,"Notes
+
+•   The PLPI provides data from wholesalers. Poland has a universe of 13,380 retail pharmacies
+•   The universe size for active wholesalers is 163 wholesaler warehouses, of which the sample is 150 wholesaler warehouses. This represents purchases by retail pharmacies from wholesalers (indirect sales)
+•   All data is projected to brick level and then summarized to national level",0.85,Monthly,60 months,Local and MIDAS,Local
+Philippines,Hospital,1,2022,Philippine Hospital Pharmaceutical Audit (PHPA),Hospital Sell-in,"Distributors and direct manufacturers representing 84% of total hospital market, and panel of 99 (60 Private, 39 Government) hospital pharmacies","818 hospitals with 90,377 beds",Data from distributors and direct manufacturers is unprojected. Hospital pharmacy panel data projected by type and by bed size,Monthly,144 months,Trade,Philippine Peso,-,-,-,"Notes
+
+•   The PHPA covers private and government hospitals and clinics, HMOs, government agencies and hospital traders
+•   The audit sources data from Distributors and Direct Manufacturers (DDM) and a sample of 99 hospitals nationwide. The DDM data suppliers include the two biggest drug distributors in addition to direct manufacturers, i.e., companies with their own distribution network and facilities
+•   The panel of 99 hospitals supplies data for companies not providing DDM data to IQVIA. A projection factor is then applied to this data. The panel consists of both private and government hospitals with at least
+26 beds",0.11,Monthly,60 months,Local,-
+Philippines,Retail,1,2022,Philippine Pharmaceutical Index (PPI),Retail Sell-in,"Distributors and direct manufacturers representing 90% of total retail market, and panel of 265 drugstores","8,198 pharmacies",Data from distributors and direct manufacturers is unprojected. Drugstore panel data projected by type and by region,Monthly,144 months,Trade,Philippine Peso,-,-,-,"Notes
+
+•   The PPI is an audit of non-hospital outlets: drugstores, clinics without beds, industrials and pharmaceutical traders
+•   The audit sources data from Distributors and Direct Manufacturers (DDM) and a sample of 265 drugstores nationwide. The DDM data suppliers include the two biggest drug distributors in addition to direct manufacturers, i.e., companies with their own distribution network
+and facilities
+•   The panel of 265 drugstores supplies data for companies not providing DDM data to IQVIA. A projection factor is then applied to this data. The panel consists of both chain and independent drugstores with Peso Turnover Size Classification of
+< 1,280,000",0.89,Monthly,60 months,Local,-
+Peru,Retail,0.67,2022,Mercado Farmacéutico Perú (PMP),Retail Sell-in,"26 wholesalers, 42 manufacturers","8,494 pharmacies",Not projected,Monthly,144 months,Trade,Nuevo Sol,DDD,-,-,"Notes
+
+•   The PMP includes generics and ethical products, i.e. products carrying a brand name but not publicly advertised. Also included are OTC products if they are sold through pharmacies
+•   The Peru audit covers 67% of the total pharma market, and is not projected",0.67,Monthly,60 months,Local,-
+Pakistan,Retail,0.85,2022,Pakistan Pharmaceutical Index (PKPI),Retail Sell-in,"300 Pharmacies, >1,000 Distributors","58,541 pharmacies",Ex-distributors sales unprotected; panel pharmacy sales projected,Monthly,144 months,Trade,Pakistani Rupees,-,"Hospitals, social health insurance, government institutions, groceries",-,"Notes
+
+•   The PKPI covers all ex-distributors sales to retail pharmacies, wholesalers, Doctor’s pharmacies and Private Hospital’s pharmacies and all pharmacy (panel) purchase of pharmaceutical products from wholesalers, distributors and pharmaceutical companies, including milks and baby foods",0.85,Monthly,60 months,Local,-
+Norway,Hospital,1,2022,Norwegian Pharmaceutical Hospital Index (NPHI),Hospital Sell-in,100% hospital pharmacies,"Hospitals, including psychiatric and somatic hospitals","Not projected, census coverage",Monthly,144 months,Trade,Norwegian Krone,-,-,-,"Notes
+
+•   The NPHI covers 100% of the sales from wholesaler to hospitals with hospital pharmacies
+•   The panel also covers hospitals without their own hospital pharmacy, but with direct purchase (mainly infusion solutions) from wholesalers, and sales of blood products to all hospital blood banks",0.17,Monthly,36 months,Local,-
+Norway,Retail,1,2022,Norwegian Pharmaceutical Index (NPI),Retail Sell-in,100% of retail pharmacies,100% of retail pharmacies,"Not projected, census coverage",Monthly,144 months,Trade,Norwegian Krone,-,-,Veterinary audit,"Notes
+
+•   In Norway, all registered pharmaceutical products are sold through retail pharmacies (privately owned pharmacies or publicly owned hospital pharmacies). The only exception to this is the sale of large volume hospital solutions, which goes directly from wholesaler to the hospitals
+•   From Q1 1993, export sales and strategic stockpile figures are also included
+•   Wholesalers own the pharmacy chains and almost every pharmacy belongs  to a chain and then again to a wholesaler, so are vertically integrated",0.83,Monthly,36 months,Local,-
+New Zealand,Hospital,0.97,2022,New Zealand Hospital Index (NZHI),Hospital Sell-in,Participating District Health Boards supplemented by manufacturer and wholesaler data,"20 District Health Boards, 215 Private Hospitals, Clinics and Physicians","Direct sales projected, indirect sales not projected",Monthly,144 months,Manufacturer,New Zealand Dollar,-,"Government, Health Store, Optometrists, Generic Outlets, Department & Grocery Outlets, Veterinary, Rural Outlets","Private outlets audit (NZHIPSI) available locally, not included in MIDAS","Notes
+
+•   For indirect sales, the NZHI projection methodology = 1 (no projection)
+•   For direct sales measured through the Hospital Panel, projection factors are the reciprocal of the sampling fraction based on the number of Health Boards
+•   Locally there is a separate audit for private outlets (NZHIPSI)",0.21,Monthly,24 – 60 months,MIDAS,-
+New Zealand,Retail,0.97,2022,New Zealand Pharmaceutical Index (NZPI),Retail Sell-in,"Wholesaler and manufacturer data covering approximately 98% of sales, supplemented by retail store panel","1,076 pharmacies","Wholesaler and retail store panel direct sales projected
+Manufacturer data unprojected",Monthly,144 months,Manufacturer,New Zealand Dollar,-,-,-,"Notes
+
+•   The NZPI shows wholesaler and manufacturer data covering approximately 98% of sales, supplemented by retail store panel",0.78,Monthly,24 – 60 months,MIDAS,-
+Netherlands,Hospital IMS,0.95,2022,Netherlands – IMS Hospital Audit (ZHS),Hospital Sell-in,3 wholesalers,696 Hospitals,No,Monthly,From M01 2011,Trade,Euro,DOT,"Hospital Budget transfers (Growth Hormones, Fertility, Oral Oncolytics, TNF-alfa inhibitors)","Hospital Claims Data, Budget Transfer Monitor","Notes
+
+•    The ZHS is based on the sell-in sales provided by the three major wholesalers for Hospitals in the Netherlands (Alliance, Brocacef, Mediq). This includes their deliveries of prescription medicines to hospitals and other institutions such as clinics, elderly care centres, mental health institutes, etc.
+•    The data is automatically provided by the wholesalers based on an extract of their administration. The data collected from this panel is unprojected, therefore it is
+census data
+•    Sales from non-participating wholesalers, traders or direct deliveries from manufacturers are not included in
+the audit
+•    IMS Hospital Wholesale excludes the markets transferred to hospital budgets (Growth Hormones, Fertility, oral oncolytics and TNF- alfa inhibitors). For those segments IQVIA has other solutions as Hospital Claims data and Budget Transfer Monitor",0.37,Monthly,From M01 2011,Local,-
+Netherlands,Xponent,0.95,2022,Netherlands – National Prescription Audit (XFIN),Retail Sell-out,"1,192 Pharmacies, 140 dispensing general practitioners","2,008 pharmacies, 3,147 drugstores, 337 dispensing physicians","Yes, weighted projection",Monthly,72 months,Trade,Euro,DOT,-,-,"Notes
+
+•    The XFIN audit covers the deliveries of prescription bound medicines through the official pharmacists and dispending general practitioners
+
+•    The sample is representative of the type of outlet (retail pharmacy/dispensing general practitioner), regional differences such as brick and degree of urbanisation, as well as large pharmacy chains
+
+•    XFIN data is collected through the computer systems of a panel of pharmacists and dispensing general practitioners. The data obtained from the panel are projected to the universe, based on a weighted projection method
+
+•    In comparison with the wholesalers’ data of FARMINFORM, the XFIN covers all parallel imports. Furthermore the XFIN does not include the parallel export generated at pharmacy level",0.58,Monthly,36 months,Local,-
+Netherlands,Hospital,0.95,2022,Farmacutische Index Nederland – Hospital (FIN-ZHS),Hospital sell-in,Census system of wholesalers,696 hospitals and nursery homes,No,Monthly,144 months,Manufacturer,Euro,-,"Home-made products of the pharmacies, Non registered homeopathic products, cosmetics, dressings, Veterinary products, Desensibilisation products, Non registered OTC-products",-,"Notes
+
+•   The FIN-ZHS audit is sourced by Farminform – any access via MIDAS requires a direct underlying subscription with Farminform as
+a requirement
+•   The FIN-ZHS is an audit of sales of registered pharmaceuticals/medicines through wholesalers and Manufacturers, and represents a near- census system of wholesalers and OTC dealers and manufacturers
+•   Participating wholesalers: Brocacef, Etos, Viafarma (previous Euromedica, Interpharm (incl. Dynadro), Mosadex, OPG Groothandel, OPG/Medico, Pluripharm, Regifarm, Stephar, Unipharma",0.37,Monthly,60 months,-,-
+Netherlands,Retail,0.95,2022,Farmacutische Index Nederland (FIN),Retail Sell-in,Census system of wholesalers,"1,542 pharmacies, 3,147 drugstores, 629 dispensing physicians",No,Monthly,144 months,Manufacturer,Euro,-,"Home-made products of the pharmacies, Non registered homeopathic products, cosmetics, dressings, Veterinary products, Desensibilisation products, Non registered OTC-products",-,"Notes
+
+•   The FIN audit is sourced by Farminform – any access via MIDAS requires a direct underlying subscription with Farminform as a requirement
+•   The FIN is an audit of sales of registered pharmaceuticals/medicines through wholesalers and Manufacturers, and represents a near- census system of wholesalers and OTC dealers and manufacturers
+•   Participating wholesalers: Brocacef, Etos, Viafarma (previous Euromedica, Interpharm (incl. Dynadro), Mosadex, OPG Groothandel, OPG/Medico, Pluripharm, Regifarm, Stephar, Unipharma",0.58,Monthly,60 months,-,-
+Morocco,Retail,0.88,2022,Le Marche Pharmaceutique Marocain (LMPM),Retail Sell-in,"40 wholesalers, 104 pharmacies, 11 laboratories","52 wholesalers, 8,585 pharmacies",Yes,Monthly,144 months,Manufacturer,Moroccan Dirham,-,"Hospitals, clinics",Local monthly deliverable contains indirect sales only,"Notes
+
+•   The data on MIDAS and MMIDAS contains both direct and indirect sales, in line with the Moroccan Quarterly Audit (LMPM)
+•   When the data is viewed monthly on MMIDAS, the direct sales will be seen in the last month of a quarter i.e. M03, M06, M09 and M12
+•   The local monthly Dataview contains indirect sales only and therefore does not match MMIDAS at M03, M06, M09 and M12",0.88,Monthly,60 months,Local,MIDAS
+Mexico,Non-Retail,1,2022,Non-Retail Channels (NRC),Non-Retail Sell-in,"2 HMOs, 19 Manufacturers, 50 wholesalers","4,500 POS including public and private hospitals, and non-retail related services",Not projected,Monthly,From M01 2004,Trade,Mexican Peso,DDD,-,Local government tender,"Notes
+
+•   The NRC audit contains details of sales to government institutions with general purchasing, government hospitals with an institutional segment and decentralized purchasing, private hospitals and private clinics open to public in general and non-classifiable sales
+•   Audit & MIDAS access is only available to clients participating in the data collection structure. The Non- Retail channel is excluded from syndicated publications such as World Review
+•   Non-retail data is sourced from government data from the two major HMOs (IMSS, ISSSTE), the 50 data suppliers from PMM and the invoicing from 19 companies
+•   Local government tender data is included in the local audit, but not included on MIDAS",0.39,Monthly,60 months,MIDAS,Local
+Mexico,Sell Out,1,2022,Pharmaceutical Market Mexico (PMM) SOSI,Retail Sell-out,"Pharmacy chains, supermarkets, wholesalers, sub-distributors, telemarketing","43,000 retail outlets – 83% supermarkets and pharmacies (chain and independent), 17% convenience stores, sub-distribution",Projected to a national estimate using 6 regional factors,Monthly,From June 2015,Public,Mexican Peso,DDD,-,-,"Notes
+
+•   PMM SOSI data in Mexico comes from pharmacy chains and wholesalers
+•   Mexico has a universe of
+93 wholesalers and pharmacy chains with more than 120 branches, and/or distribution centres
+•   The data for Mexico Sell out is a mixture of sell-out (77%) and sell-in (23%) data sources
+•   The data obtained is projected to a national estimate using 6 regional factors, and covers approximately 69% of total Mexican pharmaceutical market sales in values",0.61,Monthly,60 months,MIDAS,Local
+Mexico,Retail,1,2022,Pharmaceutical Market Mexico (PMM) SISO,Retail Sell-in,"50 wholesalers, pharmacy chains covering 96% of indirect sales",93 wholesalers and pharmacy chains with more than 120 branches and/or distribution centres,Projected to a national estimate using 6 regional factors,Monthly,144 months,Trade,Mexican Peso,DDD,-,-,"Notes
+
+•   PMM data in Mexico comes from pharmacy chains and wholesalers
+•   Mexico has a universe of
+93 wholesalers and pharmacy chains with more than 120 branches, and/or distribution centres
+•   The sample size used is
+50 wholesalers/pharmacy chains including total sales to pharmacies through 60 branches covering 96.15% of indirect sales
+•   The data obtained is projected to a national estimate using 6 regional factors, and covers approximately 69% of total Mexican pharmaceutical market sales in values",0.61,Monthly,60 months,MIDAS,Local
+Malaysia,Government Hospital,0.82,2022,Malaysia Government Report (MGR),Hospital Sell-in,Data from distributors and direct manufacturers,"126 public hospitals, 4 institution hospitals","No projection, as data from distributors & direct manufacturers is census",Quarterly,48 quarters,Trade,Malaysian Ringgit,"DDD, DOT","Chinese medicine halls, supermarkets, vets, non-pharmacist drugstores and retail outlets, exports",-,"Notes
+
+•   The public hospital sector accounts for about 34% of the West and East Malaysia total pharmaceutical market
+•   The audit is based on the sales of ethical and OTC preparations awarded to any Malaysian public hospitals, polyclinics and institutions",0.26,Quarterly,20 quarters,Local,-
+Malaysia,Combined,0.82,2022,Malaysia Pharmaceutical Audit (MPA),Combined Sell-in,"117 doctors, 3,506 hospitals beds, 667 pharmacies, plus distributors & direct manufacturers panel","11,699 doctors, 3,226 pharmacies, 11,711 hospital beds","Projected by panel type, DDM sales are unprojected",Quarterly,48 quarters,Trade,Malaysian Ringgit,"DDD, DOT","Chinese medicine halls, supermarkets, vets,non-pharmacist drugstores and
+retail outlets, exports",-,"Notes
+
+•   The MPA is based on the sales movement of ethical and OTC preparations through the dispensing doctors, private hospital and retail pharmacies located throughout Malaysia
+•   Due to the nature of the sample, the audit covers both the pharmaceuticals officially marketed by companies operating in Malaysia as well as products which are parallel imported
+•   The audit does not include the sales of pharmaceuticals to supermarkets,
+non-pharmacist drugstores and retail outlets, and exports to other countries",0.56,Quarterly,20 quarters,Local,-
+Luxembourg,Retail,0.98,2022,Le Marche Pharmaceutique Luxembourgeois (LMPL),Retail Sell-in,"20 pharmacies, 4 wholesalers + 1 Belgian wholesaler","85 pharmacies, 4 wholesalers + 1 Belgian wholesaler","No projection for indirect sales (100% coverage) Direct sales projected, factor changes monthly",Monthly,144 months,Manufacturer,Euro,-,Hospitals,-,"Notes
+
+•   All units are calculated by their wholesaler purchase price without VAT. Discounts are not taken into consideration",0.98,Monthly,144 months,MIDAS,MIDAS
+Lithuania,Hospital,0.99,2022,Lithuania Hospital Index (LTHI),Hospital Sell-in,6 wholesalers (83% market share),30 wholesalers,Yes,Monthly,144 months,Trade,Euro,"DDD, DOT",-,-,"Notes
+
+•   The LTHI covers wholesaler sales to hospitals",0.08,Monthly,72 months,MIDAS,-
+Lithuania,Retail,0.99,2022,Lithuania Pharmaceutical Index (LTPI),Retail Sell-in,9 wholesalers (99% market share),30 wholesalers,No,Monthly,144 months,Trade,Euro,"DDD, DOT",-,-,"Notes
+
+•   The LTPI covers wholesaler sales to pharmacies",0.92,Monthly,72 months,MIDAS,MIDAS
+Lebanon,Retail,0.77,2022,Lebanon Pharmaceutical Index (LPI),Retail Sell-in,"81 pharmacies, 28 distributors","2,599 Pharmacies","Pharmacy data is projected, distributor data is unprojected",Monthly,144 months,Trade,Lebanese Lira,-,"Health care centres, hospitals, government institutions",-,"Notes
+
+•   The LPI does not cover the consumption of drugs distributed directly to health care centres, hospitals and government institutions",0.77,Monthly,60 months,Local and MIDAS,-
+Latvia,Hospital,1,2022,Latvia Hospital National Pharmaceutical Data,Hospital,12 wholesalers,30 wholesalers,Yes,Monthly,From Jan 2013,Trade,Euro,DOT,-,-,"Notes
+
+•   The Latvia Hospital panel on MIDAS cover volumes sold from wholesalers to hospital pharmacies
+•   It represents ~8% of the total Latvia pharmaceutical market",0.08,Monthly,72 months,MIDAS,-
+Latvia,Retail,1,2022,Latvia Pharmaceutical Index (LVPI),Retail Sell-out,450 Pharmacies,850 Pharmacies,Yes,Monthly,144 months,Trade,Euro,"DDD, DOT",Hospitals,-,"Notes
+
+•   Latvia Retail data collection changed from sell-in to sell-out with the M07 2012 data update
+•   Sell-out backdata is available from M07 2010, with the sell-in backdata being retained on MIDAS up to M06 2010
+•   Locally, the LVPI displays values at both wholesaler (trade) and retail (public) levels – MIDAS uses an average margin factor to calculate the public level",0.92,Monthly,72 months,MIDAS,-
+Kuwait,Retail,0.35,2022,Pharmaceutical Index – Kuwait (PIK),Retail Sell-in,"18 pharmacies, 18 distributors","450 pharmacies, 14 private hospitals",Yes,Monthly,144 months,Public,Kuwaiti Dinar,-,-,"Institutional hospitals and organizations, tenders via LPO","Notes
+
+•    PIK Reports on purchases of private pharmacies, private clinics and hospitals and private companies
+•    PIK audit does not cover the consumption of drugs distributed directly by health centres, hospitals and government institutions
+•    The hospitals in the panel are considered as an integral part of the private market. These clinics or polyclinics, where people mainly see doctors practicing in the clinics, but who do not require hospitalization
+•    Government institutions and semi-institutions are covered in a separate locally available audit, the KLPO
+•    KLPO measures direct sales from panel distributors to institutional and semi- institutional hospitals and organizations, and most tenders
+•    Both PIK and KLPO cover 98% of the market, of which 35% is attributed to PIK and 65% to KLPO.",0.35,Monthly,60 months,Locl,MIDAS
+Korea,Clinic,0.99,2022,Korea Clinic Pharmaceutical Audit (KCPA),Hospital Sell-in,490 clinics,"31,978 clinics",Yes,Quarterly,144 months,Trade,Korean Won,-,"Raw materials, exports, military supplies",-,"Notes
+
+•    Private doctor clinics with less than 30 beds formed the third largest generator of pharmaceutical drug consumption in the Republic of Korea in 2000. Prior to the implementation of the Separation of Prescribing from Dispensing (SPD), clinics represented approximately 17% of the total pharmaceutical market
+•    From 1st August 2000, clinic doctors have to issue prescriptions to patients, which are to be filled in the pharmacies. The clinics are still allowed to dispense a limited range of pharmaceuticals, e.g. vaccines and some injections
+•    These clinics are distributed throughout the country’s 9 provinces but 34% of them are concentrated in 2 cities, Seoul and Pusan
+•    The KCPA is a nation-wide survey which monitors the pharmaceutical business generated by this sector (both consumed and prescribed for dispensing elsewhere)
+•    The Hospital and Clinic channels capture the in-patient market and the Retail (Pharmacy) channel captures the out-patient market",0.077,Quarterly,60 months,-,-
+Korea,Hospital,0.99,2022,Korea Hospital Pharmaceutical Audit (KHPA),Hospital Sell-in,175 hospitals,"1,695 (1,324 General and 371 Specialized) hospitals",Yes,Quarterly,144 months,Trade,Korean Won,-,"Raw materials, exports, military supplies",-,"Notes
+
+•   The KHPA is a nation-wide survey which covers the purchases of pharmaceutical products of hospitals (both general and specialized) with more than 30 beds in the Republic of Korea
+•   Special hospitals such as the leprosy hospital, tuberculosis asylum, pediatrics and internal medicine
+are excluded
+•   The audit does not cover the sales of pharmaceuticals products through clinics which normally have less than 30 beds each, which is covered by the Korea Clinic Audit
+•   The Hospital and Clinic channels capture the in-patient market and the Retail (Pharmacy) channel captures the out-patient market",0.275,Quarterly,60 months,-,-
+Korea,Retail,0.99,2022,Korea Pharmaceutical Audit (KPA),Retail Sell-in,"111 wholesalers, 540 drugstores","24,421 drugstores",Yes,Monthly,144 months,Trade,Korean Won,-,"Raw materials, exports, military supplies",-,"Notes
+
+•    The KPA measures sales data relating to purchases of pharmaceuticals (ethicals and OTC preparations) through drugstores
+
+•    IQVIA figures give a universe size of 24,421 drugstores operated by qualified pharmacists. These drugstores are distributed throughout the country’s
+9 provinces but 30% of them are concentrated in 2 cities, Seoul and Pusan
+
+•    The sales data (purchase invoices/records) is received from both 540 panel drugstores and 111 panel wholesalers. Data from panel wholesalers has been included from January 2002. Indirect sales are therefore projected separately to the direct sales, which remain based on the panel drugstores. This sales data represents purchases from manufacturers, wholesalers and other sources
+e.g. importers are collected from the drugstores",0.637,Monthly,60 months,-,-
+Kazakhstan,Non-Retail,1,2022,Kazakhstan Budget Audit,Non-Retail Government,State wholesaler data and 13 wholesalers,"1,200 hospitals, reimbursement systems",Not projected,Monthly,From Q1 2005,Trade,Kazakhstani Tenge,DOT,-,-,"Notes
+
+•   Kazakhstan Non Retail audit (locally called Kazakhstan Budget) captures wholesaler transactions to Hospitals and Reimbursement systems. This includes two levels, funding from the national budget and from regional budgets
+•   National budget: As part of the national finance, two programs exists covering reimbursement and hospital purchasing. The state distributor “SK- Pharmacia” is included in the IQVIA sample, and delivers products to the hospitals under these programs
+•   Regional budget: Regional reimbursement and additional hospital foundations are covered by regional budgets. Data for this segment of the market is provided by State wholesaler
+•   The Kazakhstan Budget audit is not projected",0.4,Monthly,From Q1 2005,Local,-
+Kazakhstan,Retail,1,2022,Kazakhstan Retail Audit,Retail Sell-in,17 wholesalers,100 wholesalers,Yes,Monthly,From Q1 2005,Trade,Kazakhstani Tenge,DOT,-,-,"Notes
+
+•   The Kazakhstan Retail audit captures transactions from wholesalers, accounting for approximately 80% of the market, with projection factors being applied to obtain a total
+market view",0.6,Monthly,From Q1 2005,Local,-
+Jordan,Retail,0.71,2022,Jordan Pharmaceutical Index (JPI),Retail Sell-in,110 pharmacies + 1 major chain pharmacy + 20 distributors,"3,500 pharmacies","Panel pharmacies projected, chain pharmacy unprojected",Monthly,144 months,Trade,Jordanian Dinar,-,"Health care centres, hospitals, government institutions",-,"Notes
+
+•   The JPI does not cover the consumption of drugs distributed directly by the Health Care Centres, Hospitals and Government Institutions",0.71,Monthly,60 months,Local and MIDAS,MIDAS
+Japan,Hospital,1,2022,Japan Hospital Pharmaceutical Market (JHPM),Hospital Sell-in,50 wholesalers (99% total volume),76 wholesalers,Yes,Monthly,144 months,Public,Japanese Yen (millions),DDD,Direct sales,-,"Notes
+
+•    In Japan, healthcare is accessed through a network of around 96,000 clinics and some 7,000 hospitals. A large proportion of hospitals and clinics are privately-owned
+
+•    This audit covers the ethical drugs sold through pharmaceutical wholesalers only. The ethical drugs directly sold to hospitals and general practitioners, OTC drugs, quasi-drugs, animal health medicines, and agricultural medicines are not included
+
+•    The hospitals in this report cover medical facilities with 100 beds and over and covers approx. 7,000 medical facilities, which include the healthcare facilities for the elderly as of December 2012
+
+•    The data for this report is based on sales made to the hospitals with 100 beds and over, through the 50 panel wholesalers of JPM; the monthly figures are obtained and further projected to show the estimated national
+total market",0.42,Monthly,144 months,Local,Local
+Japan,Retail,1,2022,Japan Pharmaceutical Market (JPM),Retail Sell-in,50 wholesalers (99% total volume),76 wholesalers,Yes,Monthly,144 months,Public,Japanese Yen (millions),DDD,Direct sales,"GP, Pharmacy split","Notes
+
+•    Locally, the JPM consists of 3 channels
+-    Hospital (100 or more bed institutions)
+-    GP (0-99 bed institutions, including Dispensing Doctors)
+-    Pharmacy
+•    The GP and Pharmacy channels are combined on MIDAS to Japan Retail
+•    At present, there are an estimated 800 wholesalers in Japan. However, most of them are very small family business companies; therefore, IQVIA-J regards major 76 wholesalers as the Universe of Japanese ethical market. Most of them are members of JPWA (Japan Pharmaceutical Wholesalers Association). The 50 panel wholesalers have been selected from 47 prefectures in order to reflect the Universe and manufacturers’ share in each prefecture
+•    It is estimated that the total ethical sales volume by the panel wholesalers is 99% of the total sales volume of the member
+of JPWA",0.58,Monthly,144 months,Local,Local
+Italy,DPC,1,2022,Distribuzione Per Conto (DPC),LHA Consumption,Wholesalers servicing the 104 LHA where DPC is active,104 LHA where DPC is active,Yes,Monthly,From M01 2007,Manufacturer,Euro,DOT,-,-,"Notes
+
+•    Distribuzione per Conto refers to “Direct to Patient Distribution”
+
+•    Measuring the flow of drug distribution directly to patients through a special agreement between LHAs, wholesalers and retail pharmacies
+
+•    This type of distribution is considered to be ‘’non retail’’
+
+•    The product (price and quantities) are negotiated between the Manufacturer and the Local Health Authority (LHA); prices of products sold under this agreement are subject to the hospital pricing rules
+
+•    Wholesalers are the main data providers for the DPC channel. Data is collected from a panel on which IQVIA has previously obtained the needed authorization from Regional or Local Health Authorities to collect and deliver information. When a LHA does not give the authorization, the data source is the prescription data flow (DPC prescriptions are identified by a flag)",0.08,Monthly,36 months,MIDAS,MIDAS
+Italy,Hospital,1,2022,Il Mercato Farmaceutico Ospedalerio (IMFO),Hospital Consumption,"70,2% of Public Hospitals (beds), 69,5% Local Health Authorities (population), key ATC are integrated by collaborating Manufacturers (ex-factory data)",153.033 beds,"Yes, based on weighted factors",Monthly,144 months,Manufacturer,Euro,DOT,-,-,"Notes
+
+•   The IMFO provides information on drug consumption in the hospital market. The hospital service represents the flow of drugs dispensed by the hospital pharmacies to inpatient and out patient wards and through the ""hospital direct distribution"" system
+•   The projection method is based on weighted factors. The sample design is stratified according to 18 geographic areas and 19 macro wards
+•   In order to improve the representativeness of the most significant specialty markets, the sample of Hospitals and LHA has been integrated with the ex-factory data from collaborating pharmaceutical companies",0.53,Monthly,36 months,MIDAS,MIDAS
+Italy,Retail Sell-Out,1,2022,National SELLOUT (NMNM),Retail Sell-out,"Federfarma/Assofarm (Pharmacies Associations, coverage 97%), 8,000 pharmacies, 193 wholesaler warehouses","18,963 pharmacies",A statistical algorithm is applied to estimate total sellout (being census the reimbursed products while the private consumption is estimated),Monthly,From M01 2014,Manufacturer,Euro,DOT,-,-,"Notes
+
+•   With reference to reimbursed products (classe A/A con nota), Italian pharmacies have to communicate the sellout volumes to Minister of Health to get the reimbursement. IQVIA gather this data flow through Italian Pharmacy Associations
+•   The total sell out is estimated through an algorithm based on the ratio between sell out and sell in in the pharmacy panel, and then applied to the wholesalers sellin",0.38,Monthly,36 months,MIDAS,MIDAS
+Italy,Retail,1,2022,Il Mercato Farmaceutico (IMF),Retail Sell-in,"193 wholesaler warehouses, 8,000 pharmacies,
+Pharma Companies (direct sales)","193 wholesaler warehouses, 18,963 pharmacies",A projection factor is applied to estimate about 1% sales,Monthly,144 months,Manufacturer,Euro,DOT,-,-,"Notes
+
+•   The Italian pharmacy sector comprises both direct and indirect sales
+•   Indirect sales are collected from wholesalers (some of them are present in more than one region) with minor projection of 2 missing wholesalers
+•   Direct sales figures are gathered from collaborating Pharma companies, and the non collaborating are estimated through an algorithm applied on the 8,000 pharmacy panel",0.38,Monthly,36 months,MIDAS,MIDAS
+Ireland,Hospital,1,2022,Irish National Hospital (IHI),Hospital Sell-in,Wholesalers and manufacturers with direct hospital pharmacy sales,200 Hospital Pharmacies,No,Monthly,From M01 2006,Trade,Euro,-,-,-,"Notes
+
+•   Data are provided by the major wholesaling groups and manufacturers who sell direct on all their distribution to hospital pharmacies, and is
+not projected",0.2,Monthly,60 months,Local,Local
+Ireland,Retail,1,2022,Irish Pharmaceutical Index (IPI),Retail Sell-in,Major wholesaler groups,"1,771 retail pharmacies",No,Monthly,144 months,Trade,Euro,-,-,-,"Notes
+
+•   Data is provided by the major wholesaling groups on all their distribution to retail pharmacies and all the major parallel traders for Rx products. The residue of the market is estimated from the purchase data based on parallel trade being carried out by individual pharmacies throughout the Republic of Ireland that hold wholesaler licenses
+•   The sample is designed to be representative of the number of shops in each of 54 subdivisions (bricks) of the Country, based on countries, and postal districts of Dublin",0.8,Monthly,60 months,Local,Local
+Indonesia,Total Market Audit,0.6,2022,Indonesia Total Market Audit (ITMA),Sell-in,Distributor’s Data from Manufacturers(DDM) + Panels Projection,,Yes (For Non Contributors),Quarterly,From Q1 2015,Trade,Indonesian Rupiah (millions),-,-,-,"Notes 
+
+•   The ITMA covers sell-in data from Distributors to all available channel in Indonesia, including modern trade and clinics based on direct manufacturer input
+•   The ITMA is only available to customers who are contributors of data at the local level",0.68 (Rx); 0.32 (Free Sales),Quarterly,From Q1 2019,Local,Local
+Indonesia,Hospital,0.6,2022,Indonesia Hospital Pharma Audit (IHPA),Hospital Sell-Out,250 hospitals,"3,150 hospitals",Yes,Quarterly,48 quarters,Trade,Indonesian Rupiah (millions),-,-,-,"Notes
+
+•   The IHPA measures usage from hospital pharmacies to patients, which represents 33% of the total national pharmaceutical market
+•   The 250 hospitals consist of general hospitals divided into 2 types (Government and Private) and specialty hospitals divided into
+3 categories (Maternity, Pulmonology
+and Ophthalmology)
+•   General hospitals panels are also stratified into 2 classes of bed-sizes (1 - 200 and greater than 200 beds)",0.32,Quarterly,From Q1 2017,Local,Local
+Indonesia,Retail,0.6,2022,Indonesia Pharmaceutical Audit (IPA),Retail Sell-out,936 pharmacies,"28,695 pharmacies","Yes, by area - 12 factors",Quarterly,48 quarters,Trade,Indonesian Rupiah (millions),-,-,-,"Notes
+
+•   The IPA measures sales from retail pharmacies (apotiks) to patients/end- users, which represents 28% of the total national pharmaceutical market
+•   The sample retail pharmacies are carefully selected so as to be representative of the movement of drugs passing through. They are randomly selected and located in different cities and towns distributed throughout Indonesia",0.26,Quarterly,From Q1 2017,Local,Local
+Indonesia,Drugstore,0.6,2022,Indonesia Drugstores Audit (IDA),Retail Sell-in,175 drugstores,"8,855 drugstores","Yes, by regions and drugstore type",Quarterly,48 quarters,Trade,Indonesian Rupiah (millions),-,-,-,"Notes
+
+•    In Indonesia, medicines are classified into 4 categories: Narcotics (O), Prescription Medicine (G), OTC Medicine with Warning Labels (W) and OTC Medicines (F)
+
+•    By legislation, O and G can only be sold through pharmacies (apotiks) on prescriptions. Drugstores (toko obat) can deal in W and F. F can also be sold through outlets such as supermarkets and general stores. Although legally prohibited from selling G, the majority of the drugstores deal in these products thus fulfilling the function of a cheaper source of pharmaceutical products, particularly for self- medication. Besides drugstores, there exists large number of peddlers throughout the country with greater concentration in the cities. These peddlers, unauthorized to deal in prescription medicines, in practice, trade in ethical drugs as well
+
+•    The IDA measures sales from distributors/sub-distributors to licensed drugstores, which represents 8% of the total national pharmaceutical market",0.05,Quarterly,From Q1 2017,Local,Local
+India,Hospital,0.95,2022,Hospital Secondary Audit (HSA),Stockist sale out to Hospital,"8,970 stockists","29,000+ stockists","Yes, Factors for Company X 25 Regions (H SA)",Monthly,"From Q1 2005
+From M01 2007",Trade,Indian Rupee,Local ATC classification,"Sales or tenders to NGOs, Primary health centres, Direct hospital supply form Manufacture or CNF",-,"Notes
+
+•   Covers sales out of stockists to retailers, located inside the premises of hospitals/nursing homes. The sample is stratified into 30 major metros and 21 states (excluding the metros) regional clusters. As an additional stratification semi-rural and rural clusters are being considered. At the same time these regional clusters are taking into account the socio- demographic environment. A special focus is on Hospital stockists to ensure that the company coverage benchmarks are met within each of the regional clusters
+•   Projection factors are calculated as the ratio of universe turnover to panel turnover (ratio estimator), by zone and company. Hence, for each zone, the panel data is projected separately by company",0.13,Monthly,60 months,Local,-
+India,Retail,0.95,2022,Secondary Stockist Audit (SSA),Stockist sell-out to Retailers,"8,970 stockists","29,000+ stockists","Yes, Factors for Company x Region x Outlet for 51 Regions (SSA)",Monthly,144 months,Trade,Indian Rupee,Local ATC classification,"Sales or tenders to NGOs, Primary health centres, Direct hospital supply form Manufacture or CNF",-,"Notes
+
+•    Drug Distribution in India is unique and fragmented
+-    Stockists (wholesalers) are appointed by companies to distribute products
+-    Each company has its own stockists universe
+-    Stockists can distribute for different companies or can specialize
+-    Stockists can sell to sub-stockists
+-    Unlike many other markets, there are no stockists who distribute for all manufacturers
+•    Data for some specialist areas such as Vaccines, Oncology, Super-Specialty or Institutional products may be under- represented due to reasons as below
+-    Proportion of the sales are out of scope. Direct Institutional sales, Direct Doctor or Patients sales are not captured
+-    Specialist Stockists operating in specialist fields may not be captured and projected in the IQVIA audit",0.81,Monthly,60 months,Local,-
+India,Total Sales,0.95,2022,Total Sales Audit (TSA),Stockist sale out,"8,970 stockists","29,000+ stockists","Yes, Factors for Company x Region x Outlet for 51 Regions (SSA) and 25 Regions (H SA)",Monthly,From M01 2007,Trade,Indian Rupee,Local ATC classification,"Sales or tenders to NGOs, Primary health centres, Direct supply form Manufacture or CNF without going through stockist","Split by Retail, hospital, dispensing doctors available locally, Regional, Townclass, Metro, State by townclass","Notes
+
+•   The India Total Sales Audit is a measure of sales out of stockists to three different channels:
+-   Retailers/Wholesalers (SSA)
+-   Retailers located inside the premises of Hospitals/Nursing homes (HSA)
+-   Dispensing Doctors and others
+(DSA)
+•   Locally, all of these audits are available separately, but on MIDAS it is only the SSA and HSA which show the split",1,Monthly,60 months,Local,-
+Hungary,Hospital,1,2022,Hungary Hospital Audit (HHA),Hospital Sell-in,"17 Wholesalers, 13 direct sales","164 Hospitals (69,761 beds)",Not projected,Monthly,144 months,Manufacturer,Hungarian Forint,-,-,Sales values shown at both manufacturer and public level locally,"Notes
+
+•   The Hungarian healthcare system provides comprehensive universal care through a predominantly publicly- funded scheme. Hungary has 175 hospitals which are run either by the Ministry of Health, the municipalities or universities
+•   Hungary hospital audit provides data on wholesaler sales to hospital pharmacies. The hospital universe comprises 175 hospitals
+(71,064 beds)
+•   Sales data is shown at both the ex- MNF and Public levels at a local level
+– MIDAS reports sales levels at manufacturer level, with a margin factor for other levels",0.23,Monthly,84 months,Local and MIDAS,Local
+Hungary,Retail,1,2022,Hungarian Pharmaceutical Audit (HPA),Retail Sell-in,"17 Wholesalers, 13 direct sales","2,383 Pharmacies",Not projected,Monthly,144 months,Manufacturer,Hungarian Forint,-,-,Sales values shown at both manufacturer and public level locally,"Notes
+
+•   The Hungary pharmaceutical audit covers wholesalers’ and Manufacturer’s sales to public pharmacies
+•   Sales data is shown at both the ex- MNF and Public levels at a local level
+– MIDAS reports sales levels at manufacturer level, with a margin factor for other levels",0.77,Monthly,84 months,Local and MIDAS,Local
+Hong Kong,Combined,0.91,2022,Hong Kong Pharmaceutical Audit (HKPA),Combined Sell-in,"Distributors and direct manufacturer panel representing ~83% of audited market, 1,100 private hospital beds, 27,895 government hospital beds, 117 doctors, 25 dispensaries","4,514 private hospital beds, 27,895 government hospital beds, 5,734 doctors, 604 dispensaries","Distributors and direct manufacturer panel unprojected, remainder projected",Quarterly,48 quarters,Trade,Hong Kong Dollars,-,"Sales of medicine companies (non-pharmacist drug stores), supermarkets, other retail outlets and exports",-,"Notes
+
+•   The Hong Kong Pharmaceutical Audit (HKPA) covers the private and the government market sector in ethical plus over-the-counter marketing, namely the dispensing doctor clinics, private and government (combined) hospitals and dispensaries (pharmacies)
+•   It is based on the purchases of pharmaceuticals by the above outlets located throughout Hong Kong (Hong Kong Island, Kowloon and New Territories). This includes pharmaceuticals officially marketed by companies operating in Hong Kong",0.91,Quarterly,20 quarters,Local,Local
+Greece,Retail,0.6,2022,Hellenic Pharmaceutical Monitor (GPI),Retail Sell-out,"2,100 pharmacies","10,150 pharmacies","Projected using territory factors, which may change each month",Monthly,144 months,Trade,Euros,-,"Hospitals, private clinics",-,"Notes
+
+•   The Greece Pharmaceutical Index (GPI) is a pharmaceutical sell-out audit, which covers all pharmaceuticals (RX, semi-ethical and non-ethical) sales from pharmacies to retail consumers",0.6,Monthly,132 months,Local,Local
+Germany,Hospital,1,2022,GPI Krankenhaus Index (DKM),Hospital Consumption,IQVIA panel of approx. 500 hospitals,"1,900 hospitals","448 factors for the individual wards (approximately 17,000), 4 hospital-bed-
+size classes, 16 departments and 7 regions",Monthly,144 months,Manufacturer,Euro,"DDD, DOT, ZE, Re-/Parallel-Import, Product Type, Phyto/Biotech, Generic/Original, etc.",-,Possibility to split market in inpatient and outpatient sector,"Notes
+
+•    The hospital audit covers consumption of pharmaceutical products in general hospitals with separate departments, specialized hospitals for internal medicine and orthopaedics, and special psychiatric clinics. This involves the collection of data on individual units dispensed by the pharmacy supplying the individual business units (departments) at the hospitals with
+its products
+•    The panel hospitals report about their total pharmaceuticals consumption in approximately 60 different types of wards on a continuous and monthly basis. The selection of hospitals occurs at random and on an arrangement basis
+•    Projection factors are proportional to the number of beds in the universe and panel and are adjusted to reflect the changing universe
+•    These factors Sales values are displayed locally as ‘Bewertet’ (weighted purchase price) and ‘Grosso’ (ex-mnf list price). MIDAS reflects the Bewertet value.
+•    Sanatoriums are not included in the universe or the sample",0.14,Monthly,120 months,MIDAS,MIDAS
+Germany,Retail,1,2022,Der Pharmazeutische Markt Deutschland (DPM),Retail Sell-in,"Coverage of fully sorted wholesalers according to PHAGRO, approx. 4,500 Pharmacies (direct sales), selected reimporters","19,600 Pharmacies, fully sorted wholesalers as of PHAGRO","Wholesaler data unprojected, direct sales from selected reimportes unprojected, Direct sales data projected by region",Monthly,144 months,Manufacturer,Euro,"DDD, DOT, ZE, Re-/Parallel-Import, Product Type, Phyto/Biotech, Generic/Original, etc.",-,Database with separation of indirect and direct sales,"Notes
+
+•   Audited data in Germany provides data from wholesalers and pharmacies
+•   Direct and indirect sales are used as sources of data
+-   Indirect sales are purchases via wholesalers and are not projected
+-   Direct sales from selected reimporters which are not projected covering German direct sales re- import market by approx. 85%
+-   Direct sales are purchases from pharmaceutical manufacturers, specialist wholesalers, or distribution cooperatives: via representative random of approximately 4,500 retail pharmacies
+•   These sales are projected by regions, while projection factors change every month as the panel data is improved",0.86,Monthly,120 months,MIDAS,MIDAS
+Germany,Pharmascope,1,2022,Germany Pharmascope National (PSN),Retail Sell-out,"Pharmacy coding centres/data processing centres, approx. 4,500 Pharmacies + sample of mail order pharmacies (private & cash sales)","19,600 Pharmacies",Private & Cash are projected,Monthly,144 months,Manufacturer,Euro,"DDD, DOT, ZE, Re-/Parallel-Import, Product Type, Phyto/Biotech, Generic/Original, etc.",-,"IQVIA PharmaScope® National Vaccine audit & IQVIA PharmaScope® National Diagnostics audit, IQVIA PharmaScope® National Real XL audit","Notes
+
+•    Additional integration of private and cash sales via mail order pharmacies (from Jul 2009) is based on a special mail order panel
+
+•    Pharmacy & wholesaler exports are excluded
+
+•    Due to banded pricing, MIDAS uses different conversion factors to the
+German audits
+
+•    MIDAS applies all backdated sales to current owning company, while in the audit, historical manufacturer ownership
+is maintained
+
+•    The locally available Vaccine audit (J6 & J7 markets) covers vaccine wholesalers
+
+•    Diagnostics (T2D2 market) audit is available locally to provide further focus into this market as it includes specialiced retailers
+
+•    IMS PharmaScope® National Real XL provides mandatory rebates for political questions",0.86,Monthly,120 months,MIDAS,MIDAS
+French West Africa,Retail,0.86,2022,West Africa Francophone (FWA),Retail Sell-in,25 Wholesalers covering approximately 85% of the market,"3,095 private pharmacies","Yes, separate factors for each country",Monthly,144 months,Manufacturer,Euro,-,Hospital channels,-,"Notes
+
+•   The French West Africa region consists of the following 12 countries:
+-   Benin
+-   Burkina Faso
+-   Cameroon
+-   Chad*
+-   La République du Congo
+-   Gabon
+-   Guinea
+-   Ivory Coast
+-   Mali
+-   Niger*
+-   Senegal
+-   Togo
+* Niger and Chad were added in M01/12 with backdata from M01/11",0.86,Monthly,60 months,-,-
+France,Hospital,1,2022,Etude Hôpital Public Privé (EHPP),Hospital Consumption,Coverage rate dependent on hospital type (see Notes),"2,000 hospital trusts","Yes, 12 projection factors for each hospital type",Monthly,144 months,Manufacturer,Euro,-,-,-,"Notes
+
+•    Hospital audit is a consumption audit, covering regional university centres, hospitals, oncology centres, psychiatric (public & private) and private clinics
+•    Coverage rate is in number of stays, and dependant on hospital category:
+-    (Big hospitals (CHU): 53%
+-    Hospitals: 22%
+-    Oncology centres: 39%
+-    Specialized establishments:16%
+-    Private hospitals:15%
+•    In France, 30% of hospitals are publicly owned while the remainder are in the private sector. Accounting for over half of all reimbursed healthcare expenditure, hospitals are the main providers of healthcare, especially in the absence of an effective GP gatekeeper system
+•    The French hospital audit (EHPP) reports the consumption of pharmaceutical products in public, private hospitals and clinics
+•    Products available in the form of split packs (tablets, suppositories) are shown in counting units; other products are shown in packs",0.21,Monthly,60 months,MIDAS,MIDAS
+France,Retail,1,2022,Le Marche Pharmaceutique (LMP),Retail Sell-out,"13,700 computerized pharmacies","21,703 pharmacies","Yes, based on geographical area",Monthly,144 months,Manufacturer,Euro,-,-,-,"Notes
+
+•   Due to banded pricing, the Latest Price measure is reported at public level, to provide an accurate reimbursement price for products in the France Retail market",0.79,Monthly,60 months,-,MIDAS
+Finland,Hospital,1,2022,Pharmaceutical Market Finland: Hospital (FHI),Hospital Sell-in,Wholesalers (100% coverage),420 hospitals,No,Monthly,144 months,Trade,Euro,-,-,-,"Notes
+
+•   Report of aggregate purchases of pharmaceutical products by hospitals. The pharmaceutical products are registered by the National Agency
+for Medicines
+•   As the data is based on total deliveries from the wholesalers to the hospitals, discounted sales in units are included in the audit. Possible price discounts are not included
+•   The FHI has coverage of 100% of hospitals in Finland",0.27,Monthly,144 months,Local and MIDAS,MIDAS
+Finland,Retail,1,2022,Pharmaceutical Market Finland: Pharmacies (PMF),Retail Sell-in,Wholesalers (100% coverage),812 pharmacies,No,Monthly,144 months,Trade,Euro,-,-,-,"Notes
+
+•   The audit reports on aggregate purchases of registered pharmaceutical products by retail pharmacies. The pharmaceutical products can be registered and sold to the public only with a permit from the National Agency for Medicines. All figures in the audit are based on the net deliveries from the wholesalers to the pharmacies, i.e. discounted sales are included in the report and any return to the wholesaler of unsold packages from the pharmacies are withdrawn
+•   The pharmaceutical audit covers approximately 73% of total Finnish pharmaceutical market sales. No projection factors are used, as the report contains the deliveries of the wholesalers to private and university pharmacies to the extent of 100%",0.73,Monthly,144 months,Local and MIDAS,MIDAS
+Estonia,Retail,0.88,2022,Estonia Pharmaceutical Index (ESPI),Retail Sell-in,"2 wholesalers, pharmacy panel",20 wholesalers,Yes,Monthly,144 months,Trade,Euro,"DDD, DOT",Hospitals,-,"Notes
+
+•   The data source in Estonia is a combined wholesalers’ and pharmacies panel showing sell-in activity of pharmacies",0.88,Monthly,60 months,MIDAS,-
+Egypt,Non-Retail,1,2022,Institutional market indicator,Non Retail Sell-in,52 distributors,,Distributor data unprojected,Monthly,45 months,Public,Egyptian Pound,-,-,,"Notes
+
+•   The Institutional market is an unprojected audit monitoring institutional & hospital purchasing from specific distributors only
+•   Non Retail Audit covers all Public sector “ MOH, NHO, Education , Universities” Plus Private Hospitals
+•   The audit covers 25% of total Egyptian pharmaceutical market sales
+•   Corporation is coded based on product ownership locally",0.25,Monthly,36 months,Local,4 Sectors
+Egypt,Retail,1,2022,Pharmaceutical Index of Egypt,Retail Sell-in,"24 distributors, 445 pharmacies","52,360 pharmacies","Distributor data unprojected, pharmacy data projected",Monthly,144 months,Public,Egyptian Pound,-,-,Egypt Market Indicator,"Notes
+
+•   The Egyptian audit projects pharmacy data to national levels by using 70 territory projection factors. Distributor data is unprojected. Egypt has a universe of pharmacies from which the sample is selected at random out of  an address register according to stratification criteria
+•   Tax is 5% for local products, 1.6%
+for imported
+•   The audit covers 75-80% of total Egyptian pharmaceutical market sales
+•   Corporation is coded based on product ownership locally
+•   The Egypt Market Indicator is an unprojected audit monitoring institutional & hospital purchasing from specific distributors only",0.75,Monthly,60 months,Local,-
+Ecuador,Non-Retail,0.95,2022,Non Retail Audit (NRA),Non-Retail Sell-in,Direct data from 50 Manufacturers and 75 Wholesalers,"9,166 pharmacies",Not Projected,Monthly,60 months,Trade,US Dollar,DDD,Private institutions and others,Others,"Notes
+
+•   The representation of the universe by means of the NRA-sample is achieved by the principles of stratification and random sampling. The pharmacies which have to be considered as “clusters” in regard to elementary units (drugs in the various preparation and pack-sizes) are selected at random within the strata (regions)",0.08,Monthly,60 months,Local,Local
+Ecuador,Retail,0.95,2022,Mercado Farmacéutico Ecuador (PME),Retail Sell-in,"60 Pharmacies.
+Direct data from 50 Manufacturers and 75 distributors","9,166 pharmacies",Separate projection factors for three regions,Monthly,144 months,Trade,US Dollar,DDD,Public institutions and others,-,"Notes
+
+•   The representation of the universe by means of the PME-sample is achieved by the principles of stratification and random sampling. The pharmacies which have to be considered as “clusters” in regard to elementary units (drugs in the various preparation and pack-sizes) are selected at random within the strata (regions)",0.87,Monthly,60 months,Local,Local
+Dominican Republic,Retail,0.78,2022,Mercado Farmacéutico de República Dominicana (PMDR),Retail Sell-in,89 pharmacies,"1,980 pharmacies",Separate factors for all 4 regions,Quarterly,48 quarters,Trade,Dominican Peso,-,"Public and private hospitals, clinics, physicians",-,"Notes
+
+•   Audit available locally on monthly basis, but quarterly on MIDAS",0.78,Monthly,20 quarters,Local,MIDAS
+Denmark,"Retail, Hospital, Combined",1,2022,Dansk Lægemiddel Information (DLI),Retail and Hospital Sell-in,"3 wholesalers, manufacturers","398 pharmacies, 90 hospitals",Not projected,Monthly,144 months,Trade,Danish Krone,-,-,Local reference coding,"Notes
+
+•   Wholesaler data is collected on a daily basis from three wholesalers
+•   Direct sales to hospitals are reported by manufacturers every month
+•   Hospital pharmacy internal production of pharmaceuticals (SAD products) are reported once a year (all sales placed in December). SAD products account for approximately 0.85% of total sales
+•   Denmark data is supplied by DLI and then subject to IQVIA coding & product reference rules
+•   As a result there are differences in product reference coding and differences in the use of ATC classification between IQVIA outputs and DLI outputs",1,Monthly,60 months,-,Local
+Czech Republic,Physician,0.95,2022,Czech Republic Physician Index (CRPI),Physician Sell-in,35 wholesalers (96% coverage),48 000 physicians,Not projected,Monthly,60 months,Manufacturer,Czech Crown,"DDD, DOT","Specialist distribution channels, army, welfare centres","Social Services, Vendor of selected products, Green Pharmacy, Internet Pharmacy, Infant home, Sanitary goods, Cosmetic care","Notes
+
+•   Market segments not covered by audits are represented by special distribution channels & deliveries to the army",0.3,Monthly,60 months,Local and MIDAS,MIDAS
+Czech Republic,Hospital,0.95,2022,Czech Republic Hospital Index (CRHI),Hospital Sell-in,35 wholesalers (98% coverage),156 hospital pharmacies,Not projected,Monthly,144 months,Manufacturer,Czech Crown,"DDD, DOT","Specialist distribution channels, army, welfare centres","Social Services, Vendor of selected products, Green Pharmacy, Internet Pharmacy, Infant home, Sanitary goods, Cosmetic care","Notes
+
+•   Market segments not covered by audits are represented by special distribution channels & deliveries to the army",0.3,Monthly,60 months,Local and MIDAS,MIDAS
+Czech Republic,Retail,0.95,2022,Czech Republic Pharmaceutical Index (CRPI),Retail Sell-in,35 wholesalers (98% coverage),"2,800 retail pharmacies",Not projected,Monthly,144 months,Manufacturer,Czech Crown,"DDD, DOT","Specialist distribution channels, army, welfare centres","Social Services, Vendor of selected products, Green Pharmacy, Internet Pharmacy, Infant home, Sanitary goods, Cosmetic care","Notes
+
+•   Market segments not covered by audits are represented by special distribution channels & deliveries to the army",0.65,Monthly,60 months,Local and MIDAS,MIDAS
+Croatia,Hospital,0.98,2022,Croatia Hospital Index (HRH),Hospital Sell-in,9 wholesalers plus 6 companies with direct sales,"78 Hospitals, 213 Second line institutions (Other channel)",Not projected,Monthly,From M01 2005,Trade,Croatian Kuna,-,-,"Other channel available locally, included in MIDAS Hospital panel","Notes
+
+•   Three channels exist in the local Croatia MarketViewer source: Retail, Hospital and Other
+•   The data contained in the Other channel was previously distributed between the pharmacy and hospital channels
+•   Locally this channel can be segmented as a separate channel, but is included in the Hospital channel
+on MIDAS
+•   Sales data is calculated at both the ex-manufacturer and trade levels locally, but the MIDAS output is at trade level
+•   WHO and EphMRA ATC classifications are available at the local level",0.36,Monthly,60 months,Local,Local
+Croatia,Retail,0.98,2022,Croatia Pharmaceutical Index (CPM),Retail Sell-in,9 wholesalers plus 6 companies with direct sales,"1,163 Pharmacies",Not projected,Monthly,From M01 2005,Trade,Croatian Kuna,-,-,Sales levels available at Manufacturer and Trade level locally,"Notes
+
+•   Sales data is calculated at both the ex-manufacturer and trade levels locally, but the MIDAS output is at trade level
+•   WHO and EphMRA ATC classifications are available at the local level",0.64,Monthly,60 months,Local,Local
+Colombia,Retail,0.37,2022,Mercado Farmacéutico Colombia (PMC),Retail Sell-in/Sell Out,"57 wholesalers, 3,980 pharmacy chains (39 HQ),
+729 co-operatives (6 HQ)","30,593 pharmacies",Separate factors for all 8 regions,Monthly,144 months,Trade,Peso Colombiano,DDD,"Personal Names, Physicians, Private Institutions, Optics, (Universities,
+Foundations)",-,"Notes
+
+•   The audit includes Generics and Ethical products, i.e. products carrying a brand name but not publicly advertised. OTC products are covered by the audit if they are sold through pharmacies or co-operatives",39% LC – 37% UN,Monthly,60 months,Local,-
+China,Retail,0.72,2022,China Retail Rx,Retail Sell-out,~ 6000 retail pharmacies,"~231,699 retail pharmacies","Yes, by store type and reimbursement type in city level & then by city cluster",Monthly,From M01 2016,Public,Chinese Renminbi,DT (Dosage Units) – equivalent to MIDAS SU (Standard Units),"Small hospitals (<100 beds), Community health center, Township health
+center and clinics",Reference data changes not applied retroactively in local audit,"Notes
+
+•   Three levels of registration label exist in China:
+-   Label 1 = RX-bound
+-   Label 2 = OTC
+-   Label 3 = Health food
+•   The China Retail audit covers Label
+1 products only, and is therefore 100% Rx bound, providing a measure of sell- out data, covering cash register receipts
+•   Reference data changes are not applied retroactively in local datasets. Therefore product ownership, pack changes, classification changes etc. may differ between local data and MIDAS for historical data periods",0.12,Monthly,60 months,Local,-
+China,Hospital,0.72,2022,China Hospital Pharmaceutical Audit (CHPA),Hospital Sell-in,"Total sample of 2,484 hospitals (1,970 General Hospitals, 514 Specialty hospitals)","12,157 hospitals with over 100 beds (10,091 General hospitals, 2,066 specialty hospitals)","Yes, by hospital type, bed size & specialty",Monthly,From M01 2009,Trade,Chinese Renminbi,DT (Dosage Units) – equivalent to MIDAS SU (Standard Units),"Small hospitals (<100 beds), Community health center, Township health center and clinics, Direct to patient sales",-,"Notes
+
+•   CHPA covers hospitals with greater than 100 beds
+•   Separate city & region audits are available locally
+•   Speciality Hospitals included within CHPA: Gynaecology, Infectious Disease, Oncology, Paediatrics, Psychiatry, Tuberculosis, Ophthalmology and Dermatology
+•   Not covered within the CHPA are hospitals <100 beds, community health centres, township health centres, clinics and Direct to patient sales",0.6,Monthly,60 months,Local,-
+Chile,Retail,0.71,2022,Pharmaceutical Market Chile (PMC),Retail Sell-in,"4 wholesalers, 4 pharmacy chains","2,991 pharmacies",Not projected,Monthly,144 months,Manufacturer,Chilean Peso,-,Government and private institutions,-,"Notes
+
+•   The PMCH universe corresponds to 100% of census data obtained from pharmacy chains and wholesalers, covering almost 100% of the market
+•   Due to the importance of pharmacy chains in Chile, which are covering 88% approximated of the trade market, the price structure is different from those countries where the wholesaler/distributors are acting as intermediaries between manufacturer and pharmacy. Consequently for 88% approximated of the market, the manufacturer selling price is identical to the chain pharmacy purchase price
+•   The channel covered by the audit includes Generics and Ethical products, i.e. products carrying a brand name but not publicly advertised. OTC products are covered by the audit if they are sold through pharmacies",0.71,Monthly,60 months,MIDAS,Local
+Central America,Retail,0.77,2022,Pharmaceutical Market Central America (PMCA),Retail Sell-in,"202 wholesalers, 250 pharmacies","412 wholesalers, 11,173 pharmacies","6 factors, one for each of the six countries, which change each month according panel collaboration and sample data quality",Monthly,144 months,Trade,US Dollar,DDD,"Government and private hospitals, social security purchases",-,"Notes
+
+•    The PMCA is based on data supplied by a panel of pharmacies located throughout Central America: Guatemala, Honduras, El Salvador, Nicaragua, Costa Rica
+and Panama
+
+•    The price structure in Central American countries varies according to whether the laboratory sells CIF or FOB to its distributors. Locally producing laboratories, or laboratories with warehouses in the free zone in Panama, generally sell CIF. The average mark-up from FOB to CIF is around 8%. The distributor mark-up is different in every country. The pharmacy mark-up to the public is 25-35%
+
+•    The report includes Generics and Ethical products, which are products carrying a brand name but not publicly advertised. OTC products are covered by the audit if they are sold through pharmacies. Government purchases (governmental hospitals, Social Security and private hospitals) are
+not included",0.77,Monthly,60 months,Local,Local
+Canada,Retail and Hospital,1,2022,Canadian Drugstore and Hospital Purchases Audit (CDH),Retail and Hospital Sell-in,"Wholesalers, 3004 drugstores, 738 hospitals","10,783 Drugstores, 937 Hospitals","Yes, for current month plus re-projections for prior 2 months",Monthly,144 months,Trade,Canadian Dollar,"USC, Product Form Classification, Local molecule coding",Cross-border internet pharmacy sales to the US,-,"Notes
+
+•   Dollar values represent the price levels by drug stores and hospitals and therefore may include mark-ups by wholesalers. Cash discounts offered by wholesalers or manufacturers for prompt payment are not reflected in the reported dollar volumes
+•   Exclusion of all cross-border internet pharmacy sales [IP-US] estimates to the US have been in place within CDH projections since 2003
+•   Molecule coding differs between MIDAS and local offerings
+•   The USC therapy classification system is used in local outputs",1,Monthly,60 months,Local,-
+Bulgaria,Hospital,0.98,2022,Bulgarian Hospital Index (BGHI),Hospital Sell-in,"20 Wholesalers, 13 DTP/DTH","322 hospitals with 49,028 beds",Not Projected,Monthly,144 months,Manufacturer and Trade,Bulgarian Lev,-,-,Banded pricing levels,"Notes
+
+•   The panel of Wholesalers covers 95% of the total market in value and 93% of the total market in volume
+•   The BGHI shows data at all levels, with banded factors being applied to move to ex-MNF and Public level
+•   MIDAS input is at Public level, with one set of factors to move to ex-MNF & Trade level (not banded), therefore variances may occur when comparing data at ex-MNF level between MIDAS and local",0.15,Monthly,60 months,Local,-
+Bulgaria,Retail,0.98,2022,Bulgarian Pharmaceutical Index (BGPI),Retail Sell-in,"20 Wholesalers, 13 DTP/DTH",3150 Pharmacies,Not Projected,Monthly,144 months,Manufacturer and Public,Bulgarian Lev,-,-,Banded pricing levels,"Notes
+
+•   The panel of Wholesalers covers 95% of the total market in value and 93% of the total market in volume
+•   The BGPI shows data at all levels, with banded factors being applied to move to ex-MNF and Public level
+•   MIDAS input is at Public level, with one set of factors to move to ex-MNF & Trade level (not banded), therefore variances may occur when comparing data at ex-MNF level between MIDAS and local",0.85,Monthly,60 months,Local,-
+Brazil,Non-Retail HPP,0.97,2022,Non Retail Audit (NRA),Non-Retail Sell-in,"Wholesalers, Tenders, Deliveries and Direct Sales from MNF (unprojected)",604 Data Suppliers,Not Projected,Monthly,144 months,Manufacturer,Brazilian Real,DDD,-,-,"Notes
+
+•    The Brazil Non-Retail audit is a non-projected audit designed to provide the sales of the market in channels such as hospitals, tenders and government acquisitions. The audit comprises data provided both by participating companies and wholesalers. Hospitals are only classified as Private, Public and Clinics
+
+•    Audit & MIDAS access is only available to clients participating in the data collection structure
+
+•    Participating manufacturers in the NRA cover 100% of participant sales. Non-participating manufacturers are covered by indirect sales via the wholesaler panel, therefore the market share for non-participating companies & related ATCs may not be fully reflected
+
+•    Brazil Non Retail prices are calculated via average of what was practiced in public tenders
+
+•    Brazil Retail HPP prices are calculated via average of what was practiced in public tenders AND prices that wholesalers used to sell to private hospitals and clinics",0.53,Monthly,60 months,Local,Local
+Brazil,Retail PPP,0.97,2022,"Mercado Farmacêutico Brasileiro (PMB), (PPP)",Retail Sell-in,"338 wholesalers (indirect sales), 100 pharmacies (direct sales only)","72,425 pharmacies (61,464 independent pharmacies, 10,961 pharmacy
+chains)",Yes,Monthly,144 months,Trade,Brazilian Real,DDD,"Supermarkets, insurers, companies not classified as drug distributors",-,"Notes
+
+•    The Brazilian audit provides data from independent, chain pharmacies and delivery pharmacies
+
+•    The sample is selected randomly out of an address register arranged according to stratification criteria, namely that there are 2 pharmacy types (independent and chain) and 11 regions. Pharmacies are classified in each region according to the number of elementary units (drugs in various preparations and pack sizes) bought from the supplier. Data is projected to national levels using separate factors for each region
+
+•    Two views of the Retail market are available, both locally and on MIDAS,
+with the only difference being the currency values
+
+-    Brazil Retail reflects list price
+
+-    Brazil Retail PPP reflects actual
+transaction values, including discounts",0.44,Monthly,60 months,Local,Local
+Bosnia,Combined,0.95,2022,Bosnia Herzegovina Pharmaceutical Index (BIHMIE),Retail and Hospital Sell-in,"23 Wholesalers, 3 Manufacturers with direct sales","1,339 pharmacies, 52 hospitals",Not projected,Monthly,From M01 2011,Trade,Konvertible Mark,DOT,-,-,"Notes
+
+•   The Bosnia Combined audit is an unprojected measure of the distribution of product volumes via 23 major wholesalers to 52 hospitals and 1,339 pharmacies country wide, which represents 95% of the total volumes distributed within Bosnia",1,Monthly,From M01 2011,MIDAS,MIDAS
+Belgium,Hospital,>0.99,2022,Belgium Hospital Audit (BHA),Hospital Consumption,"57,544 beds","70,100 beds (285 hospitals)",Yes,Monthly,144 months,Manufacturer,Euro,-,-,-,"Notes
+
+•   The Belgian hospital audit covers public and private hospitals
+•   The sample is used based on stratification sample, comprising:
+2 regions (Flanders + Brussels and Walloon + Brussels), and 4 types of hospitals (Acute, Psychiatric, Acute University and University)
+•   Data is projected using one factor per stratification criteria
+•   The audit has coverage of all acute, psychiatric and academic hospital beds in Belgium",0.29,Monthly,144 months,MIDAS,MIDAS
+Belgium,Retail,>0.99,2022,Le Marché Pharmaceutique Belge (LMPB),Retail Sell-in,"Indirect sales: 18 Wholesalers, Direct sales, Parallel imports: Aktuapharma + Goedert (2,600 pharmacies)","18 Wholesalers and 4,814 pharmacies",Yes,Monthly,144 months,Manufacturer,Euro,-,Dispensing Physicians (<1%),-,"Notes
+
+•   Direct sales is the result of a calculation between Sell In and Sell Out + Stock at national level. Direct Sales = Sell Out + Delta Stock – Sell In. The panel figures are projected at national level",0.71,Monthly,144 months,Local,MIDAS
+Belarus,Hospital,1,2022,IQVIA Belarus Hospital Audit,Hospital Sell-in,Sample of specialized wholesalers and hospitals (>90% coverage),650 Hospitals,Not projected,Monthly,144 months,Trade,Belarus Ruble,-,-,-,"Notes
+
+•   Belarus Retail was launched on MIDAS in 2017 and measures purchases by hospitals, with backdata available from M01 2007
+•   The data is sourced from a sample of specialized wholesalers and hospitals representing over 90% of the hospital channel. This data is not projected",0.25,Monthly,144 months,Local,MIDAS
+Belarus,Retail,1,2022,IQVIA Belarus Retail Audit,Retail Sell-in,904 Pharmacies,"3,300 Pharmacies",Yes. Stratification based on region and nano-brick,Monthly,144 months,Trade,Belarus Ruble,-,-,-,"Notes
+
+•   Belarus Retail was relaunched on MIDAS in 2017 and measures purchases by pharmacies and kiosks (retail channel) with backdata available from M01 2007
+•   The data (purchase invoices/records) is sourced from a panel of 904 pharmacies and projected to represent the universe of 3,300 pharmacies",0.75,Monthly,144 months,Local,MIDAS
+Bangladesh,Retail,0.85,2022,Bangladesh Pharmaceutical Index (BDPI),Retail Sell-in,517 Pharmacies,"81,004 Pharmacies",16 Regional Factors according to the degree of collaboration and sample data quality,Quarterly,48 quarters,Trade,Bangladeshi Taka,-,Non-pharmacy sales,-,"Notes
+
+•   The report is projected to the national level (pharmacy market segment) and covers both ethical and over-the- counter preparations marketed either officially or through illegal and smuggled sources, provided they move through retail pharmacies
+•   As a normal practice, most pharmacies include bonus goods as part of their stocks
+•   Non-Pharmacy sectors of the market are not covered, and the sales estimates do not include the sales of pharmaceuticals through these other outlets. Companies which primarily sell their products through non- pharmacy outlets will consequently have low sales estimates and ranking",0.85,Quarterly,20 quarters,-,-
+Austria,Hospital,1,2022,Der Pharmazeutische Markt Osterreich Klinikbericht (DPMOK),Hospital Consumption,"Consumption data from 112 hospitals (49,540 beds), of which 97 are general hospital & 15 are specialized hospitals",187 Hospitals,Regional projection factors,Monthly,144 months,Manufacturer,Euro,-,-,-,"Notes
+
+•    The Austrian Hospital audit covers hospital consumption of all registered pharmaceutical products in Austria containing data from Acute Hospitals, Long Term Care and Psychiatric Hospitals. The IQVIA sample hospitals are representatively stratified into eight regions. Each region has its own projection factor
+
+•    The Vienna region is covered by means of a data pooling model. The monthly sales of
+20 manufacturers to the Vienna hospitals are integrated in the hospital report. The manufacturers who do not participate in the Vienna data pooling are being estimated by a specific model and as such integrated in
+the report
+
+•    With the M0713 update, the quarterly audit was converted into a monthly offering by the inclusion of monthly long term and Psychiatric hospitals care data alongside the existing acute hospital data, bringing the monthly data in line with the quarterly data
+
+•    Monthly backdata prior to M0105 and back to M01 2003 reflects quarterly data divided by 3",0.31,Monthly,60 months,MIDAS,MIDAS
+Austria,Retail Sellout,1,2022,Der Pharmazeutische Markt Osterreich Sell-Out (DPMOE Sell-Out),Retail Sell-Out,"Primary: 514 Retail Pharmacies for direct sales
+Secondary: 100% of total wholesalers for self-dispensing doctor sales","1,379 Public Pharmacies and 814 Dispensing Doctors","Pharmacies and direct sales projected, dispensing doctors unprojected",Monthly,From M01 2016,Manufacturer,Euro,-,-,-,"Notes
+
+•   The Austrian pharmaceutical audit DPMOE Sell-Out covers the sales from pharmacies to patients of the Austrian pharmacy panel. In addition it includes the self-dispensing doctors in Austria. These data are provided by the wholesalers
+•   The IQVIA universe consists of 1,379 retail pharmacies and 814 dispensing doctors. The pharmacy sample size is 514 retail pharmacies and 100% of total wholesalers data for self- dispensing doctors
+•   Projection factors are applied to data obtained from the retail pharmacies of the pharmacy panel
+•   Data from dispensing doctors provides 100% coverage, thus no projection factors are used",0.69,Monthly,From M01 2016,MIDAS,MIDAS
+Austria,Retail,1,2022,Der Pharmazeutische Markt Osterreich (DPMO),Retail Sell-in,"Indirect sales: 100% of total wholesalers
+Direct sales: 514 Retail Pharmacies for direct sales","1,379 Public Pharmacies and 814 Dispensing Doctors","Pharmacies and direct sales projected, dispensing doctors unprojected",Monthly,144 months,Manufacturer,Euro,-,-,-,"Notes
+
+•    The Austrian pharmaceutical audit covers indirect purchases of pharmaceuticals through wholesalers and direct purchases of panel retail pharmacies of registered OTC drugs from manufacturers. In Austria where pharmaceuticals may be dispensed by retail pharmacies and by dispensing doctors, wholesalers keep separate records of sales to retail pharmacies and dispensing doctors
+
+•    Direct purchases of registered OTC drugs are recorded by the retail pharmacies. The IQVIA universe consists of 1,379 retail pharmacies and 814 dispensing doctors. The pharmacy sample size is 514 retail pharmacies and 100% of total wholesalers data
+
+•    Projection factors are applied to data obtained from wholesalers in the retail pharmacy segment and direct sales of registered OTC drugs reported from the retail pharmacies of the pharmacy panel
+
+•    Data from dispensing doctors provides 100%
+coverage, thus no projection factors are used",0.69,Monthly,60 months,MIDAS,MIDAS
+Australia,Hospital,0.97,2022,Australian Hospital Index (AHI),Hospital Sell-in,Wholesaler & direct manufacturer data covering 96%,"971 hospitals (674 Public, 297 Private)",Not projected,Monthly,144 months,Trade,Australian Dollars,DDD,-,Other Outlets,"Notes
+
+•   The Australian Hospital Index is a record of purchases made through Hospital Pharmacy Departments, and as such is restricted to ‘pharmaceutical products’ – i.e. purchases made through the
+Hospital Supplies Departments are not included
+•   The Other Outlets audit captures sales for defined ATCs in prisons, day surgeries, veterinary clinics and suppliers, government, aged and community healthcare, dentists, clinics and medical centers and ambulance",0.15,Monthly,24-60 months,-,Local
+Australia,Retail,0.97,2022,Australia Pharmaceutical Index (API),Retail Sell-in,"Wholesaler data covering 96% of wholesalers, plus panel of retail pharmacies","6,182 Pharmacies, buying groups, dispensing doctors",Wholesaler & manufacturer direct sales are not projected Pharmacy panel sales are projected,Monthly,144 months,Trade,Australian Dollars,DDD,-,Other Outlets,"Notes
+
+•   Audited data is obtained from wholesalers and covers approximately 96% of total wholesaler and manufacturer direct sales, supplemented by data from a panel of retail pharmacies. The sample panels vary slightly each month
+•   Wholesaler and manufacturer direct sales are unprojected. Pharmacy panel sales are projected. Projection factors are the reciprocal of the sampling fraction of Retail Stores in each state multiplied by a national correction factor. Sampling fraction varies slightly month by month to reflect actual participation
+•   The Other Outlets audit captures sales for defined ATCs in prisons, day surgeries, veterinary clinics and suppliers, government, aged and community healthcare, dentists, clinics and medical centers and ambulance",0.82,Monthly,24-60 months,-,Local
+Argentina,Retail,0.82,2022,Mercado Farmaceutico Argentina (PMA),Retail Sell-in,"40 Wholesalers, 100 Pharmacies","15,216 Pharmacies, 458 Wholesalers","Yes, using regional factors for pharmacies & wholesalers",Monthly,144 months,Trade,Peso,DDD,"Hospitals, institutions and supermarkets",-,"Notes
+
+•   In Argentina, audited data is obtained from indirect and direct sources:
+•   Indirect sales, representing purchases by retail pharmacies from wholesalers, come from a sample of 40 wholesalers
+•   Direct sales, representing purchases by retail pharmacies directly from manufacturers, come from a sample of 100 retail pharmacies
+•   Pharmacies are classified in each of 8 regions according to the number of elementary units (units of pharmaceutical products) bought from a supplier. The pharmacy sample is selected randomly from each of the 8 regions based on the pharmacy classification
+•   Data is projected to a national estimate using regional factors for pharmacies and wholesalers",0.82,Monthly,60 months,Local and MIDAS,Local
+Algeria,Retail,0.8,2022,Le Marché National Pharmaceutique Algérien (LMNPA),Retail Sell-in,45 Wholesaler warehouses,"10,000 Pharmacies","51 projection factors (1 per wilaya, 4 for Algiers)",Monthly,144 months,Public,Algerian Dinar,None,"Hospital, military, government channels",-,"Notes
+
+•   The Algerian audit was relaunched in 2005 to become a national audit and measures purchases by street pharmacies
+•   Data covering the Algeria National audit was launched on MIDAS during 2005, with backdata available from Q1 2002",0.8,Monthly,60 Months,Local,-
