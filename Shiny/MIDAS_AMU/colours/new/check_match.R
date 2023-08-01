@@ -1,3 +1,5 @@
+# NOTE: the values in each of these fields may have changed (e.g., been deleted/replaced), such as the WHO region classification
+
 country <- data_for_visualisations %>% select(country)
 country <- country[!duplicated(country), ]
 country_match <- merge(colours_country, country, by.x = "location", by.y = "country", all = T)
@@ -23,10 +25,10 @@ sector <- sector[!duplicated(sector), ]
 sector_match <- merge(colours_sector, sector, by.x = "sector", by.y = "sector", all = T)
 write.csv(sector_match, file = './colours/new/sector_match.csv', na = "ADD A COLOUR", row.names=FALSE)
 
-whoregion <- data_for_visualisations %>% select(who_region)
+whoregion <- data_for_visualisations %>% select(who_regional_office)
 whoregion <- whoregion[!duplicated(whoregion), ]
-whoreg_match <- merge(colours_whoregion, whoregion, by.x = "region", by.y = "who_region", all = T)
+whoreg_match <- merge(colours_whoregion, whoregion, by.x = "region", by.y = "who_regional_office", all = T)
 write.csv(whoreg_match, file = './colours/new/whoreg_match.csv', na = "ADD A COLOUR", row.names=FALSE)
 
 rm(country, antimicrobial, route, aware, sector, whoregion)
-rm(list = ls(pattern = "_match")) 
+rm(list = ls(pattern = "_match"))

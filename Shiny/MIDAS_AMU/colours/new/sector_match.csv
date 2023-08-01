@@ -1,4 +1,5 @@
-"sector","my_colours"
-"All","#000000"
-"Hospital","#5C741F"
-"Retail","#EAAE2B"
+sector,my_colours
+All,#810000
+Hospital,#5C741F
+Retail,#EAAE2B
+Unknown,ADD A COLOUR

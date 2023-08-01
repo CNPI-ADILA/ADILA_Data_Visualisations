@@ -1,8 +1,15 @@
-"region","my_colours"
-"All","#000000"
-"MIDAS African Region (AFR)","#810000"
-"MIDAS Eastern Mediterranean Region (EMR)","#E57723"
-"MIDAS European Region (EUR)","#E6D089"
-"MIDAS Region of the Americas (AMR)","#5C741F"
-"MIDAS South-East Asian Region (SEAR)","#54EECA"
-"MIDAS Western Pacific Region (WPR)","#382FEB"
+region,my_colours
+,ADD A COLOUR
+African Region (AFR),ADD A COLOUR
+All,#810000
+Eastern Mediterranean Region (EMR),ADD A COLOUR
+European Region (EUR),ADD A COLOUR
+MIDAS African Region (AFR),#810000
+MIDAS Eastern Mediterranean Region (EMR),#E57723
+MIDAS European Region (EUR),#E6D089
+MIDAS Region of the Americas (AMR),#5C741F
+MIDAS South-East Asian Region (SEAR),#54EECA
+MIDAS Western Pacific Region (WPR),#382FEB
+Region of the Americas (AMR),ADD A COLOUR
+South-East Asian Region (SEAR),ADD A COLOUR
+Western Pacific Region (WPR),ADD A COLOUR

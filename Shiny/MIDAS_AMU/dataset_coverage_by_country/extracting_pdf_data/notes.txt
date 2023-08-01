@@ -9,3 +9,7 @@
 		OR
 		- normalised = x - mean / sd
 		OR ...
+
+
+
+- NOTE: WE HAVE NOW EXTRACTED MORE ACCURATE DATA FROM THE ACTS REPORTS FOR THIS PURPOSE (refer to Wiki)!

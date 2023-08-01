@@ -4,8 +4,8 @@
 #install.packages("randomcoloR")
 library("randomcoloR")
 set.seed(1983765)
-n <- 421
-colours <- distinctColorPalette(n) # last done for the antimicrobial list
+n <- 8
+colours <- distinctColorPalette(n)
 pie(rep(1, n),
     col = colours,
     main = "randomcoloR Package")

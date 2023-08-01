@@ -1,422 +1,496 @@
 "antimicrobial","my_colours"
-"Acetyl Kitasamycin",ADD A COLOUR
-"Acetylspiramycin",ADD A COLOUR
-"Acetylspiramycin+Metronidazole","#9E24EC"
+"Acetyl Kitasamycin","#5D5E48"
+"Acetylspiramycin","#92EEF4"
+"Acetylspiramycin+Metronidazole","#EBB764"
 "All","#810000"
-"Ambroxol+Amoxicillin",ADD A COLOUR
-"Ambroxol+Doxycycline",ADD A COLOUR
-"Amikacin","#EB2F41"
-"Amikacin+Cefepime",ADD A COLOUR
-"Amoxicillin","#5C741F"
-"Amoxicillin+Bacillus coagulans",ADD A COLOUR
-"Amoxicillin+Bacillus coagulans+Cloxacillin",ADD A COLOUR
-"Amoxicillin+Bacillus coagulans+Dicloxacillin",ADD A COLOUR
-"Amoxicillin+Bromelain",ADD A COLOUR
-"Amoxicillin+Clavulanic acid","#928B57"
-"Amoxicillin+Clavulanic acid+Lactic ferments","#92687D"
-"Amoxicillin+Clavulanic acid+Lactobacillus acidophilus","#231416"
-"Amoxicillin+Clavulanic acid+Nimesulide","#7F84C1"
-"Amoxicillin+Cloxacillin",ADD A COLOUR
-"Amoxicillin+Cloxacillin+DL-Lactic acid",ADD A COLOUR
-"Amoxicillin+Cloxacillin+DL-Lactic acid+Serrapeptase",ADD A COLOUR
-"Amoxicillin+Cloxacillin+Lactobacillus acidophilus",ADD A COLOUR
-"Amoxicillin+Cloxacillin+Lactobacillus lactis",ADD A COLOUR
-"Amoxicillin+Cloxacillin+Serrapeptase",ADD A COLOUR
-"Amoxicillin+Cloxacillin+Serrapeptase+Lactobacillus acidophilus",ADD A COLOUR
-"Amoxicillin+Diclofenac",ADD A COLOUR
-"Amoxicillin+Diclofenac+Esomeprazole",ADD A COLOUR
-"Amoxicillin+Diclofenac+Paracetamol",ADD A COLOUR
-"Amoxicillin+Dicloxacillin","#419780"
-"Amoxicillin+Dicloxacillin+Lactobacillus acidophilus",ADD A COLOUR
-"Amoxicillin+Dicloxacillin+Saccharomyces boulardii","#7B2AB6"
-"Amoxicillin+Flucloxacillin","#9C7123"
-"Amoxicillin+Flucloxacillin+Lactobacillus acidophilus",ADD A COLOUR
-"Amoxicillin+Lactobacillus acidophilus",ADD A COLOUR
-"Amoxicillin+Metronidazole","#A360EA"
-"Amoxicillin+Nystatin",ADD A COLOUR
-"Amoxicillin+Sulbactam","#47C32B"
-"Amoxicillin+Sulbactam-pivoxil","#661A3D"
-"Amphotericin B+Tetracycline",ADD A COLOUR
-"Ampicillin","#EB2F69"
-"Ampicillin+Bacillus coagulans+Cloxacillin",ADD A COLOUR
-"Ampicillin+Chymotrypsin+Trypsin",ADD A COLOUR
-"Ampicillin+Cloxacillin","#96A02A"
-"Ampicillin+Cloxacillin+Lactobacillus acidophilus",ADD A COLOUR
-"Ampicillin+Cloxacillin+Saccharomyces boulardii",ADD A COLOUR
-"Ampicillin+Dicloxacillin",ADD A COLOUR
-"Ampicillin+Dicloxacillin+Lactobacillus acidophilus",ADD A COLOUR
-"Ampicillin+Dicloxacillin+Lidocaine",ADD A COLOUR
-"Ampicillin+Flucloxacillin",ADD A COLOUR
-"Ampicillin+Lidocaine+Sulbactam","#8DC3E1"
-"Ampicillin+Oxacillin",ADD A COLOUR
-"Ampicillin+Probenecid",ADD A COLOUR
-"Ampicillin+Sulbactam","#4D9AE5"
-"Antofloxacin",ADD A COLOUR
-"Arbekacin","#E9E931"
-"Arginine+Cefepime",ADD A COLOUR
-"Azelaic acid+Copper+Curcumin+Doxycycline+Folic acid+Nicotinamide+Pyridoxine+Quercetin+Zinc",ADD A COLOUR
-"Azithromycin","#50A0BA"
-"Azithromycin+Bacillus coagulans+Cefixime",ADD A COLOUR
-"Azithromycin+Bacillus coagulans+Saccharomyces boulardii",ADD A COLOUR
-"Azithromycin+Cefixime",ADD A COLOUR
-"Azithromycin+Cefixime+DL-Lactic acid",ADD A COLOUR
-"Azithromycin+Cefixime+Lactobacillus acidophilus",ADD A COLOUR
-"Azithromycin+Cefpodoxime-proxetil",ADD A COLOUR
-"Azithromycin+Cefpodoxime-proxetil+Lactobacillus acidophilus",ADD A COLOUR
-"Azithromycin+Fluconazole+Secnidazole",ADD A COLOUR
-"Azithromycin+Lactobacillus acidophilus",ADD A COLOUR
-"Azithromycin+Levofloxacin",ADD A COLOUR
-"Azithromycin+Levofloxacin+Lactobacillus acidophilus",ADD A COLOUR
-"Azithromycin+Nimesulide",ADD A COLOUR
-"Azithromycin+Ofloxacin",ADD A COLOUR
-"Azithromycin+Zinc",ADD A COLOUR
-"Azlocillin","#E85891"
-"Aztreonam","#ADBEA6"
-"Bacampicillin","#E7E6C2"
-"Bacillus coagulans+Cefixime",ADD A COLOUR
-"Bacillus coagulans+Cefixime+Ofloxacin",ADD A COLOUR
-"Bacillus coagulans+Cefixime+Saccharomyces boulardii",ADD A COLOUR
-"Bacillus coagulans+Doxycycline",ADD A COLOUR
-"Bacillus coagulans+Doxycycline+Lactobacillus reuteri+Lactobacillus rhamnosus",ADD A COLOUR
-"Bacillus coagulans+Ofloxacin",ADD A COLOUR
-"Balofloxacin",ADD A COLOUR
-"Barium+Benzoyl peroxide+Gentamicin+Polymethyl methacrylate",ADD A COLOUR
-"Barium+Polymethyl methacrylate+Tobramycin",ADD A COLOUR
-"Benzoyl peroxide+Chlorophyll+Gentamicin+Polymethyl methacrylate+Zirconium",ADD A COLOUR
-"Benzoyl peroxide+Clindamycin+Gentamicin+Methacrylic acid+N,N-Dimethyl-P-Toluidine+Polymethyl methacrylate+Zirconium",ADD A COLOUR
-"Benzoyl peroxide+Clindamycin+Gentamicin+Methacrylic acid+N,N-Dimethyl-P-Toluidine+Propylmethacrylate ethylacrylate copolymer+Zirconium",ADD A COLOUR
-"Benzoyl peroxide+Clindamycin+Gentamicin+Methacrylic acid+O-Toluidine+Polymethyl methacrylate+Zirconium",ADD A COLOUR
-"Benzoyl peroxide+Clindamycin+Gentamicin+Propylmethacrylate ethylacrylate copolymer+Zirconium",ADD A COLOUR
-"Benzoyl peroxide+Gentamicin+Methacrylic acid+N,N-Dimethyl-P-Toluidine+Polymethyl methacrylate+Zirconium",ADD A COLOUR
-"Benzoyl peroxide+Gentamicin+Methacrylic acid+O-Toluidine+Polymethyl methacrylate+Zirconium",ADD A COLOUR
-"Benzoyl peroxide+Gentamicin+Polymethyl methacrylate+Styrene methyl methacrylate copolymer+Zirconium",ADD A COLOUR
-"Benzoyl peroxide+Gentamicin+Polymethyl methacrylate+Zirconium",ADD A COLOUR
-"Benzoyl peroxide+Gentamicin+Propylmethacrylate ethylacrylate copolymer+Zirconium",ADD A COLOUR
-"Benzylpenicillin","#8B481D"
-"Benzylpenicillin+Colistin",ADD A COLOUR
-"Benzylpenicillin+Kanamycin",ADD A COLOUR
-"Benzylpenicillin+Lidocaine",ADD A COLOUR
-"Benzylpenicillin+Probenecid",ADD A COLOUR
-"Benzylpenicillin+Streptomycin",ADD A COLOUR
-"Benzylpenicillin+Streptomycin+Ascorbic acid+Metamizole sodium",ADD A COLOUR
-"Benzylpenicillin+Tolycaine",ADD A COLOUR
-"Beta-cyclodextrin+Doxycycline",ADD A COLOUR
-"Beta-cyclodextrin+Doxycycline+Lactobacillus acidophilus",ADD A COLOUR
-"Betamipron+Panipenem",ADD A COLOUR
-"Bezoar bovis+Borneol+Sulfamethoxazole+Trimethoprim",ADD A COLOUR
-"Biapenem","#2B5D1C"
-"Bone+Gentamicin+Vancomycin",ADD A COLOUR
-"Bromelain+Doxycycline+Lactobacillus reuteri+Lactobacillus rhamnosus+Ornidazole",ADD A COLOUR
-"Bromelain+Tetracycline",ADD A COLOUR
-"Bromhexine+Sulfamethoxazole+Trimethoprim","#2B6E64"
-"Carbenicillin","#C28F28"
-"Cefacetrile",ADD A COLOUR
-"Cefaclor","#EAAE2B"
-"Cefaclor+Clavulanic acid","#2E186D"
-"Cefadroxil","#6D584B"
-"Cefadroxil+Clavulanic acid","#E95A22"
-"Cefadroxil+Lactobacillus acidophilus",ADD A COLOUR
-"Cefadroxil+Trimethoprim",ADD A COLOUR
-"Cefalexin","#693B8D"
-"Cefalexin+Probenecid",ADD A COLOUR
-"Cefalexin+Trimethoprim","#57954F"
-"Cefalotin","#8B2713"
-"Cefamandole","#E9BF5B"
-"Cefamandole+Lidocaine",ADD A COLOUR
-"Cefapirin","#789050"
-"Cefathiamidine",ADD A COLOUR
-"Cefatrizine","#1B142F"
-"Cefazedone","#E863BF"
-"Cefazolin","#79531A"
-"Cefazolin+Lidocaine",ADD A COLOUR
-"Cefbuperazone","#1D4035"
-"Cefcapene-pivoxil","#49581C"
-"Cefdinir","#875242"
-"Cefdinir+Clavulanic acid","#4445AD"
-"Cefdinir+Lactobacillus acidophilus",ADD A COLOUR
-"Cefditoren-pivoxil","#E594C0"
-"Cefepime","#759D77"
-"Cefepime+Sulbactam","#B9281C"
-"Cefepime+Tazobactam",ADD A COLOUR
-"Cefetamet-pivoxil","#B996A5"
-"Cefixime","#B5E9A0"
-"Cefixime+Cefpodoxime-proxetil",ADD A COLOUR
-"Cefixime+Clavulanic acid","#4EB7E8"
-"Cefixime+Clavulanic acid+Lactobacillus acidophilus","#63171D"
-"Cefixime+Cloxacillin",ADD A COLOUR
-"Cefixime+Cloxacillin+Lactobacillus acidophilus",ADD A COLOUR
-"Cefixime+Dicloxacillin",ADD A COLOUR
-"Cefixime+Dicloxacillin+Lactobacillus acidophilus",ADD A COLOUR
-"Cefixime+Lactobacillus acidophilus",ADD A COLOUR
-"Cefixime+Lactobacillus lactis",ADD A COLOUR
-"Cefixime+Levofloxacin",ADD A COLOUR
-"Cefixime+Linezolid","#6A601A"
-"Cefixime+Moxifloxacin",ADD A COLOUR
-"Cefixime+Ofloxacin","#912797"
-"Cefixime+Ofloxacin+Lactobacillus acidophilus",ADD A COLOUR
-"Cefixime+Ornidazole",ADD A COLOUR
-"Cefixime+Ornidazole+Saccharomyces boulardii+Lactobacillus acidophilus",ADD A COLOUR
-"Cefixime+Sulbactam",ADD A COLOUR
-"Cefmenoxime","#E558E4"
-"Cefmetazole","#7965B9"
-"Cefminox","#E3C6B1"
-"Cefodizime","#C3ED84"
-"Cefonicid","#5F1C83"
-"Cefoperazone","#7CBC5B"
-"Cefoperazone+Sulbactam","#8E2246"
-"Cefoperazone+Tazobactam",ADD A COLOUR
-"Ceforanide","#BFA55B"
-"Cefoselis",ADD A COLOUR
-"Cefotaxime","#63613A"
-"Cefotaxime+Lidocaine",ADD A COLOUR
-"Cefotaxime+Sulbactam","#EAE984"
-"Cefotetan","#B2E44A"
-"Cefotiam","#2C4A58"
-"Cefoxitin","#E5E2E4"
-"Cefozopran","#8D4762"
-"Cefpiramide","#241049"
-"Cefpirome","#423E14"
-"Cefpirome+Sulbactam",ADD A COLOUR
-"Cefpodoxime-proxetil","#18242B"
-"Cefpodoxime-proxetil+Clavulanic acid","#9F7671"
-"Cefpodoxime-proxetil+Cloxacillin+Lactobacillus acidophilus",ADD A COLOUR
-"Cefpodoxime-proxetil+Dicloxacillin",ADD A COLOUR
-"Cefpodoxime-proxetil+Dicloxacillin+Lactobacillus acidophilus",ADD A COLOUR
-"Cefpodoxime-proxetil+Lactobacillus acidophilus",ADD A COLOUR
-"Cefpodoxime-proxetil+Levofloxacin",ADD A COLOUR
-"Cefpodoxime-proxetil+Ofloxacin",ADD A COLOUR
-"Cefpodoxime-proxetil+Ofloxacin+Lactobacillus acidophilus",ADD A COLOUR
-"Cefpodoxime-proxetil+Sulbactam","#8E6C45"
-"Cefprozil","#5E5462"
-"Cefradine","#4CCC98"
-"Cefroxadine","#6B3B3F"
-"Cefsulodin","#4578D6"
-"Ceftaroline-fosamil","#B66C51"
-"Ceftazidime","#8BBABB"
-"Ceftazidime+Avibactam","#57EE2B"
-"Ceftazidime+Sulbactam","#AB982C"
-"Ceftazidime+Tazobactam",ADD A COLOUR
-"Ceftazidime+Tobramycin",ADD A COLOUR
-"Cefteram-pivoxil","#ADC960"
-"Ceftezole","#DE6FAB"
-"Ceftibuten","#8791E9"
-"Ceftibuten+Clavulanic acid","#E2A398"
-"Ceftizoxime","#48C355"
-"Ceftizoxime+Tazobactam",ADD A COLOUR
-"Ceftobiprole-medocaril","#BFEAE2"
-"Ceftolozane+Tazobactam","#B98A55"
-"Ceftriaxone","#442F3A"
-"Ceftriaxone+Lactobacillus acidophilus",ADD A COLOUR
-"Ceftriaxone+Lidocaine",ADD A COLOUR
-"Ceftriaxone+Sulbactam","#1D2614"
-"Ceftriaxone+Tazobactam",ADD A COLOUR
-"Ceftriaxone+Vancomycin",ADD A COLOUR
-"Cefuroxime","#424133"
-"Cefuroxime axetil","#2C3354"
-"Cefuroxime axetil+Clavulanic acid",ADD A COLOUR
-"Cefuroxime axetil+Lactobacillus acidophilus",ADD A COLOUR
-"Cefuroxime axetil+Linezolid",ADD A COLOUR
-"Cefuroxime axetil+Sulbactam",ADD A COLOUR
-"Cefuroxime+Clavulanic acid","#439B25"
-"Cefuroxime+Linezolid",ADD A COLOUR
-"Cefuroxime+Sulbactam","#9251BE"
-"Cellulose+Doxycycline",ADD A COLOUR
-"Chloramphenicol","#8A99B7"
-"Chloramphenicol+Cyanocobalamin+Folic acid+Nicotinamide+Nucleotides+Pantothenic acid+Pyridoxine+Riboflavin+Thiamine",ADD A COLOUR
-"Chloramphenicol+Tetracycline",ADD A COLOUR
-"Chlortetracycline","#BB4F1B"
-"Chymotrypsin+Doxycycline+Trypsin",ADD A COLOUR
-"Cilastatin+Imipenem","#CD8641"
-"Ciprofloxacin","#1E3D14"
-"Ciprofloxacin+Ascorbic acid",ADD A COLOUR
-"Ciprofloxacin+Metronidazole",ADD A COLOUR
-"Ciprofloxacin+Ornidazole",ADD A COLOUR
-"Ciprofloxacin+Phenazopyridine",ADD A COLOUR
-"Ciprofloxacin+Tinidazole","#BA5170"
-"Clarithromycin","#692C16"
-"Clindamycin","#5E1959"
-"Clindamycin+Gentamicin+Polymethyl methacrylate",ADD A COLOUR
-"Clindamycin+Gentamicin+Propylmethacrylate ethylacrylate copolymer",ADD A COLOUR
-"Clofoctol","#B1A9EA"
-"Clometocillin","#AA9E8E"
-"Cloxacillin","#E77461"
-"Colistin","#94EAB8"
-"Colistin+Erythromycin",ADD A COLOUR
-"Colistin+Polymethyl methacrylate+Tobramycin",ADD A COLOUR
-"Collagen+Gentamicin",ADD A COLOUR
-"Cyanocobalamin+Folic acid+Nicotinamide+Oxytetracycline+Pantothenic acid+Pyridoxine+Riboflavin+Thiamine",ADD A COLOUR
-"Cyanocobalamin+Folic acid+Nicotinamide+Oxytetracycline+Pantothenic acid+Pyridoxine+Riboflavin+Thiamine+Ascorbic acid",ADD A COLOUR
-"Dalbavancin","#BDC72F"
-"Dalfopristin+Quinupristin","#886A98"
-"Daptomycin","#5C3D1A"
-"Delafloxacin","#3C1F9A"
-"Demeclocycline","#55E8E3"
-"Dextran+Levofloxacin",ADD A COLOUR
-"Dextran+Linezolid",ADD A COLOUR
-"Dibekacin","#B64D36"
-"Dicloxacillin","#31577F"
-"Dirithromycin","#56EC7D"
-"Doripenem","#42A674"
-"Doxycycline","#3C1133"
-"Doxycycline+Lactobacillus acidophilus",ADD A COLOUR
-"Doxycycline+Lactobacillus lactis",ADD A COLOUR
-"Doxycycline+Saccharomyces boulardii",ADD A COLOUR
-"Doxycycline+Serrapeptase",ADD A COLOUR
-"Doxycycline+Tinidazole",ADD A COLOUR
-"Doxycycline+Trypsin",ADD A COLOUR
-"Enoxacin","#B692BC"
-"Eravacycline",ADD A COLOUR
-"Ertapenem","#429397"
-"Erythromycin","#D771E4"
-"Erythromycin stinoprate",ADD A COLOUR
-"Erythromycin+Nimesulide",ADD A COLOUR
-"Erythromycin+Sulfamethoxazole+Trimethoprim",ADD A COLOUR
-"Erythromycin+Trimethoprim",ADD A COLOUR
-"Ethylenediamine+Gentamicin+Propylmethacrylate ethylacrylate copolymer+Zirconium",ADD A COLOUR
-"Ethylmorphine+Guaifenesin+Tetracycline",ADD A COLOUR
-"Etimicin",ADD A COLOUR
-"Faropenem","#EDCF36"
-"Flavoxate+Ofloxacin","#BA8F74"
-"Fleroxacin","#5221EB"
-"Flomoxef","#AC7BC0"
-"Flucloxacillin","#C42B46"
-"Flumequine","#349E4C"
-"Fluorometholone+Gentamicin",ADD A COLOUR
-"Fosfomycin","#B43CE5"
-"Fosfomycin+Lidocaine",ADD A COLOUR
-"Fosfomycin+Trimethoprim",ADD A COLOUR
-"Furbenicillin",ADD A COLOUR
-"Fusidic acid","#E933B7"
-"Garenoxacin","#85C2A5"
-"Gatifloxacin","#E58ADD"
-"Gemifloxacin","#B034C3"
-"Gentamicin","#EAAA61"
-"Gentamicin+Lidocaine",ADD A COLOUR
-"Gentamicin+Polymethyl methacrylate",ADD A COLOUR
-"Gentamicin+Vancomycin",ADD A COLOUR
-"Gentamicin+Zirconium",ADD A COLOUR
-"Guaifenesin+Sulfamethoxazole+Trimethoprim","#5353DE"
-"Guaifenesin+Tetracycline",ADD A COLOUR
-"Guamecycline",ADD A COLOUR
-"Hyaluronic acid+Minocycline",ADD A COLOUR
-"Imipenem",ADD A COLOUR
-"Isepamicin","#E93090"
-"Isoniazid+Rifampicin",ADD A COLOUR
-"Josamycin","#8CEA92"
-"Kanamycin","#6A7294"
-"Kanamycin+Lidocaine",ADD A COLOUR
-"Kitasamycin",ADD A COLOUR
-"Lactose+Tigecycline",ADD A COLOUR
-"Latamoxef","#D5C95B"
-"Lefamulin",ADD A COLOUR
-"Lenampicillin",ADD A COLOUR
-"Levofloxacin","#2B5738"
-"Levofloxacin+Metronidazole",ADD A COLOUR
-"Levofloxacin+Ornidazole",ADD A COLOUR
-"Lidocaine+Oxytetracycline",ADD A COLOUR
-"Lidocaine+Rifamycin",ADD A COLOUR
-"Lincomycin","#48EC56"
-"Lincomycin+Lactobacillus acidophilus",ADD A COLOUR
-"Linezolid","#BB3288"
-"Lomefloxacin","#91B62D"
-"Lymecycline","#EA932C"
-"Lysozyme+Metacycline",ADD A COLOUR
-"Mannitol+Moxifloxacin",ADD A COLOUR
-"Mecillinam","#6844EB"
-"Meleumycin",ADD A COLOUR
-"Meropenem","#94EBDD"
-"Meropenem+Sulbactam","#824B86"
-"Meropenem+Tazobactam",ADD A COLOUR
-"Meropenem+Vaborbactam","#55C578"
-"Metacycline","#B784E6"
-"Metronidazole+Norfloxacin",ADD A COLOUR
-"Metronidazole+Spiramycin","#729189"
-"Metronidazole+Tetracycline","#954342"
-"Mezlocillin","#E9311B"
-"Mezlocillin+Sulbactam","#4FC4AA"
-"Micronomicin",ADD A COLOUR
-"Midecamycin","#9BE670"
-"Minocycline","#59507E"
-"Moxifloxacin","#4486B6"
-"Nafcillin","#C3C3E6"
-"Naproxen+Tetracycline",ADD A COLOUR
-"Nemonoxacin",ADD A COLOUR
-"Neomycin","#B058AB"
-"Neomycin+Polymyxin B+Tetracaine+Tyrothricin",ADD A COLOUR
-"Netilmicin","#E67E4A"
-"Norfloxacin","#4721C0"
-"Norfloxacin+Phenazopyridine",ADD A COLOUR
-"Norvancomycin",ADD A COLOUR
-"Nystatin+Tetracycline",ADD A COLOUR
-"Ofloxacin","#92EB2E"
-"Ofloxacin+Lactobacillus acidophilus",ADD A COLOUR
-"Ofloxacin+Ornidazole",ADD A COLOUR
-"Ofloxacin+Tinidazole",ADD A COLOUR
-"Oleandomycin","#E52EE5"
-"Oleandomycin+Tetracycline",ADD A COLOUR
-"Omadacycline","#42111C"
-"Oritavancin",ADD A COLOUR
-"Oxacillin","#8A277A"
-"Oxytetracycline","#C9B12B"
-"Paromomycin",ADD A COLOUR
-"Pazufloxacin","#4870E6"
-"Pefloxacin","#8ABE7E"
-"Penamecillin","#E65748"
-"Phenazopyridine+Sulfamethoxazole+Trimethoprim","#807E67"
-"Pheneticillin","#B76E76"
-"Phenoxymethylpenicillin","#817C85"
-"Piperacillin","#432617"
-"Piperacillin+Sulbactam","#E77994"
-"Piperacillin+Tazobactam","#4FBBBC"
-"Pivampicillin","#897F27"
-"Pivampicillin+Pivmecillinam","#EBBA8C"
-"Pivmecillinam","#567751"
-"Polymyxin B","#AEB1B7"
-"Pristinamycin","#88EB5B"
-"Procaine-benzylpenicillin",ADD A COLOUR
-"Protease+Tetracycline",ADD A COLOUR
-"Prulifloxacin","#C8EF2E"
-"Ribostamycin","#8472E5"
-"Rifabutin","#87B0E7"
-"Rifampicin","#417488"
-"Rifampicin+Trimethoprim",ADD A COLOUR
-"Rifamycin","#C15357"
-"Rokitamycin","#E5837F"
-"Rosoxacin","#76BE2D"
-"Roxithromycin","#BD2B65"
-"Roxithromycin+Lactobacillus acidophilus",ADD A COLOUR
-"Roxithromycin+Serrapeptase",ADD A COLOUR
-"Rufloxacin","#ACBC87"
-"Sisomicin","#E2ED65"
-"Sitafloxacin","#E99873"
-"Sparfloxacin","#E699A9"
-"Spectinomycin","#AE6320"
-"Spiramycin","#24316B"
-"Streptomycin","#A8B160"
-"Sulbenicillin","#50EDA4"
-"Sulfadiazine+Sulfamethoxazole+Trimethoprim",ADD A COLOUR
-"Sulfadiazine+Trimethoprim",ADD A COLOUR
-"Sulfadimidine+Trimethoprim",ADD A COLOUR
-"Sulfamethizole+Trimethoprim",ADD A COLOUR
-"Sulfamethoxazole+Sulfogaiacol",ADD A COLOUR
-"Sulfamethoxazole+Sulfogaiacol+Trimethoprim",ADD A COLOUR
-"Sulfamethoxazole+Trimethoprim","#E7BFC6"
-"Sulfametrole+Trimethoprim","#DFA6EA"
-"Sulfamoxole+Trimethoprim",ADD A COLOUR
-"Tedizolid","#C1B185"
-"Teicoplanin","#50655E"
-"Telavancin",ADD A COLOUR
-"Telithromycin","#C4E9C0"
-"Temocillin","#B8DAEA"
-"Tetracycline","#B36795"
-"Thiamphenicol","#54EECA"
-"Ticarcillin","#4E2F64"
-"Ticarcillin+Clavulanic acid",ADD A COLOUR
-"Tigecycline","#EB5C71"
-"Tobramycin","#922B66"
-"Tosufloxacin","#307A21"
-"Trimethoprim","#404A95"
-"Troleandomycin","#6F942D"
-"Trovafloxacin","#C135AD"
-"Vancomycin","#643B5B"
-"Zabofloxacin",ADD A COLOUR
+"Aloe barbadensis+Camellia sinensis+Chondroitinsulfuric acid+Cucumis sativus+Fucus vesiculosus+Glycerol+Haslea ostrearia+Hyaluronic acid+Leptogorgia virgulata+Levomenol+Matricaria chamomilla+Minocycline+Palmaria palmata+Panthenol+Retinol+Silybum marianum+Vitamin E+Ascorbic acid",ADD A COLOUR
+"Aluminium+Kaolin+Pectin+Sulfamethoxazole+Trimethoprim",ADD A COLOUR
+"Ambroxol+Amoxicillin","#A9AAD6"
+"Ambroxol+Doxycycline","#E6EC58"
+"Ambroxol+Roxithromycin",ADD A COLOUR
+"Amikacin","#F5C4DA"
+"Amikacin+Cefepime","#83EF91"
+"Amikacin+Citric acid+Sodium",ADD A COLOUR
+"Ammonium+Guaifenesin+Sulfamethoxazole+Trimethoprim",ADD A COLOUR
+"Amoxicillin","#687D4F"
+"Amoxicillin+Bacillus coagulans","#A8A1C2"
+"Amoxicillin+Bacillus coagulans+Clavulanic acid",ADD A COLOUR
+"Amoxicillin+Bacillus coagulans+Cloxacillin","#B39795"
+"Amoxicillin+Bacillus coagulans+Dicloxacillin","#837A7F"
+"Amoxicillin+Bismuth",ADD A COLOUR
+"Amoxicillin+Bromelain","#BDB9BC"
+"Amoxicillin+Clavulanic acid","#F0A34F"
+"Amoxicillin+Clavulanic acid+Lactic ferments","#8FC590"
+"Amoxicillin+Clavulanic acid+Lactobacillus acidophilus","#E1DC57"
+"Amoxicillin+Clavulanic acid+Nimesulide","#39F4E9"
+"Amoxicillin+Cloxacillin","#F1F79E"
+"Amoxicillin+Cloxacillin+DL-Lactic acid","#D3E482"
+"Amoxicillin+Cloxacillin+DL-Lactic acid+Serrapeptase","#4F24AB"
+"Amoxicillin+Cloxacillin+Lactic acid",ADD A COLOUR
+"Amoxicillin+Cloxacillin+Lactobacillus acidophilus","#A4CE1A"
+"Amoxicillin+Cloxacillin+Lactobacillus lactis","#9A279D"
+"Amoxicillin+Cloxacillin+Saccharomyces boulardii",ADD A COLOUR
+"Amoxicillin+Cloxacillin+Serrapeptase","#E0BFA9"
+"Amoxicillin+Cloxacillin+Serrapeptase+Lactobacillus acidophilus","#C8298A"
+"Amoxicillin+Diclofenac","#9886AC"
+"Amoxicillin+Diclofenac+Esomeprazole","#9DFA86"
+"Amoxicillin+Diclofenac+Paracetamol","#543227"
+"Amoxicillin+Dicloxacillin","#91A8D2"
+"Amoxicillin+Dicloxacillin+Lactobacillus acidophilus","#80FBEB"
+"Amoxicillin+Dicloxacillin+Saccharomyces boulardii","#F0E772"
+"Amoxicillin+Flucloxacillin","#46677F"
+"Amoxicillin+Flucloxacillin+Lactobacillus acidophilus","#CFCEF6"
+"Amoxicillin+Lactobacillus acidophilus","#ABF442"
+"Amoxicillin+Metronidazole","#4669EC"
+"Amoxicillin+Nystatin","#D5FA79"
+"Amoxicillin+Probenecid",ADD A COLOUR
+"Amoxicillin+Serrapeptase",ADD A COLOUR
+"Amoxicillin+Sulbactam","#F1839B"
+"Amoxicillin+Sulbactam-pivoxil","#AFE1F8"
+"Amphotericin B+Tetracycline","#6DD665"
+"Ampicillin","#EDFAF8"
+"Ampicillin+Ampicillin+Sulbactam",ADD A COLOUR
+"Ampicillin+Bacillus coagulans+Cloxacillin","#0A79EB"
+"Ampicillin+Benzydamine",ADD A COLOUR
+"Ampicillin+Chymotrypsin+Trypsin","#9DD6C6"
+"Ampicillin+Cloxacillin","#9498F0"
+"Ampicillin+Cloxacillin+Lactobacillus acidophilus","#A7E068"
+"Ampicillin+Cloxacillin+Saccharomyces boulardii","#E5F8DD"
+"Ampicillin+Dicloxacillin","#E2B94E"
+"Ampicillin+Dicloxacillin+Lactobacillus acidophilus","#44AB93"
+"Ampicillin+Dicloxacillin+Lidocaine","#96DE90"
+"Ampicillin+Erythromycin",ADD A COLOUR
+"Ampicillin+Flucloxacillin","#B85BA0"
+"Ampicillin+Guaifenesin",ADD A COLOUR
+"Ampicillin+Lactobacillus acidophilus",ADD A COLOUR
+"Ampicillin+Lidocaine+Sulbactam","#62F3DD"
+"Ampicillin+Oxacillin","#69BF95"
+"Ampicillin+Probenecid","#E5EBDB"
+"Ampicillin+Sulbactam","#7B8B1F"
+"Antofloxacin","#B4CC5E"
+"Arbekacin","#787BBB"
+"Arginine+Cefepime","#D26C4F"
+"Arginine+Ceftazidime",ADD A COLOUR
+"Aspoxicillin",ADD A COLOUR
+"Astromicin",ADD A COLOUR
+"Azelaic acid+Copper+Curcumin+Doxycycline+Folic acid+Nicotinamide+Pyridoxine+Quercetin+Zinc","#EF4AA4"
+"Azithromycin","#F9F8F3"
+"Azithromycin+Bacillus coagulans+Cefixime","#F8E984"
+"Azithromycin+Bacillus coagulans+Saccharomyces boulardii","#87F3B1"
+"Azithromycin+Cefixime","#7D8F79"
+"Azithromycin+Cefixime+DL-Lactic acid","#89A0A3"
+"Azithromycin+Cefixime+Lactobacillus acidophilus","#85D3DF"
+"Azithromycin+Cefpodoxime-proxetil","#F6B1F7"
+"Azithromycin+Cefpodoxime-proxetil+Lactobacillus acidophilus","#BC9DBB"
+"Azithromycin+Fluconazole+Secnidazole","#D58988"
+"Azithromycin+Lactobacillus acidophilus","#F4ECB9"
+"Azithromycin+Levofloxacin","#212D5C"
+"Azithromycin+Levofloxacin+Lactobacillus acidophilus","#CBC6DF"
+"Azithromycin+Nimesulide","#C59A5A"
+"Azithromycin+Ofloxacin","#2A6F95"
+"Azithromycin+Zinc","#E9BEC4"
+"Azlocillin","#D7555E"
+"Aztreonam","#D4C1E3"
+"Bacampicillin","#85BBA6"
+"Bacillus coagulans+Cefadroxil",ADD A COLOUR
+"Bacillus coagulans+Cefixime","#EFE4C4"
+"Bacillus coagulans+Cefixime+Cloxacillin",ADD A COLOUR
+"Bacillus coagulans+Cefixime+Ofloxacin","#C9A774"
+"Bacillus coagulans+Cefixime+Saccharomyces boulardii","#F3D4D5"
+"Bacillus coagulans+Doxycycline","#46EF2B"
+"Bacillus coagulans+Doxycycline+Lactobacillus reuteri+Lactobacillus rhamnosus","#81A5F4"
+"Bacillus coagulans+Ofloxacin","#59B7BD"
+"Bacillus mesentericus+Cefixime+Clostridium botulinum toxin type a+Enterococcus faecalis+Lactobacillus acidophilus",ADD A COLOUR
+"Bacillus mesentericus+Cefpodoxime-proxetil+Clostridium botulinum toxin type a+Enterococcus faecalis+Lactobacillus acidophilus",ADD A COLOUR
+"Bacitracin",ADD A COLOUR
+"Bacitracin+Neomycin",ADD A COLOUR
+"Balofloxacin","#B5C528"
+"Barium+Benzoyl peroxide+Ethanol+Gentamicin+Hydroquinone+Methacrylic acid+N,N-Dimethyl-P-Toluidine+Polymethyl methacrylate+Ascorbic acid",ADD A COLOUR
+"Barium+Benzoyl peroxide+Gentamicin+Methacrylic acid+N,N-Dimethyl-P-Toluidine+Polymethyl methacrylate",ADD A COLOUR
+"Barium+Benzoyl peroxide+Gentamicin+Polymethyl methacrylate","#9EDBFB"
+"Barium+Polymethyl methacrylate+Tobramycin","#F4DE18"
+"Bekanamycin",ADD A COLOUR
+"Benzoyl peroxide+Chlorophyll+Gentamicin+Polymethyl methacrylate+Zirconium","#EBF8D1"
+"Benzoyl peroxide+Clindamycin+Gentamicin",ADD A COLOUR
+"Benzoyl peroxide+Clindamycin+Gentamicin+Methacrylic acid+N,N-Dimethyl-P-Toluidine+Polymethyl methacrylate+Zirconium","#8175E1"
+"Benzoyl peroxide+Clindamycin+Gentamicin+Methacrylic acid+N,N-Dimethyl-P-Toluidine+Propylmethacrylate ethylacrylate copolymer+Zirconium","#5D4BEE"
+"Benzoyl peroxide+Clindamycin+Gentamicin+Methacrylic acid+O-Toluidine+Polymethyl methacrylate+Zirconium","#15907E"
+"Benzoyl peroxide+Clindamycin+Gentamicin+O-Toluidine+Polymethyl methacrylate+Zirconium",ADD A COLOUR
+"Benzoyl peroxide+Clindamycin+Gentamicin+Propylmethacrylate ethylacrylate copolymer+Zirconium","#F177AA"
+"Benzoyl peroxide+Gentamicin+Methacrylic acid+N,N-Dimethyl-P-Toluidine+Polymethyl methacrylate+Zirconium","#B1B0E6"
+"Benzoyl peroxide+Gentamicin+Methacrylic acid+O-Toluidine+Polymethyl methacrylate+Zirconium","#B9F7B4"
+"Benzoyl peroxide+Gentamicin+O-Toluidine+Polymethyl methacrylate+Zirconium",ADD A COLOUR
+"Benzoyl peroxide+Gentamicin+Polymethyl methacrylate+Styrene methyl methacrylate copolymer+Zirconium","#CB93B8"
+"Benzoyl peroxide+Gentamicin+Polymethyl methacrylate+Zirconium","#52DB58"
+"Benzoyl peroxide+Gentamicin+Propylmethacrylate ethylacrylate copolymer+Zirconium","#CDE993"
+"Benzydamine+Tetracycline",ADD A COLOUR
+"Benzyl benzoate+Benzylpenicillin",ADD A COLOUR
+"Benzylpenicillin","#A1BBFB"
+"Benzylpenicillin+Chlorphenamine+Lidocaine",ADD A COLOUR
+"Benzylpenicillin+Colistin","#988AC7"
+"Benzylpenicillin+Kanamycin","#60DCB2"
+"Benzylpenicillin+Lidocaine","#F4E6E3"
+"Benzylpenicillin+Probenecid","#FDB5DD"
+"Benzylpenicillin+Streptomycin","#BDA0D0"
+"Benzylpenicillin+Streptomycin+Ascorbic acid+Metamizole sodium","#C3BF20"
+"Benzylpenicillin+Tolycaine","#F2C0AB"
+"Beta-cyclodextrin+Doxycycline","#9C507D"
+"Beta-cyclodextrin+Doxycycline+Lactobacillus acidophilus","#9EE573"
+"Betamipron+Panipenem","#BAF65D"
+"Bezoar bovis+Borneol+Sulfamethoxazole+Trimethoprim","#97773D"
+"Biapenem","#8C40E4"
+"Bone+Gentamicin+Vancomycin","#BBF0E4"
+"Bromelain+Doxycycline+Lactobacillus reuteri+Lactobacillus rhamnosus+Ornidazole","#957C6B"
+"Bromelain+Tetracycline","#AFCEAD"
+"Bromhexine+Cefaclor",ADD A COLOUR
+"Bromhexine+Chlorphenamine+Paracetamol+Phenylephrine",ADD A COLOUR
+"Bromhexine+Sulfamethoxazole+Trimethoprim","#8490BB"
+"Carbenicillin","#E7DFD2"
+"Carumonam",ADD A COLOUR
+"Cefacetrile","#EA9FF2"
+"Cefaclor","#F331F3"
+"Cefaclor+Clavulanic acid","#35F16A"
+"Cefadroxil","#83CCE4"
+"Cefadroxil+Clavulanic acid","#F6EBD4"
+"Cefadroxil+Lactobacillus acidophilus","#92F3A3"
+"Cefadroxil+Probenecid",ADD A COLOUR
+"Cefadroxil+Trimethoprim","#A1F8DF"
+"Cefalexin","#8EDFA3"
+"Cefalexin+Lactobacillus acidophilus",ADD A COLOUR
+"Cefalexin+Probenecid","#69B6F8"
+"Cefalexin+Trimethoprim","#87BDE9"
+"Cefalotin","#9186D5"
+"Cefamandole","#BDE85B"
+"Cefamandole+Lidocaine","#D05DA1"
+"Cefapirin","#AE67F3"
+"Cefathiamidine","#8DF12B"
+"Cefatrizine","#CDBCB4"
+"Cefazedone","#59FDD5"
+"Cefazolin","#DED577"
+"Cefazolin+Lidocaine","#3E54E1"
+"Cefbuperazone","#D5E6E6"
+"Cefcapene-pivoxil","#88BAC0"
+"Cefdinir","#AA77A7"
+"Cefdinir+Clavulanic acid","#995E23"
+"Cefdinir+Lactobacillus acidophilus","#3D774E"
+"Cefditoren-pivoxil","#6984D0"
+"Cefepime","#E4C095"
+"Cefepime+Sulbactam","#EE75F1"
+"Cefepime+Tazobactam","#9055CA"
+"Cefetamet-pivoxil","#DEA3E1"
+"Cefixime","#AAC5D3"
+"Cefixime+Cefpodoxime-proxetil","#B1DF74"
+"Cefixime+Clavulanic acid","#5EB3DE"
+"Cefixime+Clavulanic acid+Lactobacillus acidophilus","#D7B1EC"
+"Cefixime+Cloxacillin","#991FF8"
+"Cefixime+Cloxacillin+Lactobacillus acidophilus","#BA7E95"
+"Cefixime+Dicloxacillin","#C565BF"
+"Cefixime+Dicloxacillin+Lactobacillus acidophilus","#44D364"
+"Cefixime+Lactobacillus acidophilus","#F7C89D"
+"Cefixime+Lactobacillus lactis","#F7DB39"
+"Cefixime+Levofloxacin","#EB85F8"
+"Cefixime+Linezolid","#D7FB8A"
+"Cefixime+Moxifloxacin","#6289B1"
+"Cefixime+Ofloxacin","#BD23FC"
+"Cefixime+Ofloxacin+Lactobacillus acidophilus","#F6ACDF"
+"Cefixime+Ornidazole","#8177A5"
+"Cefixime+Ornidazole+Saccharomyces boulardii+Lactobacillus acidophilus","#EBFDBF"
+"Cefixime+Sulbactam","#EEB77A"
+"Cefmenoxime","#C5BA6B"
+"Cefmetazole","#60AC7B"
+"Cefminox","#D29DF2"
+"Cefodizime","#EED5F7"
+"Cefonicid","#F4CA80"
+"Cefonicid+Lidocaine",ADD A COLOUR
+"Cefoperazone","#F57083"
+"Cefoperazone+Sulbactam","#CABC9B"
+"Cefoperazone+Tazobactam","#F3C9F7"
+"Ceforanide","#C094A6"
+"Cefoselis","#BFB3FB"
+"Cefotaxime","#ADDE80"
+"Cefotaxime+Lidocaine","#F8D9EA"
+"Cefotaxime+Sulbactam","#FCD4EE"
+"Cefotetan","#C246D7"
+"Cefotiam","#DEC31F"
+"Cefotiam-hexetil",ADD A COLOUR
+"Cefoxitin","#B599AC"
+"Cefozopran","#B86569"
+"Cefpiramide","#D7C2F7"
+"Cefpirome","#E3D4C0"
+"Cefpirome+Sulbactam","#8B53A3"
+"Cefpodoxime-proxetil","#9A8AED"
+"Cefpodoxime-proxetil+Clavulanic acid","#8EF1CE"
+"Cefpodoxime-proxetil+Cloxacillin+Lactobacillus acidophilus","#89E25C"
+"Cefpodoxime-proxetil+Dicloxacillin","#EAC86E"
+"Cefpodoxime-proxetil+Dicloxacillin+Lactobacillus acidophilus","#D27BAB"
+"Cefpodoxime-proxetil+Lactobacillus acidophilus","#E7FA58"
+"Cefpodoxime-proxetil+Levofloxacin","#F8F6B8"
+"Cefpodoxime-proxetil+Ofloxacin","#71CCF6"
+"Cefpodoxime-proxetil+Ofloxacin+Lactobacillus acidophilus","#AFD6A9"
+"Cefpodoxime-proxetil+Sulbactam","#E65A09"
+"Cefprozil","#BC76E6"
+"Cefradine","#7E21E7"
+"Cefroxadine","#79BA72"
+"Cefsulodin","#7ACB6D"
+"Ceftaroline-fosamil","#91E0D7"
+"Ceftazidime","#3B95F0"
+"Ceftazidime+Avibactam","#BD94D8"
+"Ceftazidime+Sulbactam","#AFD7EB"
+"Ceftazidime+Tazobactam","#3B8595"
+"Ceftazidime+Tobramycin","#47CAE8"
+"Cefteram-pivoxil","#D874F6"
+"Ceftezole","#59E0E4"
+"Ceftibuten","#E6995D"
+"Ceftibuten+Clavulanic acid","#9B977B"
+"Ceftizoxime","#9BD1DC"
+"Ceftizoxime+Lidocaine",ADD A COLOUR
+"Ceftizoxime+Tazobactam","#E274DE"
+"Ceftobiprole-medocaril","#ABC0E1"
+"Ceftolozane+Tazobactam","#BC5FE5"
+"Ceftriaxone","#D75E7A"
+"Ceftriaxone+Lactobacillus acidophilus","#55E1F5"
+"Ceftriaxone+Lidocaine","#ED4135"
+"Ceftriaxone+Sulbactam","#F3685D"
+"Ceftriaxone+Tazobactam","#9BF8C7"
+"Ceftriaxone+Vancomycin","#E54487"
+"Cefuroxime","#C9A925"
+"Cefuroxime axetil","#77F1FA"
+"Cefuroxime axetil+Clavulanic acid","#D6D3DC"
+"Cefuroxime axetil+Lactobacillus acidophilus","#D89FA3"
+"Cefuroxime axetil+Linezolid","#8F8FAB"
+"Cefuroxime axetil+Sulbactam","#DE27B3"
+"Cefuroxime+Clavulanic acid","#B0ECF8"
+"Cefuroxime+Lidocaine",ADD A COLOUR
+"Cefuroxime+Linezolid","#EACC4E"
+"Cefuroxime+Sulbactam","#D14262"
+"Cellulose+Doxycycline","#C5D853"
+"Cephalosporin C",ADD A COLOUR
+"Chloramphenicol","#7CA3B6"
+"Chloramphenicol+Cyanocobalamin+Folic acid+Nicotinamide+Nucleotides+Pantothenic acid+Pyridoxine+Riboflavin+Thiamine","#4B2CF8"
+"Chloramphenicol+Cyanocobalamin+Folic acid+Pantothenic acid",ADD A COLOUR
+"Chloramphenicol+Tetracycline","#C5E3D7"
+"Chlorophyll",ADD A COLOUR
+"Chlortetracycline","#C1D2DF"
+"Chymotrypsin+Doxycycline+Trypsin","#88E5D3"
+"Ciclacillin",ADD A COLOUR
+"Cilastatin+Imipenem","#71DED5"
+"Ciprofloxacin","#7FD1B3"
+"Ciprofloxacin+Ascorbic acid","#8F7C98"
+"Ciprofloxacin+Metronidazole","#5F94F8"
+"Ciprofloxacin+Ornidazole","#B2F8E7"
+"Ciprofloxacin+Phenazopyridine","#B0B458"
+"Ciprofloxacin+Tinidazole","#CECEC4"
+"Clarithromycin","#CE9D7F"
+"Clindamycin","#99C96E"
+"Clindamycin+Gentamicin+Polymethyl methacrylate","#E2E5A1"
+"Clindamycin+Gentamicin+Propylmethacrylate ethylacrylate copolymer","#F82578"
+"Clofoctol","#DC87DA"
+"Clometocillin","#CDE0C7"
+"Cloxacillin","#ABF1F5"
+"Colistin","#837510"
+"Colistin+Erythromycin","#B4B1C4"
+"Colistin+Polymethyl methacrylate+Tobramycin","#27A8CB"
+"Collagen+Gentamicin","#AD43F7"
+"Cyanocobalamin+Folic acid+Nicotinamide+Oxytetracycline+Pantothenic acid+Pyridoxine+Riboflavin+Thiamine","#895B6E"
+"Cyanocobalamin+Folic acid+Nicotinamide+Oxytetracycline+Pantothenic acid+Pyridoxine+Riboflavin+Thiamine+Ascorbic acid","#79F5C2"
+"Dalbavancin","#DA61F6"
+"Dalfopristin+Quinupristin","#A8C4B9"
+"Daptomycin","#CA313B"
+"Delafloxacin","#D4EE74"
+"Demeclocycline","#F4B696"
+"Dexamethasone+Neomycin",ADD A COLOUR
+"Dextran+Levofloxacin","#A796B4"
+"Dextran+Linezolid","#F36AA8"
+"Diastase+Doxycycline",ADD A COLOUR
+"Dibekacin","#E8D9A2"
+"Diclofenac+Serrapeptase",ADD A COLOUR
+"Dicloxacillin","#F2F582"
+"Dirithromycin","#47B26A"
+"Doconexent+Doxycycline+Icosapent+Linum usitatissimum+Vitamin E",ADD A COLOUR
+"Doripenem","#F74574"
+"Doxycycline","#57DBC1"
+"Doxycycline+Lactobacillus acidophilus","#396E70"
+"Doxycycline+Lactobacillus lactis","#34ECBF"
+"Doxycycline+Octinoxate+Salicylic acid+Zinc",ADD A COLOUR
+"Doxycycline+Saccharomyces boulardii","#33F7BE"
+"Doxycycline+Serrapeptase","#9B6BA7"
+"Doxycycline+Tinidazole","#E4DBF9"
+"Doxycycline+Trypsin","#51F5F7"
+"Enoxacin","#4EC089"
+"Eravacycline","#B696B1"
+"Ertapenem","#D3D2B1"
+"Erythromycin","#C4F1CE"
+"Erythromycin stinoprate","#F5941E"
+"Erythromycin+Nimesulide","#F46990"
+"Erythromycin+Oxytetracycline",ADD A COLOUR
+"Erythromycin+Sulfamethoxazole+Trimethoprim","#DBE0F4"
+"Erythromycin+Trimethoprim","#F2AEAF"
+"Ethylenediamine+Gentamicin+Propylmethacrylate ethylacrylate copolymer+Zirconium","#9277BF"
+"Ethylmethylhydroxypyridine",ADD A COLOUR
+"Ethylmorphine+Guaifenesin+Tetracycline","#B9B7A2"
+"Etimicin","#D1BB4C"
+"Faropenem","#7CC6C2"
+"Flavoxate+Ofloxacin","#C120C3"
+"Fleroxacin","#C57ABA"
+"Flomoxef","#CFF3A8"
+"Flucloxacillin","#58A9C6"
+"Flumequine","#B2D27F"
+"Fluorometholone+Gentamicin","#63BF1B"
+"Flurithromycin",ADD A COLOUR
+"Fosfomycin","#BFF77C"
+"Fosfomycin trometamol",ADD A COLOUR
+"Fosfomycin+Lidocaine","#22B8F1"
+"Fosfomycin+Trimethoprim","#D5D063"
+"Furbenicillin","#95B452"
+"Fusidic acid","#AED1F7"
+"Garenoxacin","#B990E8"
+"Gatifloxacin","#FAD3BD"
+"Gatifloxacin+Ornidazole",ADD A COLOUR
+"Gemifloxacin","#E2CAA9"
+"Gentamicin","#F7E192"
+"Gentamicin+Lidocaine","#E653D2"
+"Gentamicin+Polymethyl methacrylate","#AE706F"
+"Gentamicin+Vancomycin","#697BDA"
+"Gentamicin+Zirconium","#8A9F64"
+"Guaifenesin+Sulfamethoxazole+Trimethoprim","#F1AD7C"
+"Guaifenesin+Tetracycline","#C5AB60"
+"Guamecycline","#58F5AF"
+"Hyaluronic acid+Minocycline","#B7AFCC"
+"Hydroxymethylquinoxaline dioxide",ADD A COLOUR
+"Imipenem","#E1CCC7"
+"Isepamicin","#BA77F4"
+"Isoniazid+Rifampicin","#747CFB"
+"Josamycin","#3FEFCF"
+"Kanamycin","#A2235E"
+"Kanamycin+Lidocaine","#FBF1E6"
+"Kitasamycin","#785AEC"
+"Lactose+Tigecycline","#C2C3D2"
+"Latamoxef","#6A57D5"
+"Lefamulin","#9E9894"
+"Lenampicillin","#BDEA30"
+"Levofloxacin","#F5F264"
+"Levofloxacin+Metronidazole","#F276CB"
+"Levofloxacin+Ornidazole","#5AE0A5"
+"Lidocaine+Oxytetracycline","#F7C9C3"
+"Lidocaine+Rifamycin","#F69D9C"
+"Lincomycin","#A2B584"
+"Lincomycin+Lactobacillus acidophilus","#A2EC5F"
+"Linezolid","#EB827B"
+"Lomefloxacin","#8A98E0"
+"Loracarbef",ADD A COLOUR
+"Lymecycline","#AEA0EB"
+"Lysozyme+Metacycline","#E7FAEB"
+"Macrogol(s)",ADD A COLOUR
+"Mannitol+Moxifloxacin","#3B98CA"
+"Mecillinam","#D031EE"
+"Meleumycin","#F56DDB"
+"Meropenem","#ACFBA1"
+"Meropenem+Sodium+Sulbactam",ADD A COLOUR
+"Meropenem+Sulbactam","#CEF0F3"
+"Meropenem+Tazobactam","#CED579"
+"Meropenem+Vaborbactam","#C4B072"
+"Metacycline","#C179C6"
+"Metronidazole+Norfloxacin","#1CFBDA"
+"Metronidazole+Spiramycin","#F088C3"
+"Metronidazole+Tetracycline","#CEFA53"
+"Mezlocillin","#73D9E2"
+"Mezlocillin+Sulbactam","#C1D199"
+"Micronomicin","#A6A5E8"
+"Midecamycin","#C8F18B"
+"Minocycline","#45EF9A"
+"Moxifloxacin","#484DA3"
+"Nafcillin","#AAECCE"
+"Naproxen+Tetracycline","#C9E9BC"
+"Nemonoxacin","#5EAE32"
+"Neomycin","#912AC4"
+"Neomycin+Polymyxin B+Tetracaine+Tyrothricin","#A17FF2"
+"Netilmicin","#735CA9"
+"Norfloxacin","#F94AC0"
+"Norfloxacin+Lactobacillus acidophilus",ADD A COLOUR
+"Norfloxacin+Phenazopyridine","#F6CD8D"
+"Norfloxacin+Tinidazole",ADD A COLOUR
+"Norvancomycin","#AF77BC"
+"Nystatin+Tetracycline","#B29E40"
+"Ofloxacin","#A0F7F3"
+"Ofloxacin+Lactobacillus acidophilus","#706473"
+"Ofloxacin+Ornidazole","#F0D2A0"
+"Ofloxacin+Tinidazole","#F8A0BF"
+"Oleandomycin","#D15385"
+"Oleandomycin+Tetracycline","#498DCD"
+"Omadacycline","#E8DA8D"
+"Oritavancin","#BBF793"
+"Oxacillin","#E8FB20"
+"Oxytetracycline","#B388F0"
+"Paromomycin","#F4EBF8"
+"Paroxetine",ADD A COLOUR
+"Pazufloxacin","#C1E66B"
+"Pefloxacin","#D1A149"
+"Penamecillin","#F4B7C9"
+"Phenazopyridine+Sulfamethizole+Tetracycline",ADD A COLOUR
+"Phenazopyridine+Sulfamethoxazole+Trimethoprim","#47C76B"
+"Pheneticillin","#5B9399"
+"Phenoxymethylpenicillin","#6B2866"
+"Piperacillin","#CB4BB1"
+"Piperacillin+Sulbactam","#FB8C67"
+"Piperacillin+Tazobactam","#75A6E0"
+"Pivampicillin","#AD69C9"
+"Pivampicillin+Pivmecillinam","#537AF1"
+"Pivmecillinam","#9C9A59"
+"Polymyxin B","#4F944B"
+"Pristinamycin","#C2DBFA"
+"Procaine-Caffeine Complex",ADD A COLOUR
+"Procaine-benzylpenicillin","#CCC48A"
+"Propicillin",ADD A COLOUR
+"Protease+Tetracycline","#BBD0D0"
+"Prulifloxacin","#F5F136"
+"Ribostamycin","#CBE722"
+"Rifabutin","#393DC8"
+"Rifampicin","#8BF256"
+"Rifampicin+Trimethoprim","#E1A6C5"
+"Rifamycin","#B251EC"
+"Rifaximin",ADD A COLOUR
+"Rokitamycin","#89BBD7"
+"Rosoxacin","#BCE7F2"
+"Roxithromycin","#F29ADA"
+"Roxithromycin+Lactobacillus acidophilus","#D3B0C5"
+"Roxithromycin+Serrapeptase","#BAB8F9"
+"Rufloxacin","#69F17C"
+"Sisomicin","#E098FA"
+"Sitafloxacin","#D9AAF4"
+"Sparfloxacin","#57D1DC"
+"Spectinomycin","#6C5879"
+"Spiramycin","#CCC799"
+"Streptomycin","#AEBE9A"
+"Sulbactam",ADD A COLOUR
+"Sulbenicillin","#F4E7BE"
+"Sulfadiazine+Sulfamethoxazole+Trimethoprim","#EC853A"
+"Sulfadiazine+Tetroxoprim",ADD A COLOUR
+"Sulfadiazine+Trimethoprim","#F7CCF0"
+"Sulfadimidine+Trimethoprim","#D9E6F4"
+"Sulfamethizole+Trimethoprim","#B2C4F5"
+"Sulfamethoxazole+Sulfogaiacol","#81C0F7"
+"Sulfamethoxazole+Sulfogaiacol+Trimethoprim","#E297AC"
+"Sulfamethoxazole+Trimethobenzamide",ADD A COLOUR
+"Sulfamethoxazole+Trimethoprim","#E2B6E6"
+"Sulfametrole+Trimethoprim","#989213"
+"Sulfamoxole+Trimethoprim","#DEEDBA"
+"Tebipenem-pivoxil",ADD A COLOUR
+"Tedizolid","#ED947A"
+"Teicoplanin","#B29CF7"
+"Telavancin","#B67751"
+"Telithromycin","#D488EC"
+"Temocillin","#CE5BD4"
+"Tetracycline","#F6CF32"
+"Thiamphenicol","#29B9AF"
+"Thiamphenicol glycinate acetylcysteine complex",ADD A COLOUR
+"Ticarcillin","#F7BEF4"
+"Ticarcillin+Clavulanic acid","#A2D994"
+"Tigecycline","#EB1DCD"
+"Tobramycin","#8FBF3F"
+"Tosufloxacin","#B3EFBB"
+"Trimethoprim","#F053F3"
+"Troleandomycin","#C1B8DF"
+"Trovafloxacin","#E6BFD8"
+"Vancomycin","#A179D9"
+"Xibornol",ADD A COLOUR
+"Zabofloxacin","#E8495E"

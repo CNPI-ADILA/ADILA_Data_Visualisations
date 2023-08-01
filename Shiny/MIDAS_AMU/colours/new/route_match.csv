@@ -1,10 +1,12 @@
 "route","my_colours"
 "All","#810000"
-"Inhal",ADD A COLOUR
-"Inhal.powder",ADD A COLOUR
+"Inhal","#777EDD"
+"Inhal.powder","#DD77D1"
 "Inhal.solution","#88CCEE"
+"Instill",ADD A COLOUR
 "Oral","#629C25"
 "Parenteral","#FC8105"
 "Rectal","#DDCC77"
-"Sublingual/Buccal/Oromucosal",ADD A COLOUR
-"Transdermal",ADD A COLOUR
+"Sublingual/Buccal/Oromucosal","#000000"
+"Transdermal","#77DDBD"
+"Unknown",ADD A COLOUR

@@ -37,7 +37,7 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if
   avg_year_range_per_data_source <- round(sum(unique(avg_year_range_per_data_source$year_range)) / num_data_sources, 2)
   
   avg_perc_aware <- data_for_visualisations %>%
-    filter(metric == "ddd" & who_region == "All" & country == "All" & antimicrobials == "All" & route_of_administration == "All" & sector == "All" & aware_category != "All") %>%
+    filter(metric == "ddd" & who_regional_office == "All" & country == "All" & antimicrobials == "All" & route_of_administration == "All" & sector == "All" & aware_category != "All") %>%
     group_by(source_title, aware_category) %>%
     mutate(AMC_aware = sum(value)) %>%
     ungroup()
@@ -54,7 +54,7 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if
   rm(avg_perc_aware)
 
   avg_perc_route <- data_for_visualisations %>%
-    filter(metric == "ddd" & who_region == "All" & country == "All" & antimicrobials == "All" & aware_category == "All" & sector == "All" & route_of_administration != "All") %>%
+    filter(metric == "ddd" & who_regional_office == "All" & country == "All" & antimicrobials == "All" & aware_category == "All" & sector == "All" & route_of_administration != "All") %>%
     group_by(source_title, route_of_administration) %>%
     mutate(AMC_route = sum(value)) %>%
     ungroup()
@@ -99,7 +99,7 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if
             filter(metric == "su" & (route_of_administration == "Oral" | route_of_administration == "Parenteral")) %>%
             filter(value > 0) %>%
             mutate(value = log(value)) %>%
-            group_by(who_region, country, antimicrobials, aware_category, route_of_administration, sector) %>%
+            group_by(who_regional_office, country, antimicrobials, aware_category, route_of_administration, sector) %>%
             summarize(value = sum(value, na.rm = TRUE), .groups = "keep") %>%
             ungroup()
           country_route_univ <- country_route_univ %>%
@@ -109,7 +109,7 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if
             ) %>%
             filter((aware_category == "Access" | aware_category == "Watch" | aware_category == "Reserve") & sector != "All" & antimicrobials != "All") 
           cor_labels <- country_route_univ %>%
-            group_by(who_region) %>%
+            group_by(who_regional_office) %>%
             mutate(label = round(cor(Oral, Parenteral, use = "complete.obs"), 2)) %>%
             distinct(label) %>% mutate(aware_category = NA, sector = NA, group = NA)
           cor_labels$label <- paste0("corr=", cor_labels$label)
@@ -120,7 +120,7 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if
             geom_smooth(method = "lm", se = FALSE) +
             scale_colour_manual(values = colours) +
             labs(x = "log(Oral SU)", y = "log(Parenteral SU)", fill = NULL) +
-            facet_wrap(~who_region)
+            facet_wrap(~who_regional_office)
           country_route_univ_plot <- country_route_univ_plot + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = cor_labels, show.legend = FALSE)
           country_route_univ_plot
           ggsave("./outputs/parenteral_vs_oral.png", 
@@ -130,7 +130,7 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if
             filter(metric == "su" & (aware_category == "Access" | aware_category == "Watch" | aware_category == "Reserve")) %>%
             filter(value > 0) %>%
             mutate(value = log(value)) %>%
-            group_by(who_region, country, aware_category, route_of_administration, sector) %>%
+            group_by(who_regional_office, country, aware_category, route_of_administration, sector) %>%
             summarize(value = sum(value, na.rm = TRUE), .groups = "keep") %>%
             ungroup()
           country_aware_univ <- country_aware_univ %>%
@@ -140,17 +140,17 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if
             ) %>%
             filter((route_of_administration == "Oral" | route_of_administration == "Parenteral") & sector != "All") 
           cor_labels1 <- country_aware_univ %>%
-            group_by(who_region) %>%
+            group_by(who_regional_office) %>%
             mutate(label = round(cor(Access, Watch, use = "complete.obs"), 2)) %>%
             distinct(label) %>% mutate(route_of_administration = NA, sector = NA, group = NA)
           cor_labels1$label <- paste0("corr=", cor_labels1$label)
           cor_labels2 <- country_aware_univ %>%
-            group_by(who_region) %>%
+            group_by(who_regional_office) %>%
             mutate(label = round(cor(Access, Reserve, use = "complete.obs"), 2)) %>%
             distinct(label) %>% mutate(route_of_administration = NA, sector = NA, group = NA)
           cor_labels2$label <- paste0("corr=", cor_labels2$label)
           cor_labels3 <- country_aware_univ %>%
-            group_by(who_region) %>%
+            group_by(who_regional_office) %>%
             mutate(label = round(cor(Watch, Reserve, use = "complete.obs"), 2)) %>%
             distinct(label) %>% mutate(route_of_administration = NA, sector = NA, group = NA)
           cor_labels3$label <- paste0("corr=", cor_labels3$label)
@@ -161,7 +161,7 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if
             geom_smooth(method = "lm", se = FALSE) +
             scale_colour_manual(values = colours) +
             labs(x = "log(Access SU)", y = "log(Watch SU)", fill = NULL) +
-            facet_wrap(~who_region)
+            facet_wrap(~who_regional_office)
           country_aware_univ_plot1 <- country_aware_univ_plot1 + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = cor_labels1, show.legend = FALSE)
           country_aware_univ_plot1
           ggsave("./outputs/watch_vs_access.png", 
@@ -172,7 +172,7 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if
             geom_smooth(method = "lm", se = FALSE) +
             scale_colour_manual(values = colours) +
             labs(x = "log(Access SU)", y = "log(Reserve SU)", fill = NULL) +
-            facet_wrap(~who_region)
+            facet_wrap(~who_regional_office)
           country_aware_univ_plot2 <- country_aware_univ_plot2 + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = cor_labels2, show.legend = FALSE)
           country_aware_univ_plot2
           ggsave("./outputs/reserve_vs_access.png", 
@@ -183,7 +183,7 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if
             geom_smooth(method = "lm", se = FALSE) +
             scale_colour_manual(values = colours) +
             labs(x = "log(Watch SU)", y = "log(Reserve SU)", fill = NULL) +
-            facet_wrap(~who_region)
+            facet_wrap(~who_regional_office)
           country_aware_univ_plot3 <- country_aware_univ_plot3 + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = cor_labels3, show.legend = FALSE)
           country_aware_univ_plot3
           ggsave("./outputs/reserve_vs_watch.png", 
@@ -193,7 +193,7 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if
             filter(metric == "su" & (sector == "Retail" | sector == "Hospital")) %>%
             filter(value > 0) %>%
             mutate(value = log(value)) %>%
-            group_by(who_region, country, antimicrobials, aware_category, route_of_administration, sector) %>%
+            group_by(who_regional_office, country, antimicrobials, aware_category, route_of_administration, sector) %>%
             summarize(value = sum(value, na.rm = TRUE), .groups = "keep") %>%
             ungroup()
           country_sector_univ <- country_sector_univ %>%
@@ -203,7 +203,7 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if
             ) %>%
             filter((route_of_administration == "Oral" | route_of_administration == "Parenteral") & (aware_category == "Access" | aware_category == "Reserve" | aware_category == "Watch") & antimicrobials != "All") 
           cor_labels <- country_sector_univ %>%
-            group_by(who_region) %>%
+            group_by(who_regional_office) %>%
             mutate(label = round(cor(Retail, Hospital, use = "complete.obs"), 2)) %>%
             distinct(label) %>% mutate(aware_category = NA, route_of_administration = NA, group = NA)
           cor_labels$label <- paste0("corr=", cor_labels$label)
@@ -214,7 +214,7 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if
             geom_smooth(method = "lm", se = FALSE) +
             scale_colour_manual(values = colours) +
             labs(x = "log(Retail SU)", y = "log(Hospital SU)", fill = NULL) +
-            facet_wrap(~who_region)
+            facet_wrap(~who_regional_office)
           country_sector_univ_plot <- country_sector_univ_plot + geom_text(x = Inf, y = -Inf, hjust = 1, vjust = .001, aes(label = label), data = cor_labels, show.legend = FALSE)
           country_sector_univ_plot
           ggsave("./outputs/hospital_vs_retail.png", 

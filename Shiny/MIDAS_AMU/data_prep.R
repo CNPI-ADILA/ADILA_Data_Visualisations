@@ -8,18 +8,23 @@ data_original <- read.csv(d) #can also use data.table's fread(d)
 # reformat/clean
   # renaming columns
   data_reformatted <- data_original %>% 
-    select(source_title, who_region, country, antimicrobials, aware_category, route_of_administration, sector, effective_from, standard_units, ddd, did, di) %>%
+    select(source_citation, who_regional_office, country, antimicrobials, aware_category, route_of_administration, sector, effective_from, standard_units, ddd, did, di) %>%
     mutate(year = as.numeric(gsub("-01-01", "", effective_from))) %>% select(-effective_from) %>% rename(su = standard_units)
   # reshaping wide to long
   data_reformatted <- gather(data_reformatted, metric, value, su, ddd, did, di, factor_key = TRUE)
   # collapsing stratification in other categories (e.g., age_appropriate (true/false), manufacturer, etc.)
   data_reformatted <- data_reformatted %>% 
-    group_by(source_title, who_region, country, antimicrobials, aware_category, route_of_administration, sector, year, metric) %>%
+    group_by(source_citation, who_regional_office, country, antimicrobials, aware_category, route_of_administration, sector, year, metric) %>%
     summarize(value = sum(value, na.rm = TRUE), .groups = "keep") %>%
     ungroup()
 
 # create summed cols for "All" antimicrobials/routes/countries/aware_categories/who_region/sector
 source("collapse_by_category.R")
+
+# list of countries/years that didn't have data for both hospital and retail
+limited_coverage <- data_original %>% mutate(year = as.numeric(gsub("-01-01", "", effective_from))) %>% 
+  distinct(country, year, market_segment_coverage) %>% filter(market_segment_coverage == "Retail Only")
+limited_coverage <- list(paste0(limited_coverage$country, " ", limited_coverage$year))
   
 # change some country names that don't match the names in the shape file
 data_for_visualisations <- data_for_visualisations %>%

@@ -1,4 +1,5 @@
 sector,my_colours
-All,#000000
-Hospital,#5C741F
-Retail,#EAAE2B
+All,#810000
+Hospital,#C56ECB
+Retail,#B8C2C3
+Unknown,#B2D974

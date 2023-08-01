@@ -1,8 +1,9 @@
 region,my_colours
-All,#000000
-MIDAS African Region (AFR),#810000
-MIDAS Eastern Mediterranean Region (EMR),#E57723
-MIDAS European Region (EUR),#E6D089
-MIDAS Region of the Americas (AMR) ,#5C741F
-MIDAS South-East Asian Region (SEAR),#54EECA
-MIDAS Western Pacific Region (WPR),#382FEB
+All,#810000
+,#85ABD4
+African Region (AFR),#D9CFC7
+Eastern Mediterranean Region (EMR),#CA8BD3
+European Region (EUR),#BB4DDD
+Region of the Americas (AMR),#8EE56A
+South-East Asian Region (SEAR),#D8CC6A
+Western Pacific Region (WPR),#84DBC1

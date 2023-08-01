@@ -1,209 +1,210 @@
 location,my_colours
 All,#810000
-MIDAS Central America,#E57723
-MIDAS French West Africa,#E6D089
-Afghanistan,#5C741F
-Albania,#928B57
-Algeria,#EB2F69
-American Samoa,#50A0BA
-Andorra,#8B481D
-Angola,#EAAE2B
-Antigua and Barbuda,#6D584B
-Argentina,#693B8D
-Armenia,#79531A
-Australia,#875242
-Austria,#B5E9A0
-Azerbaijan,#4CCC98
-Bahrain,#1E3D14
-Bangladesh,#692C16
-Barbados,#E77461
-Belarus,#3C1133
-Belgium,#D771E4
-Belize,#E933B7
-Benin,#B034C3
-Bermuda,#EAAA61
-Bhutan,#8CEA92
-Bolivia,#2B5738
-Bosnia and Herzegovina,#EA932C
-Botswana,#E67E4A
-Brazil,#4721C0
-Brunei,#8A277A
-Bulgaria,#C9B12B
-Burkina Faso,#817C85
-Burundi,#88EB5B
-Cambodia,#BD2B65
-Cameroon,#24316B
-Canada,#54EECA
-Cape Verde,#EB2F41
-Central African Republic,#47C32B
-Chad,#661A3D
-Chile,#4D9AE5
-China,#ADBEA6
-Colombia,#8B2713
-Comoros,#759D77
-Congo,#63613A
-Cook Islands,#B66C51
-Costa Rica,#8BBABB
-Cote d'Ivoire,#57EE2B
-Croatia,#BFEAE2
-Cuba,#B98A55
-Cyprus,#442F3A
-Czech Republic,#424133
-Democratic Republic of the Congo,#8A99B7
-Denmark,#5E1959
-Djibouti,#94EAB8
-Dominica,#5C3D1A
-Dominican Republic,#429397
-Ecuador,#B43CE5
-Egypt,#6A7294
-El Salvador,#48EC56
-Equatorial Guinea,#BB3288
-Eritrea,#94EBDD
-Estonia,#59507E
-Ethiopia,#4486B6
-Federated States of Micronesia,#92EB2E
-Fiji,#432617
-Finland,#4FBBBC
-France,#AEB1B7
-Gabon,#87B0E7
-Georgia,#417488
-Germany,#50655E
-Ghana,#B36795
-Greece,#EB5C71
-Greenland,#922B66
-Grenada,#643B5B
-Guam,#E5E2E4
-Guatemala,#31577F
-Guinea,#C42B46
-Guinea-Bissau,#B058AB
-Guyana,#404A95
-Haiti,#E9BF5B
-Honduras,#7CBC5B
-Hungary,#18242B
-Iceland,#BDC72F
-India,#55C578
-Indonesia,#567751
-Iran,#C8EF2E
-Iraq,#C1B185
-Ireland,#E594C0
-Israel,#B996A5
-Italy,#423E14
-Jamaica,#9F7671
-Japan,#5E5462
-Jordan,#8791E9
-Kazakhstan,#439B25
-Kenya,#42A674
-Kiribati,#E58ADD
-Kuwait,#91B62D
-Kyrgyzstan,#8ABE7E
-Laos,#E699A9
-Latvia,#AE6320
-Lebanon,#8E2246
-Lesotho,#9BE670
-Liberia,#B2E44A
-Libya,#AA9E8E
-Lithuania,#55E8E3
-Luxembourg,#C15357
-Macedonia,#C4E9C0
-Madagascar,#B8DAEA
-Malawi,#E85891
-Malaysia,#2B5D1C
-Maldives,#C28F28
-Mali,#57954F
-Malta,#E863BF
-Marshall Islands,#49581C
-Mauritania,#E558E4
-Mauritius,#7965B9
-Mexico,#E3C6B1
-Moldova,#C3ED84
-Monaco,#5F1C83
-Mongolia,#EAE984
-Montenegro,#2C4A58
-Morocco,#241049
-Mozambique,#AB982C
-Myanmar,#ADC960
-Namibia,#DE6FAB
-Nauru,#48C355
-Nepal,#1D2614
-Netherlands,#56EC7D
-New Zealand,#B692BC
-Nicaragua,#EDCF36
-Niger,#5221EB
-Nigeria,#AC7BC0
-Niue,#E93090
-North Korea,#D5C95B
-Northern Mariana Islands,#B784E6
-Norway,#E9311B
-Oman,#4FC4AA
-Pakistan,#C3C3E6
-Palau,#4870E6
-Palestine,#E77994
-Panama,#8472E5
-Papua New Guinea,#ACBC87
-Paraguay,#50EDA4
-Peru,#4E2F64
-Philippines,#307A21
-Poland,#789050
-Portugal,#4578D6
-Puerto Rico,#886A98
-Qatar,#349E4C
-Republic of Korea,#88CCEE
-Romania,#1B142F
-Russia,#BFA55B
-Rwanda,#6844EB
-Saint Kitts and Nevis,#E65748
-Saint Lucia,#231416
-Saint Vincent and the Grenadines,#E9E931
-Samoa,#E95A22
-San Marino,#B9281C
-Sao Tome and Principe,#4EB7E8
-Saudi Arabia,#63171D
-Senegal,#6A601A
-Serbia,#8E6C45
-Seychelles,#9251BE
-Sierra Leone,#85C2A5
-Singapore,#824B86
-Slovakia,#B64D36
-Slovenia,#E7E6C2
-Solomon Islands,#B1A9EA
-Somalia,#E5837F
-South Africa,#8D4762
-South Korea,#6B3B3F
-South Sudan,#E99873
-Spain,#7F84C1
-Sri Lanka,#92687D
-Sudan,#6F942D
-Suriname,#C135AD
-Swaziland,#B76E76
-Sweden,#897F27
-Switzerland,#1D4035
-Syria,#E2ED65
-Taiwan,#E52EE5
-Tajikistan,#76BE2D
-Tanzania,#BB4F1B
-Thailand,#8DC3E1
-The Bahamas,#2E186D
-The Gambia,#4445AD
-Timor-Leste,#E2A398
-Togo,#3C1F9A
-Tokelau,#42111C
-Tonga,#A8B160
-Trinidad and Tobago,#2C3354
-Tunisia,#729189
-Turkey,#E7BFC6
-Turkmenistan,#CD8641
-Tuvalu,#DFA6EA
-Uganda,#BA5170
-Ukraine,#419780
-United Arab Emirates,#9C7123
-United Kingdom,#96A02A
-United States,#2B6E64
-Uruguay,#807E67
-Uzbekistan,#7B2AB6
-Vanuatu,#912797
-Venezuela,#BA8F74
-Vietnam,#954342
-"Virgin Islands, U.S.",#A360EA
-Yemen,#5353DE
-Zambia,#EBBA8C
-Zimbabwe,#9E24EC
+MIDAS Central America,#4AE953
+MIDAS French West Africa,#E224CF
+Afghanistan,#883BDB
+Albania,#99AC8F
+Algeria,#C07347
+American Samoa,#EBEFBE
+Andorra,#54F5EF
+Angola,#EB9CDE
+Antigua and Barbuda,#EAF39E
+Argentina,#F297C5
+Armenia,#F3A636
+Australia,#9EA4F1
+Austria,#DE3DAC
+Azerbaijan,#85638D
+Bahrain,#CFF5C0
+Bangladesh,#59C19F
+Barbados,#F2A28B
+Belarus,#8EF4A8
+Belgium,#B47E77
+Belize,#3B5363
+Benin,#4DF12D
+Bermuda,#EF57F0
+Bhutan,#EA308B
+Bolivia,#F53350
+Bosnia and Herzegovina,#90E19A
+Botswana,#27F8B0
+Brazil,#F6F339
+Brunei,#CDC7D1
+Bulgaria,#F2F1D5
+Burkina Faso,#9AF888
+Burundi,#C094F0
+Cambodia,#AC91D4
+Cameroon,#CE65F7
+Canada,#E99DBA
+Cape Verde,#227C70
+Central African Republic,#ED82AC
+Chad,#67D05B
+Chile,#5CF2A6
+China,#4CEEB6
+Colombia,#EC9C5C
+Comoros,#DA25F9
+Congo,#75F1D8
+Cook Islands,#B5AED5
+Costa Rica,#E466AC
+Cote d'Ivoire,#EBF77B
+Croatia,#C0412B
+Cuba,#F4D9E1
+Cyprus,#D5D1F9
+Czech Republic,#6BB976
+Democratic Republic of the Congo,#B7ECEF
+Denmark,#AC31EE
+Djibouti,#66A5A5
+Dominica,#A65AE8
+Dominican Republic,#E5BBAD
+Ecuador,#2DEB75
+Egypt,#E74DCD
+El Salvador,#82A81B
+Equatorial Guinea,#B8E2F2
+Eritrea,#BEB7F1
+Estonia,#7C604D
+Ethiopia,#CF46EF
+Federated States of Micronesia,#B0A26D
+Fiji,#E46A4D
+Finland,#7BD9BF
+France,#DDF0CC
+Gabon,#A8F4B8
+Georgia,#B7C8E7
+Germany,#A7F3D8
+Ghana,#7FF095
+Greece,#B15AC8
+Greenland,#CFBA97
+Grenada,#C5D467
+Guam,#CAF32E
+Guatemala,#E3A671
+Guinea,#C8A9A0
+Guinea-Bissau,#C79271
+Guyana,#A9E2D9
+Haiti,#5C82F2
+Honduras,#9FBA81
+Hungary,#E8BB90
+Iceland,#F395F3
+India,#E3E7EE
+Indonesia,#64D7E4
+Iran,#798292
+Iraq,#EABEF3
+Ireland,#BC3C6F
+Israel,#D97AC2
+Italy,#C8DCD1
+Jamaica,#93C4DF
+Japan,#BEF0E1
+Jordan,#F3D8BE
+Kazakhstan,#90CF9E
+Kenya,#D8A354
+Kiribati,#775EF7
+Kuwait,#3BAFAE
+Kyrgyzstan,#E875E1
+Laos,#DE9DCC
+Latvia,#D4EDA6
+Lebanon,#90C760
+Lesotho,#E681F4
+Liberia,#30934C
+Libya,#BAAA3B
+Lithuania,#E9A5A8
+Luxembourg,#EE77D0
+Macedonia,#F1828F
+Madagascar,#6ED0C9
+Malawi,#472CB5
+Malaysia,#94ABD9
+Maldives,#4D97AE
+Mali,#ECD8F1
+Malta,#F6CAE3
+Marshall Islands,#4365A9
+Mauritania,#D6D840
+Mauritius,#39EBCE
+Mexico,#AE70C3
+Moldova,#F0502C
+Monaco,#D2ABEC
+Mongolia,#79C6F2
+Montenegro,#31254E
+Morocco,#ACF295
+Mozambique,#F4E9AE
+Myanmar,#94E2EC
+Namibia,#578BEC
+Nauru,#EDC5C3
+Nepal,#C8AABB
+Netherlands,#B1F379
+New Zealand,#89B6F1
+Nicaragua,#9ED38A
+Niger,#CC5CDF
+Nigeria,#E16782
+Niue,#37E7EB
+North Korea,#31CCC9
+Northern Mariana Islands,#46BFF7
+Norway,#75A2ED
+Oman,#5A20EC
+Pakistan,#A2507B
+Palau,#83B0AB
+Palestine,#7E62CE
+Panama,#A375EE
+Papua New Guinea,#9C2886
+Paraguay,#3B7DB6
+Peru,#BECBB3
+Philippines,#E0405F
+Poland,#D2C1B0
+Portugal,#83E6BA
+Puerto Rico,#D5E3F9
+Qatar,#AC5A59
+Republic of Korea,#E27F21
+Romania,#E4D690
+Russia,#6D9146
+Rwanda,#97E9E4
+Saint Kitts and Nevis,#EECC6F
+Saint Lucia,#90C5B0
+Saint Vincent and the Grenadines,#5FD2F5
+Samoa,#8DD6F6
+San Marino,#4DB659
+Sao Tome and Principe,#435E59
+Saudi Arabia,#AC859C
+Senegal,#498DD6
+Serbia,#75826B
+Seychelles,#8CA1B7
+Sierra Leone,#58A5D8
+Singapore,#E8DF75
+Slovakia,#B536B9
+Slovenia,#BFBF6B
+Solomon Islands,#F16A6B
+Somalia,#C470F0
+South Africa,#857BD0
+South Korea,#34D1E9
+South Sudan,#4AD59B
+Spain,#59A688
+Sri Lanka,#ABBABD
+Sudan,#CCEF8B
+Suriname,#D0F3E6
+Swaziland,#F3B4D0
+Sweden,#8EC3CD
+Switzerland,#767FA5
+Syria,#C916DB
+Taiwan,#E6F6E9
+Tajikistan,#EDC332
+Tanzania,#A893F4
+Thailand,#CEF7D7
+The Bahamas,#E37B72
+The Gambia,#F320ED
+Timor-Leste,#B2D8AF
+Togo,#AA4D9F
+Tokelau,#6147F4
+Tonga,#BBD385
+Trinidad and Tobago,#58358E
+Tunisia,#F7F8F5
+Turkey,#8BF5F6
+Turkmenistan,#A3DD41
+Tuvalu,#85EF66
+Uganda,#D1F661
+Ukraine,#99F133
+United Arab Emirates,#D789ED
+United Kingdom,#30DA83
+United States,#E28B98
+Uruguay,#E9D6CB
+Uzbekistan,#EB71EF
+Vanuatu,#74AFCC
+Venezuela,#99D5B6
+Vietnam,#9B8F81
+"Virgin Islands, U.S.",#4867E9
+Yemen,#3BB6D8
+Zambia,#F9D39A
+Zimbabwe,#EF20BB
+Hong Kong,#5FF48B

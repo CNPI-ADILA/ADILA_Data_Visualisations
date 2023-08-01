@@ -49,7 +49,7 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
           # Select input *DATASET*
           selectInput(inputId = "dataset", 
                       label = "Dataset:",
-                      choices = c("", sort(unique(data_for_visualisations$source_title))),
+                      choices = c("", sort(unique(data_for_visualisations$source_citation))),
                       selected = NULL, 
                       multiple = FALSE
           ),
@@ -144,7 +144,7 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
             # Select input *DATASET*
             selectInput(inputId = "dataset", 
                         label = "Dataset:",
-                        choices = c("", sort(unique(data_for_visualisations$source_title))),
+                        choices = c("", sort(unique(data_for_visualisations$source_citation))),
                         selected = NULL, 
                         multiple = FALSE
             ),
@@ -166,7 +166,7 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
             # Select input *WHO REGION*
             selectInput(inputId = "whoregion_line_by_antimicrobial", 
                         label = "WHO region:", 
-                        choices= c("", sort(unique(data_for_visualisations$who_region))),
+                        choices= c("", sort(unique(data_for_visualisations$who_regional_office))),
                         selected = NULL,
                         multiple = FALSE),
             
@@ -236,7 +236,7 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
             # Select input *DATASET*
             selectInput(inputId = "dataset", 
                         label = "Dataset:",
-                        choices = c("", sort(unique(data_for_visualisations$source_title))),
+                        choices = c("", sort(unique(data_for_visualisations$source_citation))),
                         selected = NULL, 
                         multiple = FALSE
             ),
@@ -258,7 +258,7 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
             # Select input *WHO REGION*
             selectInput(inputId = "whoregion_line_by_route", 
                         label = "WHO region:", 
-                        choices= c("", sort(unique(data_for_visualisations$who_region))),
+                        choices= c("", sort(unique(data_for_visualisations$who_regional_office))),
                         selected = NULL,
                         multiple = FALSE),
             
@@ -328,7 +328,7 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
             # Select input *DATASET*
             selectInput(inputId = "dataset", 
                         label = "Dataset:",
-                        choices = c("", sort(unique(data_for_visualisations$source_title))),
+                        choices = c("", sort(unique(data_for_visualisations$source_citation))),
                         selected = NULL, 
                         multiple = FALSE
             ),
@@ -350,7 +350,7 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
             # Select input *WHO REGION*
             selectInput(inputId = "whoregion_line_by_aware", 
                         label = "WHO region:", 
-                        choices= c("", sort(unique(data_for_visualisations$who_region))),
+                        choices= c("", sort(unique(data_for_visualisations$who_regional_office))),
                         selected = NULL,
                         multiple = FALSE),
             
@@ -420,7 +420,7 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
             # Select input *DATASET*
             selectInput(inputId = "dataset", 
                         label = "Dataset:",
-                        choices = c("", sort(unique(data_for_visualisations$source_title))),
+                        choices = c("", sort(unique(data_for_visualisations$source_citation))),
                         selected = NULL, 
                         multiple = FALSE
             ),
@@ -481,7 +481,7 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
             # disabled(
             #   checkboxGroupInput(inputId = "line_options_by_whoregion",
             #                      label = "",
-            #                      choices = sort(unique(data_for_visualisations$who_region),
+            #                      choices = sort(unique(data_for_visualisations$who_regional_office),
             #                      inline = TRUE,
             #                      selected = "All")
             # )
@@ -505,7 +505,7 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
             # Select input *DATASET*
             selectInput(inputId = "dataset", 
                         label = "Dataset:",
-                        choices = c("", sort(unique(data_for_visualisations$source_title))),
+                        choices = c("", sort(unique(data_for_visualisations$source_citation))),
                         selected = NULL, 
                         multiple = FALSE
             ),
@@ -534,7 +534,7 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
             # Select input *WHO REGION*
             selectInput(inputId = "whoregion_line_by_country", 
                         label = "WHO region:", 
-                        choices= c("", sort(unique(data_for_visualisations$who_region))),
+                        choices= c("", sort(unique(data_for_visualisations$who_regional_office))),
                         selected = NULL,
                         multiple = FALSE),
             
@@ -597,7 +597,7 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
             # Select input *DATASET*
             selectInput(inputId = "dataset", 
                         label = "Dataset:",
-                        choices = c("", sort(unique(data_for_visualisations$source_title))),
+                        choices = c("", sort(unique(data_for_visualisations$source_citation))),
                         selected = NULL, 
                         multiple = FALSE
             ),
@@ -626,7 +626,7 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
             # Select input *WHO REGION*
             selectInput(inputId = "whoregion_line_by_sector", 
                         label = "WHO region:", 
-                        choices= c("", sort(unique(data_for_visualisations$who_region))),
+                        choices= c("", sort(unique(data_for_visualisations$who_regional_office))),
                         selected = NULL,
                         multiple = FALSE),
             
@@ -743,7 +743,7 @@ server <- function(input, output, session) {
   data <- reactive({
     req(input$dataset)
     
-    data_for_visualisations %>% filter(source_title == input$dataset)
+    data_for_visualisations %>% filter(source_citation == input$dataset)
   })
 
     #
@@ -830,7 +830,7 @@ server <- function(input, output, session) {
           req(input$dataset, input$route_line_by_antimicrobial, input$aware_line_by_antimicrobial, input$whoregion_line_by_antimicrobial)
           
           data_line_by_antimicrobial1 <- data_line_by_antimicrobial_filter2() %>%
-            filter(who_region == input$whoregion_line_by_antimicrobial)
+            filter(who_regional_office == input$whoregion_line_by_antimicrobial)
           data_line_by_antimicrobial1
         })
         
@@ -885,7 +885,7 @@ server <- function(input, output, session) {
           req(input$dataset, input$antimicrobial_line_by_route, input$aware_line_by_route, input$whoregion_line_by_route)
           
           data_line_by_route1 <- data_line_by_route_filter2() %>%
-            filter(who_region == input$whoregion_line_by_route)
+            filter(who_regional_office == input$whoregion_line_by_route)
           data_line_by_route1
         })
         
@@ -940,7 +940,7 @@ server <- function(input, output, session) {
           req(input$dataset, input$antimicrobial_line_by_aware, input$route_line_by_aware, input$whoregion_line_by_aware)
           
           data_line_by_aware1 <- data_line_by_aware_filter2() %>%
-            filter(who_region == input$whoregion_line_by_aware)
+            filter(who_regional_office == input$whoregion_line_by_aware)
           data_line_by_aware1
         })
         
@@ -1050,7 +1050,7 @@ server <- function(input, output, session) {
           req(input$dataset, input$antimicrobial_line_by_country, input$route_line_by_country, input$aware_line_by_country, input$whoregion_line_by_country)
           
           data_line_by_country1 <- data_line_by_country_filter3() %>%
-            filter(who_region == input$whoregion_line_by_country)
+            filter(who_regional_office == input$whoregion_line_by_country)
           data_line_by_country1
         })
         
@@ -1105,7 +1105,7 @@ server <- function(input, output, session) {
           req(input$dataset, input$antimicrobial_line_by_sector, input$route_line_by_sector, input$aware_line_by_sector, input$whoregion_line_by_sector)
           
           data_line_by_sector1 <- data_line_by_sector_filter3() %>%
-            filter(who_region == input$whoregion_line_by_sector)
+            filter(who_regional_office == input$whoregion_line_by_sector)
           data_line_by_sector1
         })
         
@@ -1236,7 +1236,7 @@ server <- function(input, output, session) {
           D <- data_line_by_antimicrobial_filter2()
           updateSelectInput(session, inputId = "whoregion_line_by_antimicrobial",
                             label = "WHO region:",
-                            choices = c("", sort(unique(D$who_region))),
+                            choices = c("", sort(unique(D$who_regional_office))),
                             selected = NULL)
         })
         
@@ -1303,7 +1303,7 @@ server <- function(input, output, session) {
           D <- data_line_by_route_filter2()
           updateSelectInput(session, inputId = "whoregion_line_by_route",
                             label = "WHO region:",
-                            choices = c("", sort(unique(D$who_region))),
+                            choices = c("", sort(unique(D$who_regional_office))),
                             selected = NULL)
         })
         
@@ -1370,7 +1370,7 @@ server <- function(input, output, session) {
           D <- data_line_by_aware_filter2()
           updateSelectInput(session, inputId = "whoregion_line_by_aware",
                             label = "WHO region:",
-                            choices = c("", sort(unique(D$who_region))),
+                            choices = c("", sort(unique(D$who_regional_office))),
                             selected = NULL)
         })
         
@@ -1504,7 +1504,7 @@ server <- function(input, output, session) {
           D <- data_line_by_country_filter3()
           updateSelectInput(session, inputId = "whoregion_line_by_country",
                             label = "WHO region:",
-                            choices = c("", sort(unique(D$who_region))),
+                            choices = c("", sort(unique(D$who_regional_office))),
                             selected = NULL)
         })
         
@@ -1571,7 +1571,7 @@ server <- function(input, output, session) {
           D <- data_line_by_sector_filter3()
           updateSelectInput(session, inputId = "whoregion_line_by_sector",
                             label = "WHO region:",
-                            choices = c("", sort(unique(D$who_region))),
+                            choices = c("", sort(unique(D$who_regional_office))),
                             selected = NULL)
         })
         
@@ -1699,7 +1699,7 @@ server <- function(input, output, session) {
           DATA_by_antimicrobial <- data_line_by_antimicrobial_filter6()
 
           DATA_by_antimicrobial_lines <- DATA_by_antimicrobial %>%
-            group_by(route_of_administration, aware_category, country, metric, antimicrobials, who_region, sector) %>%
+            group_by(route_of_administration, aware_category, country, metric, antimicrobials, who_regional_office, sector) %>%
             filter(length(year) > 1) %>% ungroup()
 
           antimicrobial_colours <- colours_antimicrobial$my_colours[colours_antimicrobial$antimicrobial %in% DATA_by_antimicrobial_lines$antimicrobials]
@@ -1731,7 +1731,7 @@ server <- function(input, output, session) {
         # Line display options ##NOT NEEDED - NOW USING PLOTLY##
         # enable("line_options_by_antimicrobial")
         # tickbox_update_by_antimicrobial <- data_line_by_antimicrobial_filter6() %>%
-        #   group_by(route_of_administration, aware_category, country, metric, antimicrobials, who_region, sector) %>%
+        #   group_by(route_of_administration, aware_category, country, metric, antimicrobials, who_regional_office, sector) %>%
         #   filter(length(year) > 1) %>% ungroup()
         # updateCheckboxGroupInput(session, inputId = "line_options_by_antimicrobial",
         #                          label = "",
@@ -1771,7 +1771,7 @@ server <- function(input, output, session) {
           DATA_by_route <- data_line_by_route_filter6()
           
           DATA_by_route_lines <- DATA_by_route %>% 
-            group_by(antimicrobials, aware_category, country, metric, route_of_administration, who_region, sector) %>%
+            group_by(antimicrobials, aware_category, country, metric, route_of_administration, who_regional_office, sector) %>%
             filter(length(year) > 1) %>% ungroup()
   
           route_colours <- colours_route$my_colours[colours_route$route %in% DATA_by_route_lines$route_of_administration]
@@ -1803,7 +1803,7 @@ server <- function(input, output, session) {
         # Line display options ##NOT NEEDED - NOW USING PLOTLY##
         # enable("line_options_by_route")
         # tickbox_update_by_route <- data_line_by_route_filter6() %>%
-        #   group_by(antimicrobials, aware_category, country, metric, route_of_administration, who_region, sector) %>%
+        #   group_by(antimicrobials, aware_category, country, metric, route_of_administration, who_regional_office, sector) %>%
         #   filter(length(year) > 1) %>% ungroup()
         # updateCheckboxGroupInput(session, inputId = "line_options_by_route",
         #                          label = "",
@@ -1843,7 +1843,7 @@ server <- function(input, output, session) {
           DATA_by_aware <- data_line_by_aware_filter6()
           
           DATA_by_aware_lines <- DATA_by_aware %>% 
-            group_by(antimicrobials, route_of_administration, country, metric, aware_category, who_region, sector) %>%
+            group_by(antimicrobials, route_of_administration, country, metric, aware_category, who_regional_office, sector) %>%
             filter(length(year) > 1) %>% ungroup()
           
           aware_colours <- colours_aware$my_colours[colours_aware$aware_category %in% DATA_by_aware_lines$aware_category]
@@ -1875,7 +1875,7 @@ server <- function(input, output, session) {
         # Line display options ##NOT NEEDED - NOW USING PLOTLY##
         # enable("line_options_by_aware")
         # tickbox_update_by_aware <- data_line_by_aware_filter6() %>%
-        #   group_by(antimicrobials, route_of_administration, country, metric, aware_category, who_region, sector) %>%
+        #   group_by(antimicrobials, route_of_administration, country, metric, aware_category, who_regional_office, sector) %>%
         #   filter(length(year) > 1) %>% ungroup()
         # updateCheckboxGroupInput(session, inputId = "line_options_by_aware",
         #                          label = "",
@@ -1916,25 +1916,25 @@ server <- function(input, output, session) {
           
           DATA_by_whoregion_lines <- DATA_by_whoregion %>% 
             filter(country == "All") %>%
-            group_by(antimicrobials, route_of_administration, aware_category, metric, who_region, sector) %>%
+            group_by(antimicrobials, route_of_administration, aware_category, metric, who_regional_office, sector) %>%
             filter(length(year) > 1) %>% ungroup()
           
-          whoregion_colours <- colours_whoregion$my_colours[colours_whoregion$region %in% DATA_by_whoregion_lines$who_region]
+          whoregion_colours <- colours_whoregion$my_colours[colours_whoregion$region %in% DATA_by_whoregion_lines$who_regional_office]
           
           if (input$metric_line_by_whoregion == "ddd" | input$metric_line_by_whoregion == "su") {
-            hover_text_by_whoregion <- paste0('</br>', DATA_by_whoregion_lines$who_region,
+            hover_text_by_whoregion <- paste0('</br>', DATA_by_whoregion_lines$who_regional_office,
                                               '</br>', DATA_by_whoregion_lines$year,
                                               '</br>', toupper(DATA_by_whoregion_lines$metric), "(x 10^3): ", round(DATA_by_whoregion_lines$value,0))
           } else {
-            hover_text_by_whoregion <- paste0('</br>', DATA_by_whoregion_lines$who_region,
+            hover_text_by_whoregion <- paste0('</br>', DATA_by_whoregion_lines$who_regional_office,
                                               '</br>', DATA_by_whoregion_lines$year,
                                               '</br>', toupper(DATA_by_whoregion_lines$metric), ": ", round(DATA_by_whoregion_lines$value,0))
           }
           
           DATA_by_whoregion_plot <- 
-            ggplot(DATA_by_whoregion_lines, aes(x = year, y = value, text = hover_text_by_whoregion, group = who_region)) +
-            geom_line(aes(colour = who_region)) +
-            #geom_point(aes(colour = who_region)) +
+            ggplot(DATA_by_whoregion_lines, aes(x = year, y = value, text = hover_text_by_whoregion, group = who_regional_office)) +
+            geom_line(aes(colour = who_regional_office)) +
+            #geom_point(aes(colour = who_regional_office)) +
             scale_colour_manual(values = whoregion_colours) +
             scale_x_continuous("Year", breaks = seq(2015,2019,1), labels = seq(2015,2019,1)) +
             labs(x = "Year", y = ifelse(input$metric_line_by_whoregion == "ddd" | input$metric_line_by_whoregion == "su", paste0(toupper(unique(DATA_by_whoregion_lines$metric)), " x 10^3"), toupper(unique(DATA_by_whoregion_lines$metric))), fill = NULL) + 
@@ -1948,11 +1948,11 @@ server <- function(input, output, session) {
         # Line display options ##NOT NEEDED - NOW USING PLOTLY##
         # enable("line_options_by_whoregion")
         # tickbox_update_by_whoregion <- data_line_by_whoregion_filter5() %>%
-        #   group_by(antimicrobials, route_of_administration, aware_category, metric, who_region, sector) %>%
+        #   group_by(antimicrobials, route_of_administration, aware_category, metric, who_regional_office, sector) %>%
         #   filter(length(year) > 1) %>% ungroup()
         # updateCheckboxGroupInput(session, inputId = "line_options_by_whoregion",
         #                          label = "",
-        #                          choices = sort(unique(tickbox_update_by_whoregion$who_region)),
+        #                          choices = sort(unique(tickbox_update_by_whoregion$who_regional_office)),
         #                          inline = TRUE,
         #                          selected = "All")
         
@@ -1988,7 +1988,7 @@ server <- function(input, output, session) {
         DATA_by_country <- data_line_by_country_filter6()
         
         DATA_by_country_lines <- DATA_by_country %>% 
-          group_by(antimicrobials, route_of_administration, aware_category, metric, country, who_region, sector) %>%
+          group_by(antimicrobials, route_of_administration, aware_category, metric, country, who_regional_office, sector) %>%
           filter(length(year) > 1) %>% ungroup()
         
         country_colours <- colours_country$my_colours[colours_country$location %in% DATA_by_country_lines$country]
@@ -2020,7 +2020,7 @@ server <- function(input, output, session) {
       # Line display options ##NOT NEEDED - NOW USING PLOTLY##
       # enable("line_options_by_country")
       # tickbox_update_by_country <- data_line_by_country_filter6() %>%
-      #   group_by(antimicrobials, route_of_administration, aware_category, metric, country, who_region, sector) %>%
+      #   group_by(antimicrobials, route_of_administration, aware_category, metric, country, who_regional_office, sector) %>%
       #   filter(length(year) > 1) %>% ungroup()
       # updateCheckboxGroupInput(session, inputId = "line_options_by_country",
       #                          label = "",
@@ -2060,7 +2060,7 @@ server <- function(input, output, session) {
         DATA_by_sector <- data_line_by_sector_filter6()
         
         DATA_by_sector_lines <- DATA_by_sector %>% 
-          group_by(antimicrobials, route_of_administration, aware_category, metric, country, who_region, sector) %>%
+          group_by(antimicrobials, route_of_administration, aware_category, metric, country, who_regional_office, sector) %>%
           filter(length(year) > 1) %>% ungroup()
         
         sector_colours <- colours_sector$my_colours[colours_sector$sector %in% DATA_by_sector_lines$sector]
@@ -2092,7 +2092,7 @@ server <- function(input, output, session) {
       # Line display options ##NOT NEEDED - NOW USING PLOTLY##
       # enable("line_options_by_sector")
       # tickbox_update_by_sector <- data_line_by_sector_filter6() %>%
-      #   group_by(antimicrobials, route_of_administration, aware_category, metric, country, who_region, sector) %>%
+      #   group_by(antimicrobials, route_of_administration, aware_category, metric, country, who_regional_office, sector) %>%
       #   filter(length(year) > 1) %>% ungroup()
       # updateCheckboxGroupInput(session, inputId = "line_options_by_sector",
       #                          label = "",
