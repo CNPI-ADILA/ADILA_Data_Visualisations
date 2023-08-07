@@ -1,18 +1,18 @@
 # Integrate as new tab ("Statistics") in Shiny app:
 library(DT)
 library(writexl)
-colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if needed: "#0072B2", "#D55E00"
+colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#CC79A7", "#0072B2", "#D55E00", "#F54842")
 
 ########################
 # Data sources summary # could also add 95% CIs if necessary
 ########################
   # values to put in a data table
-  num_data_sources <- length(unique(data_for_visualisations$source_title))
+  num_data_sources <- length(unique(data_for_visualisations$source_citation))
   
   total_num_countries <- length(unique(data_for_visualisations$country))
   
   avg_num_countries_per_data_source <- data_for_visualisations %>%
-    group_by(source_title) %>%
+    group_by(source_citation) %>%
     mutate(count = n_distinct(country)) %>%
     ungroup()
   avg_num_countries_per_data_source <- round(sum(unique(avg_num_countries_per_data_source$count)) / num_data_sources, 2)
@@ -20,7 +20,7 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if
   total_num_antimicrobials <- length(unique(data_for_visualisations$antimicrobials))
     
   avg_num_antimicrobials_per_data_source <- data_for_visualisations %>%
-    group_by(source_title) %>%
+    group_by(source_citation) %>%
     mutate(count = n_distinct(antimicrobials)) %>%
     ungroup()
   avg_num_antimicrobials_per_data_source <- round(sum(unique(avg_num_antimicrobials_per_data_source$count)) / num_data_sources, 2)
@@ -31,18 +31,18 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if
   rm(total_year_range_min, total_year_range_max)
   
   avg_year_range_per_data_source <- data_for_visualisations %>%
-    group_by(source_title) %>%
+    group_by(source_citation) %>%
     mutate(year_range = (max(data_for_visualisations$year, na.rm = T) - min(data_for_visualisations$year, na.rm = T))) %>%
     ungroup()
   avg_year_range_per_data_source <- round(sum(unique(avg_year_range_per_data_source$year_range)) / num_data_sources, 2)
   
   avg_perc_aware <- data_for_visualisations %>%
     filter(metric == "ddd" & who_regional_office == "All" & country == "All" & antimicrobials == "All" & route_of_administration == "All" & sector == "All" & aware_category != "All") %>%
-    group_by(source_title, aware_category) %>%
+    group_by(source_citation, aware_category) %>%
     mutate(AMC_aware = sum(value)) %>%
     ungroup()
   avg_perc_aware <- avg_perc_aware %>%
-    group_by(source_title) %>%
+    group_by(source_citation) %>%
     mutate(AMC_total = sum(value), perc = (AMC_aware/AMC_total)*100) %>%
     ungroup()   
   avg_perc_access <- avg_perc_aware %>% filter(aware_category == "Access")
@@ -55,11 +55,11 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73","#F0E442","#CC79A7") #if
 
   avg_perc_route <- data_for_visualisations %>%
     filter(metric == "ddd" & who_regional_office == "All" & country == "All" & antimicrobials == "All" & aware_category == "All" & sector == "All" & route_of_administration != "All") %>%
-    group_by(source_title, route_of_administration) %>%
+    group_by(source_citation, route_of_administration) %>%
     mutate(AMC_route = sum(value)) %>%
     ungroup()
   avg_perc_route <- avg_perc_route %>%
-    group_by(source_title) %>%
+    group_by(source_citation) %>%
     mutate(AMC_total = sum(value), perc = (AMC_route/AMC_total)*100) %>%
     ungroup()   
   avg_perc_oral <- avg_perc_route %>% filter(route_of_administration == "Oral")

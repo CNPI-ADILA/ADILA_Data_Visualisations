@@ -4,11 +4,10 @@
 
 # drop duplicates
 coverage <- data_for_visualisations %>% 
-  filter(who_region == "All" & antimicrobials == "All" & aware_category == "All" & route_of_administration == "All" & metric == "ddd" & sector != "All" & country != "All") %>%
+  filter(who_regional_office == "All" & antimicrobials == "All" & aware_category == "All" & route_of_administration == "All" & metric == "ddd" & sector != "All" & country != "All") %>%
   select(country, sector, year, value)
 
 # frequency table (with %) of how many countries have one or both sectors
-#sector_by_country <- coverage %>% 
 total = length(unique(coverage$country))
 sector_by_country <- coverage %>% group_by(country, year) %>% mutate(coverage = ifelse(length(sector) == 2, "Retail & Hospital", sector))
 summary <- sector_by_country %>% group_by(coverage) %>% summarise(num_of_countries = length(unique(country)), perc_of_countries = round((length(unique(country))/total)*100,2)) %>% ungroup()

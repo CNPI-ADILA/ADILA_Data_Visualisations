@@ -31,7 +31,8 @@ data_for_visualisations <- data_for_visualisations %>%
   mutate(country = ifelse(country == "Russian Federation", "Russia", country)) %>%
   mutate(country = ifelse(country == "U.K. of Great Britain and Northern Ireland", "United Kingdom", country)) %>%
   mutate(country = ifelse(country == "United States of America", "United States", country)) %>%
-  mutate(country = ifelse(country == "Viet Nam", "Vietnam", country))
+  mutate(country = ifelse(country == "Viet Nam", "Vietnam", country)) %>%
+  mutate(country = ifelse(country == "Republic of Korea", "South Korea", country))
 
 # make values more manageable 
 data_for_visualisations <- data_for_visualisations %>%
@@ -55,3 +56,4 @@ data_for_visualisations <- data_for_visualisations %>%
     #source("./colours/new/check_match.R")
   # multiple line-breaks
   linebreaks <- function(n){HTML(strrep(br(), n))}
+  
