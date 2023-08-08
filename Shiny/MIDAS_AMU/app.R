@@ -33,14 +33,14 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
   # App title
   titlePanel("ANTIMICROBIAL USE DATA"),
 
-  # Two visualisations, each in a separate tab (one tab containing several sub-tabs)
+  # Five tabs (1. Heatmap, 2. Line plots (with several sub-tabs), 3. DU90 by manufacturer, 4. Summary statistics, 5. Methods)
   navbarPage("", selected = NULL, collapsible = TRUE,
              
-    #----------
-    # HEAT MAP
-    #----------
-    tabPanel("Spatial", fluidRow(column(6)), 
-             
+    #-------------
+    # 1. HEAT MAP
+    #-------------
+    tabPanel("Spatial", fluidRow(column(2)), 
+               
       sidebarLayout(
         
         # Sidebar inputs
@@ -126,10 +126,10 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
       
     ),
     
-    #------------
-    # LINE PLOTS
-    #------------
-    navbarMenu("Temporal", fluidRow(column(6)), 
+    #---------------
+    # 2. LINE PLOTS
+    #---------------
+    navbarMenu("Temporal", fluidRow(column(2)), 
                
       #
       # Antimicrobials
@@ -677,7 +677,317 @@ ui <- fluidPage( #or try theme=shinytheme("...") instead of colour settings in d
       ),
 
     ),
-    
+
+    #-------------------------
+    # 3. DU90 BY MANUFACTURER
+    #-------------------------
+    tabPanel("DU90 by manufacturer", fluidRow(column(2)), 
+               
+      sidebarLayout(
+       
+        # Sidebar inputs
+        sidebarPanel(
+           
+          # Select input *DATASET*
+          selectInput(inputId = "dataset", 
+                      label = "Dataset:",
+                      choices = c("", sort(unique(data_for_visualisations$source_citation))),
+                      selected = NULL, 
+                      multiple = FALSE
+          ),
+           
+          # Select input *ANTIMICROBIAL*
+          selectInput(inputId = "antimicrobial_map", 
+                      label = "Antimicrobial:",
+                      choices = c("", sort(unique(data_for_visualisations$antimicrobials))),
+                      selected = NULL, 
+                      multiple = FALSE
+          ),
+           
+          # Select input *ADMINISTRATION ROUTE*
+          selectInput(inputId = "route_map", 
+                      label = "Administration route:",
+                      choices = c("", sort(unique(data_for_visualisations$route_of_administration))),
+                      selected = NULL, 
+                      multiple = FALSE
+          ),
+           
+          # Select input *AWaRe*
+          selectInput(inputId = "aware_map", 
+                      label = "AWaRe category:",
+                      choices = c("", sort(unique(data_for_visualisations$aware_category))),
+                      selected = NULL, 
+                      multiple = FALSE
+          ),
+           
+          # Select input *SECTOR*
+          selectInput(inputId = "sector_map", 
+                      label = "Sector:",
+                      choices = c("", sort(unique(data_for_visualisations$sector))),
+                      selected = NULL, 
+                      multiple = FALSE
+          ),
+           
+          # Slider input *SINGLE YEAR OR YEAR RANGE*
+          sliderInput(inputId = "years",
+                      label = "Year(s):",
+                      value = c(min(data_for_visualisations$year, na.rm = T), max(data_for_visualisations$year, na.rm = T)),
+                      min = min(data_for_visualisations$year, na.rm = T),
+                      max = max(data_for_visualisations$year, na.rm = T),
+                      step = 1,
+                      sep = "",
+                      round = TRUE,
+                      ticks = FALSE),
+           
+          # Choose metric (DDD/DID/DI)
+          radioButtons(inputId = "metric_map",
+                       label = "AMU metric:",
+                       selected = character(0),
+                       choices = unique(data_for_visualisations$metric)),
+          conditionalPanel(
+            condition = "input.metric_map == null", 
+            helpText("Please select metric")
+          ),
+           
+          # Action button to load map
+          linebreaks(5),
+          actionButton(inputId  = "load_map", label = "Load map"),
+          hidden(p(id = "please_wait_map", "Please wait while the map loads..."))
+           
+        ),
+         
+        # Main panel map (could also add a table below map???)
+        mainPanel(
+           
+          h4(uiOutput("map_title")),
+          leafletOutput(outputId = "heat_map", height = 700)
+           
+        )
+         
+      )
+             
+    ),
+    #-------------------------
+    # 3. DU90 BY MANUFACTURER
+    #-------------------------
+    tabPanel("DU90 by manufacturer", fluidRow(column(2)), #UPDATE WITH APP IN C:\Users\wcuningh\Documents\ADILA_Data_Visualisations\RMarkdown\MIDAS_Pharma!!!!!!!!!!!!!!
+               
+      sidebarLayout(
+       
+        # Sidebar inputs
+        sidebarPanel(
+           
+          # Select input *DATASET*
+          selectInput(inputId = "dataset", 
+                      label = "Dataset:",
+                      choices = c("", sort(unique(data_for_visualisations$source_citation))),
+                      selected = NULL, 
+                      multiple = FALSE
+          ),
+           
+          # Select input *ANTIMICROBIAL*
+          selectInput(inputId = "antimicrobial_map", 
+                      label = "Antimicrobial:",
+                      choices = c("", sort(unique(data_for_visualisations$antimicrobials))),
+                      selected = NULL, 
+                      multiple = FALSE
+          ),
+           
+          # Select input *ADMINISTRATION ROUTE*
+          selectInput(inputId = "route_map", 
+                      label = "Administration route:",
+                      choices = c("", sort(unique(data_for_visualisations$route_of_administration))),
+                      selected = NULL, 
+                      multiple = FALSE
+          ),
+           
+          # Select input *AWaRe*
+          selectInput(inputId = "aware_map", 
+                      label = "AWaRe category:",
+                      choices = c("", sort(unique(data_for_visualisations$aware_category))),
+                      selected = NULL, 
+                      multiple = FALSE
+          ),
+           
+          # Select input *SECTOR*
+          selectInput(inputId = "sector_map", 
+                      label = "Sector:",
+                      choices = c("", sort(unique(data_for_visualisations$sector))),
+                      selected = NULL, 
+                      multiple = FALSE
+          ),
+           
+          # Slider input *SINGLE YEAR OR YEAR RANGE*
+          sliderInput(inputId = "years",
+                      label = "Year(s):",
+                      value = c(min(data_for_visualisations$year, na.rm = T), max(data_for_visualisations$year, na.rm = T)),
+                      min = min(data_for_visualisations$year, na.rm = T),
+                      max = max(data_for_visualisations$year, na.rm = T),
+                      step = 1,
+                      sep = "",
+                      round = TRUE,
+                      ticks = FALSE),
+           
+          # Choose metric (DDD/DID/DI)
+          radioButtons(inputId = "metric_map",
+                       label = "AMU metric:",
+                       selected = character(0),
+                       choices = unique(data_for_visualisations$metric)),
+          conditionalPanel(
+            condition = "input.metric_map == null", 
+            helpText("Please select metric")
+          ),
+           
+          # Action button to load map
+          linebreaks(5),
+          actionButton(inputId  = "load_map", label = "Load map"),
+          hidden(p(id = "please_wait_map", "Please wait while the map loads..."))
+           
+        ),
+         
+        # Main panel
+        mainPanel(
+           
+          h4(uiOutput("map_title")),
+          leafletOutput(outputId = "heat_map", height = 700)
+           
+        )
+         
+      )
+             
+    ),
+
+    #-----------------------
+    # 4. SUMMARY STATISTICS
+    #-----------------------
+    tabPanel("Summary statistics", fluidRow(column(2)), #TAKE FROM statistics.R AND PLOT IN sector_coverage.R (./dataset_coverage_by_country/)!!!!!!! only input will be dataset...
+             
+      sidebarLayout(
+         
+        # Sidebar inputs
+        sidebarPanel(
+           
+          # Select input *DATASET*
+          selectInput(inputId = "dataset", 
+                      label = "Dataset:",
+                      choices = c("", sort(unique(data_for_visualisations$source_citation))),
+                      selected = NULL, 
+                      multiple = FALSE
+          ),
+           
+          # Select input *ANTIMICROBIAL*
+          selectInput(inputId = "antimicrobial_map", 
+                      label = "Antimicrobial:",
+                      choices = c("", sort(unique(data_for_visualisations$antimicrobials))),
+                      selected = NULL, 
+                      multiple = FALSE
+          ),
+           
+          # Select input *ADMINISTRATION ROUTE*
+          selectInput(inputId = "route_map", 
+                      label = "Administration route:",
+                      choices = c("", sort(unique(data_for_visualisations$route_of_administration))),
+                      selected = NULL, 
+                      multiple = FALSE
+          ),
+           
+          # Select input *AWaRe*
+          selectInput(inputId = "aware_map", 
+                      label = "AWaRe category:",
+                      choices = c("", sort(unique(data_for_visualisations$aware_category))),
+                      selected = NULL, 
+                      multiple = FALSE
+          ),
+           
+          # Select input *SECTOR*
+          selectInput(inputId = "sector_map", 
+                      label = "Sector:",
+                      choices = c("", sort(unique(data_for_visualisations$sector))),
+                      selected = NULL, 
+                      multiple = FALSE
+          ),
+           
+          # Slider input *SINGLE YEAR OR YEAR RANGE*
+          sliderInput(inputId = "years",
+                      label = "Year(s):",
+                      value = c(min(data_for_visualisations$year, na.rm = T), max(data_for_visualisations$year, na.rm = T)),
+                      min = min(data_for_visualisations$year, na.rm = T),
+                      max = max(data_for_visualisations$year, na.rm = T),
+                      step = 1,
+                      sep = "",
+                      round = TRUE,
+                      ticks = FALSE),
+           
+          # Choose metric (DDD/DID/DI)
+          radioButtons(inputId = "metric_map",
+                       label = "AMU metric:",
+                       selected = character(0),
+                       choices = unique(data_for_visualisations$metric)),
+          conditionalPanel(
+            condition = "input.metric_map == null", 
+            helpText("Please select metric")
+          ),
+           
+          # Action button to load map
+          linebreaks(5),
+          actionButton(inputId  = "load_map", label = "Load map"),
+          hidden(p(id = "please_wait_map", "Please wait while the map loads..."))
+           
+        ),
+         
+        # Main panel
+        mainPanel(
+           
+          h4(uiOutput("map_title")),
+          leafletOutput(outputId = "heat_map", height = 700)
+           
+        )
+         
+      )
+             
+    ),
+
+    #------------
+    # 5. METHODS
+    #------------
+    tabPanel("Methods", fluidRow(column(2)), 
+      
+      titlePanel(
+        
+        "Methods"
+        
+      ), 
+      
+      sidebarLayout(
+         
+        mainPanel(
+           
+          "We used the global market dataset MIDAS supplied by IQVIATM to study antibiotic consumption between 1998 and 2019. We calculated annual defined daily doses (DDD) based on the volume of antibiotics reported in kilograms or standard units (the number of minimum dosage units, e.g., a tablet). For antibiotics with an existing WHO DDD, the annual DDD was calculated as the annual weight of the active ingredient (or standard units for combination antibiotics) divided by the WHO DDD. However, if no WHO DDD existed, we divided the annual standard units by the average number of daily doses, determined by dividing the recommended daily dosage (from an online source such as NICE’s British National Formulary) by the weight of the active ingredient(s) in a single standard unit (from IQVIA’s standardised international pack). Using this approach, we calculated the annual DDD for >99% of the dataset. We also calculated the annual DDD per 1,000 inhabitants per day (DID) using World Bank Population Data (for Taiwan we used the Taiwanese government figures).
+
+          Additional detail:
+          For single antibiotics:
+          -	When the antibiotic quantities were expressed in weights (i.e., kilograms of the chemical salt), we divided this value by the salt conversion factor.
+          -	The NFC123 code was used to determine the appropriate WHO DDD based on the route of administration.
+          For combination antibiotics:
+          -	Because the kilogram weights weren’t provided for the combined set of antibiotics, the standard units were used, divided by the recommended number of doses per day. 
+          When there was no WHO DDD:
+          -	We searched the internet to determine the recommended daily dosage using the following strategy:
+          o	Governmental sites (such as NICE) or non-profit sites were used in preference to commercial sites.
+          o	When a range of illnesses were described, the most generic treatment fitting the route of administration was used.
+          o	For IV treatments that provided a dosage per kilogram of patient weight, an average human weight of 85kg was used to calculate weights per kilogram.
+          o	Dosages for adults were used in preference to children (unless only child doses were available).
+          o	If a range was provided (e.g., 500–1500mg), the median value of the range was used (e.g., 1000mg).
+          o	The most specific match was used (e.g., with beta-lactam inhibitor), but if this could not be found, the molecule alone was used instead.
+          -	For a very small number of rows, our approach resulted in a very large daily doses denominator (likely due to an error in information provided on the international pack weight). We therefore set an arbitrary cut-off upper limit of 16 daily doses."
+           
+          #ALSO ADD THE limited_coverage LIST!!!!!!!!!!!!!!!!!!!!!!!
+          
+        )
+         
+      )
+             
+    ),
+      
   )
   
 )
@@ -1597,9 +1907,9 @@ server <- function(input, output, session) {
                              choices = unique(D$metric))
         })
         
-  #----------
-  # HEAT MAP
-  #----------
+  #-------------
+  # 1. HEAT MAP
+  #-------------
     # Map title
     map_title_reactive <- eventReactive(input$load_map, {
       if (input$metric_map == "ddd" | input$metric_map == "su") {
@@ -1666,9 +1976,9 @@ server <- function(input, output, session) {
       
     })
     
-  #------------
-  # LINE PLOTS
-  #------------
+  #---------------
+  # 2. LINE PLOTS
+  #---------------
     # By antimicrobial
       # Plot title
       plot_title_by_antimicrobial_reactive <- eventReactive(input$load_plot_by_antimicrobial, {
@@ -2102,6 +2412,18 @@ server <- function(input, output, session) {
       
     })
 
+    #-------------------------
+    # 3. DU90 BY MANUFACTURER
+    #-------------------------
+      
+    #-----------------------
+    # 4. SUMMARY STATISTICS
+    #-----------------------
+    
+    #------------
+    # 5. METHODS
+    #------------
+      
 }
 
 ############
