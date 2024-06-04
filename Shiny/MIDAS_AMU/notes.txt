@@ -1,5 +1,5 @@
 =================================================================================================
-PLAN FOR APP:
+ORIGINAL PLAN FOR APP:
 
 1.
 Heatmap of DDD by country (also have the option to show a data table)
@@ -21,7 +21,17 @@ DEPLOY OPTIONS:
 		- https://www.shinyapps.io/?_ga=2.124969162.1745752972.1675950619-1149319099.1670938131
 	2. Deploy on-premises or in your VPC (open source) - "Shiny Server"
 		- https://posit.co/products/open-source/shinyserver/?_ga=2.124969162.1745752972.1675950619-1149319099.1670938131
+		- ADILA Shiny server now available!!!
+			- guidance:
+				- https://docs.posit.co/shiny-server/
+				- https://www.youtube.com/watch?v=JL4T0qfqY7k
+					- Install packages (using "pak")?
+						- pak::pkg_system_requirements("shiny", execute = T)
+						- pak::pak(c())
+					- git clone https://...
+					- The URL structure is: <instance_ipv4>:3838/<app-folder-name>:
+				- https://appsilon.com/how-to-share-r-shiny-apps/
 
 
-	- General instructions: https://shiny.rstudio.com/articles/shinyapps.html
+	- General guidance: https://shiny.rstudio.com/articles/shinyapps.html
 =================================================================================================

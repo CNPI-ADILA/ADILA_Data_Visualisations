@@ -1,3 +1,7 @@
+*
+* NOTE: WE HAVE NOW EXTRACTED MORE ACCURATE DATA FROM THE ACTS REPORTS FOR THIS PURPOSE (refer to Wiki)!
+*
+
 - data from each country only covers a fraction of all AMC
 - the fraction covered varies by country
 - some countries include only "retail", some only "hospital", some both
@@ -8,8 +12,3 @@
 		- normalised = a + ( ((x - xminimum) * (b - a)) / range of x)
 		OR
 		- normalised = x - mean / sd
-		OR ...
-
-
-
-- NOTE: WE HAVE NOW EXTRACTED MORE ACCURATE DATA FROM THE ACTS REPORTS FOR THIS PURPOSE (refer to Wiki)!

@@ -1,4 +1,7 @@
-# Integrate as new tab ("Statistics") in Shiny app:
+#
+# Integrate as new tab ("Summary statistics") in Shiny app!!!
+#
+
 library(DT)
 library(writexl)
 colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#CC79A7", "#0072B2", "#D55E00", "#F54842")
@@ -81,6 +84,15 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#CC79A7", "
   write_xlsx(data_source_summary_table, "./outputs/data_source_summary_table.xlsx")
   #datatable(data_source_summary_table)
   
+  # AMC (i.e., in DDDs) outliers
+  #outliers <- data_reformatted %>% filter(metric == "ddd") %>% group_by(country, antimicrobials, route_of_administration, year) %>% 
+    #summarise(value = sum(as.numeric(value), na.rm = TRUE), .groups = "keep") %>% ungroup()
+  #outliers <- outliers %>% arrange(country, antimicrobials, route_of_administration, year) %>%
+    #group_by(country, antimicrobials, route_of_administration) %>% filter(rstatix::is_outlier(value, coef = 7)) %>% rename(AMC = value)
+    
+    # plus Rosner's test, mentioned here: https://statsandr.com/blog/outliers-detection-in-r/
+    # export this data frame as csv somewhere
+  
 #------------------------------------------------------------------------------#   
 #------------------------------------------------------------------------------#   
 #------------------------------------------------------------------------------#   
@@ -88,7 +100,7 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#CC79A7", "
 # Statistical models #
 ######################
   # DU90
-    # copy over / adapt from Pharma DU90 corporation report (except do for antimicrobials, inputs: who_region/country/aware/route/sector/year/metric)
+    # copy over / adapt from Pharma DU90 manufacturer report (except do for antimicrobials, inputs: who_region/country/aware/route/sector/year/metric)
 
 #------------------------------------------------------------------------------#   
   # Correlations
@@ -220,7 +232,7 @@ colours <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#CC79A7", "
           ggsave("./outputs/hospital_vs_retail.png", 
                  scale = 1, width = 30, height = 20, dpi = 1000, units = "cm")
       # multivariable
-        #e.g., is route correlated to aware correlated to sector?
+        #e.g., is route correlated to AWaRe correlated to sector?
         #3D: 
           #http://www.sthda.com/english/wiki/scatterplot3d-3d-graphics-r-software-and-data-visualization
           #https://plotly.com/r/3d-scatter-plots/

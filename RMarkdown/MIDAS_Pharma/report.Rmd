@@ -1,3 +1,6 @@
+
+<!-- Integrate as new tab ("DU90 by manufacturer") in Shiny app!!! -->
+
 ---
 title: "Visualisations for Pharma Project (MIDAS data)"
 author: "Will Cuningham | ADILA"

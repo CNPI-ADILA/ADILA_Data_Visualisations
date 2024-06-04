@@ -1,0 +1,13 @@
+The ADILA project involves many different antibiotic use and resistance data sources from around the world. To help our researchers develop questions and analyses, including which datasets are of use, a Shiny app or interactive RMarkdown report might be useful to summarise their characteristics. 
+
+This might include:
+	- the type of data captured (both in terms of content and format)
+	- years/locations represented
+	- the types of variables (continuous, categorical, etc.) and range of values
+	- the number of observations/individuals
+	- missing data
+
+While this might be a difficult task given the range of formats in which the data are received, it could help prioritise cleaning and integration into the ADILA database.
+
+Another app/report could also summarise the descriptive characteristics of the clean data.
+	
